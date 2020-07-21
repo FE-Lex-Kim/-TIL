@@ -25,12 +25,12 @@ min-height 최소높이보다 크면 자연스럽게 늘어남
 ---
 box-sizing의 기본값은 content-box이다.
 
-* content-box : 콘텐트 영역을 기준
-* border-box : border 테투리 기준
+* content-box : width값을 늘리면 콘텐트 영역을 기준으로 늘어난다.
+* border-box : width값을 늘리면 border 테투리 기준으로 늘어난다.
 * inherit : 부모 요소의 속성값 상속
 
 박스의 크기가 100px일때 border의 크기를 1px 늘리면
-border의 크기때문에 총 102가 된다.
+border의 크기때문에 `width`는 총 102가 된다.
 
 하지만 border-box을 사용하면
 border크기를 늘려도 widht은 100px이 된다.
@@ -38,7 +38,8 @@ border크기를 늘려도 widht은 100px이 된다.
 
 ## 4. float으로 레이아웃 구성하기.
 ---
-![float](../Images/float1.jpg)
+<img src='../Images/float1.jpg' width='400px' height='400px'>
+
 float 을 사용하면 2차원적으로 위로 뜨게 된다.
 공간을 차지하지만 다른요소들의 배치에는 영향이 안간다.
 
