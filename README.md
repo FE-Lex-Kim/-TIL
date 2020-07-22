@@ -3,11 +3,14 @@
 프론트엔드 개발자가 되기위한 공부과정
 
 ## 1. CSS
-- [마진 중복](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EB%A7%88%EC%A7%84%20%EC%A4%91%EB%B3%B5.md)
+- [마진 병합 Collapsing margin](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EB%A7%88%EC%A7%84%20%EC%A4%91%EB%B3%B5.md)
 - [Margin negative 마진음수](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/margin%20negative.md)
 - [복합 선택자](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EB%B3%B5%ED%95%A9%20%EC%84%A0%ED%83%9D%EC%9E%90.md)
 - [Flex 레이아웃 구성](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/flex%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EA%B5%AC%EC%84%B1.md)
+- [Float으로 레이아웃 구성 및 이해](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/float%EC%9C%BC%EB%A1%9C%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EA%B5%AC%EC%84%B1%20%EB%B0%8F%20%EC%9D%B4%ED%95%B4.md)
 - [Float 배치되는 과정](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Float%20%EB%B0%B0%EC%B9%98%EB%90%98%EB%8A%94%20%EA%B3%BC%EC%A0%95.md)
+- [이미지 하단에 공백이 오는 이유 및 해결](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%ED%95%98%EB%8B%A8%EC%97%90%20%EC%98%A4%EB%8A%94%20%EA%B3%B5%EB%B0%B1.md)
+- [Fieldset이 flex가 안되는 이유 및 해결](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Fieldset%EC%9D%B4%20flex%EA%B0%80%20%EC%95%88%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 
 ## 2. HTML
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
