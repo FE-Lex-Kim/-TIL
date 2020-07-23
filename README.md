@@ -33,3 +33,4 @@
 
 ## 5. W3C reference 공부 및 번역
 - [W3C Collapsing margins](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%ED%95%B4%EC%84%9D/Collapsing%20margins.md)
+-  [vertical-align](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/vertical-align.md)
