@@ -12,6 +12,7 @@
 - [이미지 하단에 공백이 오는 이유 및 해결](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%ED%95%98%EB%8B%A8%EC%97%90%20%EC%98%A4%EB%8A%94%20%EA%B3%B5%EB%B0%B1.md)
 - [Fieldset이 flex가 안되는 이유 및 해결](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Fieldset%EC%9D%B4%20flex%EA%B0%80%20%EC%95%88%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 - [HTML 글자수 넘어가는경우 말줄임표](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/HTML%20%EB%A7%90%EC%A4%84%EC%9E%84%ED%91%9C.md)
+- [IS / IR 기법 설명](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/IS%2CIR%20%EA%B8%B0%EB%B2%95.md)
 
 ## 2. HTML
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
