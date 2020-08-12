@@ -16,6 +16,7 @@
 - [특성 선택자](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%ED%8A%B9%EC%84%B1%20%EC%84%A0%ED%83%9D%EC%9E%90.md)
 ## 2. HTML
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
+- [시멘틱 마크업](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/%EC%8B%9C%EB%A9%98%ED%8B%B0%20%EB%A7%88%ED%81%AC%EC%97%85.md)
 
 ## 3. Javascript
 [객체지향형 프로그래밍(OOP)](https://github.com/Alex-Eojin/-TIL/tree/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP))
