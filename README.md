@@ -29,9 +29,10 @@
 - [템플릿 리터널](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%85%9C%ED%94%8C%EB%A6%BF%20%EB%A6%AC%ED%84%B0%EB%9F%B4.md)
 - [구조분해 할당 Destructuring](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/Destructuring.md)
 
-## 4. Github
+## 4. Git
 - [Git 명령어](https://github.com/Alex-Eojin/-TIL/blob/master/Github/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 - [Vscode에서 마크다운 사용](https://github.com/Alex-Eojin/-TIL/blob/master/Github/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
+- [원격저장소 업로드 동작 과정](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20%EC%9B%90%EA%B2%A9%EC%A0%80%EC%9E%A5%EC%86%8C%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EB%8F%99%EC%9E%91%20%EC%84%A4%EB%AA%85.md)
 
 ## 5. W3C reference 공부 및 번역
 - [W3C Collapsing margins](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/Collapsing%20margins.md)
