@@ -13,7 +13,7 @@ Branch를 통해 효율적인 작업을 할수있게 된다.<br>
 ## 1. git branch
 현재 브랜치 확인을 확인 할수있고 어떤 브랜치들이 있는지 확인 가능하다.
 
-![git branch](../images/git%20branch/git%20branch%20사용시%20현재%20브랜치%20확인가능.gif)
+![git branch](../Images/git%20branch/git%20branch%20사용시%20현재%20브랜치%20확인가능.gif)
 
 Asterisk표시가 있는 브랜치가 현재위치이다.
 
@@ -22,7 +22,7 @@ Asterisk표시가 있는 브랜치가 현재위치이다.
 ## 2. git branch -a
 원격 브랜치를 포함한 모든 브랜치 목록을 확인 할 수 있다
 
-![git branch-a](../images/git%20branch/git%20branch%20-a.gif)
+![git branch-a](../Images/git%20branch/git%20branch%20-a.gif)
 
 ---
 
@@ -30,9 +30,9 @@ Asterisk표시가 있는 브랜치가 현재위치이다.
 
 브랜치를 생성해준다.
 
-![git branch 생성](../images/git%20branch/git%20branch만들기1.gif)
+![git branch 생성](../Images/git%20branch/git%20branch만들기1.gif)
 
-![git branch 생성](../images/git%20branch/git%20branch만들기2.gif)
+![git branch 생성](../Images/git%20branch/git%20branch만들기2.gif)
 
 pratice 브랜치를 생성했다!.
 
@@ -42,7 +42,7 @@ pratice 브랜치를 생성했다!.
 
 이동하고싶은 브랜치로 이동한다.
 
-![git checkout](../images/git%20branch/../git%20branch/git%20checkout.gif)
+![git checkout](../Images/git%20branch/../git%20branch/git%20checkout.gif)
 
 pratice 브랜치로 이동했다.
 
@@ -52,7 +52,7 @@ pratice 브랜치로 이동했다.
 
 브랜치 이름 현재 브랜치랑 병합하게 된다.
 
-![git merge](../images/git%20branch/git_merge.gif)
+![git merge](../Images/git%20branch/git_merge.gif)
 
 ---
 
