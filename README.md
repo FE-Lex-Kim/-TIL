@@ -2,6 +2,11 @@
 매일 기록하는 TIL<br>
 프론트엔드 개발자가 되기위한 공부과정
 
+배우고 공부했던 모든 내용을 기억할 수 없는 것을 알기에
+정리해서 모를때마다 꺼내 볼수 있도록 한다.
+
+매일 알고리즘 1개씩 풀도록 한다.
+
 ## 1. CSS
 - [마진 병합 Collapsing margin](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EB%A7%88%EC%A7%84%20%EB%B3%91%ED%95%A9%20Collapsing%20margins%20.md)
 - [Margin negative 마진음수](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/margin%20negative.md)
@@ -36,6 +41,9 @@
 - [원격저장소 업로드 동작 과정](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20%EC%9B%90%EA%B2%A9%EC%A0%80%EC%9E%A5%EC%86%8C%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EB%8F%99%EC%9E%91%20%EC%84%A4%EB%AA%85.md)
 - [Git branch](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20Branch.md)
 
-## 5. W3C reference 공부 및 번역
+## 5. 알고리즘
+- [두 정수 사이의합](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/1.%20%EB%91%90%20%EC%A0%95%EC%88%98%EC%82%AC%EC%9D%B4%EC%9D%98%20%ED%95%A9.md)
+
+## 6. W3C reference 공부 및 번역
 - [W3C Collapsing margins](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/Collapsing%20margins.md)
 -  [vertical-align](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/vertical-align.md)
