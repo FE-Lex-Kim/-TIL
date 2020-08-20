@@ -7,6 +7,8 @@
 
 매일 알고리즘 1개씩 풀도록 한다.
 
+복습은 1, 4, 7, 14, 30일 간격으로 한다.
+
 ## 1. CSS
 - [마진 병합 Collapsing margin](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EB%A7%88%EC%A7%84%20%EB%B3%91%ED%95%A9%20Collapsing%20margins%20.md)
 - [Margin negative 마진음수](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/margin%20negative.md)
