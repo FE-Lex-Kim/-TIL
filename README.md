@@ -33,6 +33,7 @@
 - [제어문](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%A0%9C%EC%96%B4%EB%AC%B8.md)
 - [타입변환과 단축속성](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%83%80%EC%9E%85%EB%B3%80%ED%99%98%EA%B3%BC%20%EB%8B%A8%EC%B6%95%ED%8F%89%EA%B0%80.md)
 - [객체 리터럴](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%20%EB%A6%AC%ED%84%B0%EB%9F%B4.md)
+- [원시값과 객체 비교](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%9B%90%EC%8B%9C%EA%B0%92%EA%B3%BC%20%EA%B0%9D%EC%B2%B4%EC%9D%98%20%EB%B9%84%EA%B5%90.md)
 - [Class](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4.md)
 - [Prototype](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.md)
 - [Getter Setter](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter.md)
