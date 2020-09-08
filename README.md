@@ -2,8 +2,8 @@
 매일 기록하는 TIL<br>
 프론트엔드 개발자가 되기위한 공부과정
 
-배우고 공부했던 모든 내용을 기억할 수 없는 것을 알기에
-정리해서 모를때마다 꺼내 볼수 있도록 한다.
+배우고 공부했던 모든 내용을 기억할 수 없기 때문에
+정리해서 모를때마다 꺼내 볼 수 있도록 한다.
 
 복습은 1, 4, 7, 14, 30일 간격으로 한다.
 
@@ -34,6 +34,7 @@
 - [원시값과 객체 비교](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%9B%90%EC%8B%9C%EA%B0%92%EA%B3%BC%20%EA%B0%9D%EC%B2%B4%EC%9D%98%20%EB%B9%84%EA%B5%90.md)
 - [함수-1](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%95%A8%EC%88%98-1.md)
 - [함수-2](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%95%A8%EC%88%98-2.md)
+- [스코프](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%8A%A4%EC%BD%94%ED%94%84.md)
 - [Class](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4.md)
 - [Prototype](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.md)
 - [Getter Setter](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter.md)
