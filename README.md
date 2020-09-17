@@ -39,6 +39,7 @@
 - [let, const와 블록 레벨 스코프](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/let%2C%20const%EC%99%80%20%EB%B8%94%EB%A1%9D%20%EB%A0%88%EB%B2%A8%20%EC%8A%A4%EC%BD%94%ED%94%84.md)
 - [프로퍼티 어트리뷰트](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20%EC%96%B4%ED%8A%B8%EB%A6%AC%EB%B7%B0%ED%8A%B8.md)
 - [생성자 함수에 의한 객체 생성](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%83%9D%EC%84%B1%EC%9E%90%20%ED%95%A8%EC%88%98%EC%97%90%20%EC%9D%98%ED%95%9C%20%EA%B0%9D%EC%B2%B4%20%EC%83%9D%EC%84%B1.md)
+- [함수 객체의 프로퍼티와 일급 객체](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%95%A8%EC%88%98%20%EA%B0%9D%EC%B2%B4%EC%9D%98%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%20%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4.md)
 - [Class](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4.md)
 - [Prototype](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.md)
 - [Getter Setter](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter.md)
