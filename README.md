@@ -48,6 +48,8 @@
 - [this](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/this.md)
 - [실행 컨텍스트](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%8B%A4%ED%96%89%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.md)
 - [클로저](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%A1%9C%EC%A0%80.md)
+- [클래스-1](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%9E%98%EC%8A%A4-1.md)
+- [클래스-2](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%9E%98%EC%8A%A4-2.md)
 - [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
 - [Prototype 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md)
 - [Getter Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
