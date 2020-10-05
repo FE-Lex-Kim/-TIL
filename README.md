@@ -50,6 +50,7 @@
 - [클로저](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%A1%9C%EC%A0%80.md)
 - [클래스-1](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%9E%98%EC%8A%A4-1.md)
 - [클래스-2](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%81%B4%EB%9E%98%EC%8A%A4-2.md)
+- [ES6 함수의 추가기능](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/ES6%20%ED%95%A8%EC%88%98%EC%9D%98%20%EC%B6%94%EA%B0%80%EA%B8%B0%EB%8A%A5.md)
 - [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
 - [Prototype 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md)
 - [Getter Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
