@@ -53,6 +53,7 @@
 - [ES6 함수의 추가기능](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/ES6%20%ED%95%A8%EC%88%98%EC%9D%98%20%EC%B6%94%EA%B0%80%EA%B8%B0%EB%8A%A5.md)
 - [배열](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%B0%B0%EC%97%B4.md)
 - [Number](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/Number.md)
+- [Math](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/Math.md)
 - [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
 - [Prototype 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md)
 - [Getter Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
