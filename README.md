@@ -74,6 +74,7 @@
 - [선형검색 과 이진검색](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%98%95%EA%B2%80%EC%83%89%20%EA%B3%BC%20%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89.md)
 - [문자열 반복 예제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%B0%98%EB%B3%B5%20%EC%98%88%EC%A0%9C.md)
 - [정렬, 버블정렬](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%A0%95%EB%A0%AC%ED%99%95%EC%9D%B8%2C%EB%B2%84%EB%B8%94%20%EC%A0%95%EB%A0%AC.md)
+- [선택정렬, 삽입정렬](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC%2C%20%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC.md)
 
 ## 6. 컴퓨터 공학 기초
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
