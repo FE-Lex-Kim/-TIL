@@ -468,3 +468,23 @@ today.toLocaleTimeString('ko-KR'); // -> 오후 12:30:00
 today.toLocaleTimeString('en-US'); // -> 12:30:00 PM
 today.toLocaleTimeString('ja-JP'); // -> 12:30:00
 ```
+
+정리
+
+```js
+// 지난만큼 밀리초를 반환한다.
+Date.parse() // 70년도에서 string 인수 지난만큼 (문자열)
+Date.UTC() // 70년도에서 숫자 인수 지난만큼 (숫자)
+Date.now() // 70년도에서 지금 지난만큼 (지금)
+
+// 70년을 기준으로 객체의 시간까지 경과된 만큼 밀리초 반환
+new Date().getTime(); // (객체가 지난만큼)
+
+// 객체를 문자열로 반환
+new Date().toDateString(); // 날짜까지 표현
+new Date().toTimeString(); // 시간까지 표현
+
+// 나머지 get,set뒤는 그 의미에 맞게 반환 ex)
+new Date().getDate();
+
+```
