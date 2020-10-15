@@ -605,3 +605,34 @@ function reverseString(str) {
 
 reverseString('Hello world!'); // -> '!dlrow olleH'
 ```
+
+**String 메서드 정리**
+```js
+const str = 'Hello world';
+// 문자열에서 문자 존재여부 확인,인덱스위치 찾는 메서드 indexof, includes, search
+str.indexOf('H');
+str.includes('H');
+str.search(/h/i);
+
+// 문자열에서 특정 문자가 시작하는지 StartsWith, endsWith
+str.startsWith('Hello');
+str.endsWith('world');
+
+// 문자열에서 일부분을 잘라 반환
+str.substring(0,6);
+str.slice(0,6)
+
+// 대문자,소문자로 반환
+str.toUpperCase();
+str.toLowerCase();
+
+// 제일 앞,뒤 공백제거
+str.trim();
+
+// 문자열중 특정 문자을 검색후 원하는 문자로 변환
+str.replace('world', 'james');
+
+// 문자열을 분열하여 배열로 반환
+str.split(' ');
+
+```
