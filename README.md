@@ -65,9 +65,10 @@
 - [브라우저의 렌더링 과정](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EA%B3%BC%EC%A0%95.md)
 - [DOM - 1](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%201.md)
 - [DOM - 2](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%202.md)
-- [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
+- [DOM - 3](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%203.md)
+- [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/masteravascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
 - [Prototype 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md)
-- [Getter Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
+- [Gettr Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
 - [배열 내장함수](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%B0%B0%EC%97%B4%20%EB%82%B4%EC%9E%A5%ED%95%A8%EC%88%98.md)
 - [구조분해 할당 Destructuring](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/Destructuring.md)
 
