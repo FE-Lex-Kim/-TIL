@@ -18,7 +18,7 @@ HTML 요소(HTML element)는 HTML 문서를 구성하는 개별적인 요소를 
 
 <br>
 
-![DOM](../Images/DOM/DOM-1.gif)
+![DOM](../Images/DOM%20-%201/DOM-1.gif)
 
 <br>
 
@@ -28,7 +28,7 @@ HTML 요소는 렌더링 엔진에 의해 파싱되어 DOM을 구성하는 요�
 
 <br>
 
-![DOM](../Images/DOM/DOM-2.gif)
+![DOM](../Images/DOM%20-%201/DOM-2.gif)
 
 <br>
 
@@ -44,7 +44,7 @@ HTML 문서는 HTML 요소들의 집합으로 이뤄지며, HTML 요소는 중�
 
 <br>
 
-![DOM](../Images/DOM/DOM-3.gif)
+![DOM](../Images/DOM%20-%201/DOM-3.gif)
 
 <br>
 
@@ -82,7 +82,7 @@ HTML 문서는 HTML 요소들의 집합으로 이뤄지며, HTML 요소는 중�
 
 <br>
 
-![DOM](../Images/DOM/DOM-4.gif)
+![DOM](../Images/DOM%20-%201/DOM-4.gif)
 
 <br>
 
@@ -174,7 +174,7 @@ DOM을 구성하는 노드 객체는 ECMAScript 사양에 정의된 표준 빌�
 
 <br>
 
-![DOM](../Images/DOM/DOM-5.gif)
+![DOM](../Images/DOM%20-%201/DOM-5.gif)
 
 <br>
 
@@ -204,7 +204,7 @@ DOM을 구성하는 노드 객체는 ECMAScript 사양에 정의된 표준 빌�
 
 <br>
 
-![DOM](../Images/DOM/DOM-6.gif)
+![DOM](../Images/DOM%20-%201/DOM-6.gif)
 
 <br>
 
@@ -237,7 +237,7 @@ input 요소 노드 객체도 다음과 같이 다양한 특성을 갖는 객체
 
 <br>
 
-![DOM](../Images/DOM/DOM-7.gif)
+![DOM](../Images/DOM%20-%201/DOM-7.gif)
 
 <br>
 
@@ -453,7 +453,7 @@ getElementsByTagName 메서드가 반환하는 DOM 컬렉션 객체인 HTMLColle
 
 <br>
 
-![DOM](../Images/DOM/DOM-8.gif)
+![DOM](../Images/DOM%20-%201/DOM-8.gif)
 
 <br>
 
