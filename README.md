@@ -79,6 +79,7 @@
 - [Git branch](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20Branch.md)
 
 ## 5. 알고리즘
+- [28가지 알고리즘 문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/28%EA%B0%80%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
 - [2016년](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/1.%202016%EB%85%84.md)
 - [두 정수 사이의합](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2.%20%EB%91%90%20%EC%A0%95%EC%88%98%EC%82%AC%EC%9D%B4%EC%9D%98%20%ED%95%A9.md)
 - [제어문 연습 문제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%A0%9C%EC%96%B4%EB%AC%B8%20%EC%97%B0%EC%8A%B5%20%EB%AC%B8%EC%A0%9C.md)
