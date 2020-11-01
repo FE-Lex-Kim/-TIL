@@ -66,6 +66,8 @@
 - [DOM - 1](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%201.md)
 - [DOM - 2](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%202.md)
 - [DOM - 3](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/DOM%20-%203.md)
+- [타이머](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%ED%83%80%EC%9D%B4%EB%A8%B8.md)
+- [비동기 프로그래밍](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md)
 - [Class 예제](https://github.com/Alex-Eojin/-TIL/blob/masteravascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md)
 - [Prototype 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md)
 - [Gettr Setter 예제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md)
