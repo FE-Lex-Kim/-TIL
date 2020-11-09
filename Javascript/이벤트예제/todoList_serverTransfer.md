@@ -263,10 +263,8 @@ $todos.onchange = e => {
   request.patch(`/todos/${e.target.parentNode.id}`, { completed: e.target.checked })
     .then(res => res.json())
     .then(_todos => todos = _todos)
-    .then(render)
+    .then(chekckAcitveCompleted)
     .catch(console.error());
-
-  chekckAcitveCompleted();
 };
 
 // 전체 체크박스 클릭 이벤트
@@ -276,9 +274,10 @@ $completeAll.onchange = e => {
     .then(res => res.json())
     .then(_todos => todos = _todos)
     .then(render)
+    .then(chekckAcitveCompleted)
     .catch(console.error());
 
-  chekckAcitveCompleted();
+  // chekckAcitveCompleted();
 };
 
 // 삭제이벤트
@@ -324,7 +323,6 @@ $btn.onclick = () => {
     .then(render)
     .catch(console.error());
 };
-
 ```
 
 ## style.css
