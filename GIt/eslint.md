@@ -68,6 +68,7 @@ $ npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugi
     // "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
     // "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
     // "no-var": 0,
+    "linebreak-style": 0,
     "no-console": 0,
     "no-plusplus": 0,
     "vars-on-top": 0,
@@ -80,8 +81,7 @@ $ npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugi
     "max-classes-per-file": 0,
     "arrow-parens": ["error", "as-needed"], // a => {}
     "no-restricted-syntax": [0, "ForOfStatement"],
-    "no-param-reassign": ["error", { "props": false }],
-    "linebreak-style": ["error", "windows"]
+    "no-param-reassign": ["error", { "props": false }]
   }
 }
 ```
