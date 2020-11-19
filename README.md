@@ -20,6 +20,12 @@
 - [IS / IR 기법 설명](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/IS%2CIR%20%EA%B8%B0%EB%B2%95.md)
 - [특성 선택자](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%ED%8A%B9%EC%84%B1%20%EC%84%A0%ED%83%9D%EC%9E%90.md)
 - [transfrom, animation](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/transfrom%2C%20animation.md)
+- [요소를 화면 가운데에 위치시키는 방법](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EC%9A%94%EC%86%8C%EB%A5%BC%20%ED%99%94%EB%A9%B4%20%EA%B0%80%EC%9A%B4%EB%8D%B0%EC%97%90%20%EC%9C%84%EC%B9%98%EC%8B%9C%ED%82%A4%EB%8A%94%20%EB%B0%A9%EB%B2%95.md)
+- [화면 전체를 스크롤없이 높이를 차지하게 하는방법](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%ED%99%94%EB%A9%B4%20%EC%A0%84%EC%B2%B4%EB%A5%BC%20%EC%8A%A4%ED%81%AC%EB%A1%A4%EC%97%86%EC%9D%B4%20%EB%86%92%EC%9D%B4%EB%A5%BC%20%EC%B0%A8%EC%A7%80%ED%95%98%EA%B2%8C%20%ED%95%98%EB%8A%94%EB%B0%A9%EB%B2%95.md)
+- [box-sizing: border-box](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/border-box.md)
+- [CSS 블러 효과(Blur effect)](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/CSS%20%EB%B8%94%EB%9F%AC%20%ED%9A%A8%EA%B3%BC(Blur%20effect).md)
+- [height auto](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/height%20auto.md)
+- [input disabled](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Input%20disabled.md)
 ## 2. HTML
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
 - [시멘틱 마크업](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/%EC%8B%9C%EB%A9%98%ED%8B%B0%20%EB%A7%88%ED%81%AC%EC%97%85.md)
@@ -76,6 +82,7 @@
 - [구조분해 할당 Destructuring](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/Destructuring.md)
 - [모듈](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%AA%A8%EB%93%88.md)
 - [form태그의 값을 서버에 데이터에 전송할때](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/form%ED%83%9C%EA%B7%B8%EC%9D%98%20%EA%B0%92%EC%9D%84%20%EC%84%9C%EB%B2%84%EC%97%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%20%EC%A0%84%EC%86%A1%ED%95%A0%EB%95%8C.md)
+- [localStorage 데이터 저장, 참조](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/localStorage%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%80%EC%9E%A5%2C%20%EC%B0%B8%EC%A1%B0.md)
 
 ## 4. Git
 - [Git 명령어](https://github.com/Alex-Eojin/-TIL/blob/master/Github/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
