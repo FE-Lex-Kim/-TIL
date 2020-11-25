@@ -115,3 +115,6 @@
 ## 8. Tool
 - [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/eslint.md)
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
+
+## 9. 데이터 베이스
+- [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
