@@ -22,7 +22,7 @@
 
 <br>
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e540bf13-70c7-4167-8762-50fd03ceaa36/640px-HTTP_cookie_exchange.svg.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e540bf13-70c7-4167-8762-50fd03ceaa36/640px-HTTP_cookie_exchange.svg.png)
+![Cookie](../Images/Cookie/Cookie-1.jpg)
 
 <br>
 
