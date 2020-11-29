@@ -84,6 +84,7 @@
 - [form태그의 값을 서버에 데이터에 전송할때](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/form%ED%83%9C%EA%B7%B8%EC%9D%98%20%EA%B0%92%EC%9D%84%20%EC%84%9C%EB%B2%84%EC%97%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%20%EC%A0%84%EC%86%A1%ED%95%A0%EB%95%8C.md)
 - [localStorage 데이터 저장, 참조](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/localStorage%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%80%EC%9E%A5%2C%20%EC%B0%B8%EC%A1%B0.md)
 - [에러 처리](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
+- [URLSearchParams](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/URLSearchParams.md)
 
 ## 4. Git
 - [Git 명령어](https://github.com/Alex-Eojin/-TIL/blob/master/Github/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
