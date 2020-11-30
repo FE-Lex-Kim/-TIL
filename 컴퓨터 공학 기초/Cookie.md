@@ -103,3 +103,13 @@ Set-Cookie: sessionToken=abc123; Expires=Wed, 09 Jun 2021 10:18:14 GMT
 `document.cookie = "temperature=20"`
 
  `temperature` 이라는 키와 `20` 이라는 값을 만든다.
+
+<br>
+
+**쿠키는 주로 세 가지 목적을 위해 사용된다.**
+
+1 . **세션 관리(Session management)** 서버에 저장해야 할 로그인, 장바구니, 게임 스코어 등의 정보 관리
+
+2 . **개인화(Personalization)** 사용자 선호, 테마 등의 세팅
+
+3 . **트래킹(Tracking)** 사용자 행동을 기록하고 분석하는 용도
