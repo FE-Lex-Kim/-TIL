@@ -159,4 +159,108 @@ TypeScript 파일(.ts)은 브라우저에서 동작하지 않으므로 **TypeScr
 
 이를 **컴파일** 또는 **트랜스파일링**이라 한다.
 
+<br>
+
+### 3.1 TypeScript 컴파일러 설치
+
+<br>
+
+전역에 TypeScript 설치한다.
+
+<br>
+
+```bash
+$ npm install -g typescript
+```
+
+<br>
+
+typeScript 버전 확인
+
+```bash
+$ tsc -v
+Version 2.8.3
+```
+
+<br>
+
+TypeScript 컴파일러(tsc)는 TypeScript 파일(.ts)을 자바스크립트 파일로 트랜스파일링한다.
+
+<br>
+
+tsc 명령어 뒤에 트랜스파일링 대상 파일명을 지정한다. 이때 확장자 .ts는 생략할 수 있다.
+
+```bash
+$tsc script
+```
+
+<br>
+
+트랜스파일링을 한후에 같은 디렉토리에 자바스크립트 파일이 생성된다.
+
+<br>
+
+하지만 트랜스파일링된 파일은 ES3버전이다.
+
+컴파일의 자바스크립트 기본 버전이 ES3이기 떄문이다.
+
+<br>
+
+트랜스파일링으로 자바스크립트 버전을 변경하려면 `-target` 또는 `-t`를 사용한다.
+
+현재 tsc가 지원하는 자바스크립트 버전은 ‘ES3’(default), ‘ES5’, ‘ES2015’, ‘ES2016’, ‘ES2017’, ‘ES2018’, ‘ES2019’, ‘ESNEXT’이다.
+
+<br>
+
+EX) ES6버전으로 트랜스파일링을 실행하려면
+
+```bash
+$ tsc script -t ES2015
+```
+
+<br>
+
+tsc 옵션 설정파일인 tsconfig.json가 생성되어 기본옵션을 설정할 수 있다.
+
+```bash
+$ tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+```
+
+<br>
+
+![TypeScript](../Images/TypeScript/TypeScript-1.gif)
+
+<br>
+
+`-watch` 또는 `-w` 옵션을 사용하면 트랜스파일링 대상 파일의 내용이 변경되었을 때 이를 감지하여 자동으로 트랜스파일링이 실행된다.
+
+```bash
+$ tsc --watch
+```
+
+<br>
+
+tsconfig.json기본 옵션으로 추가할 수 있다.
+
+<br>
+
+![TypeScript](../Images/TypeScript/TypeScript-2.gif)
+
+tsc 명령어 뒤에 파일명을 지정하면 tsconfig.json이 무시된다
+
+```bash
+$ tsc person # ✘ tsconfig.json이 무시된다.
+```
+
+<br>
+
+tsc명령어를 하면 폴더내의 모든 TypeScript파일이 트랜스파일링이 된다.
+
+```bash
+$ tsc
+```
+
+<br>
+
 출처 : [[https://poiemaweb.com/typescript-introduction](https://poiemaweb.com/typescript-introduction)]
