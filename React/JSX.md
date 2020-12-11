@@ -22,6 +22,89 @@ JSX는 React **엘리먼트(element)** 를 생성한다.
 
 <br>
 
+## JSX 사용환경설정
+
+JSX를 사용하기 위해서는 Babel을 이용하여 컴파일을 해주어야한다.
+
+<br>
+
+### 1. HTML파일에 DOM 컨테이너를 설치한다.
+
+<br>
+
+React가 DOM 컨테이너 안에 내용을 추가해준다. (루트)
+
+<br>
+
+### 2. 스크립트 태그 추가
+
+<br>
+
+`<script>` 태그 3개를 닫는 태그인 `</body>` 앞에 추가해준다.
+
+```jsx
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</body>
+```
+
+<br>
+
+위의 코드는 개발용으로 만들어진 CDN이다.
+
+처음 두 태그는 React를 실행시킨다.
+
+세번째 태그는 바벨CDN을 불러와 컴파일 시킨다.
+
+<br>
+
+### 3. <script type="text/babel"></script>
+
+<br>
+
+`<script type="text/babel"></script>` 스크립트 파일을 타입을 바벨로 컴파일하게 지정해준다.
+
+<br>
+
+하지만 위 방법은 간단한 공부목적과 데모 사이트를 만들때 사용한다.
+
+<br>
+
+때문에 `type="text/babel"` 을 제거하고 자동으로 `<script>` 태그를 변환시켜줄 JSX전처리기를 만들면된다.
+
+<br>
+
+### 3-1. JSX 전처리기 설치
+
+<br>
+
+1. `npm init -y` 실행
+2. `npm install babel-cli@6 babel-preset-react-app@3` 실행
+
+<br>
+
+### 3-2 JSX 전처리기 실행하기
+
+<br>
+
+src 폴더를 만들고 다음 터미널 명령어를 실행하면된다.
+
+```bash
+npx babel --watch src --out-dir . --presets react-app/prod
+```
+
+<br>
+
+src폴더를 계속 —watch(지켜보면서 달라진부분을 비교한다)
+
+<br>
+
+output파일을 다른폴더에 만든다.
+
+<br>
+
 ## JSX에 표현식 포함하기
 
 <br>
