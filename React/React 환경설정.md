@@ -10,6 +10,33 @@
 
 <br>
 
+creat-react-app 을한경우 
+
+1 . `npm add eslint-config-airbnb` 을 해준다.
+
+2 . package.json에서 설정을 해준다.
+
+```jsx
+"eslintConfig": {
+    "extends": ["react-app", "airbnb"]
+  },
+```
+
+3 . 옵션 룰 정해주기.
+
+```jsx
+"eslintConfig": {
+    "extends": ["react-app", "airbnb"],
+    "rules": {
+      "react/prefer-stateless-function": 0,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0
+    }
+  },
+```
+
+<br>
+
 ## 2. Reactjs Code Snippets 설치
 
 <br>
@@ -27,6 +54,8 @@
 <br>
 
 ![React 환경설정](../Images/React_환경설정/React_환경설정-2.png)
+
+[Prettier 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
 
 <br>
 
