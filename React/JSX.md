@@ -18,94 +18,107 @@ JSX라 하며 JavaScript를 확장한 문법이다.
 
 JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있다.
 
+<br>
+
+JSX는 브라우저에 실행되기전에 코드가 웹팩으로 번들링되는 과정에서
+
+바벨을 통행 일반 자바스크립트 형태의 코드로 변환된다.
+
 JSX는 React **엘리먼트(element)** 를 생성한다.
 
 <br>
 
-## JSX 사용환경설정
-
-JSX를 사용하기 위해서는 Babel을 이용하여 컴파일을 해주어야한다.
+# JSX 문법
 
 <br>
 
-### 1. HTML파일에 DOM 컨테이너를 설치한다.
+## 1. 하나의 부모요소
+
+컴포넌트에 여러요소가 있다면 반드시 부모 요소 하나로 감싸야한다.
 
 <br>
-
-React가 DOM 컨테이너 안에 내용을 추가해준다. (루트)
-
-<br>
-
-### 2. 스크립트 태그 추가
-
-<br>
-
-`<script>` 태그 3개를 닫는 태그인 `</body>` 앞에 추가해준다.
 
 ```jsx
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+function App() {
+  return (
+    <h1>Hello James!</h1>
+    <h2>How are you?</h2>
+  )
+}
 
-</body>
+export default App;
 ```
 
 <br>
 
-위의 코드는 개발용으로 만들어진 CDN이다.
-
-처음 두 태그는 React를 실행시킨다.
-
-세번째 태그는 바벨CDN을 불러와 컴파일 시킨다.
+![JSX](../Images/JSX/JSX.png)
 
 <br>
 
-### 3. <script type="text/babel"></script>
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Hello James!</h1>
+      <h2>How are you?</h2>
+    </div>
+  )
+}
 
-<br>
-
-`<script type="text/babel"></script>` 스크립트 파일을 타입을 바벨로 컴파일하게 지정해준다.
-
-<br>
-
-하지만 위 방법은 간단한 공부목적과 데모 사이트를 만들때 사용한다.
-
-<br>
-
-때문에 `type="text/babel"` 을 제거하고 자동으로 `<script>` 태그를 변환시켜줄 JSX전처리기를 만들면된다.
-
-<br>
-
-### 3-1. JSX 전처리기 설치
-
-<br>
-
-1. `npm init -y` 실행
-2. `npm install babel-cli@6 babel-preset-react-app@3` 실행
-
-<br>
-
-### 3-2 JSX 전처리기 실행하기
-
-<br>
-
-src 폴더를 만들고 다음 터미널 명령어를 실행하면된다.
-
-```bash
-npx babel --watch src --out-dir . --presets react-app/prod
+export default App;
 ```
 
 <br>
 
-src폴더를 계속 —watch(지켜보면서 달라진부분을 비교한다)
+부모 요소 하나로 감싸주어 정상 작동한다.
 
 <br>
 
-output파일을 다른폴더에 만든다.
+항상 하나의 부모요소를 넣어야한다.
+
+하지만 의미없는 태그를 넣기 싫다면
+
+React 16v부터 지원하는 Fragment 기능을 사용할 수 있다.
 
 <br>
 
-## JSX에 표현식 포함하기
+```jsx
+import { Fragment } from "react";
+
+function App() {
+  return (
+    <Fragment>
+      <h1>Hello James!</h1>
+      <h2>How are you?</h2>
+    </Fragment>
+  )
+}
+
+export default App;
+```
+
+<br>
+
+or
+
+Fragment를 생략해도된다.
+
+```jsx
+function App() {
+  return (
+    <>
+      <h1>Hello James!</h1>
+      <h2>How are you?</h2>
+    </>
+  )
+}
+
+export default App
+```
+
+<br>
+
+## 2. JSX에 표현식 포함하기
 
 <br>
 
@@ -155,7 +168,93 @@ const element = <h1>
 
 <br>
 
-## JSX도 표현식이다.
+**조건문을 사용하고싶은경우**
+
+삼항조건 연산자를 사용하면된다.
+
+```jsx
+function App() {
+  const name = 'james';
+  return (
+    <>
+      <h1>Hello {name === 'james' ? name : 'james가 아니다.'}!</h1>
+      <h2>How are you?</h2>
+    </>
+  )
+}
+
+export default App;
+```
+
+<br>
+
+`if else`문이 아니라 단순 `if` 으로 사용하고 싶은 경우에는
+
+<br>
+
+논리합 연산자를 사용하면된다.
+
+<br>
+
+```jsx
+function App() {
+  const name = 'jams';
+  return (
+    <>
+			// 만약 james **면** name을 출력한다.
+      <h1>Hello {name === 'james' && name}!</h1> 
+      <h2>How are you?</h2>
+    </>
+  )
+}
+
+export default App;
+```
+
+<br>
+
+## 3. undefined를 반환하면 안된다.
+
+<br>
+
+```jsx
+function App() {
+  const name = undefined;
+  return name;
+}
+
+export default App;
+```
+
+<br>
+
+이러한 경우 논리곱 연산자로 undefiend일때 다른값으로 지정해주면된다.
+
+```jsx
+function App() {
+  const name = undefined;
+  return name || 'james 이다.'
+}
+
+export default App;
+```
+
+<br>
+
+만약 값이 undefiend일때 보여주고 싶은 값이 있으면 뒤의 피연산자로 넣으면된다.
+
+```jsx
+function App() {
+  const name = undefined;
+  return <h1>{name || 'james 가 아니다!'}</h1>
+}
+
+export default App;
+```
+
+<br>
+
+## 4. JSX도 표현식이다.
 
 <br>
 
@@ -198,9 +297,7 @@ ReactDOM.render(getGreeting(nameObj), document.getElementById('root'));
 
 <br>
 
-## JSX 속성 정의
-
-<br>
+## 5. JSX 속성 정의
 
 속성에 따옴표를 이용해 문자열 리터럴을 정의할 수 있다.
 
@@ -234,6 +331,18 @@ JSX는 HTML보다는 JavaScript에 가깝기 때문에, React DOM은 HTML 어트
 
 <br>
 
+이렇게 클래스로 css파일에 있는 클래스안의 css속성을 정의해 넣어줄 수 도 있다.
+
+```jsx
+function App() {
+  return <h1 className = 'styleCss'>James is the best frontEnd developer!</h1>
+}
+
+export default App;
+```
+
+<br>
+
 속성안에는 스타일 객체가 들어간다.
 
 ```jsx
@@ -262,15 +371,57 @@ ReactDOM.render(getGreeting(nameObj), document.getElementById('root'));
 
 <br>
 
-## JSX로 자식 정의
+DOM요소에 스타일을 적용할때에는 객체 형태로 넣어주어야한다.
 
-태그가 비어있다면 XML처럼 /> 를 이용해 닫아주어야한다.
+또한 카멜케이스로 작성해야한다.ex) `background-color =⇒ backgroundColor`
 
 <br>
 
 ```jsx
+function App() {
+  const styleCss = {
+    color : 'skyblue',
+    fontSize : '100px',
+    backgroundColor : 'tomato'
+  }
+  return <h1 style={ styleCss }>James is the best frontEnd developer!</h1>
+}
+
+export default App;
+```
+
+<br>
+
+## 6. JSX로 자식 정의
+
+<br>
+
+태그가 비어있다면 XML처럼 /> 를 이용해 닫아주어야한다.
+
+```jsx
 const element = <img src={user.avatarUrl} />;
 ```
+
+<br>
+
+HTML에서는 input 태그는 닫히는 태그가 아니다.
+
+하지만 JSX에서는 반드시 닫아주어야 한다.
+
+```jsx
+function App() {
+  return (
+    <>
+      <h1 className = 'styleCss'>James is the best frontEnd developer!</h1>
+      <input/>
+    </>
+  )
+}
+
+export default App;
+```
+
+<br>
 
 JSX 태그는 자식을 포함할 수 있다.
 
@@ -302,7 +453,36 @@ ReactDOM.render(element, document.getElementById('root'));
 
 <br>
 
-## JSX는 객체를 표현한다.
+## 7. 주석
+
+자바스크립트에서 주석은 `//` 과같이 사용한다.
+
+<br>
+
+하지만 JSX에서는 주석을 작성할때 다르다.
+
+`{/*...*/}` 으로 작성해야한다.
+
+단축키는 VScode에서 `Alt`  + `Shift` + `a` 이다.
+
+```jsx
+function App() {
+  return (
+    <> {/* 이것은 주석입니다. */}
+      <h1 className = 'styleCss'>James is the best frontEnd developer!</h1>
+      <input/> 
+    </>
+  )
+}
+
+export default App;
+```
+
+<br>
+
+## 8. JSX는 객체를 표현한다.
+
+<br>
 
 Babel은 JSX를 React.createElement() 호출로 컴파일한다.
 
@@ -320,6 +500,8 @@ const element = (
 );
 ```
 
+<br>
+
 ```jsx
 const element = React.createElement(
   'h1',
@@ -327,6 +509,18 @@ const element = React.createElement(
   'Hello, world!'
 );
 ```
+
+<br>
+
+Babel로 컴파일 하기전에, JSX 코드를 작성하는 것이 아니라
+
+두번째 코드 처럼 작성해도 된다.
+
+<br>
+
+하지만 매번 위코드 처럼 사용한다면 명시적이고 한눈에 파악하기 힘들다.
+
+때문에 JSX를 사용하면 매우편하게 개발할 수 있다.
 
 <br>
 
@@ -347,5 +541,7 @@ const element = {
 <br>
 
 이러한 객체를 **“React 엘리먼트”** 라고 하며, 이를 화면에 표시하려는 항목에 대한 설명이라고 생각할 수 있다. 
+
+<br>
 
 React는 이러한 객체를 읽은 후 DOM을 구성하고 최신으로 유지하는 데 이러한 객체를 사용한다.
