@@ -134,6 +134,7 @@
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
 
 ## 11. React
+- [React 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/React/React%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [React](https://github.com/Alex-Eojin/-TIL/blob/master/React/React.md)
 - [JSX](https://github.com/Alex-Eojin/-TIL/blob/master/React/JSX.md)
 - [엘리먼트 랜더링](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%20%EB%A0%8C%EB%8D%94%EB%A7%81.md)
