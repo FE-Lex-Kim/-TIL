@@ -88,7 +88,17 @@
 - [URLSearchParams](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/URLSearchParams.md)
 - [SPA](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/SPA.md)
 
-## 4. Git
+## 4. React
+- [React 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/React/React%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
+- [React](https://github.com/Alex-Eojin/-TIL/blob/master/React/React.md)
+- [JSX](https://github.com/Alex-Eojin/-TIL/blob/master/React/JSX.md)
+- [엘리먼트 랜더링](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%20%EB%A0%8C%EB%8D%94%EB%A7%81.md)
+- [Components and Props](https://github.com/Alex-Eojin/-TIL/blob/master/React/Components%20and%20Props.md)
+
+## 5. TypeScript
+- [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
+
+## 6. Git
 - [Git 명령어](https://github.com/Alex-Eojin/-TIL/blob/master/Github/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 - [Vscode에서 마크다운 사용](https://github.com/Alex-Eojin/-TIL/blob/master/Github/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
 - [원격저장소 업로드 동작 과정](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20%EC%9B%90%EA%B2%A9%EC%A0%80%EC%9E%A5%EC%86%8C%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EB%8F%99%EC%9E%91%20%EC%84%A4%EB%AA%85.md)
@@ -96,7 +106,7 @@
 - [Git flow](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/Git%20flow.md)
 - [Git bash 단축표현](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/git%20bash%20%EB%8B%A8%EC%B6%95%ED%91%9C%ED%98%84.md)
 
-## 5. 알고리즘
+## 7. 알고리즘
 - [28가지 알고리즘 문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/28%EA%B0%80%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
 - [2016년](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/1.%202016%EB%85%84.md)
 - [두 정수 사이의합](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2.%20%EB%91%90%20%EC%A0%95%EC%88%98%EC%82%AC%EC%9D%B4%EC%9D%98%20%ED%95%A9.md)
@@ -111,34 +121,24 @@
 - [완주하지 못한 선수](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80%20%EB%AA%BB%ED%95%9C%20%EC%84%A0%EC%88%98.md)
 - [문자열 내맘대로 정렬하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%EB%A7%98%EB%8C%80%EB%A1%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0.md)
 
-## 6. 컴퓨터 공학 기초
+## 8. 컴퓨터 공학 기초
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/Cookie.md)
 - [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
 
-## 7. W3C reference 공부 및 번역
+## 9. W3C reference 공부 및 번역
 - [W3C Collapsing margins](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/Collapsing%20margins.md)
 -  [vertical-align](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/vertical-align.md)
 
-## 8. Tool
+## 10. Tool
 - [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/eslint.md)
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
 
-## 9. 데이터 베이스
+## 11. 데이터 베이스
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
 - [SQL](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/SQL%EB%AC%B8.md)
 - [Constraint : 제약조건](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/Constraint%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.md)
 
-## 10. TypeScript
-- [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
-
-## 11. React
-- [React 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/React/React%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
-- [React](https://github.com/Alex-Eojin/-TIL/blob/master/React/React.md)
-- [JSX](https://github.com/Alex-Eojin/-TIL/blob/master/React/JSX.md)
-- [엘리먼트 랜더링](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%20%EB%A0%8C%EB%8D%94%EB%A7%81.md)
-- [Components and Props](https://github.com/Alex-Eojin/-TIL/blob/master/React/Components%20and%20Props.md)
-
-## 11. 프론트엔드 면접 질문
+## 12. 프론트엔드 면접 질문
 - [프론트엔드 인성면접 질문](https://github.com/Alex-Eojin/-TIL/blob/master/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%A9%B4%EC%A0%91%EC%A7%88%EB%AC%B8/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EC%9D%B8%EC%84%B1%EB%A9%B4%EC%A0%91%20%EC%A7%88%EB%AC%B8.md)
