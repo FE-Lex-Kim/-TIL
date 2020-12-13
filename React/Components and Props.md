@@ -26,7 +26,7 @@ function Welcome(props) {
 
 <br>
 
-또한 **ES6 class** 를 사용하여 컴포넌트를 정의할 수 있습니다.
+또한 **ES6 class** 를 사용하여 **클래스 컴포넌트** 를 정의할 수 있습니다.
 
 ```jsx
 class Welcome extends React.Component {
@@ -35,8 +35,38 @@ class Welcome extends React.Component {
   }
 }
 ```
+
 <br>
 
+### **클래스형 컴포넌트 vs 함수형 컴포넌트**
+
+<br>
+
+**함수형 컴포넌트 장점**
+
+1 . 컴포넌트 선언 편리
+
+2 . 메모리 사용 적음
+
+<br>
+
+**함수형 컴포넌트 단점**
+
+1 . state 사용 불가능
+
+2 . 라이플사이클 API 사용 불가능(Hooks 기능 추가로 해결)
+
+<br>
+
+**클래스형 컴포넌트 장점**
+
+1 . state 기능
+
+2 .  라이프사이클 기능 사용
+
+3 . 임의 메서드 정의 가능
+
+<br>
 
 ## 컴포넌트 렌더링
 
@@ -270,7 +300,21 @@ UI 일부가 여러 번 사용되거나 UI 일부가 자체적으로 복잡한 (
 
 <br>
 
-## props는 읽기 전용이다.
+# Props
+
+<br>
+
+props는 properties를 줄인 표현이다.
+
+컴포넌트 속성을 설정할때 사용하는 요소이다.
+
+<br>
+
+props의 값은 사용하는 컴포넌트의 부모 컴포넌트에서 속성으로 설정 할 수 있다.
+
+<br>
+
+## 1. props는 읽기 전용이다.
 
 <br>
 
@@ -308,4 +352,200 @@ function withdraw(account, amount) {
 
 <br>
 
-출처: 리액트 공식문서[[https://ko.reactjs.org/docs/components-and-props.html](https://ko.reactjs.org/docs/components-and-props.html)]
+## 2. props 기본값 설정
+
+<br>
+
+<컴포넌트이름>.defaultProps 에서 객체로서 기본값을 설정해주면된다.
+
+```jsx
+import React from 'react';
+
+const MyComponent = (props) => <div>안녕 내이름은 {props.name} 이야!</div>;
+
+MyComponent.defaultProps = {
+  name: 'Jaems',
+};
+
+export default MyComponent;
+```
+
+<br>
+
+## 3. children
+
+<br>
+
+```jsx
+import React from 'react';
+import MyComponent from './MyComponent';
+
+const App = () => <MyComponent name="Alex">리액트</MyComponent>;
+export default App;
+```
+
+<br>
+
+```jsx
+import React from 'react';
+
+const MyComponent = (props) => (
+  <div>
+    안녕 내이름은 {props.name} 이야! children 값은 {props.children} 이야!
+  </div>
+);
+
+MyComponent.defaultProps = {
+  name: 'Jaems',
+};
+
+export default MyComponent;
+```
+
+<br>
+
+위의 APP 코드에서 MyComponent태그 사이의 텍스트 값을 가져올 수 있다.
+
+<br>
+
+디스트럭쳐링 할당으로 코드를 만들면 간편한 코드를  만들 수 있다.
+
+```jsx
+import React from 'react';
+
+const MyComponent = ({ name, children }) => (
+  <div>
+    안녕 내이름은 {name} 이야! children 값은 {children} 이야!
+  </div>
+);
+
+MyComponent.defaultProps = {
+  name: 'Jaems',
+};
+
+export default MyComponent;
+```
+
+<br>
+
+## 4. propTypes
+
+<br>
+
+props의 타입을 지정해 줄 수 있다.
+
+```bash
+npm i -S prop-type
+```
+
+<br>
+
+import를 해주어야한다.
+
+```jsx
+import propTypes from 'prop-types';
+```
+
+<br>
+
+다음과 같이 propTypes 객체로 지정해 줄 수 있다.
+
+```jsx
+import React from 'react';
+import propTypes from 'prop-types';
+
+const MyComponent = ({ name, children }) => (
+  <div>
+    안녕 내이름은 {name} 이야! children 값은 {children} 이야! 내 생일인 달은{' '}
+    {month}월 이야!
+  </div>
+);
+
+MyComponent.defaultProps = {
+  name: 'Jaems',
+};
+
+MyComponent.propTypes = {
+  name: propTypes.string,
+};
+
+export default MyComponent;
+```
+
+<br>
+
+타입이 동일하지 않으면 브라우저의 콘솔창에서 오류가 나온다.
+
+<br>
+
+propTypes를 지정하지 않았을때 경고 메세지를 보낼수있다.
+
+isRequired을 붙여주면된다.
+
+```jsx
+MyComponent.propTypes = {
+  name: propTypes.string,
+  month: propTypes.number.isRequired,
+};
+```
+
+<br>
+
+**지정할 수 있는 타입종류**
+
+1. array : 배열
+2. arrayOf: 특정타입만 가지고있는 배열
+3. bool: 불린값
+4. number: 숫자
+5. func: 함수
+6. string: 문자열
+7. ...등등
+
+<br>
+
+[더자세한 정보](https://ko.reactjs.org/docs/typechecking-with-proptypes.html)
+
+<br>
+
+## 5. 클래스형 컴포넌트의 props
+
+<br>
+
+render() 함수안에서 this.props로 참조할수있다.
+
+defaultProps와 propTypes도 똑같은 방식이다.
+
+<br>
+
+defaultProps와 propTypes을 클래스 바깥에 선언 해주어야한다.
+
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class MyComponent extends Component {
+  render() {
+    // eslint-disable-next-line react/prop-types
+    const { name, children, month } = this.props;
+    return (
+      <div>
+        안녕 내이름은 {name} 이야! children 값은 {children} 이야! 내 생일인 달은{' '}
+        {month}월 이야!
+      </div>
+    );
+  }
+}
+
+MyComponent.defaultProps = {
+  name: '아무것도 아니다',
+};
+
+MyComponent.propTypes = {
+  name: PropTypes.string,
+  month: PropTypes.number.isRequired,
+};
+
+export default MyComponent;
+```
+
+참고: 리액트 공식문서[[https://ko.reactjs.org/docs/components-and-props.html](https://ko.reactjs.org/docs/components-and-props.html)]
