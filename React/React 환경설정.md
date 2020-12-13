@@ -30,7 +30,10 @@ creat-react-app 을한경우
     "rules": {
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,
-      "react/jsx-one-expression-per-line": 0
+      "react/jsx-one-expression-per-line": 0,
+      // 윈도우 인경우 추가해주기
+      // vscode 오른쪽 밑 CRLF로 변경해주기
+			"linebreak-style": ["error", "windows"] 
     }
   },
 ```
