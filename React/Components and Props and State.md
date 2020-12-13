@@ -1,4 +1,4 @@
-# Components and Props
+# Components and Props and State
 
 <br>
 
@@ -547,5 +547,216 @@ MyComponent.propTypes = {
 
 export default MyComponent;
 ```
+
+# State
+
+<br>
+
+**state는 컴포넌트 내부에서 바뀔 수 있는 값이다.**
+
+props는 컴포넌트가 사용되어질때 부모 컴포넌트가 설정하는값이다.
+
+또한 읽기전용이다.
+
+<br>
+
+때문에 
+
+<br>
+
+props의 값을 바꾸어주려면 부모의 컴포넌트에서 직접 바꾸어주어야한다.
+
+1. state는 클래스형 컴포넌트
+2. 함수형 컴포넌트에서는 useState라는 함수를 사용한다.
+
+<br>
+
+## 1. 클래스형 컴포넌트의 state
+
+<br>
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  state = {
+    number: 0,
+  };
+
+  render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          // onClick을 클릭했을때
+          onClick={() => {
+            // 1씩 number값을 증가시켜준다.
+            this.setState({ number: number + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+<br>
+
+state를 클래스안에서 객체로서 정의한다.
+
+이후에 JSX태그안에서 사용하면된다.
+
+<br>
+
+만약 조회하고싶을떄는 `this.state.number` 로해주어도 되지만
+
+디스트럭처링할당으로 number을 선언하여 가져와도된다.
+
+<br>
+
+state값을 수정하고싶을때는 `this.setState()`함수를 사용하면된다.
+
+<br>
+
+### setState()
+
+<br>
+
+onclick이벤트 안에서 클릭 한번시마다 `this.setState()` 함수를 호출하게 하여 1씩 number의 값을 증가 시켰다.
+
+```jsx
+state = {
+    number: 0,
+    FixNumber: 0,
+  };
+```
+
+<br>
+
+만약 state객체안에 다른 프로퍼티가 있더라도
+
+setState()함수에서는 바꾸고싶은 프로퍼티만 객체로서 넣어주면된다.
+
+다른 프로퍼티의 값은 변하지 않는다.
+
+```jsx
+this.setState({number: number + 1})
+```
+
+<br>
+
+setState()인수에 함수 인자를 전달해도된다.
+
+함수인자안에서는 업데이터 하고 싶은 값을 반환값에 넣어주면된다.
+
+<br>
+
+prevState는 기존 state객체이다. props는 현재 가지고있는 props 객체를 가리킨다.
+
+두번째 매개변수는 옵션이기때문에 생략해주어도된다.
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  state = {
+    number: 0,
+    FixNumber: 0,
+  };
+
+  render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          // onClick을 클릭했을때
+          onClick={() => {
+            // 1씩 number값을 증가시켜준다.
+            this.setState((preState,props) => {
+              return { number: preState.number + 1 };
+            });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+<br>
+
+## 2. 함수형 컴포넌트의 state
+
+<br>
+
+클래스형 컴포넌트에서 setState()함수를 사용한것처럼
+
+함수형 컴포넌트에서는 useState()함수가 있다.
+
+<br>
+
+useState()함수는 반환하는 값으로 첫번째 인수에 넘긴 초기값을 배열로서 반환한다.
+
+```jsx
+useState('')
+```
+
+<br>
+
+두번째인수의 값으로는 배열의 원소의 상태를 바꾸는 setter 함수가 호출된다.
+
+setter함수는 원소의 상태를 바꿀수 있게 해준다.
+
+setter함수의 첫번째 인수에 바꾸고 싶은 값을 넣어주면된다.
+
+<br>
+
+useState()의 반환값을 얻을때는 배열의 디스트럭처링 할당으로 변수를 선언해 얻을수있다.
+
+```jsx
+const [name, setName] = useState('');
+```
+
+<br>
+
+name은 초기값므로 아직은 빈값이고
+
+setName은 setter함수로 name의 값을 수정할수있다.
+
+```jsx
+import React, { useState } from 'react';
+
+const modiName = () => {
+  const [name, setName] = useState('who Are you?');
+  const setAlex = () => setName('Alex');
+  const setJames = () => setName('james');
+
+  return (
+    <div>
+      <h1>{name}</h1>
+      <button onClick={setAlex}>Alex</button>
+      <button onClick={setJames}>james</button>
+    </div>
+  );
+};
+
+export default modiName;
+```
+
+<br>
+
+onclick은 이벤트이기때문에 함수의 호출을 넣어주는것 이아니라
+
+함수 식별자를 넣어주어야한다.
 
 참고: 리액트 공식문서[[https://ko.reactjs.org/docs/components-and-props.html](https://ko.reactjs.org/docs/components-and-props.html)]
