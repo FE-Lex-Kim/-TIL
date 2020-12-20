@@ -76,7 +76,7 @@ creat-react-app으로 웹팩과 바벨의 설치를 생략하고 한번에 프�
 ### 4.1 npm creat react-app <프로젝트이름>
 
 ```bash
-npm creat react-app <프로젝트이름>
+npm create-react-app <프로젝트이름>
 ```
 
 <br>
@@ -86,7 +86,7 @@ or
 <br>
 
 ```bash
-npx creat react-app <프로젝트이름>
+npx create-react-app <프로젝트이름>
 ```
 
 <br>
@@ -104,6 +104,40 @@ npx을 하게되면 현재 최근 버전인 리액트 버전으로 받게된다.
 <br>
 
 이후 리액트 개발전용 서버를  `npm start` 하면 실행할 수 있다.
+
+<br>
+
+### 컴포넌트 임포트 VS Code 자동완성기능
+
+컴포넌트를 작성하는 과정에서 import를 하지 않고 바로 작성하면 
+
+VS Code 에디터에서 자동완성 기능이 나타난다.
+
+<br>
+
+하지만 만약 탭중에 컴포넌트가 열려있지 않으면 자동완성이 되지않는다.
+
+파일이 닫혀 있을때도 자동완성 기능을 작동시키려면
+
+<br>
+
+jsconfig.json 파일을 최상위 디렉토리에 만들어준다.
+
+그안에 ctrl + space 를 눌러 
+
+```jsx
+{
+  "compilerOptions": {
+    "target": "es6"
+  }
+}
+```
+
+<br>
+
+위의 코드를 넣어준다.
+
+파일이 열려있지 않아도 자동완성으로 컴포넌트를 불러와 사용할 수 있다.
 
 <br>
 
