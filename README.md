@@ -103,6 +103,7 @@
 - [Hooks](https://github.com/Alex-Eojin/-TIL/blob/master/React/Hooks.md)
 - [Context API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
 - [리덕스 기초개념](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%A6%AC%EB%8D%95%EC%8A%A4%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90.md)
+- [리덕스](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%A6%AC%EB%8D%95%EC%8A%A4.md)
 
 ## 5. TypeScript
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
