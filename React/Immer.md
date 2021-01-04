@@ -159,4 +159,145 @@ setState에 produce가 들어가게 되었을때 반환되는 업데이트 함�
 
 <br>
 
+예제)
+
+<br>
+
+Immer 사용전)
+
+```jsx
+import React, { useRef, useState } from 'react';
+let id = 0;
+const App = () => {
+  const inputRef = useRef(null);
+  const [value, setValue] = useState({ name: '', nickName: '' });
+  const [list, setList] = useState([]);
+  const onChange = ({ target }) => {
+    setValue(() => ({ ...value, [target.name]: target.value }));
+  };
+  const onClick = (e) => {
+    e.preventDefault();
+    if (value.name === '' || value.nickName === '') return;
+    setList(() => [{ id: id++, ...value }, ...list]);
+    setValue(() => ({ name: '', nickName: '' }));
+    inputRef.current.focus();
+  };
+  const onRemove = (id) => {
+    setList(() => list.filter((list) => list.id !== id));
+  };
+  return (
+    <>
+      <form>
+        <input
+          value={value.name}
+          ref={inputRef}
+          name="name"
+          onChange={onChange}
+        />
+        <input
+          value={value.nickName}
+          name="nickName"
+          onChange={onChange}
+          style={{ marginLeft: '10px' }}
+        />
+        <button type="submit" onClick={onClick} style={{ marginLeft: '10px' }}>
+          버튼
+        </button>
+      </form>
+      <ul>
+        {list.map(({ id, name, nickName }) => (
+          <li key={id} onDoubleClick={() => onRemove(id)}>
+            {name}({nickName}) {id}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+export default App;
+```
+
+<br>
+
+Immer 사용후
+
+```jsx
+import produce from 'immer';
+import React, { useRef, useState } from 'react';
+let id = 0;
+
+const App = () => {
+  const inputRef = useRef(null);
+  const [value, setValue] = useState({ name: '', nickName: '' });
+  const [list, setList] = useState([]);
+
+  const onChange = ({ target }) => {
+    setValue(
+      produce((draft) => {
+        draft[target.name] = target.value;
+      }),
+    );
+  };
+
+  const onClick = (e) => {
+    e.preventDefault();
+    if (value.name === '' || value.nickName === '') return;
+    setList(
+      produce((draft) => {
+        draft.push({ id: id++, name: value.name, nickName: value.nickName });
+      }),
+    );
+    setValue(
+      produce((draft) => {
+        draft.name = '';
+        draft.nickName = '';
+      }),
+    );
+    inputRef.current.focus();
+  };
+
+  const onRemove = (id) => {
+    setList(
+      produce((draft) => {
+        draft.splice(
+          draft.findIndex((info) => info.id === id),
+          1,
+        );
+      }),
+    );
+  };
+
+  return (
+    <>
+      <form>
+        <input
+          value={value.name}
+          ref={inputRef}
+          name="name"
+          onChange={onChange}
+        />
+        <input
+          value={value.nickName}
+          name="nickName"
+          onChange={onChange}
+          style={{ marginLeft: '10px' }}
+        />
+        <button type="submit" onClick={onClick} style={{ marginLeft: '10px' }}>
+          버튼
+        </button>
+      </form>
+      <ul>
+        {list.map(({ id, name, nickName }) => (
+          <li key={id} onDoubleClick={() => onRemove(id)}>
+            {name}({nickName}) {id}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+export default App;
+```
+
 참고 :  [Immer 공식 문서](https://immerjs.github.io/immer/docs/introduction)
