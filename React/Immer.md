@@ -36,7 +36,7 @@ npm i immer
 
 draftState에 변경하려고 하는 값을 모두 적용시킨후에 nextState를 만든다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a9a3630-cf26-4a6c-88b8-f759df631808/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a9a3630-cf26-4a6c-88b8-f759df631808/Untitled.png)
+![Immer](../Images/Immer/Immer-1.png)
 
 <br>
 
