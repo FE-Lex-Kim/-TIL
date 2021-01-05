@@ -95,260 +95,7 @@ export default Counter;
 
 <br>
 
-## 2. useEffect
-
-<br>
-
-useEffect는 **컴포넌트가 렌더링 될때** 마다 특정 작업을 수행하도록 설정해준다.
-
-클래스형 컴포넌트에서 componenetDidMount와 componenetDidUpdate와 합친형태와 비슷하다.
-
-컴포넌트가 렌더링이 된후 실행된다.
-
-```jsx
-import React, { useEffect, useState } from "react";
-
-const Counter = () => {
-  const [name, setname] = useState("");
-  const [nickname, setnickname] = useState("");
-  useEffect(() => {
-    console.log("렌더링이 완료되었습니다.");
-    console.log({
-      name,
-      nickname,
-    });
-  });
-  return (
-    <div>
-      <input
-        onChange={(e) => {
-          setname(e.target.value);
-        }}
-      />
-      <input
-        onChange={(e) => {
-          setnickname(e.target.value);
-        }}
-      />
-      <b>이름: {name}</b>
-      <b>닉네임: {nickname}</b>
-    </div>
-  );
-};
-
-export default Counter;
-```
-
-<br>
-
-### 마운트된 경우만 실행할때
-
-<br>
-
-useEffect는 **마운트** 와 **업데이트** 가 될때 실행된다.
-
-마운트가 됬을 때만 실행하려면 useEffect 함수의 두번째 인수에 빈배열을 넣으면된다.
-
-<br>
-
-```jsx
-useEffect(() => {
-    console.log("마운트가 완료되었습니다.");
-  }, []);
-```
-
-<br>
-
-처음 컴포넌트가 생긴 경우에만 호출되고
-
-그 이후에 업데이트 되어도 실행되지 않는다.
-
-<br>
-
-### 특정값이 업데이트 될때만 실행할때
-
-<br>
-
-useEffect를 사용할 때, 특정값만 변경될 때 호출하고 싶다면
-
-두번째 인수에 검사하고 싶은 값을 넣어주면 된다.
-
-```jsx
-useEffect(() => {
-    console.log(name);
-  }, [name]);
-```
-
-<br>
-
-name state가 변경될 때만 useEffect가 실행된다.
-
-<br>
-
-useState로 관리하는 state를 넣어주어도 되고
-
-또는
-
-props로 전달받은 값을 넣어 주어도 된다.
-
-<br>
-
-### 언마운트 업데이트 직전 작업 처리시 실행
-
-<br>
-
-useEffect는 렌더링이되고 난후 실행된다.
-
-두번째 파라미터는 조건에따라 실행된다.
-
-<br>
-
-만약 컴포넌트가 **언마운트** 나 **업데이트 되기전** 에 호출하고 싶다면 useEffect에서 cleenup(뒷정리)함수를 반환해주어야한다.
-
-```jsx
-useEffect(() => {
-    console.log("effect");
-    console.log(name);
-    return () => {
-      console.log("cleenUp");
-      console.log(name);
-    };
-  }, [name]);
-```
-
-<br>
-
-오직 언마운트될 때만 호출하고 싶다면 useEffect 함수의 두번째 파라미터에 빈배열을 넣으면된다.
-
-<br>
-
-상태가 바뀌면 업데이트가 되고
-
-클래스 컴포넌트에서는 렌더함수가 실행되는데 
-
-함수 컴포넌트에서는 컴포넌트 함수자체가 다시 실행된다.
-
-<br>
-
-그 이후 상태가 변경된 변수가 useState()에 의해 retrun 값으로 변경이된다.
-
-그이후 함수형 컴포넌트의 return의 상태의 변경부분만 비교한뒤 브라우저의 DOM에 적용한다.
-
-<br>
-
-useEffect를 사용하면 함수형 컴포넌트의 실행순서가 헷갈린다.
-
-정확히 어떤식으로 Lifecycle이 동작하는지 알아야한다.
-
-<br>
-
-예제)
-
-```jsx
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import NewsItem from './NewsItem';
-import axios from 'axios';
-
-const NewsListBlock = styled.div`
-  box-sizing: border-box;
-  padding-bottom: 3rem;
-  width: 768px;
-  margin: 0 auto;
-  margin-top: 2rem;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-`;
-
-const NewsList = () => {
-  const [articles, setArticles] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    // async를 사용하는 함수 따로 선언
-    const fetchData = async () => {
-      try {
-        console.log(1);
-        setLoading(true);
-        const response = await axios.get(
-          'https://newsapi.org/v2/top-headlines?country=kr&apiKey=0a8c4202385d4ec1bb93b7e277b3c51f',
-        );
-        setArticles(response.data.articles);
-        console.log(2);
-      } catch (e) {
-        console.log(3);
-      }
-      setLoading(false);
-      console.log(4);
-    };
-    fetchData();
-  }, []);
-
-  // 대기 중일 때
-  if (loading) {
-    console.log(5);
-    return <NewsListBlock>대기 중…</NewsListBlock>;
-  }
-  // 아직 articles 값이 설정되지 않았을 때
-  if (!articles) {
-    console.log(6);
-    return null;
-  }
-
-  console.log(7);
-  // articles 값이 유효할 때
-  return (
-    <NewsListBlock>
-      {articles.map((article) => (
-        <NewsItem key={article.url} article={article} />
-      ))}
-    </NewsListBlock>
-  );
-};
-
-export default NewsList;
-```
-
-<br>
-
-**코드실행순서**
-
-1 . 컴포넌트가 마운트 되고난후
-
-articles가 falsy값이므로 `6`이 콘솔에 찍힌다.
-
-<br>
-
-2 . 이후 마운트가 된이후 useEffect가 실행된다.
-
-그이유는 useEffect의 두번째 인자로 `[]` 빈배열을 주었기 때문이다.
-
-<br>
-
-3 . useEffect 함수안에서 try문의 첫번째 `1` 이 찍힌후 setLoading으로 상태값을 변경했으므로 함수 컴포넌트가 reRendering되어 if문안의 loadting이 trusy값이므로 콘솔에 `5`가 찍힌후 대기중이 랜더가 된다.
-
-<br>
-
-4. 다시axios가 실행된후, setArticles가 실행되어 상태가 변하므로 함수컴포넌트가 리랜더링 된후 loading은 아직도 true값이므로 다시 콘솔에 `5` 가 찍한다.
-
-<br>
-
-5. 이후에 다시 useEffect로 돌아와 콘솔에 `2`가 찍힌다.
-
-<br>
-
-6. try문이 종료 된후 setLoading이 false가 되므로 다시 함수 컴포넌트가 리랜더링 되어 loading if문을 지나 articles if문을 지나 콘솔에 `7` 이 찍히고 retrun문으로 JSX가 반환된다.
-
-<br>
-
-7. 그이후 다시 useEffect로 돌아와 콘솔에 4가 찍히고 마무리 된다.
-
-<br>
-
-## 3. useReducer
+## 2. useReducer
 
 <br>
 
@@ -508,7 +255,7 @@ export default Counter;
 
 <br>
 
-## 4. useMemo
+## 3. useMemo
 
 <br>
 
@@ -616,7 +363,7 @@ export default Average;
 
 <br>
 
-## 5. useCallback
+## 4. useCallback
 
 <br>
 
@@ -686,7 +433,7 @@ export default Average;
 
 <br>
 
-## 6. useRef
+## 5. useRef
 
 <br>
 
@@ -737,3 +484,7 @@ const Average = () => {
 
 export default Average;
 ```
+
+## 6. useEffect
+
+[useEffect 내용정리 챕터](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
