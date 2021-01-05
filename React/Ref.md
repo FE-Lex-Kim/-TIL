@@ -1,4 +1,4 @@
-# ref DOM
+# Ref
 
 <br>
 
@@ -217,3 +217,98 @@ export default ScrollBox;
 <br>
 
 또한 서로 다른 컴포넌트끼리 ref를 교환해서 사용하면 복잡해지므로 사용하면 안된다.
+
+<br>
+
+### 함수형 컴포넌트의 useRef Hook
+
+<br>
+
+**사용법**
+
+```jsx
+const refContainer = useRef(initialValue);
+
+// useRef는 객체를 반환한다.
+// 반환된 객체의 current키의 값은 initialValue이 된다.
+```
+
+<br>
+
+useRef Hooks는 함수형 컴포넌트에서 ref를 쉽게 사용할 수 있도록 해준다.
+
+useRef를 사용하여 ref를 설정하면 useRef를 통해 만든 객체안의 current 값이 실제 엘리먼트를 가리킨다.
+
+<br>
+
+![Ref](../Images/Ref/ref-1.png)
+
+<br>
+
+### 로컬변수
+
+<br>
+
+이 기능은 클래스에서 인스턴스 필드를 사용하는 방법과 유사하다.
+
+<br>
+
+함수형 컴포넌트에서 로컬변수로 useRef를 활용할 수 있다.
+
+함수형 컴포넌트안에 useRef의 값은 렌더링과 상관없이 변경할 수 있다.
+
+<br>
+
+**리액트에서 props와 state가 변경되면 업데이트가된다.**
+
+**하지만 useRef로 변수에 할당한 값이 변경되어도 업데이트가 되지 않는다.**
+
+<br>
+
+예제코드)
+
+```jsx
+import React, { useRef } from 'react';
+
+const App = () => {
+  const number = useRef(1);
+  const onClick = () => {
+    number.current += 1;
+  };
+  
+  console.log(number.current);
+
+  return (
+    <>
+      <h1>{number.current}</h1>
+      <button onClick={onClick}>+1</button>
+    </>
+  );
+};
+
+export default App;
+```
+
+<br>
+
+### 컴포넌트 ref등록
+
+<br>
+
+등록하고 싶은 컴포넌트의 props로 ref를 넣어주면된다.
+
+```jsx
+import React, { useRef } from 'react';
+
+const App = () => {
+  const inputEl = useRef(null);
+
+  return <input ref={inputEl} type="text" />;
+};
+
+export default App;
+```
+
+<br>
+
+current의 값으로 input 엘리먼트를 가리킨다.
