@@ -427,3 +427,397 @@ useEffect(() => {
 <br>
 
 오직 언마운트될 때만 호출하고 싶다면 useEffect 함수의 두번째 파라미터에 빈배열을 넣으면된다.
+
+<br>
+
+## useEffect 더 잘 사용하기
+
+<br>
+
+### Multiple Effect 사용
+
+<br>
+
+**예제 코드)**
+
+```jsx
+class FriendStatusWithCounter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0, isOnline: null };
+    this.handleStatusChange = this.handleStatusChange.bind(this);
+  }
+
+  componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentWillUnmount() {
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+
+  handleStatusChange(status) {
+    this.setState({
+      isOnline: status.isOnline
+    });
+  }
+  // ...
+```
+
+<br>
+
+위 코드는 count와 친구 구독/비구독 을 결합한 컴포넌트이다.
+
+<br>
+
+1 . `document.title`을 설정하는 로직이 componentDidMoun와componentDidUpdate에 나누어져 있다.
+
+2 . `구독(subscription)로직` 또한 componentDidMount와 componentWillUnmount에 나누어져 있다.
+
+따라서 `componentDidMount`가 두 가지의 작업을 위한 코드를 모두 가지고 있게된다.
+
+<br>
+
+Hook을 통해서는 이러한 문제를 쉽게 해결가능하다.
+
+effect을 여러 번 사용할 수 있다.
+
+<br>
+
+**Hook 사용후 예제코드)**
+
+```jsx
+function FriendStatusWithCounter(props) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+
+  const [isOnline, setIsOnline] = useState(null);
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+  // ...
+}
+```
+
+<br>
+
+Hook을 이용하면 생명주기 메서드에 따라서가 아니라 코드가 **무엇을 하는지** 에 따라 나눌 수가 있다. 
+
+리액트는 컴포넌트에 사용된 모든 effect를 지정된 순서에 맞춰 적용한다.
+
+<br>
+
+### effect가 업데이트 시마다 실행되는 이유
+
+<br>
+
+effect 정리(clean-up)가 마운트 해제되는 때에 한번만이 아니라 모든 리렌더링 시에 실행되는 이유가 무엇일까?
+
+이러한 메커니즘은 버그가 적은 컴포넌트를 만드는 데에 어떻게 도움이 된다.
+
+<br>
+
+**예제코드)**
+
+```
+componentDidMount() {
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+
+  componentWillUnmount() {
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+```
+
+<br>
+
+1. 컴포넌트가 마운트 된이후 친구 상태를 구독한다.
+2. 컴포넌트가 마운트를 해제 할때에 구독을 해지한다.
+
+<br>
+
+**하지만 컴포넌트가 화면에 표시되는 동안 friend prop이 변한다면 다른 친구의 온라인 상태를 표시하고 다른 ID참고하여 구독을 해지할것이다.**
+
+즉, 메모리 누수나 충돌이 일어나는 버그가 발생한다.
+
+<br>
+
+따라서 이런경우를 위해 componentDidUpdate에 이전에 id에서 친구 구독을 해지하는 작업을 다시 한번더 해야한다.
+
+```jsx
+componentDidMount() {
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+
+  componentDidUpdate(prevProps) {
+    // 이전 friend.id에서 구독을 해지합니다.
+    ChatAPI.unsubscribeFromFriendStatus(
+      prevProps.friend.id,
+      this.handleStatusChange
+    );
+    // 다음 friend.id를 구독합니다.
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+
+  componentWillUnmount() {
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  }
+```
+
+<br>
+
+이러한 문제에서 Hook을 사용하면 간단히 해결한다!
+
+<br>
+
+Hook을 사용한 예제)
+
+```jsx
+function FriendStatus(props) {
+  // ...
+  useEffect(() => {
+    // ...
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+```
+
+<br>
+
+단지 effect를 발생한뒤 그에대한 clean-up을 반환에 함수로 적어준것 으로 처리가능하다.
+
+<br>
+
+useEffect는 업데이트를 다루는 Hook이다.
+
+따라서 더는 업데이트를 위한 코드를 만들어 낼 필요가 없다!
+
+<br>
+
+다음 effect를 적용하기전에 이전의 effect를 정리(clean-up) 해주기에 굉장히 편하다.
+
+<br>
+
+다음 코드는 위의 코드의 순서를 더 잘 보여주기위한  실행 흐름을 보여주는 코드이다.
+
+```jsx
+// { friend: { id: 100 } } state을 사용하여 마운트합니다.
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // 첫번째 effect가 작동합니다.
+
+// { friend: { id: 200 } } state로 업데이트합니다.
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // 이전의 effect를 정리(clean-up)합니다.
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // 다음 effect가 작동합니다.
+
+// { friend: { id: 300 } } state로 업데이트합니다.
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // 이전의 effect를 정리(clean-up)합니다.
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // 다음 effect가 작동합니다.
+
+// 마운트를 해제합니다.
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // 마지막 effect를 정리(clean-up)합니다.
+```
+
+<br>
+
+클래스 컴포넌트에서 업데이트 로직을 뺴먹으면 발생하는 버그를 예방해준다.굿굿
+
+<br>
+
+### Effect기능을 건너뛰고 성능 최적화하기
+
+<br>
+
+**모든 렌더링 이후에 effect를 정리(clean-up)하거나 적용하는 것이 때때로 성능 저하를 발생시키는 경우도 있다.**
+
+<br>
+
+클래스 컴포넌트의 경우에는 componentDidUpdate에서 prevProps나 prevState와의 비교를 통해 이러한 문제를 해결할 수 있다.
+
+```jsx
+componentDidUpdate(prevProps, prevState) {
+  if (prevState.count !== this.state.count) {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+}
+```
+
+<br>
+
+**이전의 상태와 현재 상태를 비교**하여 다른경우에는 effect를 주는 방법으로 해결할 수 있다.
+
+<br>
+
+이러한 요구 조건은 흔하기 때문에 useEffect Hook API에 이미 내재되어 있다.
+
+<br>
+
+**특정 값들이 리렌더링 시에 변경되지 않는다면 리액트가 effect를 건너뛰도록 할 수 있다.**
+
+**useEffect의 선택적 인수인 두 번째 인수로 배열을 넘기면 된다.**
+
+```jsx
+useEffect(() => {
+  document.title = `You clicked ${count} times`;
+}, [count]); // count가 바뀔 때만 effect를 재실행합니다.
+```
+
+<br>
+
+위의 예시에서 우리는 [count]를 두 번째 인수로 넘긴다.
+
+<br>
+
+이것이 의미하는 바는 다음과 같다.
+
+<br>
+
+**count 상태가 변경이 되지 않은 경우**
+
+1 . 만약 count가 5이고 컴포넌트가 리렌더링된 이후에도 여전히 count는 변함없이 5라면 리액트는 이전 렌더링 시의 값 [5]를 그다음 렌더링 때의 [5]와 비교한다.
+
+2 . 배열 내의 모든 값이 같기 때문에(5 === 5) 리액트는 effect를 건너뛰게 된다.
+
+이런 식으로 최적화가 가능하다!
+
+<br>
+
+**count 상태가 변경된경우**
+
+1 . count가 6으로 업데이트된 뒤에 렌더링하면 리액트는 이전에 렌더링된 값 [5]를 그다음 렌더링 시의 [6]와 비교한다.
+
+2 . 이때 5 !== 6 이기 때문에 리액트는 effect를 재실행한다.
+
+<br>
+
+**팁!**
+
+배열 내에 여러 개의 값이 있다면 **그중의 단 하나만 다를지라도** 리액트는 effect를 재실행한다.
+
+<br>
+
+**정리(clean-up)를 사용하는 effect의 경우에도 동일하게 작용한다.**
+
+```jsx
+useEffect(() => {
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+
+  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+  return () => {
+    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+  };
+}, [props.friend.id]); // props.friend.id가 바뀔 때만 재구독합니다.
+```
+
+<br>
+
+**주의!**
+
+이 최적화 방법을 사용한다면 배열이 **컴포넌트 범위 내에서 바뀌는 값들과 effect에 의해 사용되는 값들을 모두 포함한다.**
+
+그렇지 않으면 현재 값이 아닌 **이전의 렌더링 때의 값을 참고하게 된다.**
+
+<br>
+
+**effect를 실행하고 이를 정리(clean-up)하는 과정을 (마운트와 마운트 해제 시에)딱 한 번씩만 실행하고 싶다면,** **빈 배열([])을 두 번째 인수로 넘기면 된다.**
+
+<br>
+
+이것은 의존성 배열의 작동 방법을 그대로 따라서 사용하는 것일 뿐이며 특별한 방법인 것은 아니다.
+
+빈 배열([])을 넘기게 되면, effect 안의 prop과 state는 초깃값을 유지하게 된다.
+
+<br>
+
+**리액트는 브라우저가 다 그려질 때까지 useEffect의 실행을 지연** 하기 때문에 추가적인 작업을 더하는 것이 큰 문제가 되지는 않다.
+
+<br>
+
+**팁!!**
+
+exhaustive-deps 규칙을 [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 패키지에 포함하는 것을 리액트에서 추천한다.
+
+이 패키지는 의존성이 바르지 않게 지정되었을 때 경고하고 수정하도록 알려준다.
+
+<br>
+
+설치방법
+
+```bash
+# npm 
+npm install eslint-plugin-react-hooks --save-dev
+```
+
+<br>
+
+eslint config
+
+```jsx
+{
+  "extends": [
+    // ...
+    "plugin:react-hooks/recommended"
+  ]
+}
+```
+
+<br>
+
+좀더 엄격하게 할경우
+
+```jsx
+{
+  "plugins": [
+    // ...
+    "react-hooks"
+  ],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn" // <--- THIS IS THE NEW RULE
+  }
+}
+```
+
+참고: 
+
+[React 공식문서](https://ko.reactjs.org/docs/hooks-effect.html)
+
+책 리액트를 다루는 기술
