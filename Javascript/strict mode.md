@@ -1,5 +1,7 @@
 # Strict mode
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 [Notion](https://www.notion.so/20-Strict-mode-35853d5182714c0f8fa322eadf98afc6)
 
 ## 1. strict mode 란?

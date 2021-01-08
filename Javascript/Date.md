@@ -1,5 +1,7 @@
 # Date
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 <br>
 
 표준 빌트인 객체인 Date는 날짜와 시간(년, 월, 일, 시, 분, 초, 밀리초(millisecond/ms. 천분의 1초))을 위한 메서드를 제공하는 빌트인 객체이면서 생성자 함수다.

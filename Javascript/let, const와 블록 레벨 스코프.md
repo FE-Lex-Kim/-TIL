@@ -1,5 +1,7 @@
 # let, const와 블록 레벨 스코프
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 [Notion](https://www.notion.so/15-let-const-ce540b8b8d2649418b1159741ca594de)
 
 <br>

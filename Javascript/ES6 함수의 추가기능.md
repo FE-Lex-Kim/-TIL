@@ -1,5 +1,7 @@
 # ES6 함수의 추가 기능
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 <br>
 
 ## 1. 함수의 구분

@@ -1,5 +1,7 @@
 # Math
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 <br>
 
 표준 빌트인 객체(standard built-in object)인 Math는 수학적인 상수와 함수를 위한 프로퍼티와 메서드를 제공한다. 

@@ -1,5 +1,7 @@
 # this
 
+- 출처 [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)을 보고 정리한 내용입니다.
+
 [Notion](https://www.notion.so/22-this-f5363acd2783465397d680f5b820a56f)
 
 ## 1. this 키워드
