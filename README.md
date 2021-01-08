@@ -106,7 +106,8 @@
 - [Context API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
 - [리덕스 기초개념](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%A6%AC%EB%8D%95%EC%8A%A4%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90.md)
 - [리덕스](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%A6%AC%EB%8D%95%EC%8A%A4.md)
-- [리덕스 미들웨어](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%A6%AC%EB%8D%95%EC%8A%A4%20%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4.md)
+- [redux-thunk](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-thunk.md)
+- [redux-saga](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-saga.md)
 - [컴포넌트 성능 최적화](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 - [Immer](https://github.com/Alex-Eojin/-TIL/blob/master/React/Immer.md)
 
