@@ -18,17 +18,9 @@ HTML 요소(HTML element)는 HTML 문서를 구성하는 개별적인 요소를 
 
 <br>
 
-![DOM](../Images/DOM%20-%201/DOM-1.gif)
-
-<br>
-
 HTML 요소는 렌더링 엔진에 의해 파싱되어 DOM을 구성하는 요소 노드 객체로 변환된다.
 
 이때 HTML 요소의 어트리뷰트는 어트리뷰트 노드로, HTML 요소의 텍스트 콘텐츠는 텍스트 노드로 변환된다.
-
-<br>
-
-![DOM](../Images/DOM%20-%201/DOM-2.gif)
 
 <br>
 
@@ -41,10 +33,6 @@ HTML 문서는 HTML 요소들의 집합으로 이뤄지며, HTML 요소는 중�
 이때 HTML 요소 간에는 중첩 관계에 의해 계층적인 부자(parent-child) 관계가 형성된다. 
 
 이러한 HTML 요소 간의 부자 관계를 반영하여 HTML 문서의 구성 요소인 HTML 요소를 객체화한 모든 노드 객체들을 트리 자료구조로 구성한다.
-
-<br>
-
-![DOM](../Images/DOM%20-%201/DOM-3.gif)
 
 <br>
 
@@ -79,10 +67,6 @@ HTML 문서는 HTML 요소들의 집합으로 이뤄지며, HTML 요소는 중�
 <br>
 
 랜더링 엔진이 생성한 DOM 트리
-
-<br>
-
-![DOM](../Images/DOM%20-%201/DOM-4.gif)
 
 <br>
 
@@ -174,10 +158,6 @@ DOM을 구성하는 노드 객체는 ECMAScript 사양에 정의된 표준 빌�
 
 <br>
 
-![DOM](../Images/DOM%20-%201/DOM-5.gif)
-
-<br>
-
 모든 노드 객체는 Object, EventTarget, Node 인터페이스를 상속받는다.
 
 <br>
@@ -234,10 +214,6 @@ DOM을 구성하는 노드 객체는 ECMAScript 사양에 정의된 표준 빌�
 <br>
 
 input 요소 노드 객체도 다음과 같이 다양한 특성을 갖는 객체이며, 이러한 특성을 나타내는 기능들을 상속을 통해 제공받는다.
-
-<br>
-
-![DOM](../Images/DOM%20-%201/DOM-7.gif)
 
 <br>
 

@@ -30,10 +30,6 @@ li.banana 요소는 2개의 형제 요소와 부모 요소를 갖는다.
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-9.gif)
-
-<br>
-
 parentNode, previousSibling, firstChild, childNodes 프로퍼티는 Node.prototype이 제공하고, 프로퍼티 키에 Element가 포함된 previousElementSibling, nextElementSibling과 children 프로퍼티는 Element.prototype이 제공한다.
 
 <br>
@@ -65,10 +61,6 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-10.gif)
-
-<br>
-
 이처럼 HTML 문서의 공백 문자는 공백 텍스트 노드를 생성한다. 
 
 따라서 노드 탐색 시에는 공백 문자가 생성한 공백 텍스트 노드에 주의해아 한다. 
@@ -87,10 +79,6 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 <br>
 
 ## 3.2. 자식 노드 탐색
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-11.gif)
 
 <br>
 
@@ -258,10 +246,6 @@ firstChild 프로퍼티는 첫 번째 자식 노드를 반환한다. firstChild 
 
 단, 어트리뷰트 노드는 요소 노드의 형제 노드이지만 부모 노드가 같은 형제 노드가 아니기 때문에 반환되지 않는다. **즉, 아래 프로퍼티는 텍스트 노드 또는 요소 노드만 반환한다.**
 
-![DOM-2](../Images/DOM%20-%202/DOM-12.gif)
-
-<br>
-
 ```jsx
 <!DOCTYPE html>
 <html>
@@ -312,10 +296,6 @@ firstChild 프로퍼티는 첫 번째 자식 노드를 반환한다. firstChild 
 <br>
 
 # 4. 노드 정보 취득
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-13.gif)
 
 <br>
 
@@ -450,10 +430,6 @@ Node.prototype.textContent 프로퍼티는 setter와 getter 모두 존재하는 
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-14.gif)
-
-<br>
-
 nodeValue 프로퍼티를 사용하면 textContent 프로퍼티를 사용할 때와 비교해서 코드가 더 복잡하다.
 
 ```jsx
@@ -472,10 +448,6 @@ nodeValue 프로퍼티를 사용하면 textContent 프로퍼티를 사용할 때
   </script>
 </html>
 ```
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-15.gif)
 
 <br>
 
@@ -568,10 +540,6 @@ Element.prototype.innerHTML 프로퍼티는 setter와 getter 모두 존재하는
 <br>
 
 앞서 살펴본 textContent 프로퍼티를 참조하면 HTML 마크업을 무시하고 텍스트만 반환하지만 innerHTML 프로퍼티는 HTML 마크업이 포함된 문자열을 그대로 반환한다.
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-16.gif)
 
 <br>
 
@@ -716,10 +684,6 @@ insertAdjacentHTML 메서드는 두 번째 인수로 전달한 HTML 마크업 �
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-17.gif)
-
-<br>
-
 ```jsx
 <!DOCTYPE html>
 <html>
@@ -802,10 +766,6 @@ const $li = document.createElement('li');
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-18.gif)
-
-<br>
-
 createElement 메서드로 생성한 요소 노드는 기존 DOM에 추가되지 않고 홀로 존재하는 상태다. 
 
 즉, createElement 메서드는 요소 노드를 생성할 뿐 DOM에 추가하지는 않는다. 
@@ -840,10 +800,6 @@ const textNode = document.createTextNode('Banana');
 
 <br>
 
-![DOM-2](../Images/DOM%20-%202/DOM-19.gif)
-
-<br>
-
 텍스트 노드는 요소 노드의 자식 노드다. 하지만 createTextNode 메서드로 생성한 텍스트 노드는 요소 노드의 자식 노드로 추가되지 않고 홀로 존재하는 상태다. 
 
 <br>
@@ -868,10 +824,6 @@ appendChild 메서드의 인수로 createTextNode 메서드로 생성한 텍스�
 // 3. 텍스트 노드를 $li 요소 노드의 자식 노드로 추가
 $li.appendChild(textNode);
 ```
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-20.gif)
 
 <br>
 
@@ -901,10 +853,6 @@ Node.prototype.appendChild메서드를 사용하여 텍스트 노드와 부자 �
 // 4. $li 요소 노드를 #fruits 요소 노드의 마지막 자식 노드로 추가
 $fruits.appendChild($li);
 ```
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-21.gif)
 
 <br>
 
@@ -1013,10 +961,6 @@ DocumentFragment 노드는 위 예제의 컨테이너 요소와 같이 자식 �
 DocumentFragment 노드는 기존 DOM과는 별도로 존재하므로 DocumentFragment 노드에 자식 노드를 추가하여도 기존 DOM에는 어떠한 변경도 발생하지 않는다. 
 
 또한 DocumentFragment 노드를 DOM에 추가하면 자신은 제거되고 자신의 자식 노드만 DOM에 추가된다.
-
-<br>
-
-![DOM-2](../Images/DOM%20-%202/DOM-22.gif)
 
 <br>
 

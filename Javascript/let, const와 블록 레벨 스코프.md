@@ -210,12 +210,6 @@ bar 변수도 let키워드로 **블록 레벨 스코프**라
 
 <br>
 
-![블록 레벨 스코프의 중첩](../Images/let,%20const와%20블록%20레벨%20스코프/블록_레벨_스코프의_중첩.gif)
-
-"let, const와 블록 레벨 스코프 | PoiemaWeb," PoiemaWeb,2020년 09월 11일 수정, https://poiemaweb.com/fastcampus/block-level-scope.
-
-<br>
-
 ### 2.3. 변수 호이스팅
 
 <br>
@@ -261,10 +255,6 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
 
-![var키워드 변수의 생명주기](../Images/let,%20const와%20블록%20레벨%20스코프/var키워드_생명주기.gif)
-
-"let, const와 블록 레벨 스코프 | PoiemaWeb," PoiemaWeb,2020년 09월 11일 수정, https://poiemaweb.com/fastcampus/block-level-scope.
-
 <br>
 
 **그렇다면 let 키워드는 호이스팅이 일어날까?**
@@ -302,12 +292,6 @@ console.log(foo); // undefined
 foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
-
-<br>
-
-![let키워드 변수의 생명주기](../Images/let,%20const와%20블록%20레벨%20스코프/let키워드_생명주기.gif)
-
-"let, const와 블록 레벨 스코프 | PoiemaWeb," PoiemaWeb,2020년 09월 11일 수정, https://poiemaweb.com/fastcampus/block-level-scope.
 
 <br>
 

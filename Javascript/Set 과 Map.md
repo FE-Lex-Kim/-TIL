@@ -12,10 +12,6 @@ Set 객체는 **배열**과 유사하지만 차이가 있다.
 
 <br>
 
-![Set 과 Map](../Images/set과map/set과map-1.gif)
-
-<br>
-
 ## 1.1. Set 객체의 생성
 
 <br>
@@ -451,10 +447,6 @@ console.log(setB.isSuperset(setA)); // false
 **Map 객체는 키와 값의 쌍으로 이루어진 컬렉션이다.**
 
 Map 객체는 **객체**와 유사하지만 차이가 있다.
-
-<br>
-
-![Set 과 Map](../Images/set과map/set과map-2.gif)
 
 <br>
 

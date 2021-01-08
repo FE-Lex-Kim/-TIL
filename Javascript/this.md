@@ -564,10 +564,6 @@ console.log(getName()); // ''
 
 <br>
 
-![this](../Images/this/this-1.gif)
-
-<br>
-
 ```jsx
 function Person(name) {
   this.name = name;
@@ -587,8 +583,6 @@ Person.prototype.name = 'Kim';
 // getName 메서드를 호출한 객체는 Person.prototype이다.
 console.log(Person.prototype.getName()); // ② Kim
 ```
-
-![this](../Images/this/this-2.gif)
 
 <br>
 
@@ -655,8 +649,6 @@ console.log(radius); // 15
 **모든 함수가 상속받아 사용할 수 있다.**
 
 <br>
-
-![this](../Images/this/this-3.gif)
 
 ```jsx
 function getThisBinding() {
@@ -839,5 +831,3 @@ person.foo(function () {
 ```
 
 <br>
-
-![this](../Images/this/this-4.gif)

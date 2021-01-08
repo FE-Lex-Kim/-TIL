@@ -340,10 +340,6 @@ Array.prototype[Symbol.for('sum')] = function () {
 
 <br>
 
-![Symbol](../Images/Symbol/Symbol-1.gif)
-
-<br>
-
 자바스크립트가 기본 제공하는 빌트인 심벌 값을 ECMAScript 사양에서는 Well-Known Symbol이라 부른다.
 
 Well-Known Symbol은 자바스크립트 엔진의 내부 알고리즘에 사용된다.

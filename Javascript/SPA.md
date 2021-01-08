@@ -150,8 +150,6 @@ link tag(`<a href="service.html">Service</a>` 등)을 클릭하면 href 어트�
 
 <br>
 
-![SPA](../Images/SPA/SPA-1.png)
-
 렌더링 과정
 
 1 . 이때 서버는 html로 화면을 표시하는데 부족함이 없는 완전한 리소스를 클라이언트에 응답한다. 이를 **서버 렌더링**이라 한다.
@@ -196,7 +194,6 @@ AJAX는 자바스크립트를 이용해서 비동기적(Asynchronous)으로 서�
 
 <br>
 
-![SPA](../Images/SPA/SPA-2.png)
 
 <br>
 
@@ -640,8 +637,7 @@ app.listen(3000, function () {
 
 **전통적 링크 방식에서 PJAX 방식까지 SPA의 발전 과정**
 
-![SPA](../Images/SPA/SPA-3.png)
 
 <br>
 
-출처: [[https://poiemaweb.com/js-spa](https://poiemaweb.com/js-spa)]
+참고자료: [https://poiemaweb.com/js-spa](https://poiemaweb.com/js-spa)

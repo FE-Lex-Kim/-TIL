@@ -316,10 +316,6 @@ str.substring(1, 4); // -> ell
 
 <br>
 
-![String](../Images/String/String-1.gif)
-
-<br>
-
 substring 메서드의 두 번째 인수는 생략할 수 있다. 
 
 이때 첫 번째 인수로 전달한 인덱스에 위치하는 문자부터 마지막 문자까지 부분 문자열을 반환한다.

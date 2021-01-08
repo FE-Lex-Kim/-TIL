@@ -85,8 +85,6 @@ strict mode와 유사한 효과가 있다.
 
 <br>
 
-![strict mode](../Images/strict_mode/strict_mode-1.gif)
-
 ## 2. strict mode의 적용
 
 <br>
