@@ -1,5 +1,7 @@
 # URLSearchParams
 
+이글은 [MDN](https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams)을 참고로 정리한 글입니다.
+
 <br>
 
 URLSearchParams 인터페이스는 URL의 쿼리 문자열에 대해 작업할 수 있는 유틸리티 메서드를 정의한다.
