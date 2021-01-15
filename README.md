@@ -90,6 +90,7 @@
 - [Immer](https://github.com/Alex-Eojin/-TIL/blob/master/React/Immer.md)
 - [Custom Snippet](https://github.com/Alex-Eojin/-TIL/blob/master/React/Custom%20Snippet.md)
 - [Next.js](https://github.com/Alex-Eojin/-TIL/blob/master/React/Next.js.md)
+- [useHistory, useLocation, usePrams, useRouteMatch](https://github.com/Alex-Eojin/-TIL/blob/master/React/useHistory%2C%20useLocation%2C%20usePrams%2C%20useRouteMatch.md)
 
 ## 5. TypeScript
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
