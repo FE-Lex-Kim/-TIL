@@ -91,6 +91,7 @@
 - [Custom Snippet](https://github.com/Alex-Eojin/-TIL/blob/master/React/Custom%20Snippet.md)
 - [Next.js](https://github.com/Alex-Eojin/-TIL/blob/master/React/Next.js.md)
 - [useHistory, useLocation, usePrams, useRouteMatch](https://github.com/Alex-Eojin/-TIL/blob/master/React/useHistory%2C%20useLocation%2C%20usePrams%2C%20useRouteMatch.md)
+- [CORS(Cross Origin Request) 오류](https://github.com/Alex-Eojin/-TIL/blob/master/React/CORS(Cross%20Origin%20Request)%20%EC%98%A4%EB%A5%98.md)
 
 ## 5. TypeScript
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
