@@ -26,7 +26,7 @@
 - [CSS 블러 효과(Blur effect)](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/CSS%20%EB%B8%94%EB%9F%AC%20%ED%9A%A8%EA%B3%BC(Blur%20effect).md)
 - [height auto](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/height%20auto.md)
 - [input disabled](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Input%20disabled.md)
-- 
+
 ## 2. HTML
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
 - [시멘틱 마크업](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/%EC%8B%9C%EB%A9%98%ED%8B%B0%20%EB%A7%88%ED%81%AC%EC%97%85.md)
@@ -135,6 +135,7 @@
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
 - [Prettier](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
 - [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
+- [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
 
 ## 11. 데이터 베이스
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
