@@ -1278,9 +1278,9 @@ export default React.memo(TodosContainer);
 
 <br>
 
-### 정리) 리덕스 사용 서순
+### 정리) 리덕스 사용 순서
 
-리덕스 생성 서순
+리덕스 생성 순서
 
 <br>
 
