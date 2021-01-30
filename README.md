@@ -138,6 +138,7 @@
 - [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
 - [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
 - [npm install --save-dev, --save-prod](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/--save-dev%2C%20--save-prod%20.md)
+- [터미널에서 vscode여는 방법(code . 적용 하는법)](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C%20vscode%EC%97%AC%EB%8A%94%20%EB%B0%A9%EB%B2%95(code%20.%20%EC%A0%81%EC%9A%A9%20%ED%95%98%EB%8A%94%EB%B2%95).md)
 
 ## 11. koa
 - [koa기본](https://github.com/Alex-Eojin/-TIL/blob/master/koa/koa%20%EA%B8%B0%EB%B3%B8.md)
