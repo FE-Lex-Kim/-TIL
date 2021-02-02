@@ -98,6 +98,7 @@
 - [useHistory, useLocation, usePrams, useRouteMatch](https://github.com/Alex-Eojin/-TIL/blob/master/React/useHistory%2C%20useLocation%2C%20usePrams%2C%20useRouteMatch.md)
 - [CORS(Cross Origin Request) 오류](<https://github.com/Alex-Eojin/-TIL/blob/master/React/CORS(Cross%20Origin%20Request)%20%EC%98%A4%EB%A5%98.md>)
 - [styled component animation](https://github.com/Alex-Eojin/-TIL/blob/master/React/styled%20component%20animation.md)
+- [무한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80%20%EA%B5%AC%ED%98%84.md)
 
 ## 5. TypeScript
 
