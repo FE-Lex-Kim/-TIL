@@ -106,6 +106,7 @@
 ## 5. TypeScript
 
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
+- [Type](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/Type.md)
 
 ## 6. Git
 
