@@ -69,6 +69,7 @@
 - [에러 처리](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
 - [URLSearchParams](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/URLSearchParams.md)
 - [SPA](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/SPA.md)
+- [toLocaleString() 세자리수 마다 콤마 넣어주기](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/toLocaleString()%20%EC%84%B8%EC%9E%90%EB%A6%AC%EC%88%98%20%EB%A7%88%EB%8B%A4%20%EC%BD%A4%EB%A7%88%20%EB%84%A3%EC%96%B4%EC%A3%BC%EA%B8%B0.md>)
 
 ## 4. React
 
