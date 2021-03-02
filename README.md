@@ -117,6 +117,7 @@
 - [Git branch](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20Branch.md)
 - [Git flow](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/Git%20flow.md)
 - [Git bash 단축표현](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/git%20bash%20%EB%8B%A8%EC%B6%95%ED%91%9C%ED%98%84.md)
+- [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
 
 ## 7. 알고리즘
 
