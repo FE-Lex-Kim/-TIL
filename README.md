@@ -59,6 +59,7 @@
 - [strict mode](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/strict%20mode.md)
 - [빌트인 객체](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EB%B9%8C%ED%8A%B8%EC%9D%B8%20%EA%B0%9D%EC%B2%B4.md)
 - [this](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/this.md)
+- [클로저](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%ED%81%B4%EB%A1%9C%EC%A0%80.md)
 - [Class 예제](<https://github.com/Alex-Eojin/-TIL/blob/masteravascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md>)
 - [Prototype 예제](<https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md>)
 - [Gettr Setter 예제](<https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md>)
