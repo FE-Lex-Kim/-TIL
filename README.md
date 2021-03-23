@@ -149,6 +149,7 @@
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/Cookie.md)
 - [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/WebP.md)
+- [서버 인증 방법 : JWT vs 세션 / 쿠키](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%84%9C%EB%B2%84%20%EC%9D%B8%EC%A6%9D%20%EB%B0%A9%EB%B2%95%20:%20JWT%20vs%20%EC%84%B8%EC%85%98%2C%EC%BF%A0%ED%82%A4.md)
 
 ## 9. W3C reference 공부 및 번역
 
