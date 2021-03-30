@@ -63,6 +63,7 @@
 - [클로저](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%ED%81%B4%EB%A1%9C%EC%A0%80.md)
 - [브라우저 렌더링 과정](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EA%B3%BC%EC%A0%95.md)
 - [비동기 프로그래밍](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md)
+- [Promise](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4.md)
 - [Class 예제](<https://github.com/Alex-Eojin/-TIL/blob/masteravascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%98%88%EC%A0%9C.md>)
 - [Prototype 예제](<https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%98%88%EC%A0%9C.md>)
 - [Gettr Setter 예제](<https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%98%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP)/Getter%2C%20Setter%20%EC%98%88%EC%A0%9C.md>)
