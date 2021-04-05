@@ -104,7 +104,6 @@
 - [Custom Snippet](https://github.com/Alex-Eojin/-TIL/blob/master/React/Custom%20Snippet.md)
 - [Next.js](https://github.com/Alex-Eojin/-TIL/blob/master/React/Next.js.md)
 - [useHistory, useLocation, usePrams, useRouteMatch](https://github.com/Alex-Eojin/-TIL/blob/master/React/useHistory%2C%20useLocation%2C%20usePrams%2C%20useRouteMatch.md)
-- [CORS(Cross Origin Request) 오류](<https://github.com/Alex-Eojin/-TIL/blob/master/React/CORS(Cross%20Origin%20Request)%20%EC%98%A4%EB%A5%98.md>)
 - [styled component animation](https://github.com/Alex-Eojin/-TIL/blob/master/React/styled%20component%20animation.md)
 - [무한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80%20%EA%B5%AC%ED%98%84.md)
 - [여러번 발생하는 이벤트 호출 방지](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%AC%EB%9F%AC%EB%B2%88%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%98%B8%EC%B6%9C%20%EB%B0%A9%EC%A7%80.md)
@@ -155,6 +154,7 @@
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/WebP.md)
 - [서버 인증 방법 : JWT vs 세션 / 쿠키](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%84%9C%EB%B2%84%20%EC%9D%B8%EC%A6%9D%20%EB%B0%A9%EB%B2%95%20:%20JWT%20vs%20%EC%84%B8%EC%85%98%2C%EC%BF%A0%ED%82%A4.md)
 - [HTTP,HTTPS](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/HTTP%2CHTTPS.md)
+- [CORS(Cross Origin Request)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/CORS(Cross%20Origin%20Request).md>)
 
 ## 9. W3C reference 공부 및 번역
 
