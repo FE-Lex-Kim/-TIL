@@ -10,6 +10,15 @@ CORS란 Cross-Origin Resource Sharing의 약자, 교차 출처 리소스 공유�
 
 <br>
 
+그렇다면 origin이란?
+
+- 도메인(domain): naver.com
+- 오리진(origin): [https://www.naver.com/PORT](https://www.naver.com/PORT)
+
+이와 같이 프로토콜과 포트 번호가 포함되어 있는것을 오리진이라고 한다.
+
+<br>
+
 즉, 기존의 HTML, CSS, 이미지, 폰트 등 파일들의 리소스를 각각의 출처를 받는다.
 
 그때 자바스크립트를 통해 기존에 자신이 사용한 origin이 아니라 다른 도메인, 프로토콜, 포트에 있는 리소스를 요청하면 웹 어플리케이션은 cross-origin HTTP 요청을 실행한다.
@@ -37,6 +46,15 @@ https://domain-a.com의 프론트 엔드 JavaScript 코드가 XMLHttpRequest를 
 <br>
 
 보안상 이유로 브라우저는 자신과 동일한 도메인으로만 HTTP 요청을 보내도록 제한하여, XMLHttpRequest와 Fetch API는 **same-origin policy(동일 출처 정책)**을 따른다.
+
+<br>
+
+**Same-Origin Policy이란?**
+
+1. XSS(Corss Site Scripting)유저가 웹 사이트에 접속하는 것으로 정상적이지 않은 요청이 클라이언트(웹 브라우저)에서 실행되는 것을 나타내며, Cookie 내에 Session정보를 탈취 당하는 등의 예시가 있다.
+2. CSRF(Cross-Site Request Forgeries)웹 어플리케이션의 유저가 의도하지 않은 처리를 웹 어플리케이션에서 실행되는 것을 나타내며, 원래는 로그인한 유저 밖에 실행할 수 없는 처리가 멋대로 되는 등의 예시가 있다.
+
+과 같은 위험을 막는 목적으로 사용된는 오리진 사이의 리소스 요청을 제한하는 것이다.
 
 <br>
 
