@@ -77,6 +77,7 @@
 - [SPA](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/SPA.md)
 - [toLocaleString() 세자리수 마다 콤마 넣어주기](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/toLocaleString()%20%EC%84%B8%EC%9E%90%EB%A6%AC%EC%88%98%20%EB%A7%88%EB%8B%A4%20%EC%BD%A4%EB%A7%88%20%EB%84%A3%EC%96%B4%EC%A3%BC%EA%B8%B0.md>)
 - [부모창 자식창](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%EB%B6%80%EB%AA%A8%EC%B0%BD%20%EC%9E%90%EC%8B%9D%EC%B0%BD.md)
+- [문자열의 문자 코드](https://github.com/FE-Lex-Kim/-TIL/blob/master/Javascript/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EB%AC%B8%EC%9E%90%20%EC%BD%94%EB%93%9C.md)
 
 ## 4. React
 
