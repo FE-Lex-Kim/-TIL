@@ -176,6 +176,7 @@
 - [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
 - [Storybook 설치](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Storybook%20%EC%84%A4%EC%B9%98.md)
 - [git issue 관리](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/git%20issue%20%EA%B4%80%EB%A6%AC.md)
+- [E325: ATTENTION 에러 처리](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/E325:%20ATTENTION%20%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
 
 ## 11. koa
 
