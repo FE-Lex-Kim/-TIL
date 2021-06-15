@@ -34,6 +34,7 @@
 
 - [IMG의 srcset과 sizes 속성](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/IMG%EC%9D%98%20srcset%EA%B3%BC%20sizes%20%EC%86%8D%EC%84%B1.md)
 - [시멘틱 마크업](https://github.com/Alex-Eojin/-TIL/blob/master/HTML/%EC%8B%9C%EB%A9%98%ED%8B%B0%20%EB%A7%88%ED%81%AC%EC%97%85.md)
+- [doctype이란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/doctype%EC%9D%B4%EB%9E%80%3F.md)
 
 ## 3. Javascript
 
