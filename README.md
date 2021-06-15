@@ -37,6 +37,7 @@
 - [doctype이란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/doctype%EC%9D%B4%EB%9E%80%3F.md)
 - [표준모드(standards mode)와 호환모드(quirks mode)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/%ED%91%9C%EC%A4%80%EB%AA%A8%EB%93%9C(standards%20mode)%EC%99%80%20%ED%98%B8%ED%99%98%EB%AA%A8%EB%93%9C(quirks%20mode).md>)
 - [XML과 XHTML](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/XML%EA%B3%BC%20XHTML.md)
+- [XHTML 한계점](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/XHTML%EC%9D%98%20%ED%95%9C%EA%B3%84%EC%A0%90.md)
 
 ## 3. Javascript
 
