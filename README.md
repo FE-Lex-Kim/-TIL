@@ -38,6 +38,7 @@
 - [표준모드(standards mode)와 호환모드(quirks mode)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/%ED%91%9C%EC%A4%80%EB%AA%A8%EB%93%9C(standards%20mode)%EC%99%80%20%ED%98%B8%ED%99%98%EB%AA%A8%EB%93%9C(quirks%20mode).md>)
 - [XML과 XHTML](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/XML%EA%B3%BC%20XHTML.md)
 - [XHTML 한계점](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/XHTML%EC%9D%98%20%ED%95%9C%EA%B3%84%EC%A0%90.md)
+- [다국어 페이지를 만들때 고려해야할 사항](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/%EB%8B%A4%EA%B5%AD%EC%96%B4%20%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EB%95%8C%20%EA%B3%A0%EB%A0%A4%ED%95%B4%EC%95%BC%ED%95%A0%20%EC%82%AC%ED%95%AD.md)
 
 ## 3. Javascript
 
