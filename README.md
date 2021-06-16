@@ -42,6 +42,7 @@
 - [data- 속성](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/data-%20%EC%86%8D%EC%84%B1.md)
 - [로컬스토리지, 세션스토리지, 쿠키](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/%EB%A1%9C%EC%BB%AC%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%2C%20%EC%84%B8%EC%85%98%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%2C%20%EC%BF%A0%ED%82%A4.md)
 - [Progressive rendering](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/Progressive%20rendering.md)
+- [srcset 속성](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/srcset%20%EC%86%8D%EC%84%B1.md)
 
 ## 3. Javascript
 
