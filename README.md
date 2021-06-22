@@ -31,6 +31,7 @@
 - [글자 수 길어졌을때 (...) 구현(ellipsis)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%EA%B8%80%EC%9E%90%20%EC%88%98%20%EA%B8%B8%EC%96%B4%EC%A1%8C%EC%9D%84%EB%95%8C%20(...)%20%EA%B5%AC%ED%98%84(ellipsis).md>)
 - [float 해제 방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/float%20%ED%95%B4%EC%A0%9C%20%EB%B0%A9%EB%B2%95.md)
 - [BFC](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/BFC(Block%20Formatting%20Context).md>)
+- [스크린 리더 사용자를 위한 텍스트 숨김 방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%EC%8A%A4%ED%81%AC%EB%A6%B0%20%EB%A6%AC%EB%8D%94%20%EC%82%AC%EC%9A%A9%EC%9E%90%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%88%A8%EA%B9%80%20%EB%B0%A9%EB%B2%95.md)
 
 ## 2. HTML
 
