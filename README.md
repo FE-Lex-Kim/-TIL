@@ -175,6 +175,7 @@
 - [OSI 7계층](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/OSI%207%EA%B3%84%EC%B8%B5.md)
 - [REST API](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/REST%20API.md)
 - [TDD(Test-driven development)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/TDD(Test-driven%20development).md>)
+- [네트워크 구조](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B5%AC%EC%A1%B0.md)
 
 ## 9. W3C reference 공부 및 번역
 
