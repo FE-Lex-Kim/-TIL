@@ -41,6 +41,7 @@
 - [position 속성](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/position%20%EC%86%8D%EC%84%B1.md)
 - [Cascading](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/Cascading.md)
 - [CSS framwork](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/CSS%20framwork.md)
+- [absolute대신 translate() 사용하는 이유](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/absolute%EB%8C%80%EC%8B%A0%C2%A0translate()%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md>)
 
 ## 2. HTML
 
