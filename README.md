@@ -38,6 +38,7 @@
 - [웹폰트, 로컬폰트 적용](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%EC%9B%B9%ED%8F%B0%ED%8A%B8%2C%20%EB%A1%9C%EC%BB%AC%ED%8F%B0%ED%8A%B8%20%EC%A0%81%EC%9A%A9.md)
 - [pseudo-elements](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/pseudo-elements.md)
 - [box-sizing:border-box를 사용하는 이유](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/box-sizing:%20border-box%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
+- [position 속성](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/position%20%EC%86%8D%EC%84%B1.md)
 
 ## 2. HTML
 
