@@ -24,7 +24,6 @@
 - [transfrom, animation](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/transfrom%2C%20animation.md)
 - [요소를 화면 가운데에 위치시키는 방법](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%EC%9A%94%EC%86%8C%EB%A5%BC%20%ED%99%94%EB%A9%B4%20%EA%B0%80%EC%9A%B4%EB%8D%B0%EC%97%90%20%EC%9C%84%EC%B9%98%EC%8B%9C%ED%82%A4%EB%8A%94%20%EB%B0%A9%EB%B2%95.md)
 - [화면 전체를 스크롤없이 높이를 차지하게 하는방법](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/%ED%99%94%EB%A9%B4%20%EC%A0%84%EC%B2%B4%EB%A5%BC%20%EC%8A%A4%ED%81%AC%EB%A1%A4%EC%97%86%EC%9D%B4%20%EB%86%92%EC%9D%B4%EB%A5%BC%20%EC%B0%A8%EC%A7%80%ED%95%98%EA%B2%8C%20%ED%95%98%EB%8A%94%EB%B0%A9%EB%B2%95.md)
-- [box-sizing: border-box](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/border-box.md)
 - [CSS 블러 효과(Blur effect)](<https://github.com/Alex-Eojin/-TIL/blob/master/CSS/CSS%20%EB%B8%94%EB%9F%AC%20%ED%9A%A8%EA%B3%BC(Blur%20effect).md>)
 - [height auto](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/height%20auto.md)
 - [input disabled](https://github.com/Alex-Eojin/-TIL/blob/master/CSS/Input%20disabled.md)
@@ -38,6 +37,7 @@
 - [Sass vs Less vs Stylus](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/Sass%20vs%20Less%20vs%20Stylus.md)
 - [웹폰트, 로컬폰트 적용](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%EC%9B%B9%ED%8F%B0%ED%8A%B8%2C%20%EB%A1%9C%EC%BB%AC%ED%8F%B0%ED%8A%B8%20%EC%A0%81%EC%9A%A9.md)
 - [pseudo-elements](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/pseudo-elements.md)
+- [box-sizing:border-box를 사용하는 이유](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/box-sizing:%20border-box%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 
 ## 2. HTML
 
