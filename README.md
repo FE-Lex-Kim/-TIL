@@ -189,6 +189,7 @@
 - [네트워크 정의 및 역사](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EC%A0%95%EC%9D%98%20%EB%B0%8F%20%EC%97%AD%EC%82%AC.md)
 - [네트워크 구조](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B5%AC%EC%A1%B0.md)
 - [물리계층 역활과 기능](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EB%AC%BC%EB%A6%AC%EA%B3%84%EC%B8%B5%20%EC%97%AD%ED%99%9C%EA%B3%BC%20%EA%B8%B0%EB%8A%A5.md)
+- [물리계층 장비와 케이블](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EB%AC%BC%EB%A6%AC%EA%B3%84%EC%B8%B5%20%EC%9E%A5%EB%B9%84%EC%99%80%20%EC%BC%80%EC%9D%B4%EB%B8%94.md)
 
 ## 9. W3C reference 공부 및 번역
 
