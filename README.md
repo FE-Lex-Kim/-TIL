@@ -120,6 +120,7 @@
 - [Hooks](https://github.com/Alex-Eojin/-TIL/blob/master/React/Hooks.md)
 - [useEffect](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
 - [useMemo](https://github.com/Alex-Eojin/-TIL/blob/master/React/useMemo.md)
+- [Context in Class Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20in%20Class%20Component.md)
 - [Context Hook API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
 - [redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux.md)
 - [react-redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/react-redux.md)
