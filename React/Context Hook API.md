@@ -25,9 +25,9 @@ Context API를 사용하면 전역상태 관리 작업을 할때 따로 상태�
 예제
 
 ```jsx
-import { creactContext } from 'react';
+import { creactContext } from "react";
 
-const ColorContext = creactContext({ color: 'black' });
+const ColorContext = creactContext({ color: "black" });
 
 export default ColorContext;
 ```
@@ -43,8 +43,8 @@ creatContext를 react에서 불러와서 함수안에 Context의 초기값으로
 예제
 
 ```jsx
-import React from 'react';
-import ColorContext from '../Context/color';
+import React from "react";
+import ColorContext from "../Context/color";
 
 const ColorBox = () => {
   return (
@@ -52,8 +52,8 @@ const ColorBox = () => {
       {({ color }) => (
         <div
           style={{
-            width: '64px',
-            height: '64px',
+            width: "64px",
+            height: "64px",
             background: color,
           }}
         />
@@ -85,7 +85,7 @@ Consumer이라는 컴포넌트를 통해 Context의 초기값을 접근할 수 �
 
 <br>
 
-또 다시 여기서 주의점!**
+또 다시 여기서 주의점!\*\*
 
 그냥 컴포넌트를 작성해주면안된다.
 
@@ -116,13 +116,13 @@ Provider를 사용하면 Context의 초기값을 변경해줄 수 있다.
 예제
 
 ```jsx
-import React from 'react';
-import ColorBox from './component/ColorBox';
-import ColorContext from './Context/color';
+import React from "react";
+import ColorBox from "./component/ColorBox";
+import ColorContext from "./Context/color";
 
 function App() {
   return (
-    <ColorContext.Provider value={{ color: 'black' }}>
+    <ColorContext.Provider value={{ color: "black" }}>
       <ColorBox />
     </ColorContext.Provider>
   );
@@ -162,16 +162,16 @@ Context에 creatContext함수로 초기화한 값은 Provider가 사용되지 �
 따라서 동적인 Context를 만드는 방법을 공부해보자.
 
 ```jsx
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 const ColorContext = createContext({
-  state: { color: 'black', subColor: 'red' },
+  state: { color: "black", subColor: "red" },
   actions: { setColor: () => {}, setSubColor: () => {} },
 });
 
 const ColorProvider = ({ children }) => {
-  const [color, setColor] = useState('black');
-  const [subColor, setSubColor] = useState('red');
+  const [color, setColor] = useState("black");
+  const [subColor, setSubColor] = useState("red");
 
   const value = {
     state: { color, subColor },
@@ -195,13 +195,13 @@ export default ColorContext;
 APP 컴포넌트에 반영하기
 
 ```jsx
-import React from 'react';
-import ColorBox from './component/ColorBox';
-import ColorContext, { ColorProvider } from './Context/color';
+import React from "react";
+import ColorBox from "./component/ColorBox";
+import ColorContext, { ColorProvider } from "./Context/color";
 
 function App() {
   return (
-    <ColorProvider value={{ color: 'black' }}>
+    <ColorProvider value={{ color: "black" }}>
       <div>
         <ColorBox />
       </div>
@@ -227,8 +227,8 @@ ColorBox 파일 변경
 예제)
 
 ```jsx
-import React from 'react';
-import ColorContext, { ColorConsumer } from '../Context/color';
+import React from "react";
+import ColorContext, { ColorConsumer } from "../Context/color";
 
 const ColorBox = () => {
   return (
@@ -237,15 +237,15 @@ const ColorBox = () => {
         <>
           <div
             style={{
-              width: '64px',
-              height: '64px',
+              width: "64px",
+              height: "64px",
               background: state.color,
             }}
           />
           <div
             style={{
-              width: '32px',
-              height: '32px',
+              width: "32px",
+              height: "32px",
               background: state.subColor,
             }}
           />
@@ -271,9 +271,9 @@ export default ColorBox;
 <br>
 
 ```jsx
-import { ColorConsumer } from '../Context/color';
+import { ColorConsumer } from "../Context/color";
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
 const SelectColors = () => {
   return (
@@ -281,14 +281,14 @@ const SelectColors = () => {
       <h2>색상을 선택하세요.</h2>
       <ColorConsumer>
         {({ actions }) => (
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: "flex" }}>
             {colors.map((color) => (
               <div
                 key={color}
                 style={{
-                  width: '24px',
-                  height: '24px',
-                  cursor: 'pointer',
+                  width: "24px",
+                  height: "24px",
+                  cursor: "pointer",
                   background: color,
                 }}
                 onClick={() => {
@@ -321,7 +321,7 @@ Context의 기본값은 APP에서 Provider에의해 value로 인해 바뀌었다
 
 따라서 Context의 actions의 setColor와 setSubColor가 state의 값을 바꿀수 있게 되었다.
 
-그대로 actions를 디스트럭처링 할당으로 받아온뒤 클릭이벤트와 우클릭이벤트로 
+그대로 actions를 디스트럭처링 할당으로 받아온뒤 클릭이벤트와 우클릭이벤트로
 
 state값을 바꾸어준다.
 
@@ -348,8 +348,8 @@ onContextMenu는 우클릭 이벤트이다.
 굉장히 매력적인 Hook를 사용해 간단하게 만들수있다.
 
 ```jsx
-import React, { useContext } from 'react';
-import ColorContext from '../Context/color';
+import React, { useContext } from "react";
+import ColorContext from "../Context/color";
 
 const ColorBox = () => {
   const { state } = useContext(ColorContext);
@@ -357,15 +357,15 @@ const ColorBox = () => {
     <>
       <div
         style={{
-          width: '64px',
-          height: '64px',
+          width: "64px",
+          height: "64px",
           background: state.color,
         }}
       />
       <div
         style={{
-          width: '32px',
-          height: '32px',
+          width: "32px",
+          height: "32px",
           background: state.subColor,
         }}
       />
