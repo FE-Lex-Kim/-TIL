@@ -119,6 +119,7 @@
 - [JSX](https://github.com/Alex-Eojin/-TIL/blob/master/React/JSX.md)
 - [엘리먼트 랜더링](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%20%EB%A0%8C%EB%8D%94%EB%A7%81.md)
 - [Components and Props and State](https://github.com/Alex-Eojin/-TIL/blob/master/React/Components%20and%20Props%20and%20State.md)
+- [state and setState](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/state%20and%20setState.md)
 - [Lifecycle](https://github.com/Alex-Eojin/-TIL/blob/master/React/Lifecycle.md)
 - [이벤트](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%9D%B4%EB%B2%A4%ED%8A%B8.md)
 - [컴포넌트 스타일링](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A7%81.md)
