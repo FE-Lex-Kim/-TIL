@@ -55,6 +55,14 @@
 
 <br>
 
+특징으로는 componentDidMount에서는 DOM에 접근 가능하다.
+
+이유는 DOM트리가 다 만들어진 이후이기 때문에 DOM에 접근이 가능하기 떄문이다.
+
+따라서 이부분에서 주로 AJAX, setTImeout, setInterval, 과 같은 행동을 한다.
+
+<br>
+
 ## 업데이트
 
 <br>
@@ -82,6 +90,14 @@
 
 <br>
 
+특징으로는 shouldComponentUpdate는 아직 render하기 이전이고 return문으로 boolean 값을 넣어 render를 취소할지 실행할지 결정할 수 있다.
+
+이때 주로 성능 최적화를 한다.
+
+componentDidUpdate는 첫번째 인자로 prevState를 두번째로 prevProps를 인자로 받는다.
+
+<br>
+
 ## 언마운트
 
 <br>
@@ -98,6 +114,10 @@
 
 <br>
 
+특징으로는 주로 이벤트 리스너를 제거하고 이후 cleanUp 작업을 이곳에서 한다.
+
+<br>
+
 ## ComponentDidCatch
 
 <br>
@@ -111,7 +131,7 @@ ComponentDidCatch 메서드가 호출된다.
 이 메서드는 this.state.error 값을 true로 업데이트해준다.
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class MyComponent extends Component {
   state = {
@@ -133,13 +153,13 @@ export default MyComponent;
 
 <br>
 
-에러를 위한 리액트 컴포넌트를 만들었으면 
+에러를 위한 리액트 컴포넌트를 만들었으면
 
 부모컴포넌트에서 다른 컴포넌트들을 감싸주면된다.
 
 ```jsx
-import MyComponent from './MyComponent';
-import Errorboundary from './Errorboundary';
+import MyComponent from "./MyComponent";
+import Errorboundary from "./Errorboundary";
 
 function App() {
   return;
