@@ -129,6 +129,7 @@
 - [forward refs](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/forward%20refs.md)
 - [컴포넌트 반복](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EB%B0%98%EB%B3%B5.md)
 - [HOC 고차 컴포넌트](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/HOC%20%EA%B3%A0%EC%B0%A8%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.md)
+- [Render Props](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Render%20props.md)
 - [React SPA Router](https://github.com/Alex-Eojin/-TIL/blob/master/React/React%20SPA%20%EB%9D%BC%EC%9A%B0%ED%84%B0.md)
 - [Hooks](https://github.com/Alex-Eojin/-TIL/blob/master/React/Hooks.md)
 - [useEffect](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
