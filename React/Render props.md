@@ -78,7 +78,7 @@ class MouseTracker extends React.Component {
 
 <br>
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8098ed44-fedf-4227-b79b-dccd7305d1b6/스크린샷_2021-09-01_오전_2.22.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8098ed44-fedf-4227-b79b-dccd7305d1b6/스크린샷_2021-09-01_오전_2.22.04.png)
+![](../Images/Render%20Props/Render-props-1.png)
 
 <br>
 
