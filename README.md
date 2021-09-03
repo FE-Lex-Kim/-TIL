@@ -65,6 +65,7 @@
 - [Progressive rendering](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/Progressive%20rendering.md)
 - [srcset 속성](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/srcset%20%EC%86%8D%EC%84%B1.md)
 - [SVG](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/SVG.md)
+- [Web Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/HTML/Web%20Component.md)
 
 ## 3. Javascript
 
