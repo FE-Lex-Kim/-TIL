@@ -217,6 +217,8 @@
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/WebP.md)
 - [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
 - [TDD(Test-driven development)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/TDD(Test-driven%20development).md>)
+- [SEO 개념](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EA%B0%9C%EB%85%90.md)
+- [SEO 컨텐츠 요소](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EC%BB%A8%ED%85%90%EC%B8%A0%20%EC%9A%94%EC%86%8C.md)
 
 ## 10. Tool
 
