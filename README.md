@@ -135,6 +135,7 @@
 - [Render Props](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Render%20props.md)
 - [React SPA Router](https://github.com/Alex-Eojin/-TIL/blob/master/React/React%20SPA%20%EB%9D%BC%EC%9A%B0%ED%84%B0.md)
 - [Hooks](https://github.com/Alex-Eojin/-TIL/blob/master/React/Hooks.md)
+- [Hook을 사용하는 이유](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Hook%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 - [useEffect](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
 - [useMemo](https://github.com/Alex-Eojin/-TIL/blob/master/React/useMemo.md)
 - [Context in Class Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20in%20Class%20Component.md)
