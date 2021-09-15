@@ -190,12 +190,9 @@
 - [프로그래머스 1단계](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4%EB%A7%8C%EB%93%A4%EA%B8%B0%20%2C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 
-## 8. 컴퓨터 공학 기초
+## 8. 네트워크
 
-- [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/Cookie.md)
-- [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
-- [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/WebP.md)
 - [서버 인증 방법 : JWT vs 세션 / 쿠키](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%84%9C%EB%B2%84%20%EC%9D%B8%EC%A6%9D%20%EB%B0%A9%EB%B2%95%20:%20JWT%20vs%20%EC%84%B8%EC%85%98%2C%EC%BF%A0%ED%82%A4.md)
 - [HTTP,HTTPS](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/HTTP%2CHTTPS.md)
 - [CORS(Cross-Origin Resource Sharing)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/CORS(Cross%20Origin%20Request).md>)
@@ -215,10 +212,11 @@
 - [ICMP, DHCP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/ICMP%2C%20DHCP.md)
 - [Transport 계층 TCP / UDP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/TCP%2C%20UDP.md)
 
-## 9. W3C reference 공부 및 번역
+## 9. 웹 지식
 
-- [W3C Collapsing margins](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/Collapsing%20margins.md)
-- [vertical-align](https://github.com/Alex-Eojin/-TIL/blob/master/W3C%20reference%20%EA%B3%B5%EB%B6%80%20%EB%B0%8F%20%EB%B2%88%EC%97%AD/vertical-align.md)
+- [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
+- [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/WebP.md)
+- [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B3%B5%ED%95%99%20%EA%B8%B0%EC%B4%88/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
 
 ## 10. Tool
 
