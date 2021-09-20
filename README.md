@@ -194,6 +194,8 @@
 ## 8. 네트워크
 
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/Cookie.md)
+- [캐시 기본 동작](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%BF%A0%ED%82%A4%20%EA%B8%B0%EB%B3%B8%20%EB%8F%99%EC%9E%91.md)
+- [캐시 검증 헤더와 조건부 요청](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%BA%90%EC%8B%9C%20%EA%B2%80%EC%A6%9D%20%ED%97%A4%EB%8D%94%EC%99%80%20%EC%A1%B0%EA%B1%B4%EB%B6%80%20%EC%9A%94%EC%B2%AD.md#%EC%BA%90%EC%8B%9C-%EA%B2%80%EC%A6%9D-%ED%97%A4%EB%8D%94%EC%99%80-%EC%A1%B0%EA%B1%B4%EB%B6%80-%EC%9A%94%EC%B2%AD)
 - [서버 인증 방법 : JWT vs 세션 / 쿠키](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%84%9C%EB%B2%84%20%EC%9D%B8%EC%A6%9D%20%EB%B0%A9%EB%B2%95%20:%20JWT%20vs%20%EC%84%B8%EC%85%98%2C%EC%BF%A0%ED%82%A4.md)
 - [HTTP,HTTPS](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%2CHTTPS.md)
 - [CORS(Cross-Origin Resource Sharing)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/CORS(Cross%20Origin%20Request).md>)
