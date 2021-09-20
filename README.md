@@ -238,6 +238,7 @@
 - [npm](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/npm.md)
 - [Jest 사용하기](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
 - [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
+- [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
 
 ## 11. koa
 
