@@ -497,6 +497,16 @@ var App = React.render(Component);
 
 <br>
 
+현재 useState가 호출된 순서에 따라서 index 위치가 정해지고 있다.
+
+따라서 useState가 조건문 또는 반복문에 따라서 호출되고 안되고를 결정하면 state가 저장된 배열(React 함수의 hooks 변수)의 index의 값을 불러오거나 저장할 수 없을 것이다.
+
+실제로 [React Hook 규칙 공식 홈페이지](https://ko.reactjs.org/docs/hooks-rules.html) 를 보면 다음과 같은 내용을 가지고 있다.
+
+![vanill javascript useState](../Images/Vanilla%20Javascript%20useState/Vanilla%20Javascript%20useState-1.png)
+
+<br>
+
 ### 정리
 
 - 각각 useState 별로 state를 저장할 고유의 index 위치를 만든다.
