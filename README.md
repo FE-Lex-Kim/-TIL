@@ -138,6 +138,7 @@
 - [useState](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Hook%20useState.md)
 - [Vanilla Javascript useState](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Vanilla%20Javascript%20useState.md)
 - [useEffect](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
+- [Vanilla Javascript useEffect](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Vanilla%20Javascript%20useEffect.md)
 - [useMemo](https://github.com/Alex-Eojin/-TIL/blob/master/React/useMemo.md)
 - [Context in Class Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20in%20Class%20Component.md)
 - [Context Hook API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
