@@ -24,7 +24,7 @@ SPA는 싱글페이지로서 뷰랜더링을 브라우저가 담당하고 필요
 
 <br>
 
-리액트 라우팅 라이브러리는 
+리액트 라우팅 라이브러리는
 
 리액트라우터, 리치 라우처, Next.js등 여러가지가 있다.
 
@@ -53,18 +53,18 @@ index.js파일에서 react-router-dom에 내장되어있는 BrowserRouter이라�
 이컴포넌트는 HTML5의 History API를 사용해서 페이지를 새로고침하지 않고 주소를 변경하고, 현재 주소에 관련된 정보를 props로 쉽게 사용할수있게해준다.
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
@@ -97,10 +97,10 @@ import { Route, Link } from 'react-router-dom';
 때문에 **exact**를 사용하면 정확히 그 주소여야만 그페이지가 보여지게된다.
 
 ```jsx
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 
 class App extends Component {
   render() {
@@ -137,17 +137,17 @@ HTML5 History API를 사용하여 페이지의 주소만 변경해준다.
 **사용방법**
 
 ```jsx
-import { Route, Link } from 'react-router-dom';
-<Link to='주소'>내용</Link>
+import { Route, Link } from "react-router-dom";
+<Link to="주소">내용</Link>;
 ```
 
 <br>
 
 ```jsx
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 
 class App extends Component {
   render() {
@@ -189,7 +189,7 @@ export default App;
 이렇게 사용하는 대신에 path props를 배열로 설정해주면 여러 경로에서 같은 컴포넌트를 보여줄 수 있다.
 
 ```jsx
-<Route path={['/about', '/info']} component={About} />
+<Route path={["/about", "/info"]} component={About} />
 ```
 
 <br>
@@ -212,7 +212,7 @@ export default App;
 
 <br>
 
-파라미터와 쿼리를 딱 정해서 쓰는 경우는 없다. 
+파라미터와 쿼리를 딱 정해서 쓰는 경우는 없다.
 
 하지만 일반적으로 사용하는 경우가 있다.
 
@@ -239,16 +239,16 @@ export default App;
 <br>
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const data = {
   Alex: {
-    name: '어진',
-    description: '리액트를 좋아하는 개발자',
+    name: "어진",
+    description: "리액트를 좋아하는 개발자",
   },
   Jaems: {
-    name: '어진쓰',
-    description: '여행을 좋아하는 일반인',
+    name: "어진쓰",
+    description: "여행을 좋아하는 일반인",
   },
 };
 
@@ -425,7 +425,7 @@ ex) block → 현재페이지에서 나가는것을 막아준다. 인수로 경�
 <br>
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class HistorySample extends Component {
   handleGoBack = () => {
@@ -433,11 +433,11 @@ class HistorySample extends Component {
   };
 
   handleGoHome = () => {
-    this.props.history.push('/');
+    this.props.history.push("/");
   };
 
   componentDidMount() {
-    this.unblock = this.props.history.block('정말 떠나실 건가요?');
+    this.unblock = this.props.history.block("정말 떠나실 건가요?");
   }
 
   componentWillUnmount() {
@@ -462,12 +462,12 @@ export default HistorySample;
 <br>
 
 ```jsx
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import profiles from './profiles';
-import HistorySample from './HistorySample';
+import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import profiles from "./profiles";
+import HistorySample from "./HistorySample";
 
 class App extends Component {
   render() {
@@ -488,7 +488,7 @@ class App extends Component {
           </li>
         </ul>
         <Route path="/" exact component={Home} />
-        <Route path={['/about', '/info']} component={About} />
+        <Route path={["/about", "/info"]} component={About} />
         <Route path="/profiles" component={profiles} />
         <Route path="/history" component={HistorySample} />
       </div>
@@ -498,6 +498,28 @@ class App extends Component {
 
 export default App;
 ```
+
+<br>
+**주의!!**
+
+history를 props를 통해 전달받는다고 했다.
+
+이때 props를 통해 전달 받으려면 해당 컴포넌트는 반드시 App 컴포넌트에서 Router 컴포넌트에 등록되어 있어야 사용 가능하다.
+
+<br>
+
+**Router에 등록된 컴포넌트의 자식 컴포넌트의 자식 컴포넌트의 ... 자식 컴포넌트라고 하는 3~4단계 밑의 컴포넌트는 아예 history props를 전달 받지 못한다.(App 컴포넌트의 Router에 등록되어있지 않았기 때문에)**
+
+그 자식 컴포넌트까지 props를 전달해야 하는데 자식이 많으면 drilling 패턴이 발생한다.
+
+<br>
+
+**해당 컴포넌트가 Router 컴포넌트에 등록되지 않아도 match, location, history 객체를 사용하는 방법이 2가지 있다.**
+
+1. withRouter
+2. useHistory, useMatch, useLocation, useRouteMatch
+
+[두번째 Hooks를 사용한 Routing 방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/useHistory%2C%20useLocation%2C%20usePrams%2C%20useRouteMatch.md)
 
 <br>
 
@@ -516,18 +538,18 @@ ex) profiles에 withRouter 컴포넌트를 넣으면
 profiles기준으로 match객체가 나온다. 그뒤의 username은 나오지않는다.
 
 ```jsx
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import WithRouterSample from './WithRouterSample';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import WithRouterSample from "./WithRouterSample";
 
 const data = {
   Alex: {
-    name: '어진',
-    description: '리액트를 좋아하는 개발자',
+    name: "어진",
+    description: "리액트를 좋아하는 개발자",
   },
   James: {
-    name: '어진쓰',
-    description: '여행을 좋아하는 일반인',
+    name: "어진쓰",
+    description: "여행을 좋아하는 일반인",
   },
 };
 
@@ -554,8 +576,8 @@ export default withRouter(profile);
 <br>
 
 ```jsx
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 const WithRouterSample = ({ location, match, history }) => {
   return (
@@ -572,7 +594,7 @@ const WithRouterSample = ({ location, match, history }) => {
         rows={7}
         readOnly={true}
       />
-      <button onClick={() => history.push('/')}>홈으로</button>
+      <button onClick={() => history.push("/")}>홈으로</button>
     </div>
   );
 };
@@ -582,4 +604,37 @@ export default withRouter(WithRouterSample);
 
 <br>
 
-참고: 책 리액트를 다루는 기술
+### Switch
+
+Switch 컴포넌트는 여러 Route를 감싸서 그중에서 path(경로)가 일치하는 하나의 Route만을 랜더링 시켜준다.
+
+Switch를 사용했을때 아무 Route와 겹치지 않으면 Not Found 페이지를 구현할수있다.
+
+![React SPA 라우터](../Images/React%20SPA%20라우터/React%20SPA%20라우터-3.png)
+
+<br>
+
+`/profild/:id` 는 `/profile` 보다 위에 존재해야한다.
+
+`/profile` 이 위에 존재한다면 먼저 조건에 겹치기 때문에 뒤에 id값이 path에 존재하더라도 항상 `/profile`만 보여질 것이다.
+
+`/profile:id`가 위에 올라가고 싶다면 exact를 해서 정확하게 그 path라고 명시해주어야한다.
+
+또한 `/` 인 첫 경로도 가장 마지막에 exact를 해주어야 한다.
+
+그 이유는 `/` 는 루트 경로 이므로 모든 조건에 걸리기 떄문에 위에 둔다면 항상 루트 페이지만 보일것이다.
+
+그리고 `exact`를 해주어야한다.
+
+<br>
+
+만약 `/` 보다 위에있는 경로들에 걸리지 않고 아예없는 경로라면 항상 루트 경로인 `/` 에 걸려서 루트 페이지가 보일것이다.
+
+따라서 `exact` 해주고 그 하위에 Path를 정해주지않고 NotFound 컴포넌트를 넣어주면 NotFound 페이지를 구현할 수 있다.
+
+<br>
+
+참고
+
+- 리액트를 다루는 기술 책
+- 패스트 캠퍼스 프론트엔드 올인원
