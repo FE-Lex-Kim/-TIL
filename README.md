@@ -172,6 +172,7 @@
 - [Vscode에서 마크다운 사용](https://github.com/Alex-Eojin/-TIL/blob/master/Github/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
 - [원격저장소 업로드 동작 과정](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20%EC%9B%90%EA%B2%A9%EC%A0%80%EC%9E%A5%EC%86%8C%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EB%8F%99%EC%9E%91%20%EC%84%A4%EB%AA%85.md)
 - [Git branch](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/GIt%20Branch.md)
+- [Git rebase](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20rebase.md)
 - [Git flow](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/Git%20flow.md)
 - [Git bash 단축표현](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/git%20bash%20%EB%8B%A8%EC%B6%95%ED%91%9C%ED%98%84.md)
 - [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
