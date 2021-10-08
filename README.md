@@ -139,6 +139,7 @@
 - [Vanilla Javascript useState](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Vanilla%20Javascript%20useState.md)
 - [useEffect](https://github.com/Alex-Eojin/-TIL/blob/master/React/useEffect.md)
 - [Vanilla Javascript useEffect](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Vanilla%20Javascript%20useEffect.md)
+- [useCallback, React.memo 사용해서 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/useCallback%2C%20React.memo.md)
 - [Custom Hook](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Custom%20Hook.md)
 - [useMemo](https://github.com/Alex-Eojin/-TIL/blob/master/React/useMemo.md)
 - [Context in Class Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20in%20Class%20Component.md)
