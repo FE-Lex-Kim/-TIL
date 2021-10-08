@@ -150,7 +150,7 @@
 - [redux-thunk](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-thunk.md)
 - [redux-saga](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-saga.md)
 - [Redux Thunk vs Saga](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Redux%20Thunk%20vs%20Saga.md)
-- [react-virtualized 성능 최적화](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
+- [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
 - [Immer](https://github.com/Alex-Eojin/-TIL/blob/master/React/Immer.md)
 - [Custom Snippet](https://github.com/Alex-Eojin/-TIL/blob/master/React/Custom%20Snippet.md)
 - [Next.js](https://github.com/Alex-Eojin/-TIL/blob/master/React/Next.js.md)
