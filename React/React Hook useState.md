@@ -246,6 +246,128 @@ export default Exmaple;
 
 <br>
 
+## 비동기적 일괄처리되는 setState
+
+setState는 **비동기적으로 일괄처리 되어진다.**
+
+모든 컴포넌트가 **자신의 이벤트 핸들러에서 setState가 호출될때까지** React는 리렌더링 하지 않고 내부적으로 기다리고 있다.
+
+<br>
+
+**state이 갱신되는 시점은 리렌더링** 되어질때이다.
+
+따라서 **모든 컴포넌트의 setState가 동시에 일괄적으로 처리되어질때까지 state는 갱신 되어지지 않는다.**
+
+<br>
+
+### 왜 비동기적으로 일괄처리 되어질까?
+
+부모와 자식에서 setState가 호출된다면 자식은 두번 렌더링 되지 않는다.
+
+setState는 이벤트 핸들러에 의해서 호출되지만 비동기적으로 동작한다.
+
+이후 state 갱신은 모든 setState가 호출된뒤(가장 마지막 이벤트 핸들러가 끝날 시점) state들이 일괄적으로 업데이트 된다.
+
+<br>
+
+**setState가 호출될때마다 리렌더링 된다면, 성능이 안 좋아 진다.**
+
+따라서 여러번 리렌더링 되는 것을 방지해서 **한번의 리렌더링으로 성능을 크게 향상시킨다.**
+
+<br>
+
+## 이전 state 값 받아와서 갱신
+
+이전 state를 사용해서 새로운 state를 계산하는 경우 setState에 콜백함수를 전달해서 갱신할 수 있다.
+
+콜백함수는 인자는 이전 state 값을 가지고 있다.
+
+<br>
+
+일반적으로 state를 갱신할때
+
+```jsx
+const [count, setCount] = useState(0);
+setCount(count + 1);
+```
+
+<br>
+
+콜백함수로 state를 갱신할때
+
+```jsx
+const [count, setCount] = useState(0);
+setCount((prevState) => prevState + 1);
+```
+
+<br>
+
+setState는 비동기적으로 일괄처리 되어진다.
+
+하지만 **setState에 콜백함수를 전달하면 이전에 변경한 state 값에 접근 할 수 있어서, 이전 값(가장 최근에 setState로 갱신한 값)을 기준으로 갱신가능하다.**
+
+setState는 일괄적으로 처리되기 때문에 여러 업데이트 사항이 충돌없이 차례대로 반영된다.
+
+<br>
+
+예제코드
+
+```jsx
+import React, { useState } from "react";
+
+function FcSetStaetCount(props) {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <button onClick={onClick}>click me</button>
+      <p>{count}</p>
+    </>
+  );
+
+  function onClick() {
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+  }
+}
+
+export default FcSetStaetCount;
+```
+
+<br>
+
+당연히 비동기적으로 동작하므로 리렌더링이 되지않아, state가 갱신 안되어서,
+
+세 개의 setCount count 값은 항상 1이 된다.
+
+```jsx
+import React, { useState } from "react";
+
+function FcSetStaetCount(props) {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <button onClick={onClick}>click me</button>
+      <p>{count}</p>
+    </>
+  );
+
+  function onClick() {
+    setCount((prevState) => prevState + 1);
+    setCount((prevState) => prevState + 1);
+    setCount((prevState) => prevState + 1);
+  }
+}
+
+export default FcSetStaetCount;
+```
+
+콜백함수의 인자는 이전의 setState로 변경한 state값에 접근이 가능하다.(리렌더링이 되진 않았지만, 이전의 setState의 변경값을 접근가능함)
+
+<br>
+
 참고
 
 - [https://ko.reactjs.org/docs/hooks-state.html](https://ko.reactjs.org/docs/hooks-state.html)
+- [https://ko.reactjs.org/docs/hooks-reference.html#functional-updates](https://ko.reactjs.org/docs/hooks-reference.html#functional-updates)
+- [https://ko.reactjs.org/docs/faq-state.html](https://ko.reactjs.org/docs/faq-state.html)
