@@ -366,8 +366,103 @@ export default FcSetStaetCount;
 
 <br>
 
+## useState 고비용 초기값 성능 최적화
+
+<br>
+
+useState의 초기값 자체가 어떠한 로직을 통해서 고비용 든다면 문제가 된다.
+
+해당 초기값이 함수의 호출로 생성되고, 이전의 useState의 값이 있으면 최초 렌더링이 아니라고 판단해 이전의 state 값을 사용하는 로직 방식이라, **매번 리렌더링이 될때마다 호출이되어** **계산이 되어서 고비용이 발생한다.**
+
+<br>
+
+정리하면, 매번 컴포넌트가 리 렌더링 될때마다 초기값이 계산된다.
+
+예제를 보자
+
+```jsx
+import React, { useState } from "react";
+
+function InitUseState(props) {
+  function initCount(a, b) {
+    console.log("callback");
+    return a ** b;
+  }
+
+  const [count, setCount] = useState(initCount(10, 10));
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={onClick}>Increase count</button>
+    </>
+  );
+
+  function onClick(params) {
+    setCount(count + 1);
+  }
+}
+
+export default InitUseState;
+```
+
+initCount라는 함수를 호출해서 초기값을 설정했다.(고비용은 아니지만 그렇다고 한다면)
+
+<br>
+
+해당 초기값 함수가 큰 고비용을 발생하고 매번 리렌더링 마다 호출된다면 비효율적이다.
+
+<br>
+
+![최초 렌더링시에만 초기값 설정](./../Images/useState/useState-1.png)
+![최초 렌더링시에만 초기값 설정](./../Images/useState/useState-2.png)
+
+<br>
+
+이때 useState의 **콜백함수를** 통해서 반환되는 값에 해당 함수를 호출 하면 **최초 렌더링 시에만 호출되어 들어간다**.
+
+<br>
+
+예제를 보고 이해해 보자
+
+```jsx
+import React, { useState } from "react";
+
+function InitUseState(props) {
+  function initCount(a, b) {
+    console.log("callback");
+    return a ** b;
+  }
+
+  const [count, setCount] = useState(() => initCount(10, 10));
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={onClick}>Increase count</button>
+    </>
+  );
+
+  function onClick(params) {
+    setCount(count + 1);
+  }
+}
+
+export default InitUseState;
+```
+
+<br>
+
+useState에 콜백함수의 반환값으로 초기값으로 들어가는 함수를 호출해주자.
+
+그러면 최초 **componentDidmount 시기 때만 호출되어서** 들어가고 이후에 업데이트시에는 두번다시 호출되지 않는다.
+
+![최초 렌더링시에만 초기값 설정](./../Images/useState/useState-3.png)
+![최초 렌더링시에만 초기값 설정](./../Images/useState/useState-4.png)
+
+<br>
+
 참고
 
 - [https://ko.reactjs.org/docs/hooks-state.html](https://ko.reactjs.org/docs/hooks-state.html)
 - [https://ko.reactjs.org/docs/hooks-reference.html#functional-updates](https://ko.reactjs.org/docs/hooks-reference.html#functional-updates)
 - [https://ko.reactjs.org/docs/faq-state.html](https://ko.reactjs.org/docs/faq-state.html)
+- [https://ko.reactjs.org/docs/hooks-faq.html#how-to-create-expensive-objects-lazily](https://ko.reactjs.org/docs/hooks-faq.html#how-to-create-expensive-objects-lazily)
