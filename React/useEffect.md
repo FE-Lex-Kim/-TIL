@@ -53,7 +53,7 @@ ex)
 예시 코드)
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 class Example extends React.Component {
   constructor(props) {
@@ -65,11 +65,11 @@ class Example extends React.Component {
 
   componentDidMount() {
     document.title = `You clicked ${this.state.count} times`;
-    console.log('DidMount');
+    console.log("DidMount");
   }
   componentDidUpdate() {
     document.title = `You clicked ${this.state.count} times`;
-    console.log('DidUpdate');
+    console.log("DidUpdate");
   }
 
   render() {
@@ -96,7 +96,7 @@ export default Example;
 Hook 예시)
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Example() {
   const [count, setCount] = useState(0);
@@ -108,9 +108,7 @@ function Example() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
@@ -122,7 +120,7 @@ useEffect 하나의 함수로 처리 가능하다.
 
 **그렇다면 useEffect가 하는일은 무엇일까?**
 
-useEffect Hook을 이용하여 우리는 리액트에게 컴포넌트가 렌더링 이후에 어떤 일을 수행해야하는 지를 말한다. 
+useEffect Hook을 이용하여 우리는 리액트에게 컴포넌트가 렌더링 이후에 어떤 일을 수행해야하는 지를 말한다.
 
 <br>
 
@@ -136,7 +134,7 @@ useEffect Hook을 이용하여 우리는 리액트에게 컴포넌트가 렌더�
 
 **useEffect를 컴포넌트 안에서 불러내는 이유는 무엇일까?**
 
-useEffect를 컴포넌트 내부에 둠으로써 effect를 통해 count state 변수(또는 그 어떤 prop에도)에 접근할 수 있게 된다. 
+useEffect를 컴포넌트 내부에 둠으로써 effect를 통해 count state 변수(또는 그 어떤 prop에도)에 접근할 수 있게 된다.
 
 <br>
 
@@ -172,7 +170,7 @@ useEffect에 전달된 함수가 모든 렌더링에서 다르다.
 
 **팁!**
 
-componentDidMount 혹은 componentDidUpdate와는 달리 useEffect에서 사용되는 effect는 브라우저가 화면을 업데이트하는 것을 차단하지 않는다. 
+componentDidMount 혹은 componentDidUpdate와는 달리 useEffect에서 사용되는 effect는 브라우저가 화면을 업데이트하는 것을 차단하지 않는다.
 
 이를 통해 애플리케이션의 반응성을 향상해줍니다.
 
@@ -192,7 +190,7 @@ componentDidMount 혹은 componentDidUpdate와는 달리 useEffect에서 사용�
 
 리액트가 DOM을 업데이트한 뒤 추가로 코드를 실행하는 것
 
-ex) 
+ex)
 
 리액트가 DOM을 바꾸고 난 뒤 문서 타이틀을 업데이트하는것 .. 등등
 
@@ -230,15 +228,15 @@ class FriendStatus extends React.Component {
   }
   handleStatusChange(status) {
     this.setState({
-      isOnline: status.isOnline
+      isOnline: status.isOnline,
     });
   }
 
   render() {
     if (this.state.isOnline === null) {
-      return 'Loading...';
+      return "Loading...";
     }
-    return this.state.isOnline ? 'Online' : 'Offline';
+    return this.state.isOnline ? "Online" : "Offline";
   }
 }
 ```
@@ -260,7 +258,7 @@ Hook을 이용하면 클래스형 컴포넌트와 다르게 useEffect 하나의 
 추가와 제거를 하는 코드는 둘과의 연결성이 높아 useEffect에 이렇게 하나의 Hook으로 처리 가능하게 만들었다.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function FriendStatus(props) {
   const [isOnline, setIsOnline] = useState(null);
@@ -277,15 +275,15 @@ function FriendStatus(props) {
   });
 
   if (isOnline === null) {
-    return 'Loading...';
+    return "Loading...";
   }
-  return isOnline ? 'Online' : 'Offline';
+  return isOnline ? "Online" : "Offline";
 }
 ```
 
 <br>
 
-**effect에서 함수를 반환하는 이유는 무엇일까?** 
+**effect에서 함수를 반환하는 이유는 무엇일까?**
 
 이는 effect를 위한 추가적인 정리(clean-up) 메커니즘이다.
 
@@ -303,7 +301,7 @@ function FriendStatus(props) {
 
 <br>
 
-**리액트가 effect를 정리(clean-up)하는 시점은 정확히 언제일까?** 
+**리액트가 effect를 정리(clean-up)하는 시점은 정확히 언제일까?**
 
 리액트는 컴포넌트가 마운트 해제되는 때에 정리(clean-up)를 실행한다.
 
@@ -311,7 +309,7 @@ function FriendStatus(props) {
 
 <br>
 
-하지만 위의 예시에서 보았듯이 effect는 한번이 아니라 렌더링이 실행되는 때마다 실행된다. 
+하지만 위의 예시에서 보았듯이 effect는 한번이 아니라 렌더링이 실행되는 때마다 실행된다.
 
 <br>
 
@@ -329,7 +327,7 @@ useEffect가 컴포넌트의 렌더링 이후에 다양한 side effects를 표�
 
 **1 . effect에 정리(clean-up)가 필요한 경우에는 함수를 반환한다.**
 
-**2 . 정리(clean-up)가 필요 없는경우 아무것도 반환하지 않는다.** 
+**2 . 정리(clean-up)가 필요 없는경우 아무것도 반환하지 않는다.**
 
 <br>
 
@@ -359,8 +357,8 @@ useEffect는 **마운트** 와 **업데이트** 가 될때 실행된다.
 
 ```jsx
 useEffect(() => {
-    console.log("마운트가 완료되었습니다.");
-  }, []);
+  console.log("마운트가 완료되었습니다.");
+}, []);
 ```
 
 <br>
@@ -381,8 +379,8 @@ useEffect를 사용할 때, 특정값만 변경될 때 호출하고 싶다면
 
 ```jsx
 useEffect(() => {
-    console.log(name);
-  }, [name]);
+  console.log(name);
+}, [name]);
 ```
 
 <br>
@@ -415,13 +413,13 @@ useEffect는 렌더링이되고 난후 실행된다.
 
 ```jsx
 useEffect(() => {
-    console.log("effect");
+  console.log("effect");
+  console.log(name);
+  return () => {
+    console.log("cleenUp");
     console.log(name);
-    return () => {
-      console.log("cleenUp");
-      console.log(name);
-    };
-  }, [name]);
+  };
+}, [name]);
 ```
 
 <br>
@@ -521,7 +519,7 @@ function FriendStatusWithCounter(props) {
 
 <br>
 
-Hook을 이용하면 생명주기 메서드에 따라서가 아니라 코드가 **무엇을 하는지** 에 따라 나눌 수가 있다. 
+Hook을 이용하면 생명주기 메서드에 따라서가 아니라 코드가 **무엇을 하는지** 에 따라 나눌 수가 있다.
 
 리액트는 컴포넌트에 사용된 모든 effect를 지정된 순서에 맞춰 적용한다.
 
@@ -635,19 +633,19 @@ useEffect는 업데이트를 다루는 Hook이다.
 
 <br>
 
-다음 코드는 위의 코드의 순서를 더 잘 보여주기위한  실행 흐름을 보여주는 코드이다.
+다음 코드는 위의 코드의 순서를 더 잘 보여주기위한 실행 흐름을 보여주는 코드이다.
 
 ```jsx
 // { friend: { id: 100 } } state을 사용하여 마운트합니다.
-ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // 첫번째 effect가 작동합니다.
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange); // 첫번째 effect가 작동합니다.
 
 // { friend: { id: 200 } } state로 업데이트합니다.
 ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // 이전의 effect를 정리(clean-up)합니다.
-ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // 다음 effect가 작동합니다.
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange); // 다음 effect가 작동합니다.
 
 // { friend: { id: 300 } } state로 업데이트합니다.
 ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // 이전의 effect를 정리(clean-up)합니다.
-ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // 다음 effect가 작동합니다.
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange); // 다음 effect가 작동합니다.
 
 // 마운트를 해제합니다.
 ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // 마지막 effect를 정리(clean-up)합니다.
@@ -659,7 +657,7 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // 마지막 effec
 
 <br>
 
-### Effect기능을 건너뛰고 성능 최적화하기
+### Effect 성능 최적화하기
 
 <br>
 
@@ -770,6 +768,185 @@ useEffect(() => {
 
 <br>
 
+### useEffect 내부에 함수 선언
+
+`useEffect`에서 함수를 호출한다면 해당 함수 내부의 에서 state 또는 props를 참조하는 로직이 들어간다면 문제가 된다.
+
+<br>
+
+`useEffect`의 의존성 배열안에 해당 state 또는 props을 넣어주어서 최적화 작업을 진행하기 까다롭다.
+
+아래의 예제를 보자
+
+```jsx
+function Example({ someProp }) {
+  function doSomething() {
+    console.log(someProp);
+  }
+
+  useEffect(() => {
+    doSomething();
+  }, []);
+}
+```
+
+<br>
+
+`doSomething`이 `useEffect` 내부에서 호출 되었지만 그 **내부의 로직이 보이지 않아서 `useEffect`의 의존성 배열이 무엇이 들어가는지 확인하기 어렵다.**(vscode에서도 노란색 줄이 뜨는 경고가 안뜸)
+
+<br>
+
+그래서 일반적으로 `useEffect` 내부에서 함수를 선언는 이유이다. 그러면 effect가 되는 state 또는 props를 확인하기 쉽기 때문이다.
+
+만약 함수 내부의 로직중에서 특별한 state 또는 props에 의해 호출되어야 하는 상황이 없으면 `[]` 을 넣어준다.
+
+```jsx
+function Example({ someProp }) {
+  useEffect(() => {
+    function doSomething() {
+      console.log(someProp);
+    }
+
+    doSomething();
+  }, [someProp]);
+}
+```
+
+<br>
+
+### 컴포넌트 외부에서 받아온 함수를 useEffect에서 사용할때
+
+<br>
+
+다른 컴포넌트에서 함수를 받아와(부모 컴포넌트) useEffect에서 호출할때 어떻게 의존성 배열에 넣어야할까?
+
+<br>
+
+다른 컴포넌트에서 함수를 정의할때, 애초부터 useCallback을 사용해서 해당 함수의 최적화 작업을 해준다.(참조값이 변경되지 않게함)
+
+현재 컴포넌트에서 받아온 함수 자체를 의존성 배열에 넣어준다.
+
+<br>
+
+아래의 예제를 보면 쉽게 이해가간다.
+
+```jsx
+function ProductPage({ productId }) {
+  // 모든 렌더링에서 변경되지 않도록 useCallback으로 래핑
+  const fetchProduct = useCallback(() => {
+    // ... productId로 무언가를 합니다 ...
+  }, [productId]); // 모든 useCallback 종속성이 지정됩니다
+
+  return <ProductDetails fetchProduct={fetchProduct} />;
+}
+
+function ProductDetails({ fetchProduct }) {
+  useEffect(() => {
+    fetchProduct();
+  }, [fetchProduct]); // 모든 useEffect 종속성이 지정됩니다
+  // ...
+}
+```
+
+<br>
+
+### effect 내부에서 지속적으로 자주 state가 변경하는 경우
+
+```jsx
+import React, { useEffect, useState } from "react";
+
+function IntervalCount(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(count + 1); // 이 effect는 'count' state에 따라 다릅니다
+    }, 1000);
+    console.log("effect");
+    return () => {
+      console.log("clear");
+      return clearInterval(id);
+    };
+  }, []); // 🔴 버그: `count`가 종속성으로 지정되지 않았습니다
+
+  return <h1>{count}</h1>;
+}
+
+export default IntervalCount;
+```
+
+<br>
+
+위와 같이 count가 1초 간격으로 증가하는 `setCount`가 있다.
+
+하지만 1초 간격으로 호출된다고 해도, 이미 `setCount`의 스코프는 클로저로 `count` 값이 `0`으로 설정되어 계속 `setCount(0 + 1)`를 호출하므로 카운트가 1이 된다.
+
+```jsx
+import React, { useEffect, useState } from "react";
+
+function IntervalCount(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(count + 1); // 이 effect는 'count' state에 따라 다릅니다
+    }, 1000);
+    console.log("effect");
+    return () => {
+      console.log("clear");
+      return clearInterval(id);
+    };
+  }, [count]); // 🔴 버그: `count`가 종속성으로 지정되지 않았습니다
+
+  return <h1>{count}</h1>;
+}
+
+export default IntervalCount;
+```
+
+의존성 배열안에 [count]를 넣는다고 하면, count가 변경될때마다 useEffect가 다시 호출되므로 clean up도 다시 호출되어서 clearInterval이 호출된다.
+
+<br>
+
+이것은 의미없는 clearInterval이 1초뒤에 지속적으로 호출되므로 옳바르지 않은 로직이다.
+
+<br>
+
+![지속적으로 effect가 호출되는 경우](./../Images/useEffect/useEffect-3.png)
+
+<br>
+
+```jsx
+import React, { useEffect, useState } from "react";
+
+function IntervalCount(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 1000);
+    console.log("effect");
+    return () => {
+      console.log("clear");
+      return clearInterval(id);
+    };
+  }, []);
+
+  return <h1>{count}</h1>;
+}
+
+export default IntervalCount;
+```
+
+그래서 위의 setCount를 콜백함수를 넣어서, 현재 state 참조 하지 않고 이전 state 값을 참조해서 증가하게 할 수 있다.
+
+<br>
+
+그리고 이제는 count state 값에 의존하지 않기 때문에, 의존성 배열값에 count를 넣지 않아도 된다는 점이 있다.
+
+<br>
+
 **팁!!**
 
 exhaustive-deps 규칙을 [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 패키지에 포함하는 것을 리액트에서 추천한다.
@@ -781,7 +958,7 @@ exhaustive-deps 규칙을 [eslint-plugin-react-hooks](https://www.npmjs.com/pack
 설치방법
 
 ```bash
-# npm 
+# npm
 npm install eslint-plugin-react-hooks --save-dev
 ```
 
@@ -816,7 +993,7 @@ eslint config
 }
 ```
 
-참고: 
+참고:
 
 [React 공식문서](https://ko.reactjs.org/docs/hooks-effect.html)
 
