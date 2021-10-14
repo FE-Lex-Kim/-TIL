@@ -166,7 +166,7 @@ useMemo Hook로 getAverage(list) 함수가 **list값이 변경될 경우에만 �
 
 **렌더링중에 의존성이 변경되었을때**
 
-2-1 .  getAverage(list)인 메모이제이션 값만 다시 계산한다.
+2-1 . getAverage(list)인 메모이제이션 값만 다시 계산한다.
 
 <br>
 
@@ -176,27 +176,159 @@ useMemo Hook로 getAverage(list) 함수가 **list값이 변경될 경우에만 �
 
 <br>
 
-## useEffect vs useMemo 비교
+## React.memo vs useMemo
+
+### React.memo
+
+parent component
+
+```jsx
+import React from "react";
+
+function ReactMemoCount(props) {
+  console.log("child Component");
+  return (
+    <>
+      <h1>I'm child Component</h1>
+    </>
+  );
+}
+
+export default React.memo(ReactMemoCount);
+```
 
 <br>
 
-**useEffect**
+child component
 
-**렌더링이 된후 DOM작업이 완료되고** 난 이후에 의존성이 변경된 경우 작업을 한다.
+```jsx
+import React from "react";
+
+function ReactMemoCount(props) {
+  console.log("child Component");
+  return (
+    <>
+      <h1>I'm child Component</h1>
+    </>
+  );
+}
+
+export default ReactMemoCount;
+```
 
 <br>
 
-**useMemo**
+부모 컴포넌트가 호출되면 자식 컴포넌트도 따라서 리렌더링 된다.
 
-**랜더링중에** 의존성이 변경된경우 작업을 실행한다.
-
-<br>
-
-[eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 패키지로 의존성이 바르게 정의 되지 않으면 그에 대해 경고로 수정하도록 알려준다.
+이때 자식 컴포넌트에게 React.memo를 사용하면 자식 컴포넌트의 props의 변경이 없으면 리렌더링 되지 않
 
 <br>
 
-참고: 
+### useMemo
+
+<br>
+
+parent component
+
+```jsx
+import React, { useMemo, useState } from "react";
+import ReactMemoCount from "./ReactMemoCount";
+
+function ReactMemoConuntContainer(props) {
+  const [count, setCount] = useState(0);
+  const [str, setStr] = useState("hi ");
+
+  const MemoCountComponent = useMemo(() => <ReactMemoCount str={str} />, [str]);
+
+  return (
+    <>
+      {MemoCountComponent}
+      <button onClick={increaseCount}>Increase count</button>
+      <button onClick={addStrAlex}>add str Alex</button>
+      <h2>curCount : {count}</h2>
+    </>
+  );
+
+  function increaseCount(params) {
+    setCount(count + 1);
+  }
+
+  function addStrAlex(params) {
+    setStr(str + "Alex ");
+  }
+}
+
+export default ReactMemoConuntContainer;
+```
+
+<br>
+
+child component
+
+```jsx
+import React from "react";
+
+function ReactMemoCount({ str }) {
+  console.log("child Component");
+  return (
+    <>
+      <h1>I'm child Component</h1>
+      <h2>curStr : {str}</h2>
+    </>
+  );
+}
+
+export default ReactMemoCount;
+```
+
+<br>
+
+parent componet에서 useMemo를 사용해서,
+
+자식 컴포넌트를 str이 변경되지 않으면 리렌더링이 되지않게 했다.
+
+<br>
+
+### 공통점
+
+React.memo 와 useMemo의 공통점은 자식 컴포넌트가 특정한 props가 변경되지 않으면 리렌더링 되지않게 성능을 향상 시킬 수 있다.
+
+<br>
+
+### 차이점
+
+<br>
+
+React.memo
+
+1. React.memo는 HOC 이여서 클래스 컴포넌트, 함수형 컴포넌트 두가지 모두 사용할 수 있다는 점이 있다.
+2. React.memo는 성능 최적화를 하려는 컴포넌트에서 로직을 작성한다는 점이다.(이 점을 말하는 이유는 useMemo는 그렇지 않아서)
+
+<br>
+
+useMemo
+
+1. useMemo는 함수형 컴포넌트에서만 사용가능하다.
+2. useMemo는 성능 최적화를 부모 컴포넌트에서 로직을 작성해야한다는 점이다.
+   - 따라서 정작 성능 최적화를 하려는 컴포넌트에서 해당 로직을 확인 하지 못해 가독성, 유지보수가 좋지 않다는 점이 있다.
+
+<br>
+
+개인적인 의견으로는 아무래도 React.memo가 훨씬 좋다고 생각이든다.
+
+최적화 하는 컴포넌트 내부에서 로직을 작성하다 보니 가독성과 유지보수가 높다는 점을 무시할 수 없는것 같다.
+
+그리고 useMemo는 로직 자체가 길어진다는 점에서도 불편하고 컴포넌트가 컴포넌트 처럼 보이지않는다는 단점이 있어보인다.
+
+<br>
+
+결론은 컴포넌트 성능 최적화를 하려면 React.memo를 사용하고
+
+useMemo는 컴포넌트 성능 최적화 보다 함수 중복 계산을 최적화 하는데 사용하는게 좋아 보인다.
+
+<br>
+
+참고:
 
 [리액트 공식문서](https://ko.reactjs.org/docs/hooks-reference.html#usememo)
 
