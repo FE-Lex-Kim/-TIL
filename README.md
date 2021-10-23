@@ -164,14 +164,18 @@
 - [tailwindcss Complex variants](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/tailwindcss%20Complex%20variants.md)
 - [map function 사용시, radio input 첫번째 input을 default checked 값으로 하는법](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/map%20function%20%EC%82%AC%EC%9A%A9%EC%8B%9C%2C%20radio%20input%20%EC%B2%AB%EB%B2%88%EC%A7%B8%20input%EC%9D%84%20default%20checked%20%EA%B0%92%EC%9C%BC%EB%A1%9C%20%ED%95%98%EB%8A%94%EB%B2%95.md)
 - [img 태그 이미지가 없을경우 대체이미지 생성](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/img%20%ED%83%9C%EA%B7%B8%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%97%86%EC%9D%84%EA%B2%BD%EC%9A%B0%20%EB%8C%80%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1.md)
-- [성능 최적화 분석 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
 
 ## 5. TypeScript
 
 - [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
 - [Type](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/Type.md)
 
-## 6. Git
+## 6. 성능 최적화
+
+- [성능 최적화 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
+- [이미지 사이즈 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
+
+## 7. Git
 
 - [Git 명령어](https://github.com/Alex-Eojin/-TIL/blob/master/Github/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 - [Vscode에서 마크다운 사용](https://github.com/Alex-Eojin/-TIL/blob/master/Github/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
@@ -182,7 +186,7 @@
 - [Git bash 단축표현](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/git%20bash%20%EB%8B%A8%EC%B6%95%ED%91%9C%ED%98%84.md)
 - [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
 
-## 7. 알고리즘
+## 8. 알고리즘
 
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 - [28가지 알고리즘 문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/28%EA%B0%80%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
@@ -201,7 +205,7 @@
 - [프로그래머스 1단계](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4%EB%A7%8C%EB%93%A4%EA%B8%B0%20%2C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 
-## 8. 네트워크
+## 9. 네트워크
 
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/Cookie.md)
 - [캐시 기본 동작](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%BA%90%EC%8B%9C%20%EA%B8%B0%EB%B3%B8%20%EB%8F%99%EC%9E%91.md)
@@ -227,7 +231,7 @@
 - [Transport 계층 TCP / UDP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/TCP%2C%20UDP.md)
 - [HTTP 상태 코드](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%EC%83%81%ED%83%9C%20%EC%BD%94%EB%93%9C.md)
 
-## 9. 웹 지식
+## 10. 웹 지식
 
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/WebP.md)
@@ -236,7 +240,7 @@
 - [SEO 개념 및 향상방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%ED%96%A5%EC%83%81%EB%B0%A9%EB%B2%95.md)
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 
-## 10. Tool
+## 11. Tool
 
 - [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
@@ -257,17 +261,17 @@
 - [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
 - [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
 
-## 11. koa
+## 12. koa
 
 - [koa기본](https://github.com/Alex-Eojin/-TIL/blob/master/koa/koa%20%EA%B8%B0%EB%B3%B8.md)
 
-## 12. 데이터 베이스
+## 13. 데이터 베이스
 
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
 - [SQL](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/SQL%EB%AC%B8.md)
 - [Constraint : 제약조건](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/Constraint%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.md)
 
-## 12. 프론트엔드 면접 질문
+## 14. 프론트엔드 면접 질문
 
 - [프론트엔드 인성면접 질문](https://github.com/Alex-Eojin/-TIL/blob/master/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%A9%B4%EC%A0%91%EC%A7%88%EB%AC%B8/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EC%9D%B8%EC%84%B1%EB%A9%B4%EC%A0%91%20%EC%A7%88%EB%AC%B8.md)
