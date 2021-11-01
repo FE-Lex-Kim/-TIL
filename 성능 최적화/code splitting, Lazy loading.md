@@ -173,6 +173,58 @@ export default App;
 
 <br>
 
+### code splitting 적용할때
+
+<br>
+
+**A페이지 진입시**
+
+![code splitting, Lazy loading](./../Images/code%20splitting,%20Lazy%20loading/code%20splitting,%20Lazy%20loading-3.png)
+
+<br>
+
+**A 페이지에서 B 페이지로 진입시**
+
+![code splitting, Lazy loading](./../Images/code%20splitting,%20Lazy%20loading/code%20splitting,%20Lazy%20loading-4.png)
+
+<br>
+
+A페이지와 B페이지를 따로 code splitting을 진행한후
+
+network 패널에서 js를 요청한것을 본것이다.
+
+<br>
+
+A페이지에서 B페이지로 진입시 **1.chunk.js**와 **4.chunk.js**가 새롭게 다시 생겼다.
+
+A페이지와 B페이지가 따로 코드가 번들링 되어있어,
+
+B페이지로 접근했을때, B페이지인 **1.chunk.js**와 **4.chunk.js을 요청했다.**
+
+<br>
+
+### code splitting 적용 하지 않았을때
+
+<br>
+
+A페이지
+
+![code splitting, Lazy loading](./../Images/code%20splitting,%20Lazy%20loading/code%20splitting,%20Lazy%20loading-5.png)
+
+<br>
+
+A페이지에서 B페이지로 접근시
+
+![code splitting, Lazy loading](./../Images/code%20splitting,%20Lazy%20loading/code%20splitting,%20Lazy%20loading-6.png)
+
+<br>
+
+A페이지와 B페이지로 접근시 network 패널에 변화는없다.
+
+모든 페이지를 한번에 번들링한후 최초렌더링시 한번에 받아오기 때문이다.
+
+<br>
+
 ### Suspense
 
 React.lazy를 사용하면 Suspense 컴포넌트를 사용하라고 에러메세지가 나온다.
