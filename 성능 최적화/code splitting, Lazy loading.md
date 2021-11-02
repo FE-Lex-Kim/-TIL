@@ -173,6 +173,52 @@ export default App;
 
 <br>
 
+예제코드 2)
+
+```jsx
+import React, { lazy, useState } from "react";
+import { Suspense } from "react";
+// import ImageModal from "./components/ImageModal";
+
+const LazyImageModal = lazy(() => import("./components/ImageModal"));
+
+function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <div className="App">
+      <Suspense fallback={null}>
+        {showModal ? (
+          <LazyImageModal
+            closeModal={() => {
+              setShowModal(false);
+            }}
+          />
+        ) : null}
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
+<br>
+
+위의 예제는 showModal의 값이 true일때 LazyImageModal 컴포넌트가 생기는 코드이다.
+
+이렇게 조건에 따라서 Lazy Loading도 가능하다.
+
+만약 LazyImageModal 컴포넌트의 사이즈가 크다면 이렇게 lazy loading 하는것은 성능에 큰 도움이 될것이다.
+
+<br>
+
+이렇게 단순히 라우팅할때만 lazy Loading을 하는 것이 아니라
+
+Modal과 같은 특정 이벤트가 발생할때도 가능하다.
+
+<br>
+
 ### code splitting 적용할때
 
 <br>
