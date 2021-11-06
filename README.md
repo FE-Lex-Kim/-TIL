@@ -179,6 +179,7 @@
 - [code splitting, Lazy loading](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/code%20splitting%2C%20Lazy%20loading.md)
 - [Text Compression 텍스트 압축](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Text%20Compression%20%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%95%95%EC%B6%95.md)
 - [Reflow, Repaint](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Reflow%2C%20Repaint.md)
+- [컴포넌트 Preloading](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20Preloading.md)
 
 ## 7. Git
 
