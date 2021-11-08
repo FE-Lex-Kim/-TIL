@@ -182,6 +182,7 @@
 - [Reflow, Repaint](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Reflow%2C%20Repaint.md)
 - [컴포넌트 Preloading](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20Preloading.md)
 - [이미지 preloading](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%9D%B4%EB%AF%B8%EC%A7%80%20preloading.md)
+- [이미지 동적 로딩 with intersection observer](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%8F%99%EC%A0%81%20%EB%A1%9C%EB%94%A9%20with%20intersection%20observer.md)
 
 ## 7. Git
 
