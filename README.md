@@ -173,6 +173,7 @@
 ## 6. 성능 최적화
 
 - [성능 최적화 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
+- [Chrome Performance 패널](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Chrome%20Performance%20%ED%8C%A8%EB%84%90.md)
 - [이미지 사이즈 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 - [Chrome Performance 패널로 bottleneck 현상 분석](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Chrome%20Performance%20%ED%8C%A8%EB%84%90%EB%A1%9C%20%20bottleneck%20%ED%98%84%EC%83%81%20%EB%B6%84%EC%84%9D.md)
 - [webpack bundle analyzer, cra-bundle-analyzer](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/webpack%20bundle%20analyzer%2C%20cra-bundle-analyzer.md)
