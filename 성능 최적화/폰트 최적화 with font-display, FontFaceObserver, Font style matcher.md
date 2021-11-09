@@ -90,7 +90,7 @@ auto는 브라우저의 기본 동작이다.
 
 ### block
 
-![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-2.gif)
+![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-2.png)
 
 이미지 출처 : [https://d2.naver.com/helloworld/4969726](https://d2.naver.com/helloworld/4969726)
 
@@ -116,7 +116,7 @@ blcok 옵션은 FOIT와 비슷하게 동작한다.
 
 ### swap
 
-![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-3.gif)
+![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-3.png)
 
 이미지 출처 : [https://d2.naver.com/helloworld/4969726](https://d2.naver.com/helloworld/4969726)
 
@@ -161,7 +161,7 @@ fallback 옵션과 비슷하게 동작한다.
 
 <br>
 
-![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-4.gif)
+![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-4.png)
 
 <br>
 
@@ -302,7 +302,7 @@ FOUT의 단점은 기존 폰트를 적용하기 때문에 **레이아웃이 깨�
 
 <br>
 
-![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-5.gif)
+![font-display, FontFaceObserver, **Font style matcher](./../Images/font-display,%20FontFaceObserver,%20Font%20style%20matcher/font-display,%20FontFaceObserver,%20Font%20style%20matcher-5.png)
 
 <br>
 
