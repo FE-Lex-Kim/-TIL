@@ -186,6 +186,7 @@
 - [이미지 사이즈 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%82%AC%EC%9D%B4%EC%A6%88%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 - [폰트 렌더링 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%ED%8F%B0%ED%8A%B8%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 - [폰트 사이즈 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%ED%8F%B0%ED%8A%B8%20%EC%82%AC%EC%9D%B4%EC%A6%88%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
+- [폰트 Preload](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%ED%8F%B0%ED%8A%B8%20Preload.md)
 
 ## 7. Git
 
