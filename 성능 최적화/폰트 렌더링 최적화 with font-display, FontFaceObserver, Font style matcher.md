@@ -1,4 +1,4 @@
-# 폰트 최적화 with font-display, FontFaceObserver, **Font style matcher**
+# 폰트 렌더링 최적화 with font-display, FontFaceObserver, Font style matcher
 
 <br>
 
