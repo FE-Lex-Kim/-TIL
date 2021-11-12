@@ -74,7 +74,7 @@ Dev에서만 사용하기위해서 -D flag을 적용했다.
 
 예시
 
-```json
+```bash
 purgecss --css css/app.css css/palette.css --content src/index.html
 ```
 
@@ -86,7 +86,7 @@ css/app.css, css/palette.css 파일을 분석한다.
 
 **구체적으로 분석할 파일을 - -content 뒤에 적어준다. 예를들어 html, js 파일을 넣어준다.**
 
-```json
+```bash
 purgecss --css css/app.css --content src/index.html src/**/*.js
 ```
 
@@ -104,7 +104,7 @@ default 값으로는 console에서 결과가 보여진다.
 
 <br>
 
-```json
+```bash
 purgecss --css css/app.css --content src/index.html "src/**/*.js" --output build/css/
 ```
 
@@ -118,7 +118,7 @@ build/css/ 폴더에 css파일을 생성 또는 덮어씌워준다.
 
 <br>
 
-```json
+```bash
 purgecss --config ./purgecss.config.js
 ```
 
@@ -132,7 +132,7 @@ purgecss --config ./purgecss.config.js
 
 <br>
 
-```json
+```bash
 "purge": "purgecss --css ./build/static/css/*.css --content ./build/index.html ./build/static/js/*.js --output ./build/static/css/"
 ```
 
