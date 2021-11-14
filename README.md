@@ -247,7 +247,11 @@
 - [Transport 계층 TCP / UDP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/TCP%2C%20UDP.md)
 - [HTTP 상태 코드](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%EC%83%81%ED%83%9C%20%EC%BD%94%EB%93%9C.md)
 
-## 10. 웹 지식
+## 10. 운영체제
+
+- [가상 메모리](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/%EA%B0%80%EC%83%81%20%EB%A9%94%EB%AA%A8%EB%A6%AC.md)
+
+## 11. 웹 지식
 
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/WebP.md)
@@ -256,7 +260,7 @@
 - [SEO 개념 및 향상방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%ED%96%A5%EC%83%81%EB%B0%A9%EB%B2%95.md)
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 
-## 11. Tool
+## 12. Tool
 
 - [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
@@ -277,17 +281,17 @@
 - [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
 - [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
 
-## 12. koa
+## 13. koa
 
 - [koa기본](https://github.com/Alex-Eojin/-TIL/blob/master/koa/koa%20%EA%B8%B0%EB%B3%B8.md)
 
-## 13. 데이터 베이스
+## 14. 데이터 베이스
 
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
 - [SQL](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/SQL%EB%AC%B8.md)
 - [Constraint : 제약조건](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/Constraint%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.md)
 
-## 14. 프론트엔드 면접 질문
+## 15. 프론트엔드 면접 질문
 
 - [프론트엔드 인성면접 질문](https://github.com/Alex-Eojin/-TIL/blob/master/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%A9%B4%EC%A0%91%EC%A7%88%EB%AC%B8/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EC%9D%B8%EC%84%B1%EB%A9%B4%EC%A0%91%20%EC%A7%88%EB%AC%B8.md)
