@@ -203,21 +203,10 @@
 ## 8. 알고리즘
 
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
-- [28가지 알고리즘 문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/28%EA%B0%80%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
-- [2016년](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/1.%202016%EB%85%84.md)
-- [두 정수 사이의합](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2.%20%EB%91%90%20%EC%A0%95%EC%88%98%EC%82%AC%EC%9D%B4%EC%9D%98%20%ED%95%A9.md)
-- [제어문 연습 문제](https://github.com/Alex-Eojin/-TIL/blob/master/Javascript/%EC%A0%9C%EC%96%B4%EB%AC%B8%20%EC%97%B0%EC%8A%B5%20%EB%AC%B8%EC%A0%9C.md)
 - [선형검색 과 이진검색](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%98%95%EA%B2%80%EC%83%89%20%EA%B3%BC%20%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89.md)
-- [문자열 반복 예제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%B0%98%EB%B3%B5%20%EC%98%88%EC%A0%9C.md)
 - [정렬, 버블정렬](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%A0%95%EB%A0%AC%ED%99%95%EC%9D%B8%2C%EB%B2%84%EB%B8%94%20%EC%A0%95%EB%A0%AC.md)
 - [선택정렬, 삽입정렬](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC%2C%20%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC.md)
 - [배열 HOF 연습문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B0%EC%97%B4%20HOF%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
-- [두 개 뽑아서 더하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%91%90%20%EA%B0%9C%20%EB%BD%91%EC%95%84%EC%84%9C%20%EB%8D%94%ED%95%98%EA%B8%B0.md)
-- [3진법 뒤집기](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0.md)
-- [완주하지 못한 선수](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80%20%EB%AA%BB%ED%95%9C%20%EC%84%A0%EC%88%98.md)
-- [문자열 내맘대로 정렬하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%EB%A7%98%EB%8C%80%EB%A1%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0.md)
-- [프로그래머스 1단계](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4%EB%A7%8C%EB%93%A4%EA%B8%B0%20%2C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
-- [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 
 ## 9. 네트워크
 
