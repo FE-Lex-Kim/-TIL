@@ -146,6 +146,7 @@
 - [Context Hook API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
 - [redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux.md)
 - [react-redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/react-redux.md)
+- [Reselect](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Reselect.md)
 - [custom Hook으로 container 컴포넌트 대체](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/custom%20Hook%EC%9C%BC%EB%A1%9C%20container%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EB%8C%80%EC%B2%B4.md)
 - [이전 state, props 얻는 방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EC%9D%B4%EC%A0%84%20state%2C%20props%20%EC%96%BB%EB%8A%94%20%EB%B0%A9%EB%B2%95.md)
 - [redux-thunk](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-thunk.md)
