@@ -1,4 +1,4 @@
-# 이미지 동적 로딩 with intersection observer
+# 이미지 지연 로딩(Image lazy loading) with intersection observer
 
 <br>
 
