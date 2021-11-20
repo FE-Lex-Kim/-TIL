@@ -42,7 +42,7 @@
 
 <br>
 
-이러한 패턴을 사용하면 코드의 재사용성이 높아지고 정확하게 나눠서 작업을 하므로 
+이러한 패턴을 사용하면 코드의 재사용성이 높아지고 정확하게 나눠서 작업을 하므로
 
 UI를 작성할때 좀더 집중해서 할 수 있다.
 
@@ -80,10 +80,10 @@ UI를 작성할때 좀더 집중해서 할 수 있다.
 
 <br>
 
-components/Counter.js 
+components/Counter.js
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const Counter = ({ number, onIncrease, onDecrease }) => {
   return (
@@ -111,7 +111,7 @@ export default Counter;
 componets/Todos.js
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const TodosItems = ({ onToggle, onRemove }) => {
   return (
@@ -170,7 +170,7 @@ Todos안에 예시로 만들어놓은뒤 TodosItems으로 뺴놓는것이 만들
 2. 액션 생성 함수
 3. 리듀서 코드
 
-를 작성해야한다. 
+를 작성해야한다.
 
 <br>
 
@@ -221,8 +221,8 @@ Todos안에 예시로 만들어놓은뒤 TodosItems으로 뺴놓는것이 만들
 modules/counter.js
 
 ```jsx
-const INCREASE = 'counter/INCREASE';
-const DECREASE = 'counter/DECREASE';
+const INCREASE = "counter/INCREASE";
+const DECREASE = "counter/DECREASE";
 ```
 
 <br>
@@ -254,7 +254,7 @@ export라는 키워드를 사용해서 다른 파일에서 불러와 사용할 �
 본격적으로 리덕스를 사용하여 상태를 관리할때 4가지를 만들면된다.
 
 1. 액션 타입 정의
-2. 액션 생성 함수 정의 
+2. 액션 생성 함수 정의
 3. 초기 상태 생성
 4. 리듀서 함수 정의
 
@@ -270,8 +270,8 @@ modules/counter.js
 
 ```jsx
 // 액션 타입 정의
-const INCREASE = 'counter/INCREASE';
-const DECREASE = 'counter/DECREASE';
+const INCREASE = "counter/INCREASE";
+const DECREASE = "counter/DECREASE";
 
 // 액션 생성 함수
 export const increase = () => ({
@@ -324,9 +324,9 @@ default로 export 한 경우에는 다른파일에서 import 한것이 counter�
 
 ```jsx
 // 액션 타입정의
-const INSERT = 'todos/INSERT'; // 새로운 todo를 등록한다.
-const TOGGLE = 'todos/TOGGLE'; // checkbox의 true, false를 바꾼다.
-const REMOVE = 'todos/REMOVE'; // todo를 제거한다.
+const INSERT = "todos/INSERT"; // 새로운 todo를 등록한다.
+const TOGGLE = "todos/TOGGLE"; // checkbox의 true, false를 바꾼다.
+const REMOVE = "todos/REMOVE"; // todo를 제거한다.
 
 // 액션 생성함수
 let id = 1;
@@ -352,11 +352,11 @@ export const remove = (id) => ({
 
 // 초기값 정의
 const initialState = {
-  inputText: '',
+  inputText: "",
   todo: [
     {
       id: 1,
-      text: '리덕스 기초 배우기',
+      text: "리덕스 기초 배우기",
       checked: false,
     },
   ],
@@ -375,7 +375,7 @@ const todos = (state = initialState, action) => {
       return {
         ...state,
         todo: state.todo.map((todo) =>
-          todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
+          todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
         ),
       };
     case REMOVE:
@@ -428,9 +428,9 @@ modules 디렉토리에 index.js 파일을 만들어 그안에 합쳐준다.
 modules/index.js
 
 ```jsx
-import { combineReducers } from 'redux';
-import counter from './counter';
-import todos from './todos';
+import { combineReducers } from "redux";
+import counter from "./counter";
+import todos from "./todos";
 
 const rootReducer = combineReducers({
   counter,
@@ -449,7 +449,7 @@ export default rootReducer;
 <br>
 
 ```jsx
-import rootReducer from './modules'
+import rootReducer from "./modules";
 ```
 
 <br>
@@ -463,14 +463,14 @@ import rootReducer from './modules'
 src 디렉터리의 index.js에서 이루어진다.
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-import rootReducer from './modules';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createStore } from "redux";
+import rootReducer from "./modules";
+import { Provider } from "react-redux";
 
 const store = createStore(rootReducer);
 
@@ -478,7 +478,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
@@ -543,7 +543,7 @@ const store = createStore(rootReducer, composeWithDevtools());
 
 react-redux의 connect 함수를 사용하면 스토어와 연동되어진다.
 
-연동되어진다 라는 의미는 
+연동되어진다 라는 의미는
 
 1. state 상태를 props로 넘겨준다.
 2. 액션 생성함수를 props로 넘겨준다.
@@ -609,10 +609,10 @@ const mapStateToProps = (state) => ({ number: state.counter.number });
 ```jsx
 const mapDispatchToProps = (dispatch) => ({
   increase() {
-    console.log('increase');
+    console.log("increase");
   },
   decrease() {
-    console.log('decrease');
+    console.log("decrease");
   },
 });
 ```
@@ -622,10 +622,10 @@ const mapDispatchToProps = (dispatch) => ({
 containers/CounterContainer.js
 
 ```jsx
-import React from 'react';
-import { connect } from 'react-redux';
-import Counter from '../components/Counter';
-import { decrease, increase } from '../modules/counter';
+import React from "react";
+import { connect } from "react-redux";
+import Counter from "../components/Counter";
+import { decrease, increase } from "../modules/counter";
 
 const CounterContainer = ({ number, increase, decrease }) => {
   return <Counter number={number} increase={increase} decrease={decrease} />;
@@ -641,7 +641,8 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);\
+export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
+\;
 ```
 
 **주의사항!**
@@ -673,7 +674,7 @@ const mapDispatchToProps = (dispatch) =>
       increase,
       decrease,
     },
-    dispatch,
+    dispatch
   );
 ```
 
@@ -696,10 +697,10 @@ const mapDispatchToProps = { decrease, increase };
 container/TodoContainer
 
 ```jsx
-import React from 'react';
-import { connect } from 'react-redux';
-import Todos from '../components/Todos';
-import { changeInput, insertTodo, toggle, remove } from '../modules/todos';
+import React from "react";
+import { connect } from "react-redux";
+import Todos from "../components/Todos";
+import { changeInput, insertTodo, toggle, remove } from "../modules/todos";
 
 const TodosContainer = ({
   toggle,
@@ -731,7 +732,7 @@ export default connect(
     insertTodo,
     toggle,
     remove,
-  },
+  }
 )(TodosContainer);
 ```
 
@@ -740,7 +741,7 @@ export default connect(
 components/todos
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const TodosItems = ({ todo, toggle, remove }) => {
   return (
@@ -768,7 +769,7 @@ const Todos = ({
   const onSubmit = (e) => {
     e.preventDefault();
     insertTodo(inputValue);
-    changeInput('');
+    changeInput("");
   };
   return (
     <div>
@@ -896,10 +897,9 @@ export const remove = (id) => ({
 후) todos.js
 
 ```jsx
-
 export const changeInput = createAction(
   CHANGEINPUT,
-  (inputValue) => inputValue,
+  (inputValue) => inputValue
 );
 
 export const insertTodo = createAction(INSERT, (inputText) => ({
@@ -912,8 +912,8 @@ export const toggle = createAction(TOGGLE, (id) => id);
 
 export const remove = createAction(REMOVE, (id) => id);
 ```
-<br>
 
+<br>
 
 **주의사항!**
 
@@ -986,13 +986,13 @@ const counter = handleActions(
       number: state.number - 1,
     }),
   },
-  initialState,
+  initialState
 );
 ```
 
 <br>
 
-리듀서를 만들때 **handleActions()**  함수를 사용한다.
+리듀서를 만들때 **handleActions()** 함수를 사용한다.
 
 <br>
 
@@ -1022,7 +1022,7 @@ const counter = handleActions(
 
 <br>
 
-액션 생성함수는 액션에 필요한 추가 데이터를 모두 payload라는 이름으로 사용하기 때문에 
+액션 생성함수는 액션에 필요한 추가 데이터를 모두 payload라는 이름으로 사용하기 때문에
 
 **action.id, action.todo 가아니라 action.payload로 값을 조회해야한다.**
 
@@ -1047,7 +1047,7 @@ const todos = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
+          todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
         ),
       };
     case REMOVE:
@@ -1079,7 +1079,7 @@ const todos = handleActions(
     [TOGGLE]: (state, action) => ({
       ...state,
       todos: state.todos.map((todo) =>
-        todo.id === action.payload ? { ...todo, checked: !todo.checked } : todo,
+        todo.id === action.payload ? { ...todo, checked: !todo.checked } : todo
       ),
     }),
     [REMOVE]: (state, action) => ({
@@ -1087,7 +1087,7 @@ const todos = handleActions(
       todos: state.todos.filter((todo) => todo.id !== action.payload),
     }),
   },
-  initialState,
+  initialState
 );
 ```
 
@@ -1118,10 +1118,10 @@ const number = useSelector(상태 선택 함수)
 변경 전)
 
 ```jsx
-import React from 'react';
-import { connect } from 'react-redux';
-import Counter from '../components/Counter';
-import { decrease, increase } from '../modules/counter';
+import React from "react";
+import { connect } from "react-redux";
+import Counter from "../components/Counter";
+import { decrease, increase } from "../modules/counter";
 
 const CounterContainer = ({ number, increase, decrease }) => {
   return <Counter number={number} increase={increase} decrease={decrease} />;
@@ -1138,10 +1138,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
 변경 후)
 
 ```jsx
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
-import Counter from '../components/Counter';
-import { decrease, increase } from '../modules/counter';
+import React from "react";
+import { connect, useSelector } from "react-redux";
+import Counter from "../components/Counter";
+import { decrease, increase } from "../modules/counter";
 
 const CounterContainer = () => {
   const number = useSelector((state) => state.counter.number);
@@ -1158,6 +1158,74 @@ export default CounterContainer;
 <br>
 
 넘겨주는 콜백함수의 파라미터 state는 rootReducer에 의해 합쳐져 있으므로 state.counter로 시작해야한다. 그이후 반환값이 number 변수에 할당되어 Counter 컴포넌트에 props로 전달해 들어가게된다.
+
+<br>
+
+### useSelector 주의사항
+
+useSelctor을 통해 state을 여러개 반환받아 사용하고 싶을 때도 있다.
+
+```jsx
+const CounterContainer = () => {
+  const {numberOne, numberTwo, numberThree} = useSelector((state) => ({
+				state.counter.numberOne,
+				state.counter.numberTwo,
+				state.counter.numberThree,
+	}));
+
+	...
+  };
+
+```
+
+<br>
+
+리덕스 스토어를 공유하고 있는 다른 컴포넌트가 리렌더링 되었을때, **각각 스토어를 공유하고 있었던 컴포넌트들의 useSelector의 리턴 값을 체킹한다.**
+
+**useSelector의 현재 리턴 값들을 확인해서, 리렌더링 이전에 리턴했던 값과 다른지 비교한다.**
+
+**이때 얕은 비교를 수행하기 때문에,** 객체 값이 이전값과 참조값이 달라 다르다고 판단해서 **강제 리렌더링을 수행한다.**
+
+<br>
+
+해결방법은
+
+1. **각각 하나하나 state를 불러오는 방법이다.**
+
+   ```jsx
+   const CounterContainer = () => {
+     const numberOne = useSelector((state) => state.counter.numberOne);
+     const numberTwo = useSelector((state) => state.counter.numberTwo);
+     const numberThree = useSelector((state) => state.counter.numberThree);
+
+     ...
+   };
+
+   ```
+
+2. shallowEqual을 사용해서, 객체의 첫번째 deps를 비교하게 한다.
+
+   - useSelector의 두번째 인수에 그대로 넣어주면된다.
+   - 두번째 deps 부터는 비교를 하지않으니 주의!
+
+   ```jsx
+   import { shallowEqual, useSelector } from 'react-redux'
+
+   const CounterContainer = () => {
+     const {numberOne, numberTwo, numberThree} = useSelector((state) => ({
+   				state.counter.numberOne,
+   				state.counter.numberTwo,
+   				state.counter.numberThree,
+   	}), shallowEqual);
+
+   	...
+   };
+
+   ```
+
+<br>
+
+**[React-Redux 공식 홈페이지에 자세한 정보가 적혀 있다.](https://react-redux.js.org/api/hooks#equality-comparisons-and-updates)**
 
 <br>
 
@@ -1250,8 +1318,8 @@ useStore Hooks는 컴포넌트 내부에서 리덕스 스토어 객체를 직접
 
 ```jsx
 const store = useStore();
-store.dispatch({type : 'SAMEPLE'})
-store.getState()
+store.dispatch({ type: "SAMEPLE" });
+store.getState();
 ```
 
 <br>
@@ -1290,8 +1358,13 @@ export default React.memo(TodosContainer);
 4. 모듈 index.js rooteReducer생성 ⇒ `combineReducers(컴포넌트 하나인 모듈 객체)`
 5. src index.js store 등록 ⇒ `createStore(루트 리듀서)`
 6. src index.js `Provider`에 store props 등록
-7. container 디렉토리에 리액트 컴포넌트 생성  
+7. container 디렉토리에 리액트 컴포넌트 생성
 8. `connect(상태객체 반환 함수, 액션생성함수 객체)` ⇒ props로 상태, 액션 전달
 9. 리액트 컴포넌트 props 받아옴
 
+<br>
+
+참고
+
 - 이글은 책 [리액트를 다루는 기술](http://www.yes24.com/Product/Goods/78233628?OzSrank=1)을 참고하여 정리한 글입니다.
+- [https://react-redux.js.org/api/hooks](https://react-redux.js.org/api/hooks#equality-comparisons-and-updates)
