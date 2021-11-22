@@ -1,4 +1,4 @@
-# memoization in front-end
+# memoization 렌더링 성능 향상
 
 <br>
 
