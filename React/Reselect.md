@@ -193,6 +193,50 @@ const CounterContainer = () => {
 
 <br>
 
+useSelectord에 콜백함수로 넣는 이유는
+
+`useSelector(selector)`는
+
+- **Redux store에서 state을 추출해서 사용가능하게 한다.**
+- **컴포넌트가 렌더링 됬을때, atction이 dispatch 되었을때 selector가 실행되게 한다.**
+
+<br>
+
+그래서 createSelector의 반환값을 selector에 넣어서 Redux store에서 state도 불러오고 createSelector가 실행되게 한다.
+
+<br>
+
+### selector 폴더구조
+
+```jsx
+import { createSelector } from "reselect";
+
+const callCategory = (state) => state.category.category;
+const callAllPhotos = (state) => state.photos.data;
+
+export const selectPhotos = createSelector(
+  [callCategory, callAllPhotos],
+  (category, allPhotos) =>
+    category === "all"
+      ? allPhotos
+      : allPhotos.filter((photo) => photo.category === category)
+);
+```
+
+<br>
+
+![Reselect](./../Images/Reselect/Reselect-1.png)
+
+<br>
+
+위의 예제코드와 같이
+
+createSelector을 다른 컴포넌트들에서도 재사용 할 수 있게 모듈을 만든다.
+
+seletor 폴더에서 로직을 작성한뒤, 필요한 컴포넌트에서 import해서 사용한다.
+
+<br>
+
 참고
 
 - 인프런 프론트엔드 최적화 강의
