@@ -9,8 +9,8 @@ Redux의 액션 타입, 액션 생성자 함수, 리듀서의 **로직이 복잡
 그래서 예를들어
 
 - **[redux-actions](https://github.com/redux-utilities/redux-actions) 라이브러리 사용**
-- [\*\*immer](https://immerjs.github.io/immer/) 라이브러리 사용\*\*
-- [\*\*thunk middleware](https://github.com/reduxjs/redux-thunk) 사용\*\*
+- **[immer](https://immerjs.github.io/immer/) 라이브러리 사용**
+- **[thunk middleware](https://github.com/reduxjs/redux-thunk) 사용**
 
 등등 이 있다.
 
@@ -134,7 +134,7 @@ const store = configureStore({
 
 ### devTools
 
-[\*\*Redux DevTools extension](https://github.com/zalmoxisus/redux-devtools-extension) 또한 기본 옵션으로 추가되어있다.\*\*
+**[Redux DevTools extension](https://github.com/zalmoxisus/redux-devtools-extension) 또한 기본 옵션으로 추가되어있다.**
 
 ```jsx
 const store = configureStore({
@@ -221,8 +221,8 @@ export const decrease = createAction("DECREASE");
 
 Reducer에서 **액션 타입을 참조하는 방법은 두 가지가 있다.**
 
-1. `**increase.type**`
-2. `**increase.toString()**`
+1. **`increase.type`**
+2. **`increase.toString()`**
 
 두 가지 모두 액션 생성자 함수에서 **이미 정의되어 있어 사용가능하다.**
 
@@ -462,13 +462,17 @@ initialState을 createSlice에서 정의한다.
 
 reducer 마찬가지로 내부에서 정의한다.
 
+<br>
+
 **액션 타입은 createSlice name과 reducer key 가 조합되어 네이밍 된다.**
 
 - 예를 들어) 위의 예제에서는 **액션타입이** **counter/increase, counter/decrease 가 된다.**
 
-**리듀서의 key string이 액션 생성자 함수의 이름으로 자동으로 만들어진다.**
+<br>
 
-**key 이름을 createSlice.actions에서 가져와서 export 해준다.**
+**액션 생성자 함수가 리듀서의 key string 이름으로 자동으로 생성되어진다.**
+
+**액션 생성자 함수를 createSlice.actions에서 가져와서 export 해준다.**
 
 - 위의 예제에서)
 
