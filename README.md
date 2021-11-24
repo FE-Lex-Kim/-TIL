@@ -192,6 +192,7 @@
 - [사용하지 않는 CSS 제거](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20CSS%20%EC%A0%9C%EA%B1%B0.md)
 - [Layout Shift](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Layout%20Shift.md)
 - [memoization 렌더링 성능 향상](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/memoization%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%84%B1%EB%8A%A5%20%ED%96%A5%EC%83%81.md)
+- [최적화 Check List](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%B5%9C%EC%A0%81%ED%99%94%20Check%20List.md)
 
 ## 7. Git
 
