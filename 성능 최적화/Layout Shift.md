@@ -15,7 +15,7 @@
 
 ## CLS(**Cumulative Layout Shift**)
 
-![Layout Shift](./../Layout%20Shift/Layout%20Shift-1.png)
+![Layout Shift](../images/Layout%20Shift/Layout%20Shift-1.png)
 
 Cumulative Layout Shift는 페이지가 전체 완전히 로드되어 보여지기까지 기간동안 **Layout shift가 발생하는 것을 점수로 표시한것이다.**
 
@@ -25,13 +25,13 @@ Cumulative Layout Shift는 페이지가 전체 완전히 로드되어 보여지�
 
 <br>
 
-![Layout Shift](./../Layout%20Shift/Layout%20Shift-2.png)
+![Layout Shift](../images/Layout%20Shift/Layout%20Shift-2.png)
 
 이미지 출처 : [https://web.dev/i18n/ko/cls/](https://web.dev/i18n/ko/cls/)
 
 <br>
 
-![Layout Shift](./../Layout%20Shift/Layout%20Shift-3.png)
+![Layout Shift](../images/Layout%20Shift/Layout%20Shift-3.png)
 
 <br>
 
@@ -112,7 +112,7 @@ img {
 
 현재 지원하지 않는 브라우저가 있다.(2021/11/17)
 
-![Layout Shift](./../Layout%20Shift/Layout%20Shift-4.png)
+![Layout Shift](../images/Layout%20Shift/Layout%20Shift-4.png)
 
 <br>
 
