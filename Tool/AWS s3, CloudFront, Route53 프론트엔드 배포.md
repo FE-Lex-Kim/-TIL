@@ -123,7 +123,7 @@ DNS 서비스는 Domain Name System이다.
 
 ※ **Name Server을 모른다면, 애니메이션으로** 잘 설명한 동영상 하나를 보고오는 것을 **강추한다.**
 
-<iframe width="950" height="534" src="https://www.youtube.com/embed/2ZUxoi7YNgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- [Name Server 애니메이션 동영상](https://www.youtube.com/watch?v=2ZUxoi7YNgs&t=1s)
 
 <br>
 

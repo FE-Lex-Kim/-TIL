@@ -165,12 +165,7 @@
 - [map function 사용시, radio input 첫번째 input을 default checked 값으로 하는법](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/map%20function%20%EC%82%AC%EC%9A%A9%EC%8B%9C%2C%20radio%20input%20%EC%B2%AB%EB%B2%88%EC%A7%B8%20input%EC%9D%84%20default%20checked%20%EA%B0%92%EC%9C%BC%EB%A1%9C%20%ED%95%98%EB%8A%94%EB%B2%95.md)
 - [img 태그 이미지가 없을경우 대체이미지 생성](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/img%20%ED%83%9C%EA%B7%B8%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%97%86%EC%9D%84%EA%B2%BD%EC%9A%B0%20%EB%8C%80%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1.md)
 
-## 5. TypeScript
-
-- [TypeScript](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/TypeScript.md)
-- [Type](https://github.com/Alex-Eojin/-TIL/blob/master/TypeScript/Type.md)
-
-## 6. 성능 최적화
+## 5. 성능 최적화
 
 - [성능 최적화 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
 - [Chrome Performance 패널](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Chrome%20Performance%20%ED%8C%A8%EB%84%90.md)
@@ -193,6 +188,28 @@
 - [Layout Shift](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Layout%20Shift.md)
 - [memoization 렌더링 성능 향상](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/memoization%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%84%B1%EB%8A%A5%20%ED%96%A5%EC%83%81.md)
 - [최적화 Check List](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%B5%9C%EC%A0%81%ED%99%94%20Check%20List.md)
+
+## 6. Tool
+
+- [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
+- [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
+- [Prettier](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
+- [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
+- [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
+- [npm install --save-dev, --save-prod](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/--save-dev%2C%20--save-prod%20.md)
+- [터미널에서 vscode여는 방법(code . 적용 하는법)](<https://github.com/Alex-Eojin/-TIL/blob/master/Tool/%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C%20vscode%EC%97%AC%EB%8A%94%20%EB%B0%A9%EB%B2%95(code%20.%20%EC%A0%81%EC%9A%A9%20%ED%95%98%EB%8A%94%EB%B2%95).md>)
+- [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
+- [Storybook 설치](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Storybook%20%EC%84%A4%EC%B9%98.md)
+- [git issue 관리](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/git%20issue%20%EA%B4%80%EB%A6%AC.md)
+- [E325: ATTENTION 에러 처리](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/E325:%20ATTENTION%20%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
+- [Vscode Javascript 자동완성 안될때](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Vscode%20Javascript%20%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%20%EC%95%88%EB%90%A0%EB%95%8C.md)
+- [npm](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/npm.md)
+- [Jest 사용하기](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
+- [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
+- [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
+- [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
+- [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
+- [AWS s3, CloudFront, Route53 프론트엔드 배포](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/AWS%20s3%2C%20CloudFront%2C%20Route53%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%B0%B0%ED%8F%AC.md)
 
 ## 7. Git
 
@@ -253,32 +270,7 @@
 - [SEO 개념 및 향상방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%ED%96%A5%EC%83%81%EB%B0%A9%EB%B2%95.md)
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 
-## 12. Tool
-
-- [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
-- [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
-- [Prettier](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
-- [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
-- [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
-- [npm install --save-dev, --save-prod](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/--save-dev%2C%20--save-prod%20.md)
-- [터미널에서 vscode여는 방법(code . 적용 하는법)](<https://github.com/Alex-Eojin/-TIL/blob/master/Tool/%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C%20vscode%EC%97%AC%EB%8A%94%20%EB%B0%A9%EB%B2%95(code%20.%20%EC%A0%81%EC%9A%A9%20%ED%95%98%EB%8A%94%EB%B2%95).md>)
-- [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
-- [Storybook 설치](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Storybook%20%EC%84%A4%EC%B9%98.md)
-- [git issue 관리](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/git%20issue%20%EA%B4%80%EB%A6%AC.md)
-- [E325: ATTENTION 에러 처리](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/E325:%20ATTENTION%20%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
-- [Vscode Javascript 자동완성 안될때](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Vscode%20Javascript%20%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%20%EC%95%88%EB%90%A0%EB%95%8C.md)
-- [npm](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/npm.md)
-- [Jest 사용하기](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
-- [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
-- [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
-- [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
-- [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
-
-## 13. koa
-
-- [koa기본](https://github.com/Alex-Eojin/-TIL/blob/master/koa/koa%20%EA%B8%B0%EB%B3%B8.md)
-
-## 14. 데이터 베이스
+## 12. 데이터 베이스
 
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
