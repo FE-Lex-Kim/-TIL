@@ -1,4 +1,4 @@
-- [Webpack, Babel for React](#webpack-babel-for-react)
+- [Webpack, Babel 사용해서 React 개발 환경 구축](#webpack-babel-사용해서-react-개발-환경-구축)
   - [CRA 란?](#cra-란)
   - [라이브러리 설치](#라이브러리-설치)
   - [webpack.config.js](#webpackconfigjs)
@@ -16,7 +16,7 @@
   - [Development Mode, Production Mode](#development-mode-production-mode)
   - [추가](#추가)
 
-# Webpack, Babel for React
+# Webpack, Babel 사용해서 React 개발 환경 구축
 
 Webpack에 대한 기본 개념을 익혔다면, React를 사용하기 위해 적용해보자.
 
