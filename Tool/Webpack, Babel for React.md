@@ -720,8 +720,8 @@ package.json
 
 ```json
 "scripts": {
-    "start":"webpack-dev-server --mode development --open --hot",                    // webpack-dev-server, --open : 자동으로 브라우저 열어줌, --hot : hot realod 저장했을 때 자동적으로 reload 해줌
-    "build":"webpack --mode production"                                              // dist 폴더에 컴파일된 파일 다 넣어줌
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
 },
 ```
 
