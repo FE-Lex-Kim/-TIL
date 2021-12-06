@@ -173,7 +173,7 @@ export default IntervalCount;
 
 <br>
 
-![스크린샷 2021-10-14 오후 4.14.05.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c82eff6-c05b-44c5-8326-d6172f9362d8/스크린샷_2021-10-14_오후_4.14.05.png)
+![React 성능 최적화](../Images/React%20성능%20최적화/React%20성능%20최적화-1.png)
 
 <br>
 
