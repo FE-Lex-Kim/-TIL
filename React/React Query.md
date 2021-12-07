@@ -73,7 +73,7 @@ React Query가 **생겨난 배경, 실제 코드를 비교하여 유용한지 �
 
 <br>
 
-[\*\*HNPWA API](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md)를 사용해서 news을 가져오는 로직을 만들어 비교해보자.\*\*
+**[HNPWA API](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md)를 사용해서 news을 가져오는 로직을 만들어 비교해보자.**
 
 <br>
 
