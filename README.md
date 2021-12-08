@@ -145,8 +145,9 @@
 - [useCallback, React.memo 사용해서 컴포넌트 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/useCallback%2C%20React.memo.md)
 - [Custom Hook](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Custom%20Hook.md)
 - [useMemo](https://github.com/Alex-Eojin/-TIL/blob/master/React/useMemo.md)
+- [Hooks 사용한 React 성능 최적화 체크리스트 및 총정리](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 - [Context in Class Component](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20in%20Class%20Component.md)
-- [Context Hook API](https://github.com/Alex-Eojin/-TIL/blob/master/React/Context%20API.md)
+- [Context Hook API](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Context%20Hook%20API.md)
 - [redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux.md)
 - [react-redux](https://github.com/Alex-Eojin/-TIL/blob/master/React/react-redux.md)
 - [Redux toolkit](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Redux%20toolkit.md)
@@ -159,7 +160,6 @@
 - [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
 - [React Query](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query.md)
 - [React Query 튜토리얼(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
-- [Hooks 사용한 React 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94.md)
 
 ## 5. React 구현
 
