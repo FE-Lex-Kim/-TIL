@@ -161,6 +161,7 @@
 - [React Query](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query.md)
 - [React Query 튜토리얼(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
 - [React Query 튜토리얼(2) - React Query 캐시](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(2)%20-%20React%20Query%20%EC%BA%90%EC%8B%9C.md>)
+- [React Query 튜토리얼(3) - Background Refetch 옵션](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(3)%20-%20Background%20Refetch%20%EC%98%B5%EC%85%98.md>)
 
 ## 5. React 구현
 
