@@ -1,6 +1,8 @@
 - [React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출](#react-query-튜토리얼5---query-id-usequery-여러번-호출)
   - [Query Id](#query-id)
   - [useQuery 여러번 호출](#usequery-여러번-호출)
+  - [useQueries](#usequeries)
+    - [사용법](#사용법)
 
 # React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출
 
@@ -180,6 +182,110 @@ const { data: superheroes } = useQueries("superheroes", () => {
 <br>
 
 위와 같이 각각 반환되는 **data 변수 이름을 새로운 변수 이름으로 변경해 사용하면된다.**
+
+<br>
+
+## useQueries
+
+useQuery를 여러번 호출하는 방법에 대해 위에서 알아보았다.
+
+**하지만 매번 렌더시마다 실행되는 useQuery의 개수가 다르다면, Hooks 규칙에 위반된다.**
+
+- **각 컴포넌트 별로, Hooks를 관리하는 배열의 순서를 기억한다.** 하지만 만약 렌더마다 실행되는 Hooks가 다르다면, **이전 렌더때 Hooks의 배열 순서와 다르기 때문에 크게 문제가 생긴다.**
+- 만약 잘 이해가 안된다면, [**Vanilla Javascript useState**](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Vanilla%20Javascript%20useState.md) 을 만들어봐서, 동작원리를 이해하면 된다.
+
+<br>
+
+### 사용법
+
+**query에 대한 옵션 객체를 포함하고 있는 배열을 Argument(인수)로 받는다.**
+
+옵션 객체는 2가지 프로퍼티를 사용한다
+
+- queryKey
+- queryFc
+
+<br>
+
+직접 코드를 보고 이해하는게 빠르다.
+
+```jsx
+function App({ users }) {
+  const userQueries = useQueries(
+    users.map((user) => {
+      return {
+        queryKey: ["user", user.id],
+        queryFn: () => fetchUserById(user.id),
+      };
+    })
+  );
+}
+```
+
+<br>
+
+App 컴포넌트 처럼 users에 들어오는 **id의 개수가 매번 렌더 별로 다르다면, 이전 글에 배웠던 방법대로 useQuery를 여러번 직접 작성하는것은 Hooks 법칙에 위반된다.(매번 hook의 개수가 달라지므로)**
+
+따라서 위의 코드처럼 useQueries를 사용하면 된다.
+
+<br>
+
+useQueries는 **배열을 인수로 받는다.**
+
+그리고 그안에는 **query 옵션 객체를 요소로 받는다.**
+
+- **queryKey** : 불러온 데이터를 캐시에 저장할 때 사용하는, **queryKey를 설정하는 옵션이다.**
+- **queryFn** : **데이터를 불러오는 함수를 정의해준다.**
+
+<br>
+
+return으로 나오는 값은 불러온 data 정보가 각각 배열에 담겨져 나온다.
+
+![useQueries](<../Images/React%20Query%20튜토리얼(5)/React%20Query%20튜토리얼(5)-5.png>)
+
+<br>
+
+동적 useQueries를 사용하면, deps가 깊어져서 복잡하다는 느낌이든다.
+
+<br>
+
+data를 가져와서 UI를 만드는 예제코드를 보자.
+
+```jsx
+const DynamicParrelUseQuery = ({ users }) => {
+  const res = useQueries(
+    users.map((id) => ({
+      queryKey: ["superHeroes", id],
+      queryFn: () => {
+        return axios.get(`http://localhost:4000/superheroes/${id}`);
+      },
+    }))
+  );
+
+  const isLoadingArr = res.map((hero) => hero.isLoading);
+  const isLoading = isLoadingArr.some((isLoading) => isLoading);
+
+  if (isLoading) {
+    return <h2>로딩중...</h2>;
+  }
+
+  return (
+    <div>
+      {res?.map((hero) => (
+        <h2 key={hero.data.data.id}>{hero.data.data.name}</h2>
+      ))}
+    </div>
+  );
+};
+```
+
+<br>
+
+서버 data를 찾아오는 **depth가 깊어져서 복잡하다는 느낌이든다.**
+
+isLoading을 구현하는 코드 또한 따로 로직을 구현해야하므로, **약간 보일러 플레이트 및 가독성이 그리 좋지 않은 느낌이 든다.**
+
+되도록이면 useQuery를 **여러번 쓰는 방법으로 구현하는게 좋아보인다.**
 
 <br>
 
