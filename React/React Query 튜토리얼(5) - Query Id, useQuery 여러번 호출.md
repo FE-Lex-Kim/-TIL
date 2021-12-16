@@ -1,10 +1,10 @@
-- [React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출](#react-query-튜토리얼5---query-id-usequery-여러번-호출)
+- [React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출, useQueries](#react-query-튜토리얼5---query-id-usequery-여러번-호출-usequeries)
   - [Query Id](#query-id)
   - [useQuery 여러번 호출](#usequery-여러번-호출)
   - [useQueries](#usequeries)
     - [사용법](#사용법)
 
-# React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출
+# React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출, useQueries
 
 <br>
 
