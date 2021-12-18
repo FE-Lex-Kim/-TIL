@@ -159,11 +159,12 @@
 - [Redux Thunk vs Saga](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Redux%20Thunk%20vs%20Saga.md)
 - [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
 - [React Query란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query.md)
-- [React Query 튜토리얼(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
-- [React Query 튜토리얼(2) - React Query 캐시](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(2)%20-%20React%20Query%20%EC%BA%90%EC%8B%9C.md>)
-- [React Query 튜토리얼(3) - Background Refetch 옵션](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(3)%20-%20Background%20Refetch%20%EC%98%B5%EC%85%98.md>)
-- [React Query 튜토리얼(4) - 데이터 요청 함수 이벤트 핸들러 등록 , Success and Error Callback, UI를 위한 데이터 가공 옵션, Custom Query Hook](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(4)%20-%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9A%94%EC%B2%AD%20%ED%95%A8%EC%88%98%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%95%B8%EB%93%A4%EB%9F%AC%20%EB%93%B1%EB%A1%9D%20%2C%20Success%20and%20Error%20Callback%2C%20UI%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%80%EA%B3%B5%20%EC%98%B5%EC%85%98%2C%20Custom%20Query%20Hook.md>)
-- [React Query 튜토리얼(5) - Query Id, useQuery 여러번 호출, useQueries](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(5)%20-%20Query%20Id%2C%20useQuery%20%EC%97%AC%EB%9F%AC%EB%B2%88%20%ED%98%B8%EC%B6%9C.md>)
+- [React Query(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
+- [React Query(2) - React Query 캐시](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(2)%20-%20React%20Query%20%EC%BA%90%EC%8B%9C.md>)
+- [React Query(3) - Background Refetch 옵션](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(3)%20-%20Background%20Refetch%20%EC%98%B5%EC%85%98.md>)
+- [React Query(4) - 데이터 요청 함수 이벤트 핸들러 등록 , Success and Error Callback, UI를 위한 데이터 가공 옵션, Custom Query Hook](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(4)%20-%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9A%94%EC%B2%AD%20%ED%95%A8%EC%88%98%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%95%B8%EB%93%A4%EB%9F%AC%20%EB%93%B1%EB%A1%9D%20%2C%20Success%20and%20Error%20Callback%2C%20UI%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%80%EA%B3%B5%20%EC%98%B5%EC%85%98%2C%20Custom%20Query%20Hook.md>)
+- [React Query(5) - Query Id, useQuery 여러번 호출, useQueries](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(5)%20-%20Query%20Id%2C%20useQuery%20%EC%97%AC%EB%9F%AC%EB%B2%88%20%ED%98%B8%EC%B6%9C.md>)
+- [React Query (6) - Dependent Queries, Initial Query Data](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20(6)%20-%20Dependent%20Queries%2C%20Initial%20Query%20Data.md>)
 
 ## 5. React 구현
 
