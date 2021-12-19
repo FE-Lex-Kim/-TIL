@@ -1,13 +1,13 @@
 - [React Query (6) - Dependent Queries, Initial Query Data](#react-query-6---dependent-queries-initial-query-data)
-    - [Dependent Queries](#dependent-queries)
-  - [**Initial Query Data**](#initial-query-data)
+  - [Dependent Queries](#dependent-queries)
+  - [Initial Query Data](#initial-query-data)
   - [Paginated Queries](#paginated-queries)
 
 # React Query (6) - Dependent Queries, Initial Query Data
 
 <br>
 
-### Dependent Queries
+## Dependent Queries
 
 **순차적으로 실행되는 query** 대해 알아보자.
 
@@ -119,7 +119,7 @@ query devTools에는 어떻게 보이는지 알아보자.
 
 <br>
 
-## **Initial Query Data**
+## Initial Query Data
 
 캐시에 초기 데이터를 설정하는 방법이있다.
 
