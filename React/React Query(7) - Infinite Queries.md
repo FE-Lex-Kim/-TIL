@@ -4,7 +4,8 @@
     - [hasNextPage](#hasnextpage)
     - [fetchNextPage](#fetchnextpage)
     - [data](#data)
-  - [**useMutation**](#usemutation)
+  - [useMutation](#usemutation)
+  - [Query Invalidation](#query-invalidation)
 
 # React Query(7) - Infinite Queries, useMutation
 
@@ -269,7 +270,7 @@ export default InfinityQueryPage;
 
 <br>
 
-## **useMutation**
+## useMutation
 
 **useMutation은 서버 데이터를 추가, 업데이트, 삭제하는 기능으로 사용한다.**
 
@@ -348,10 +349,84 @@ export default FavoriteColor;
 - **데이터 요청 한후 서버에서, 응답한 데이터 값이다.**
 - <Image alt="Infinity Queries" src="../Images/React%20Query(7)/React%20Query(7)-6.png" width=500 />
 
+<br>
+
+## Query Invalidation
+
+**사용자가 서버 데이터를 추가하거나, 삭제, 수정한 경우, 화면에 보여지는 데이터들은 다시 변경되어야한다.**
+
+**하지만 query가 변경되지 않으므로, 강제로 다시 refetch 해주어야한다.**
+
+<br>
+
+이럴때, `queryClient.invalidateQueries(queryKey)` 을 사용하면된다.
+
+```jsx
+const { data } = useQuery("colors", fetchFavoriteColor);
+const { mutate, isLoading, isError, error } = useMutation(addFavoriteColor, {
+  onSuccess: () => {
+    queryClient.invalidateQueries(["colors"]);
+  },
+});
+
+mutate(color);
+```
+
+<br>
+
+`useMutation` 옵션 객체중 **`onSuccess`는 데이터 요청 함수가 성공했을때, 호출된다.**
+
+`queryClient.invalidateQueries(["colors"])`을 호출해서 **성공한 직후, refetch 하게 해주었다.**
+
+<br>
+
+인자로 들어가는 값은 **refetch 하고 싶은 query의 key를 넣어주면된다.**
+
+해당 query는 다시 refetch 하게된다.
+
+<br>
+
+**주의할 점은, 해당 query key를 가지고 있는 다른 query들도 모두 refetch 한다는 점이다.**
+
+```jsx
+queryClient.invalidateQueries("colors");
+
+// 아래의 두 query는 모두 refetch 되어진다.
+const res1 = useQuery("colors", addFavoriteColor);
+const res2 = useQuery(["colors", { page: 1 }], addFavoriteColor);
+```
+
+<br>
+
+**특정한 query를 구체적으로 refetch 하는 방법이 있다.**
+
+```jsx
+queryClient.invalidateQueries(["colors", { page: 1 }]);
+
+// res2 query만 refetch 되어진다.
+const res1 = useQuery("colors", addFavoriteColor);
+const res2 = useQuery(["colors", { page: 1 }], addFavoriteColor);
+```
+
+<br>
+
+**정확하게 해당 query key만 가지고 있는 query을 refetch 하는 방법도 있다.**
+
+```jsx
+queryClient.invalidateQueries("colors", { exact: true });
+
+// res2 query만 refetch 되어진다.
+const res1 = useQuery("colors", addFavoriteColor);
+const res2 = useQuery(["colors", { page: 1 }], addFavoriteColor);
+```
+
+<br>
+
 참고
 
 - [https://react-query.tanstack.com/guides/infinite-queries](https://react-query.tanstack.com/guides/infinite-queries)
 - [https://react-query.tanstack.com/reference/useInfiniteQuery#\_top](https://react-query.tanstack.com/reference/useInfiniteQuery#_top)
 - [https://react-query.tanstack.com/reference/useMutation#\_top](https://react-query.tanstack.com/reference/useMutation#_top)
+- [https://react-query.tanstack.com/guides/query-invalidation](https://react-query.tanstack.com/guides/query-invalidation)
 - [https://www.youtube.com/watch?v=s92apk05kT4&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=20](https://www.youtube.com/watch?v=s92apk05kT4&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=20)
 - [https://www.youtube.com/watch?v=NYCG1o38oEQ&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=21](https://www.youtube.com/watch?v=NYCG1o38oEQ&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=21)
