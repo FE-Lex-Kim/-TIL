@@ -1,11 +1,12 @@
-- [React Query(7) - Infinite Queries](#react-query7---infinite-queries)
+- [React Query(7) - Infinite Queries, useMutation](#react-query7---infinite-queries-usemutation)
   - [Infinite Queries](#infinite-queries)
     - [getNextPageParams](#getnextpageparams)
     - [hasNextPage](#hasnextpage)
     - [fetchNextPage](#fetchnextpage)
     - [data](#data)
+  - [**useMutation**](#usemutation)
 
-# React Query(7) - Infinite Queries
+# React Query(7) - Infinite Queries, useMutation
 
 ## Infinite Queries
 
@@ -268,8 +269,89 @@ export default InfinityQueryPage;
 
 <br>
 
+## **useMutation**
+
+**useMutation은 서버 데이터를 추가, 업데이트, 삭제하는 기능으로 사용한다.**
+
+<br>
+
+useMutation 반환 값을 통해 데이터 요청, 상태 등등.. 을 알 수 있다.
+
+```jsx
+const addFavoriteColor = (color) => {
+  return axios.post("http://localhost:4000/colors", color);
+};
+
+const FavoriteColor = () => {
+  const { mutate, isLoading, isError, error } = useMutation(addFavoriteColor);
+
+	...
+
+  function onClick() {
+    mutate(color);
+  }
+
+	...
+
+	if(isLoading){
+		return <h2>데이터 추가하는중..</h2>
+	}
+
+	if (isError) {
+    return <h2>{error.message}</h2>;
+  }
+
+  return (
+    <>
+      <div>
+				...
+        <button onClick={onClick}>추가하기</button>
+				...
+      </div>
+    </>
+  );
+};
+
+export default FavoriteColor;
+```
+
+<br>
+
+**mutate**
+
+- `useMutation(RequestDataFn)` 인자에 전달한 **데이터 요청 함수를 실행시키는 함수이다.**
+- 만약 데이터 요청 함수에 **인수를 전달하고 싶으면, mutate의 인수에 전달 하면된다.**
+
+<br>
+
+**isLoading**
+
+- useMutation **데이터 요청 함수가 진행 중** 이라면 `true`, **아니라면** `false` 값이 나온다.
+
+<br>
+
+**isError, error**
+
+- **에러가 발생한것에 따라** `isError` 이 Boolean 값으로 나온다.
+- `error`는 **에러가 발생한 정보**가 들어가 있다.
+
+<br>
+
+**isSuccess**
+
+- **성공적으로 데이터 요청을 했다면**, `true`, 아니라면 `false` 값이 나온다.
+
+<br>
+
+**data**
+
+- **데이터 요청 한후 서버에서, 응답한 데이터 값이다.**
+- <Image alt="Infinity Queries" src="../Images/React%20Query(7)/React%20Query(7)-6.png" width=500 />
+
 참고
 
 - [https://react-query.tanstack.com/guides/infinite-queries](https://react-query.tanstack.com/guides/infinite-queries)
 - [https://react-query.tanstack.com/reference/useInfiniteQuery#\_top](https://react-query.tanstack.com/reference/useInfiniteQuery#_top)
+- [https://react-query.tanstack.com/reference/useMutation#\_top](https://react-query.tanstack.com/reference/useMutation#_top)
 - [https://www.youtube.com/watch?v=s92apk05kT4&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=20](https://www.youtube.com/watch?v=s92apk05kT4&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=20)
+- [https://www.youtube.com/watch?v=NYCG1o38oEQ&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=21](https://www.youtube.com/watch?v=NYCG1o38oEQ&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=21)
