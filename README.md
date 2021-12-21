@@ -166,6 +166,7 @@
 - [React Query(5) - Query Id, useQuery 여러번 호출, useQueries](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(5)%20-%20Query%20Id%2C%20useQuery%20%EC%97%AC%EB%9F%AC%EB%B2%88%20%ED%98%B8%EC%B6%9C.md>)
 - [React Query(6) - Dependent Queries, Initial Query Data](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20(6)%20-%20Dependent%20Queries%2C%20Initial%20Query%20Data.md>)
 - [React Query(7) - Infinite Queries, useMutation, Query Invalidation, Handling Mutation Response](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(7)%20-%20Infinite%20Queries.md>)
+- [React Query(8) - Optimistic Updates, Axios Interceptor](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(8).md>)
 
 ## 5. React 구현
 
