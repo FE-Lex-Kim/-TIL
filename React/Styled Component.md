@@ -3,7 +3,7 @@
   - [기본 사용방법](#기본-사용방법)
   - [Props](#props)
   - [Extending Style](#extending-style)
-  - [**Overriding .attrs**](#overriding-attrs)
+  - [Overriding .attrs](#overriding-attrs)
   - [Animation](#animation)
   - [Theme](#theme)
   - [Global Style](#global-style)
@@ -178,7 +178,7 @@ const StyeldComponent = () => {
 
 <br>
 
-## **Overriding .attrs**
+## Overriding .attrs
 
 **`.attrs`를 사용하면, 기존에 있던 Component의 Attribute를 덮어씌어서 atttr을 설정 할 수 있다.**
 

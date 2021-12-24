@@ -10,7 +10,7 @@
 
 ## frontend
 
-- [좋은 프론트엔드 개발자](https://github.com/FE-Lex-Kim/-TIL/blob/master/frontEnd/%EC%A2%8B%EC%9D%80%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90.md)
+- [실력있는 프론트엔드 개발자](https://github.com/FE-Lex-Kim/-TIL/blob/master/frontEnd/%EC%A2%8B%EC%9D%80%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90.md)
 
 <br>
 
