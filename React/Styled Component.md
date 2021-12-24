@@ -1,4 +1,16 @@
-# Styled Component
+- [Styled Components](#styled-components)
+  - [Styled Components를 사용하는 이유](#styled-components를-사용하는-이유)
+  - [기본 사용방법](#기본-사용방법)
+  - [Props](#props)
+  - [Extending Style](#extending-style)
+  - [**Overriding .attrs**](#overriding-attrs)
+  - [Animation](#animation)
+  - [Theme](#theme)
+  - [Global Style](#global-style)
+
+<br>
+
+# Styled Components
 
 **자바스크립트 파일안에 스타일을 선언할수있는 방식이 있다.**
 
@@ -6,13 +18,13 @@
 
 **자바스크립트 파일하나에 스타일을 작성가능하여 css파일을 따로 만들지 않아도된다.**
 
-Styled Component는 React Styling 라이브러리중에서 가장 많이 사용하고 있는 라이브러리이다.
+Styled Components는 React Styling 라이브러리중에서 가장 많이 사용하고 있는 라이브러리이다.
 
-![Styled Component](../Images/Styled%20Component/Styled%20Component-1.png)
+![Styled Components](../Images/Styled%20Component/Styled%20Component-1.png)
 
 <br>
 
-## Styled Componenet를 사용하는 이유
+## Styled Components를 사용하는 이유
 
 - styled-component는 컴포넌트가 어떤 페이지에서 렌더되었는지 지속적으로 추적하고 그에 해당하는 스타일을 적용시켜주는 것이 자동화 되어있다. **따라서 코드를 분할하고 결합해서, 최소한의 코드만을 로드하게 할 수 있게 한다.**
 - styled-component는 스타일의 class 이름이 중복되지 않게 class 이름을 유니크하게 생성한다. 따라서 **개발자는 중복, 겹침을 전혀 걱정할 일이 없어진다.**
@@ -30,7 +42,7 @@ npm install --save styled-components
 
 ## 기본 사용방법
 
-`**styled.`뒤에 태그이름을 넣어주면된다.\*\*
+**`styled.`뒤에 태그이름을 넣어주면된다.**
 
 **그리고 `styled.tag` 뒤에 tagged 템플릿 리터럴 문법을 써서 css를 정의하면된다.**
 
@@ -66,7 +78,7 @@ export default StyledComponent;
 
 <br>
 
-![Styled Component](../Images/Styled%20Component/Styled%20Component-2.png)
+![Styled Components](../Images/Styled%20Component/Styled%20Component-2.png)
 
 Styled-component의 방식은 styles 과 component의 간격을 줄여준다.
 
@@ -76,7 +88,7 @@ Styled-component의 방식은 styles 과 component의 간격을 줄여준다.
 
 ## Props
 
-**Styled Component의 중요한 장점은 props의 값을 참조해서 css에 넣어줄수도있다.**
+**Styled Components의 중요한 장점은 props의 값을 참조해서 css에 넣어줄수도있다.**
 
 <br>
 
@@ -168,7 +180,7 @@ const StyeldComponent = () => {
 
 ## **Overriding .attrs**
 
-`**.attrs`를 사용하면, 기존에 있던 Component의 Attribute를 덮어씌어서 atttr을 설정 할 수 있다.\*\*
+**`.attrs`를 사용하면, 기존에 있던 Component의 Attribute를 덮어씌어서 atttr을 설정 할 수 있다.**
 
 <br>
 
@@ -245,7 +257,7 @@ const Main = () => (
 )
 ```
 
-![Styled Component](../Images/styled_component_animation/ezgif.com-gif-maker.gif)
+![Styled Components](../Images/styled_component_animation/ezgif.com-gif-maker.gif)
 
 <br>
 
