@@ -220,7 +220,8 @@
 - [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
 - [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
 - [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
-- [Storybook](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
+- [Storybook(1) - Storybook이란?, Writing Stories, Story 계층, Renaming Story & Sorting Stories](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
+- [Storybook(2) - Renaming Story & Sorting Stories, Story within Story, Args, Decorators, Addons]
 - [AWS s3, CloudFront, Route53 프론트엔드 배포](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/AWS%20s3%2C%20CloudFront%2C%20Route53%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%B0%B0%ED%8F%AC.md)
 - [Webpack](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack.md)
 - [Webpack, Babel 사용해서 React 개발 환경 구축](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack%2C%20Babel%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%20React%20%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%B6%95.md)

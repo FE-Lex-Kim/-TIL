@@ -1,4 +1,13 @@
-# Storybook
+- [Storybook(1) - Storybook 이란?, Writing Stories, Story 계층 만들기, Renaming Story & Sorting Stories](#storybook1---storybook-이란-writing-stories-story-계층-만들기-renaming-story--sorting-stories)
+  - [Storybook이란?](#storybook이란)
+  - [Writing Stories](#writing-stories)
+  - [Story 계층 만들기](#story-계층-만들기)
+  - [Renaming Story & Sorting Stories](#renaming-story--sorting-stories)
+    - [Sorting Stories](#sorting-stories)
+
+<br>
+
+# Storybook(1) - Storybook 이란?, Writing Stories, Story 계층 만들기, Renaming Story & Sorting Stories
 
 <br>
 
@@ -181,7 +190,102 @@ export const tomato = () => <Button color="tomato">tomato</Button>;
 
 <br>
 
+## Renaming Story & Sorting Stories
+
+각각의 **Story들은 export해서 다른 Story에 재사용이 가능하다.**
+
+**따라서 export 변수명을 대표적인 것으로 하고 Storybook에서 보일 이름은 좀더 자세하게 이름을 정하면 좋다.**
+
+<br>
+
+**변경 전)**
+
+```jsx
+import React from "react";
+import Button from "./Button";
+
+export default {
+  title: "Form/Button",
+  component: Button,
+};
+
+export const Blue = () => <Button color="blue">Blue</Button>;
+export const Gray = () => <Button color="gray">gray</Button>;
+export const Orange = () => <Button color="orange">orange</Button>;
+export const Tomato = () => <Button color="tomato">tomato</Button>;
+```
+
+<br>
+
+**변경 후)**
+
+```jsx
+import React from "react";
+import Button from "./Button";
+
+export default {
+  title: "Form/Button",
+  component: Button,
+};
+
+export const Blue = () => <Button color="blue">Blue</Button>;
+export const Gray = () => <Button color="gray">gray</Button>;
+export const Orange = () => <Button color="orange">orange</Button>;
+export const Tomato = () => <Button color="tomato">tomato</Button>;
+
+Blue.storyName = "Button Blue";
+Gray.storyName = "Button Gray";
+Orange.storyName = "Button Orange";
+Tomato.storyName = "Button Tomato";
+```
+
+<br>
+
+`.storyName` 으로 정해주기만 하면된다.
+
+<br>
+
+### Sorting Stories
+
+기본적으로 Story들은 import하는 순서대로 정렬되어 Storybook 브라우저에 보여진다.
+
+preview.js 파일에서 options 프로퍼티를 통해 **정렬하는 방식을 다르게 할 수 있다.**
+
+<br>
+
+![Storybook](../Images/Storybook/Storybook-5.png)
+
+위와 같이 button - about 순으로 정렬되어있다.
+
+알파벳순으로 정렬해보자.
+
+<br>
+
+.storybook/preview.js
+
+```jsx
+export const parameters = {
+	 ...
+  options: {
+    storySort: {
+      method: "alphabetical", // <--- 추가된 코드
+    },
+  },
+};
+```
+
+![Storybook](../Images/Storybook/Storybook-6.png)
+
+<br>
+
+굉장히 쉽게 정렬이 가능하다.
+
+더 다양하고 자세한 정렬방식은 [**공식홈페이지**](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories)을 추천한다.
+
+<br>
+
 참고
 
 - [https://storybook.js.org/tutorials/intro-to-storybook](https://storybook.js.org/tutorials/intro-to-storybook)
+- [https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories)
 - [https://www.youtube.com/watch?v=BySFuXgG-ow&list=PLC3y8-rFHvwhC-j3x3t9la8-GQJGViDQk&index=1](https://www.youtube.com/watch?v=BySFuXgG-ow&list=PLC3y8-rFHvwhC-j3x3t9la8-GQJGViDQk&index=1)
