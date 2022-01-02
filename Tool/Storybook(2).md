@@ -6,10 +6,10 @@
     - [Backgrounds Addon](#backgrounds-addon)
     - [Controls Addon](#controls-addon)
     - [Actions Addon](#actions-addon)
-    - [Docs **Addon**](#docs-addon)
-    - [Viewport **Addon**](#viewport-addon)
-    - [Outline **Addon**](#outline-addon)
-    - [Measure **Addon**](#measure-addon)
+    - [Docs Addon](#docs-addon)
+    - [Viewport Addon](#viewport-addon)
+    - [Outline Addon](#outline-addon)
+    - [Measure Addon](#measure-addon)
 
 <br>
 
@@ -387,7 +387,8 @@ export default Button;
 [**Actions documentation**](https://storybook.js.org/docs/react/essentials/actions)
 
 <br>
-### Docs **Addon**
+
+### Docs Addon
 
 Docs 애드온은 각각의 **스토리들을 documentation** 으로 만들어준다.
 
@@ -397,7 +398,7 @@ docs는 스토리, 컴포넌트, 소스 코드, 환경 설정이 없는 버전..
 
 <br>
 
-### Viewport **Addon**
+### Viewport Addon
 
 Viewport 애드온은 **다른** **viewport로 테스트 가능하게 도와준다.**
 
@@ -407,7 +408,7 @@ Viewport 애드온은 **다른** **viewport로 테스트 가능하게 도와준�
 
 <br>
 
-### Outline **Addon**
+### Outline Addon
 
 Outline 애드온은 **모든 각각의 요소들의 CSS 레이아웃을 시각적으로 보여준다.**
 
@@ -415,7 +416,7 @@ Outline 애드온은 **모든 각각의 요소들의 CSS 레이아웃을 시각�
 
 <br>
 
-### Measure **Addon**
+### Measure Addon
 
 **Measure 애드온은 레이아웃을 검사하고 박스 모델을 시각화해준다.**
 
