@@ -6,10 +6,10 @@
     - [Backgrounds Addon](#backgrounds-addon)
     - [Controls Addon](#controls-addon)
     - [Actions Addon](#actions-addon)
-    - [Docs Addon](#docs-addon)
-    - [Viewport Addon](#viewport-addon)
-    - [Outline Addon](#outline-addon)
-    - [Measure Addon](#measure-addon)
+    - [Docs **Addon**](#docs-addon)
+    - [Viewport **Addon**](#viewport-addon)
+    - [Outline **Addon**](#outline-addon)
+    - [Measure **Addon**](#measure-addon)
 
 <br>
 
@@ -387,14 +387,41 @@ export default Button;
 [**Actions documentation**](https://storybook.js.org/docs/react/essentials/actions)
 
 <br>
+### Docs **Addon**
 
-### Docs Addon
+Docs 애드온은 각각의 **스토리들을 documentation** 으로 만들어준다.
 
-### Viewport Addon
+docs는 스토리, 컴포넌트, 소스 코드, 환경 설정이 없는 버전... 등등 다양한 정보를 포함해 보여준다.
 
-### Outline Addon
+![Storybook](<../Images/Storybook(2)/Storybook(2)-6.png>)
 
-### Measure Addon
+<br>
+
+### Viewport **Addon**
+
+Viewport 애드온은 **다른** **viewport로 테스트 가능하게 도와준다.**
+
+**반응형 디자인**을 할때 유용하다.
+
+![Storybook](<../Images/Storybook(2)/Storybook(2)-7.png>)
+
+<br>
+
+### Outline **Addon**
+
+Outline 애드온은 **모든 각각의 요소들의 CSS 레이아웃을 시각적으로 보여준다.**
+
+![Storybook](<../Images/Storybook(2)/Storybook(2)-8.png>)
+
+<br>
+
+### Measure **Addon**
+
+**Measure 애드온은 레이아웃을 검사하고 박스 모델을 시각화해준다.**
+
+선택한 요소의 margin, padding, border, width, hegiht을 px 단위로 보여준다.
+
+![Storybook](<../Images/Storybook(2)/Storybook(2)-9.png>)
 
 <br>
 
