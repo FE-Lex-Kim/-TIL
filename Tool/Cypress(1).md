@@ -2,6 +2,16 @@
   - [Writing tests](#writing-tests)
     - [예제 파일 설치](#예제-파일-설치)
     - [Test 파일 생성](#test-파일-생성)
+    - [Test 코드 작성](#test-코드-작성)
+    - [visit()](#visit)
+    - [type()](#type)
+    - [다양한 Test 메서드](#다양한-test-메서드)
+  - [예제) TodoList 테스트 코드](#예제-todolist-테스트-코드)
+  - [테스트 코드 작성 팁](#테스트-코드-작성-팁)
+    - [테스트 코드](#테스트-코드)
+    - [Element 선택](#element-선택)
+    - [**잘못된 DOM 탐색**](#잘못된-dom-탐색)
+    - [**올바른 DOM 탐색**](#올바른-dom-탐색)
 
 <br>
 
@@ -86,6 +96,230 @@ package.json
 파일을 생성한후, Cypress Test Runner은 sample.js파일이 **변경이 있는지 감시하고 자동으로 그 변경에 대해 보여준다.**
 
 ![Cypress(1)](<../Images/Cypress(1)/Cypress(1)-2.png>)
+
+<br>
+### Test 코드 작성
+
+Cypress는 Mochca가 빌트인 되어있다.
+
+Mocha 문법을 바탕으로 테스트 코드를 작성하면 된다.
+
+- **하지만 도입부의 문법은 `cy`로 시작한다.**
+- `cy` 객체안에 Cypress의 test 할 메서드들이 모두 포함되어있다.
+
+Cypress에 있는 **[문법은 공식 홈페이지](https://docs.cypress.io/api/table-of-contents) 또는 [예제를 포함한 공식 홈페이지](https://example.cypress.io/)** 에서 보는것을 추천한다.
+
+<br>
+
+**테스트 코드를 작성하고 파일을 저장하면, Cypress 브라우저에서는 자동으로 실시간으로 적용되어진다.**
+
+### visit()
+
+sample.js
+
+```jsx
+describe("My First Test", () => {
+  it("Visits the google", () => {
+    cy.visit("https://google.com");
+  });
+});
+```
+
+`cy.visit(url)`은 **테스트 하려는 페이지를 정하고 방문하는 메서드이다.**
+
+<br>
+
+`**cy.visit(url)` 은 baseUrl 이 정의가 되어있지 않으면, 자동으로 Test 파일을 Test URL로 실행한다.\*\*
+
+- baseUrl 은 `cypress.json` 파일에서 정의할 수 있다.
+
+```jsx
+{
+  "baseUrl": "http://localhost:3000"
+}
+// 이제 '/' 을 기준으로 api 주소 작성이 가능하다.
+```
+
+<br>
+
+아래의 코드에서
+
+1. 첫 번째 테스트 코드는 `/` 인 **baseUrl을 방문하고,**
+2. 두 번째 테스트 코드는 **baseUrl을 기준으로 경로를 판단해 방문한다.**
+
+```jsx
+it("visits base url", () => {
+  cy.visit("/");
+  cy.contains("h1", "Kitchen Sink");
+});
+it("visits file", () => {
+  cy.visit("app/index.html");
+  cy.contains("local file");
+});
+```
+
+<br>
+
+Cypress에서 표적지 모양을 클릭하면, 마우스 커서로 **어떤 엘리멘트를 얻을 것인지 알 수 있다.**
+
+![Cypress](<../Images/Cypress(1)/Cypress(1)-3.png>)
+
+<br>
+
+### type()
+
+구글 Input이 Element class가 `**.gLFyf` 이라는 것을 알 수 있다.\*\*
+
+```jsx
+/// <reference types="cypress" />
+
+describe("My First Test", () => {
+  it("Visits the google", () => {
+    cy.visit("https://google.com");
+    cy.get(".gLFyf").type("Lex wants to be best Front-end developer."{enter});
+		// get 메서드로 Element를 얻는다.
+		// type 메서드로 Element에 기입한다.
+  });
+});
+```
+
+- `type` 메서드 인수에 특수한 `{}` 문법으로 **이벤트를 실행시킬 수 있다.**
+- 예를들어 `{enter}`, `{backspace}`, `{downarrow}` .. 등등
+- 더 많은 정보는 **[type 챕터 공식홈페이지](https://docs.cypress.io/api/commands/type#Arguments)**를 보면 알 수 있다.
+
+<br>
+
+### 다양한 Test 메서드
+
+- `cy.contains(’hello’)` : `‘hello’` 라는 text를 가진 Element를 선택한다.
+- `cy.get(’abc’).find(’li’)` : `‘abc’`의 자식 요소들중 `li` 을 찾아 선택한다.
+- `click()` : Element를 클릭한다.
+- `cy.wait(5000)` : 5000ms 동안 잠시 멈춘다.
+- `cy.get('abc').should(’contain’, 'Lex Kim')` : `abc` Element가 `Lex Kim` 이라는 **Text를 반드시 가지고 있는지 확인한다.**
+- `cy.get(’abc’).should(’have.class’ , 'dfg')` : `abc` Elemen가 `dfg` 라는 class를 **가지고 있는지 확인한다.**
+- `cy.get(’abc’).should(’contain’ , 'Lex Kim').and(’have.class’, ‘dfg)` : Lex Kim Text와 ‘dfg’ 클래스를 가지고 있는지 확인한다.
+
+<br>
+
+`expect`를 사용해서 익숙한 방식으로 테스트할 수 있다.
+
+```jsx
+cy.get("tbody tr:first").should(($tr) => {
+  expect($tr).to.have.class("active");
+  expect($tr).to.have.attr("href", "/users");
+});
+```
+
+<br>
+
+## 예제) TodoList 테스트 코드
+
+## 테스트 코드 작성 팁
+
+### 테스트 코드
+
+**테스트 코드를 작성할때, 어떤식으로 작성할지 정하면 좋다.**
+
+```jsx
+test('should $1', () => {
+  // Given
+  const data = $4
+
+  // When
+  const result = $3
+
+  // Then
+  expect(result).toEqual($2)
+})
+
+참고 : https://jbee.io/react/testing-2-react-testing/
+```
+
+1. 테스트 코드에 대한 **목적(test)**을 작성한다.
+2. 최종적으로 **예상하는 값(result)**을 작성한다.
+3. 예상하는 값을 어떠한 **조건(expect)**으로 검증할지 작성한다.
+4. expect를 하기위한 그 이전의 가정을 작성한다.
+
+<br>
+
+- **data는 playload, mocking state** 등등 이 될 수 있다.
+- **result**는 data를 기반으로 **어떠한 행동을 취해서 검증해야 하는 값이 온다.**
+- 대부분 **`toEqual`로 작성하지만 `tobe`, `tobeFalsy`.. 등등이 될 수 있다.**
+
+<br>
+
+### Element 선택
+
+<br>
+
+### **잘못된 DOM 탐색**
+
+**시각적 테스트를 위한 Class와 CSS를 위한 Class를 구분해야한다.**
+
+→ **DOM 탐색을 할때,** Class 이름이 **시각적 표현을 위한 클래스 명을 사용하면 안된다.**
+
+→ **시각적인 요소를 변경하기 위해 수정했을때, 테스트 코드도 오류가 생긴다.**
+
+![Cypress](https://github.com/FE-Lex-Kim/-TIL/raw/master/Images/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD-2.png)
+
+<br>
+
+### **올바른 DOM 탐색**
+
+→ **기능만을 위한 의미있는 클래스명을 사용해야한다.**
+
+→ 테스트를 위한 **별도의 속성값 사용한다.**
+
+![Cypress](https://github.com/FE-Lex-Kim/-TIL/raw/master/Images/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD-3.png)
+
+→ `getByTestID`를 사용해야한다.
+
+<br>
+
+![https://github.com/FE-Lex-Kim/-TIL/raw/master/Images/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD-4.png](https://github.com/FE-Lex-Kim/-TIL/raw/master/Images/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD-4.png)
+
+시각적 요소와 상관없이 **테스트 요소를 항상 변함없이 선택가능하다.**
+
+<br>
+
+`**data-cy` 형식으로 attribute를 정해서 Element를 선택하는게 좋다.\*\*
+
+```jsx
+<button class="btn btn-large" data-cy="submit">
+  Submit
+</button>
+```
+
+```jsx
+cy.get("[data-cy=submit]");
+```
+
+<br>
+
+배포시 data-cy를 제거하는게 성능에 좋을 수도 있다.
+
+아래 플러그인을 사용하면된다.
+
+```bash
+npm install --save-dev babel-plugin-react-remove-properties
+```
+
+```json
+{
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "react-remove-properties",
+          {
+            "properties": ["data-cy"]
+          }
+        ]
+      ]
+    }
+  }
+}
+```
 
 <br>
 
