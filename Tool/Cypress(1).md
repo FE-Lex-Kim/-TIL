@@ -1,21 +1,22 @@
-- [Cypress(1) - Cypress 시작하기](#cypress1---cypress-시작하기)
+- [Cypress - 사용하기](#cypress---사용하기)
   - [Writing tests](#writing-tests)
     - [예제 파일 설치](#예제-파일-설치)
     - [Test 파일 생성](#test-파일-생성)
     - [Test 코드 작성](#test-코드-작성)
     - [visit()](#visit)
     - [type()](#type)
-    - [다양한 Test 메서드](#다양한-test-메서드)
+  - [다양한 Test 메서드](#다양한-test-메서드)
+    - [Test 코드 데이터 요청 방법](#test-코드-데이터-요청-방법)
   - [예제) TodoList 테스트 코드](#예제-todolist-테스트-코드)
   - [테스트 코드 작성 팁](#테스트-코드-작성-팁)
     - [테스트 코드](#테스트-코드)
     - [Element 선택](#element-선택)
-    - [**잘못된 DOM 탐색**](#잘못된-dom-탐색)
-    - [**올바른 DOM 탐색**](#올바른-dom-탐색)
+    - [잘못된 DOM 탐색](#잘못된-dom-탐색)
+    - [올바른 DOM 탐색](#올바른-dom-탐색)
 
 <br>
 
-# Cypress(1) - Cypress 시작하기
+# Cypress - 사용하기
 
 설치
 
@@ -189,7 +190,7 @@ describe("My First Test", () => {
 
 <br>
 
-### 다양한 Test 메서드
+## 다양한 Test 메서드
 
 - `cy.contains(’hello’)` : `‘hello’` 라는 text를 가진 Element를 선택한다.
 - `cy.get(’abc’).find(’li’)` : `‘abc’`의 자식 요소들중 `li` 을 찾아 선택한다.
@@ -212,7 +213,122 @@ cy.get("tbody tr:first").should(($tr) => {
 
 <br>
 
+### Test 코드 데이터 요청 방법
+
+```jsx
+cy.request("POST", "/test/seed/post", {
+  title: "First Post",
+  authorId: 1,
+  body: "...",
+});
+```
+
+<br>
+
 ## 예제) TodoList 테스트 코드
+
+TodoList.js
+
+```jsx
+const TodoList = () => {
+  const [list, setList] = useState([
+    "Cypress 공부하기",
+    "React Query 공부하기",
+    "Webpack 공부하기",
+  ]);
+  const [value, setValue] = useState("");
+
+  function onChange(e) {
+    setValue(e.target.value);
+  }
+
+  function onEnterAdd(e) {
+    if (value === "") return;
+    if (e.key === "Enter") {
+      setList([...list, value]);
+      setValue("");
+    }
+  }
+  function onClickAdd() {
+    if (value === "") return;
+    setList([...list, value]);
+    setValue("");
+  }
+
+  function onDelete(e) {
+    const id = e.target.parentNode.dataset.id;
+    const last = list.filter((todo, i) => i !== +id);
+    setList(last);
+  }
+
+  return (
+    <Container>
+      <H1>Todo List</H1>
+      <InputContainer>
+        <Input
+          data-cy="input"
+          value={value}
+          onChange={onChange}
+          onKeyDown={onEnterAdd}
+        />
+        <Button onClick={onClickAdd}>추가</Button>
+      </InputContainer>
+      <CheckBoxContainer data-cy="list">
+        {list.map((todo, i) => (
+          <div key={i} data-id={i}>
+            <Checkbox type="checkbox" />
+            <List>{todo}</List>
+            <Delete onClick={onDelete}>X</Delete>
+          </div>
+        ))}
+      </CheckBoxContainer>
+    </Container>
+  );
+};
+
+export default TodoList;
+```
+
+<br>
+
+todo.spec.js
+
+```jsx
+/* eslint-disable no-undef */
+/// <reference types="cypress" />
+
+describe("Testing TodoList", () => {
+  beforeEach(() => {
+    cy.visit("/");
+  });
+  it("add a Todo", () => {
+    // 초기값
+    function dataCy(data) {
+      return cy.get(`[data-cy=${data}]`); // data-cy 함수 생성
+    }
+
+    const input = dataCy("input");
+
+    // 테스트
+    // 1. input value 입력 테스트
+    input
+      .type("Cypress 기본개념 공부")
+      .should("have.value", "Cypress 기본개념 공부"); // input value를 확인
+
+    // 2. TodoList 생성 테스트
+    input.type("{enter}"); // enter 입력
+
+    const list = dataCy("list");
+    list
+      .children()
+      .last() // 마지막 요소 찾기
+      .find("p") // 자식 요소중 p 태그인 요소 찾기
+      .should("have.text", "Cypress 기본개념 공부"); // 요소가 text을 가지고 있는지 확인
+  });
+});
+```
+
+![Cypress](<../Images/Cypress(1)/Cypress(1)-4.png>)
 
 ## 테스트 코드 작성 팁
 
@@ -252,7 +368,7 @@ test('should $1', () => {
 
 <br>
 
-### **잘못된 DOM 탐색**
+### 잘못된 DOM 탐색
 
 **시각적 테스트를 위한 Class와 CSS를 위한 Class를 구분해야한다.**
 
@@ -264,7 +380,7 @@ test('should $1', () => {
 
 <br>
 
-### **올바른 DOM 탐색**
+### 올바른 DOM 탐색
 
 → **기능만을 위한 의미있는 클래스명을 사용해야한다.**
 
@@ -290,8 +406,15 @@ test('should $1', () => {
 </button>
 ```
 
+<br>
+
 ```jsx
-cy.get("[data-cy=submit]");
+function dataCy(data) {
+  return cy.get(`[data-cy=${data}]`);
+}
+
+const input = dataCy("input");
+const list = dataCy("list");
 ```
 
 <br>
