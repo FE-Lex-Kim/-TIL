@@ -83,11 +83,24 @@ Route 컴포넌트를 사용하여 현재 경로에 따라 다른 컴포넌트�
 
 <br>
 
-사용방식
+사용방식(**V6이전 버전에만 해당 이제는 Error가 발생한다.**)
 
 ```jsx
 import { Route, Link } from 'react-router-dom';
 <Route path='주소규칙' component={보여줄 컴포넌트} />
+```
+
+<br>
+
+**사용버전(V6버전 부터, 현재 방법을 사용하면 된다.)**
+
+```jsx
+import { Route, Link } from "react-router-dom";
+import Alex from "./people";
+
+<Routes>
+  <Route path="주소규칙" element={<Alex />} />
+</Routes>;
 ```
 
 <br>
@@ -106,8 +119,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/About" component={About} />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
       </div>
     );
   }
@@ -161,8 +176,10 @@ class App extends Component {
             <Link to="/About">소개</Link>
           </li>
         </ul>
-        <Route path="/" exact component={Home} />
-        <Route path="/About" component={About} />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
       </div>
     );
   }
@@ -178,8 +195,10 @@ export default App;
 <br>
 
 ```jsx
-<Route path="/About" component={About} />
-<Route path="/info" component={About} />
+<Routes>
+  <Route path="/About" element={<About />} />
+  <Route path="/info" element={<About />} />
+</Routes>
 ```
 
 여러개의 path에 같은 컴포넌트를 보여주고 싶을떄는 각각 Route 컴포넌트를 만들어야했다.
@@ -189,7 +208,9 @@ export default App;
 이렇게 사용하는 대신에 path props를 배열로 설정해주면 여러 경로에서 같은 컴포넌트를 보여줄 수 있다.
 
 ```jsx
-<Route path={["/about", "/info"]} component={About} />
+<Routes>
+  <Route path={["/about", "/info"]} element={<About />} />
+</Routes>
 ```
 
 <br>
@@ -284,7 +305,7 @@ URL파라미터를 사용할때는 라우터로 사용되는 컴포넌트에서 
 `/profile/:username` 이라고 path에 넣어주면 match.params.username 값을 통해 현재 username값을 조회할수있다.
 
 ```jsx
-<Route path="/profiles/:username" component={profiles} />
+<Route path="/profiles/:username" element={profiles} />
 ```
 
 <br>
@@ -364,10 +385,10 @@ export default About;
 
 컴포넌트 안에 라우트를 더 적어주기만 하면된다.
 
-```bash
-import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import profile from './profile';
+```jsx
+import React from "react";
+import { Route, Link } from "react-router-dom";
+import Profile from "./profile";
 
 const profiles = () => {
   return (
@@ -381,12 +402,14 @@ const profiles = () => {
           <Link to="/profiles/James">James</Link>
         </li>
       </ul>
-      <Route
-        path="/profiles"
-        exact
-        render={() => <div>사용자를 선택해 주세요</div>}
-      />
-      <Route path="/profiles/:username" component={profile} />
+      <Routes>
+        <Route
+          path="/profiles"
+          exact
+          render={() => <div>사용자를 선택해 주세요</div>}
+        />
+        <Route path="/profiles/:username" element={<Profile />} />
+      </Routes>
     </div>
   );
 };
@@ -487,10 +510,12 @@ class App extends Component {
             <Link to="/history">history 예제</Link>
           </li>
         </ul>
-        <Route path="/" exact component={Home} />
-        <Route path={["/about", "/info"]} component={About} />
-        <Route path="/profiles" component={profiles} />
-        <Route path="/history" component={HistorySample} />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path={["/about", "/info"]} element={<About />} />
+          <Route path="/profiles" element={<Profiles />} />
+          <Route path="/history" element={<HistorySample />} />
+        </Routes>
       </div>
     );
   }
