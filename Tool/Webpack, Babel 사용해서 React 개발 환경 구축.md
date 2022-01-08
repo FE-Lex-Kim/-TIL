@@ -14,6 +14,7 @@
     - [mini-css-extract-plugin](#mini-css-extract-plugin)
   - [개발 서버](#개발-서버)
   - [Development Mode, Production Mode](#development-mode-production-mode)
+  - [정리](#정리)
   - [추가](#추가)
 
 # Webpack, Babel 사용해서 React 개발 환경 구축
@@ -441,7 +442,13 @@ module.exports = {
 
 **브라우저의 상위 버전 두개와 한국(KR)에서 5% 이상의 점유율을 가지고 있는 브라우저에 대응하여 컴파일되도록 설정 했다.**
 
+**모든 브라우저를 지원하면 babel이 느려지게 된다.**
+
+따라서 서비스 시, **지원하려는 브라우저를 정하고 그에 알맞은 조건으로 넣어준다.**
+
 <br>
+
+※ **브라우저 조건** 쉽게 알 수 있게 하는 [**browserslist 사이트**](https://github.com/browserslist/browserslist#full-list)를 보면 참고하기 쉽다.
 
 **※ babel/preset-env의 여러 옵션은 [Babel 공식 홈페이지의 해당 챕터](https://babeljs.io/docs/en/babel-preset-env#targets)를 추천한다.**
 
@@ -734,10 +741,86 @@ package.json
 
 <br>
 
+## 정리
+
+<br>
+
+1.  src, public 폴더, indext.html 파일 생성
+2.  npm init
+3.  `npm i react react-dom`
+4.  `npm i -D webpack webpack-cli webpack-dev-server`
+5.  webpack.config.js 생성
+
+    ```jsx
+    const path = require("path");
+    const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+    module.exports = {
+      entry: "./src/index.js",
+      mode: "development",
+      module: {
+        rules: [
+          {
+            test: /\.html$/,
+            use: [
+              {
+                loader: "html-loader",
+                options: { minimize: true },
+              },
+            ],
+          },
+          {
+            test: /\.(js|jsx)$/,
+            exclude: "/node_modules",
+            use: ["babel-loader"],
+          },
+        ],
+      },
+      plugins: [
+        new HtmlWebPackPlugin({
+          template: "./public/index.html",
+          filename: "index.html",
+        }),
+      ],
+      output: {
+        filename: "main.js",
+        path: path.join(__dirname, "/dist"),
+      },
+    };
+    ```
+
+6.  `npm i -D html-webpack-plugin html-loader`
+7.  `npm i -D babel-loader @babel/core @babel/preset-react @babel/preset-env`
+8.  .babelrc 파일 생성
+
+    ```json
+    {
+      "presets": [
+        ["@babel/preset-env", { "targets": { "browsers": [">= 5% in KR"] } }],
+        "@babel/react"
+      ]
+    }
+    ```
+
+9.  package.json scripts 수정
+
+    ```jsx
+    "scripts" : {
+    	"start": "webpack-dev-server --hot",
+    	"build": "webpack"
+    }
+    ```
+
+10. jsconfig.json 파일 생성
+    `json { "compilerOptions": { "target": "es6" } } `
+
+<br>
+
 ## 추가
 
 - 다른 라이브러리 사용시 추가적으로 웹팩 설정을 해야한다.
 - CRA도 버전을 거치면서 발전해와서, 좋은 보일러 플레이트로 현업에서도 사용하는 경우가 있다고 한다.
+- **위의 방법이 공식이 아니라 만약 Webpack을 사용하면서 에러가 많이 발생할텐데, 그럴때마다 그에 따른 에러를 해결하는 방식으로 loader, plugins을 설치하면된다.**
 
 <br>
 
