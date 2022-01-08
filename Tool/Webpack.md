@@ -127,13 +127,15 @@ entry로 찾은 모듈들을 번들하고 만든 **결과물을 반환할 위치
 **webpack.config.js**
 
 ```jsx
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./path/to/my/entry/file.js",
+  entry: {
+		app: './src/app.js',
+	}
   output: {
-    path: "./dist",
-    filename: "[name]-my-first-webpack.bundle.js",
+    path: './dist',
+    filename: '[name]-my-first-webpack.bundle.js',
   },
 };
 ```

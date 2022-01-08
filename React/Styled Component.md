@@ -7,6 +7,7 @@
   - [Animation](#animation)
   - [Theme](#theme)
   - [Global Style](#global-style)
+  - [babel-plugin-styled-components](#babel-plugin-styled-components)
 
 <br>
 
@@ -383,7 +384,31 @@ export default App;
 
 <br>
 
+## babel-plugin-styled-components
+
+wepback 모드가 deveplop 일 경우, **브라우저에서 Element의 class 이름을 hash화 해서 디버깅이 어렵다.**
+
+위 plugin을 통해 **스타일드 컴포넌트의 이름을 해쉬 앞에 붙여준다.**
+
+<br>
+
+**설치**
+
+`npm install --save-dev babel-plugin-styled-components`
+
+.babelrc
+
+```json
+{
+  "plugins": ["babel-plugin-styled-components"]
+}
+```
+
+<br>
+
 참고
 
 - [https://styled-components.com/docs/basics](https://styled-components.com/docs/basics)
 - [https://www.youtube.com/watch?v=FSCSdAlLsYM&list=PLC3y8-rFHvwgu-G08-7ovbN9EyhF_cltM&index=1](https://www.youtube.com/watch?v=FSCSdAlLsYM&list=PLC3y8-rFHvwgu-G08-7ovbN9EyhF_cltM&index=1)
+- [https://dev-yakuza.posstree.com/ko/react/styled-components/](https://dev-yakuza.posstree.com/ko/react/styled-components/)
+- [https://blog.woolta.com/categories/1/posts/198](https://blog.woolta.com/categories/1/posts/198)
