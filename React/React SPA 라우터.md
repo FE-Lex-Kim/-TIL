@@ -1,3 +1,21 @@
+- [React SPA 라우터](#react-spa-라우터)
+  - [React의 SPA 라우팅](#react의-spa-라우팅)
+    - [리액트 라우터 설치](#리액트-라우터-설치)
+    - [**리액트 라우터를 적용하는 방법**](#리액트-라우터를-적용하는-방법)
+    - [Route 컴포넌트로 특정주소에 컴포너트 연결시켜주기](#route-컴포넌트로-특정주소에-컴포너트-연결시켜주기)
+    - [Link](#link)
+    - [Route 하나에 여러 개의 path 설정](#route-하나에-여러-개의-path-설정)
+    - [URL 파라미터와 쿼리](#url-파라미터와-쿼리)
+    - [URL 파라미터](#url-파라미터)
+    - [URL 쿼리](#url-쿼리)
+    - [서브 라우트](#서브-라우트)
+  - [리액트 라우터 부가기능](#리액트-라우터-부가기능)
+    - [history](#history)
+    - [withRouter](#withrouter)
+    - [Switch(V6에서 사라짐 대신 <Routes/> 로 변경됨)](#switchv6에서-사라짐-대신-routes-로-변경됨)
+
+<br>
+
 # React SPA 라우터
 
 <br>
@@ -629,7 +647,7 @@ export default withRouter(WithRouterSample);
 
 <br>
 
-### Switch
+### Switch(V6에서 사라짐 대신 <Routes/> 로 변경됨)
 
 Switch 컴포넌트는 여러 Route를 감싸서 그중에서 path(경로)가 일치하는 하나의 Route만을 랜더링 시켜준다.
 
