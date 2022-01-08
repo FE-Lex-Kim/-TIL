@@ -69,7 +69,7 @@ npm을 통해서도 설치할 수 있다.
 패키지 설치
 
 ```bash
-$ npm add eslint-config-prettier
+$ npm i eslint-config-prettier
 ```
 
 <br>

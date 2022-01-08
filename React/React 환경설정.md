@@ -12,7 +12,7 @@
 
 creat-react-app 을한경우 
 
-1 . `npm add eslint-config-airbnb` 을 해준다.
+1 . `npm i eslint-config-airbnb` 을 해준다.
 
 2 . package.json에서 설정을 해준다.
 
