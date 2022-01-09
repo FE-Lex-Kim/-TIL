@@ -13,6 +13,7 @@
     - [Element 선택](#element-선택)
     - [잘못된 DOM 탐색](#잘못된-dom-탐색)
     - [올바른 DOM 탐색](#올바른-dom-탐색)
+  - [**Testing Library**](#testing-library)
 
 <br>
 
@@ -43,6 +44,15 @@ node_modules/.bin/cypress open
 ```bash
 npx cypress open
 ```
+
+<br>
+
+**설치되는 폴더**
+
+- fixtures : 정적인 데이터(mock 응답 작성)
+- intergration : test 코드 작성
+- plugins : 테스트 파일에 플러그인 설정
+- support : 모든 테스트 파일마다 실행, 전체 테스트 코드에 적용가능
 
 <br>
 
@@ -443,6 +453,55 @@ npm install --save-dev babel-plugin-react-remove-properties
   }
 }
 ```
+
+<br>
+
+## **Testing Library**
+
+**[Testing Library](https://testing-library.com/docs/cypress-testing-library/intro)** 를 Cypress에서도 사용할 수 있다.
+
+**@testing-library/cypress 는 Cypress에서 DOM Elements를 보다 쉽게 찾게 해주는 쿼리들을 사용할 수 있다.**
+
+예를 들어 `findByRole`, `findByLabelText`, `findByText`, `findByTestId`
+
+<br>
+
+설치방법(처음부터 Cypress와 같이 설치하자.)
+
+```bash
+npm install --save-dev cypress @testing-library/cypress
+```
+
+<br>
+
+사용 방법은 `cy` Command에 추가로 확장시켜주어 사용한다.
+
+프로젝트의 **`cypress/support/commands.js` 파일에 아래의 코드를 넣어주면된다.**
+
+```jsx
+import "@testing-library/cypress/add-commands";
+```
+
+<br>
+
+```jsx
+cy.findByRole("button", { name: /Jackie Chan/i }).click();
+cy.findByRole("button", { name: /Button Text/i }).should("exist");
+cy.findByRole("button", { name: /Non-existing Button Text/i }).should(
+  "not.exist"
+);
+cy.findByLabelText(/Label text/i, { timeout: 7000 }).should("exist");
+
+// findByRole _inside_ a form element
+cy.get("form")
+  .findByRole("button", { name: /Button Text/i })
+  .should("exist");
+cy.findByRole("dialog").within(() => {
+  cy.findByRole("button", { name: /confirm/i });
+});
+```
+
+`findByRole`, `findByLabelText`, `findByText`, `findByTestId` 쿼리에 대한 더 자세한 정보는 **[Testing Library Query 챕터](https://testing-library.com/docs/queries/about/)** 를 추천한다.
 
 <br>
 
