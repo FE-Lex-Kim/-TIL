@@ -1,6 +1,13 @@
 - [React Query(8) - Handling Mutation Response, Optimistic Updates](#react-query8---handling-mutation-response-optimistic-updates)
   - [Handling Mutation Response](#handling-mutation-response)
   - [Optimistic Updates](#optimistic-updates)
+  - [정리](#정리)
+    - [캐시 및 refetch](#캐시-및-refetch)
+    - [캐시 상태](#캐시-상태)
+    - [옵션 객체](#옵션-객체)
+    - [다양하게 활용](#다양하게-활용)
+    - [페이지네이션, 무한스크롤](#페이지네이션-무한스크롤)
+    - [데이터 요청](#데이터-요청)
 
 <br>
 
@@ -148,6 +155,70 @@ useMutation(updateTodo, {
   },
 });
 ```
+
+<br>
+
+## 정리
+
+### 캐시 및 refetch
+
+- cache Time
+- stale Time
+- refetchOnMount
+- refetchOnWindowFocus
+- refetchInterval
+- refetchIntervalInBackground
+
+<br>
+
+### 캐시 상태
+
+- stale
+- fresh
+- disabled
+
+<br>
+
+### 옵션 객체
+
+- onSuccess
+- onError
+- select
+
+<br>
+
+### 다양하게 활용
+
+- CustomHook for React Query
+- Query Id
+- alias data
+- useQueries
+- Dependent Query
+  - enabled
+- InitialData
+
+<br>
+
+### 페이지네이션, 무한스크롤
+
+- keepPreviousData
+- useInfiniteQuery
+  - getNextPageParam
+  - hasNextPage
+  - fetchNextPage
+
+<br>
+
+### 데이터 요청
+
+- useMutation
+  - mutate
+- queryClient.InvalidateQueries()
+- queryClient.setQueryData
+- Optimistice update
+  - onMutate
+  - onError
+  - onSettled
 
 <br>
 
