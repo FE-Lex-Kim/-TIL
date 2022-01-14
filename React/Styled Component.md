@@ -8,6 +8,7 @@
   - [Theme](#theme)
   - [Global Style](#global-style)
   - [babel-plugin-styled-components](#babel-plugin-styled-components)
+  - [Styled-Components 반응형 디자인](#styled-components-반응형-디자인)
 
 <br>
 
@@ -406,9 +407,110 @@ wepback 모드가 deveplop 일 경우, **브라우저에서 Element의 class 이
 
 <br>
 
+## Styled-Components 반응형 디자인
+
+<br>
+
+CSS 미디어 쿼리 사용하는 방법을 적용하면된다.
+
+```jsx
+import React from "react";
+import styled from "styled-components";
+
+const StyledH1 = styled.h1`
+  background-color: indigo;
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+
+  @media (max-width: 360px) {
+    background-color: orange;
+  }
+  @media (min-width: 361px) and (max-width: 768px) {
+    background-color: yellow;
+  }
+`;
+
+const ResponsiveStyled = () => {
+  return <StyledH1>Hi Bixby</StyledH1>;
+};
+
+export default ResponsiveStyled;
+```
+
+<br>
+
+만약 반응형을 적용하는 Element 많다면, **아래코드를 작성하는데 시간**과 **정확한 px 값을 매번 기억해서 작성한다는 것은 비효율적이고 어렵다.**
+
+```jsx
+@media (min-width: 361px) and (max-width: 768px) {
+    background-color: yellow;
+}
+```
+
+<br>
+
+Styled-Components의 **theme에 미리 정의한뒤 사용하면**, 보다 효율적으로 작업할 수 있다.
+
+<br>
+
+theme.js
+
+```jsx
+const responsive = {
+  mobile: "(max-width: 700px)",
+  tablet: "(min-width: 701px) and (max-width: 800px)",
+  laptop: "(min-width: 801px)",
+};
+
+const defalutTheme = {
+  color,
+  margins,
+  paddings,
+  responsive,
+};
+```
+
+<br>
+
+ResponsiveStyled.js
+
+```jsx
+import React from "react";
+import styled from "styled-components";
+
+const StyledH1 = styled.h1`
+  background-color: indigo;
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+
+  @media ${(props) => props.theme.responsive.mobile} {
+    background-color: orange;
+  }
+  @media ${(props) => props.theme.responsive.tablet} {
+    background-color: red;
+  }
+`;
+
+const ResponsiveStyled = (props) => {
+  return <StyledH1>Hi Bixby</StyledH1>;
+};
+
+export default ResponsiveStyled;
+```
+
+<br>
+
 참고
 
 - [https://styled-components.com/docs/basics](https://styled-components.com/docs/basics)
 - [https://www.youtube.com/watch?v=FSCSdAlLsYM&list=PLC3y8-rFHvwgu-G08-7ovbN9EyhF_cltM&index=1](https://www.youtube.com/watch?v=FSCSdAlLsYM&list=PLC3y8-rFHvwgu-G08-7ovbN9EyhF_cltM&index=1)
 - [https://dev-yakuza.posstree.com/ko/react/styled-components/](https://dev-yakuza.posstree.com/ko/react/styled-components/)
 - [https://blog.woolta.com/categories/1/posts/198](https://blog.woolta.com/categories/1/posts/198)
+- [https://dev.to/carloscne/creating-responsive-and-adaptive-layouts-with-react-and-styled-components-1ghi](https://dev.to/carloscne/creating-responsive-and-adaptive-layouts-with-react-and-styled-components-1ghi)
+- [https://developer.mozilla.org/ko/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/ko/docs/Web/CSS/Media_Queries/Using_media_queries)
