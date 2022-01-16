@@ -57,7 +57,7 @@ SPA는 싱글페이지로서 뷰랜더링을 브라우저가 담당하고 필요
 리액트 라우터 라이브러리 설치 명령어
 
 ```bash
-npm i react-router-dom
+$ npm install react-router-dom@6
 ```
 
 <br>
