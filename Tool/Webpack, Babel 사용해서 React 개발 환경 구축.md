@@ -101,6 +101,9 @@ module.exports = {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
   },
+  resolve: {
+    extensions: [".jsx", ".js"],
+  },
   mode: "development",
 };
 ```
@@ -114,6 +117,7 @@ module.exports = {
   - `path.join` : **인자로 받은 경로들을 하나로 합쳐서** 문자열 형태로 path를 리턴한다.
     - `path.join('/foo', 'bar')` → Returns : `'/foo/bar'`
   - `(__dirname, "/dist")` : \_\_dirname은 현재 실행하는 파일의 절대경로이다. 현재 파일의 절대 경로에 `/dist`를 조합해, `/dist`에 결과물을 생성하도록한다.
+- `resolve : { extensions : ['.jsx', '.js'], }` : import로 파일을 불러올때, 파일 확장자를 생략하면 `.js` → `.jsx` 순으로 자동으로 붙여주어 사용한다.
 - `mode: "development"` : development 모드로 빌드한다.(뒤에서 자세히 나온다.)
 
 <br>
@@ -195,6 +199,9 @@ module.exports = {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
   },
+  resolve: {
+    extensions: [".jsx", ".js"],
+  },
   mode: "development",
   module: {
     rules: [
@@ -253,6 +260,9 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
+  },
+  resolve: {
+    extensions: [".jsx", ".js"],
   },
   mode: "development",
   module: {
@@ -345,6 +355,41 @@ babel-loader을 통해 babel을 불러와 @babel/core, @babel/preset-react, @bab
 
 <br>
 
+※ 추가
+
+Babel 7.4.0부터 `@babel/polyfill`은 deprecated 되었다.
+
+`@babel/plugin-transform-runtime` 추가해서 es6 폴리필 해준다.
+
+promise, 빌트인 생성자 함수 메서드 사용 가능(만약 이것을 설치하지 않는다면, es6 코드를 사용할 수 없다. 따라서 반드시 설치해야한다.)
+
+```jsx
+"plugins": [
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": 3,
+        "helpers": true,
+        "regenerator": true,
+        "version": "7.0.0-beta.0"
+      }
+    ]
+  ]
+```
+
+옵션으로 `corejs: 3` 버전으로 사용 할수 있다.
+
+아래의 바벨 플러그인을 추가해야한다.
+
+```bash
+npm install -D @babel/plugin-transform-runtime
+npm install @babel/runtime-corejs3
+```
+
+<br>
+
 ### babel-loader
 
 babel-loader을 적용해보자.
@@ -362,6 +407,9 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
+  },
+  resolve: {
+    extensions: [".jsx", ".js"],
   },
   mode: "development",
   module: {
@@ -429,11 +477,21 @@ module.exports = {
 ```json
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      { "targets": { "browsers": ["last 2 versions", ">= 5% in KR"] } }
-    ],
+    ["@babel/preset-env", { "targets": { "browsers": ["last 2 versions", ">= 5% in KR"] } }],
     "@babel/react"
+  ],
+  "plugins": [
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": 3,
+        "helpers": true,
+        "regenerator": true,
+        "version": "7.0.0-beta.0"
+      }
+    ]
   ]
 }
 ```
@@ -473,7 +531,7 @@ module.exports = {
 설치
 
 ```bash
-npm -D css-loader
+npm i -D css-loader
 ```
 
 <br>
@@ -493,6 +551,9 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
+  },
+  resolve: {
+    extensions: [".jsx", ".js"],
   },
   mode: "development",
   module: {
@@ -534,6 +595,10 @@ CSS 파일을 **css-loader을 통해 읽기만 가능하다.**
 
 **빌드 폴더에 저장할 수 있게해야한다.**
 
+```bash
+npm i -D mini-css-extract-plugin
+```
+
 <br>
 
 webpack.config.js
@@ -548,6 +613,9 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.join(__dirname, "/dist"),
+  },
+  resolve: {
+    extensions: [".jsx", ".js"],
   },
   mode: "development",
   module: {
@@ -617,7 +685,7 @@ module.exports = {
 설치
 
 ```bash
-npm -D webpack-dev-server
+npm i -D webpack-dev-server
 ```
 
 <br>
@@ -637,10 +705,15 @@ module.exports = {
   },
   devServer: {
     // <------------------------ 추가된 코드
-    contentBase: path.join("/dist"),
-    publicPath: "/dist/",
+    contentBase: path.join("/dist"), // 만약 예상대로 실행되지 않으면 이부분 삭제해주기
+    publicPath: "/dist/", // 만약 예상대로 실행되지 않으면 이부분 삭제해주기
     index: "index.html",
+    open: true,
     port: 3000,
+    hot: true,
+  },
+  resolve: {
+    extensions: [".jsx", ".js"],
   },
   mode: "development",
   module: {
@@ -681,6 +754,8 @@ module.exports = {
 
 - `contentBase: path.join("/dist")` : 서버가 로드할 **빌드 폴더의 static 파일 경로, dist 폴더를 로드한다.**
 - `publicPath: "/dist/"` : 개발 버전이라면 경로가 항상 일정해서 바로 찾아서 적용할 수 있다. 하지만 배포 버전에서는 다른 지정된 위치로 이동할 수있다. 따라서 수동으로 정해준다.
+- `open : true` : devserver를 실행하면 자동으로 브라우저를 열어준다.
+- `hot : true` : 코드가 변경되면, 감지하고 자동으로 build한다.
 - `port: 3000` : 3000번 포트를 사용한다.
 
 <br>
@@ -697,14 +772,14 @@ package.json
 
 ```json
 "scripts": {
-	"build": "webpack",
-	"start": "webpack-dev-server --hot"
+	"dev": "webpack serve --mode development",
+	"build": "webpack --mode production",
 }
 ```
 
 <br>
 
-npm start를 한다면 이제 코드가 수정됬을때, build가 알아서 진행된다.
+npm dev를 한다면 이제 코드가 수정됬을때, build가 알아서 진행된다.
 
 <br>
 
@@ -727,9 +802,9 @@ package.json
 
 ```json
 "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-},
+	"dev": "webpack serve --mode development",
+	"build": "webpack --mode production",
+}
 ```
 
 <br>
@@ -756,7 +831,12 @@ package.json
     const HtmlWebPackPlugin = require("html-webpack-plugin");
 
     module.exports = {
-      entry: "./src/index.js",
+      entry: "./src/index.jsx",
+      devServer: {
+        hot: true,
+        open: true,
+        port: 3000,
+      },
       mode: "development",
       module: {
         rules: [
@@ -770,7 +850,7 @@ package.json
             ],
           },
           {
-            test: /\.(js|jsx)$/,
+            test: /\.jsx?/,
             exclude: "/node_modules",
             use: ["babel-loader"],
           },
@@ -782,6 +862,9 @@ package.json
           filename: "index.html",
         }),
       ],
+      resolve: {
+        extensions: [".jsx", ".js"],
+      },
       output: {
         filename: "main.js",
         path: path.join(__dirname, "/dist"),
@@ -791,27 +874,41 @@ package.json
 
 6.  `npm i -D html-webpack-plugin html-loader`
 7.  `npm i -D babel-loader @babel/core @babel/preset-react @babel/preset-env`
-8.  .babelrc 파일 생성
+8.  `npm install -D @babel/plugin-transform-runtime npm install @babel/runtime-corejs3`
+9.  .babelrc 파일 생성
 
     ```json
     {
       "presets": [
-        ["@babel/preset-env", { "targets": { "browsers": [">= 5% in KR"] } }],
+        ["@babel/preset-env", { "targets": { "browsers": ["last 2 versions", ">= 5% in KR"] } }],
         "@babel/react"
+      ],
+      "plugins": [
+        "babel-plugin-styled-components",
+        [
+          "@babel/plugin-transform-runtime",
+          {
+            "absoluteRuntime": false,
+            "corejs": 3,
+            "helpers": true,
+            "regenerator": true,
+            "version": "7.0.0-beta.0"
+          }
+        ]
       ]
     }
     ```
 
-9.  package.json scripts 수정
+10. package.json scripts 수정
 
     ```jsx
-    "scripts" : {
-    	"start": "webpack-dev-server --hot",
-    	"build": "webpack"
+    "scripts": {
+    	"dev": "webpack serve --mode development",
+    	"build": "webpack --mode production",
     }
     ```
 
-10. jsconfig.json 파일 생성
+11. jsconfig.json 파일 생성
     `json { "compilerOptions": { "target": "es6" } } `
 
 <br>
