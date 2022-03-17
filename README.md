@@ -130,6 +130,7 @@
 - [컴포넌트 스타일링 방법](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A7%81.md)
 - [Styled Components](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Styled%20Component.md)
 - [Error Boundaries](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Error%20Boundaries.md)
+- [Error Boundaries 함수형 컴포넌트](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Error%20Boundaries%20%ED%95%A8%EC%88%98%ED%98%95%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.md)
 - [Ref](https://github.com/Alex-Eojin/-TIL/blob/master/React/Ref.md)
 - [forward refs](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/forward%20refs.md)
 - [컴포넌트 반복](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EB%B0%98%EB%B3%B5.md)
