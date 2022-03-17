@@ -1,3 +1,7 @@
+- [Forwarding Refs](#forwarding-refs)
+  - [(추가)함수형 컴포넌트에서 forwardRef](#추가함수형-컴포넌트에서-forwardref)
+  - [고차 컴포넌트에서의 ref 전달](#고차-컴포넌트에서의-ref-전달)
+
 # Forwarding Refs
 
 <br>
@@ -33,7 +37,81 @@ const ref = React.createRef();
 
 <br>
 
-### 고차 컴포넌트에서의 ref 전달
+## (추가)함수형 컴포넌트에서 forwardRef
+
+ref는 직접 DOM을 조작할때 사용한다고 했다.
+
+만약 조작하려는 자식 컴포넌트의 DOM을 조작하려고 한다면, ref가 전달되어 사용되지 않는다.
+
+<br>
+
+일반 요소(ref를 등록해서 사용가능하다.)
+
+```jsx
+function App() {
+  const submitRef = useRef(null);
+
+  return;
+  <button ref={submitRef} onKeyDown={submitKeyDown}>
+    제출
+  </button>;
+}
+```
+
+<br>
+
+자식 컴포넌트(ref를 props로 전달되지 않는다.)
+
+```jsx
+function App() {
+  const submitRef = useRef(null);
+
+  <CustomInput ref={submitRef} onKeyDown={submitKeyDown}>
+    제출
+  </CustomInput>;
+}
+```
+
+<br>
+
+자식 컴포넌트의 DOM을 조작하려면, React.forwardRef를 사용해야한다.
+
+```jsx
+// props 목록 뒤에 ref를 별도로 전달받는 모습입니다.
+const CustomInput = React.forwardRef(({ type, onKeyDown, placeholder }, ref) => {
+  return (
+    <input
+      type={type}
+      onKeyDown={onKeyDown}
+      placeholder={placeholder}
+      // 전달받은 ref는 HTML 속성으로 전달됩니다.
+      ref={ref}
+    ></input>
+  );
+});
+
+export default CustomInput;
+```
+
+<br>
+
+App.jsx(이제 사용 가능하다.)
+
+```jsx
+function App() {
+  const inputRef = useRef(null);
+
+  return (
+    <>
+      <CustomInput ref={inputRef} />
+    </>
+  );
+}
+```
+
+<br>
+
+## 고차 컴포넌트에서의 ref 전달
 
 HOC 에서 ref를 전달하는 방법
 
@@ -104,3 +182,5 @@ App → HOC → forwardRef 내부의 컴포넌트 → original Componet
 
 - [https://stackoverflow.com/questions/53849369/react-forwardref-hoc-not-giving-reference-to-container-element](https://stackoverflow.com/questions/53849369/react-forwardref-hoc-not-giving-reference-to-container-element)
 - [https://ko.reactjs.org/docs/forwarding-refs.html](https://ko.reactjs.org/docs/forwarding-refs.html)
+- [https://merrily-code.tistory.com/121](https://merrily-code.tistory.com/121)
+- [https://www.daleseo.com/react-forward-ref/](https://www.daleseo.com/react-forward-ref/)
