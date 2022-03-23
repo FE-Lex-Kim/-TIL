@@ -3,6 +3,7 @@
   - [기본 사용방법](#기본-사용방법)
   - [Props](#props)
   - [Extending Style](#extending-style)
+    - [Extending component on another page](#extending-component-on-another-page)
   - [Overriding .attrs](#overriding-attrs)
   - [Animation](#animation)
   - [Theme](#theme)
@@ -124,6 +125,10 @@ Style을 그대로 상속받아서 쉽게 사용하는 방법이 있다.
 
 **자주 사용하는 컴포넌트를 Styled() 생성자 함수로 감싸면 된다.**
 
+**※ 주의 : 지금 설명하는 방법은 다른 컴포넌트를 import 해와서 스타일을 추가로 입히는것이 아니다. Styled Component로 스타일을 입힌 태그를 상속받아 추가로 다른 스타일을 입히는 방법이다.**
+
+**즉, 아래 코드들은 하나의 파일에서 작성한것이다.**
+
 ```jsx
 const Title = styled.h1`
   font-size: 1.5em;
@@ -176,6 +181,42 @@ const StyeldComponent = () => {
     </Wrapper>
   );
 };
+```
+
+<br>
+
+### Extending component on another page
+
+**다른 파일에서 작성한 컴포넌트를 가져와서 추가로 스타일을 입힐때도 있다.**
+
+<br>
+
+**불러온 컴포넌트는 className prop을 받아 루트 엘리먼트에게 className으로 전달해야한다.**
+
+Alex.jsx
+
+```jsx
+const Alex = ({ className, children }) => <a className={className}>{children}</a>;
+```
+
+James.jsx
+
+```jsx
+const StyledAlex = styled(Alex)`
+  color: palevioletred;
+  font-weight: bold;
+`;
+
+const James = ({ className, children }) => {(
+
+	return (
+	  <div>
+	    <Link>Unstyled, boring Link</Link>
+	    <br />
+	    <StyledAlex>Styled, exciting Link</StyledAlex>
+	  </div>
+	);
+}
 ```
 
 <br>
