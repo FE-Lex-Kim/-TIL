@@ -48,6 +48,7 @@
 - [Cascading](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/Cascading.md)
 - [CSS framwork](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/CSS%20framwork.md)
 - [absolute대신 translate() 사용하는 이유](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/absolute%EB%8C%80%EC%8B%A0%C2%A0translate()%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md>)
+- [CSS 요소 선택 방법(first-child, last-child, nth-child, nth-of-type, nth-last-of-type)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/CSS%20%EC%9A%94%EC%86%8C%20%EC%84%A0%ED%83%9D%20%EB%B0%A9%EB%B2%95(first-child%2C%20last-child%2C%20nth-child%2C%20nth-of-type%2C%20nth-last-of-type).md>)
 
 ## 2. HTML
 
