@@ -51,6 +51,7 @@
 - [CSS 요소 선택 방법(first-child, last-child, nth-child, nth-of-type, nth-last-of-type)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/CSS%20%EC%9A%94%EC%86%8C%20%EC%84%A0%ED%83%9D%20%EB%B0%A9%EB%B2%95(first-child%2C%20last-child%2C%20nth-child%2C%20nth-of-type%2C%20nth-last-of-type).md>)
 - [img태그 vs background-image](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%3Cimg%3E%ED%83%9C%EA%B7%B8%20vs%20background-image.md)
 - [section vs article 태그](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/section%20vs%20article%20%ED%83%9C%EA%B7%B8.md)
+- [em vs rem](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/em%20vs%20rem.md)
 
 ## 2. HTML
 
