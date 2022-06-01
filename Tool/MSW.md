@@ -1,4 +1,4 @@
-- [MSW](#msw)
+- [MSW(Mock Service Worker)](#mswmock-service-worker)
     - [MSW 장점](#msw-장점)
   - [MSW 사용](#msw-사용)
     - [1. **설치**](#1-설치)
@@ -11,7 +11,7 @@
 
 <br>
 
-# MSW
+# MSW(Mock Service Worker)
 
 프론트엔드는 백엔드와 동시에 작업하는 경우가 많다.
 
