@@ -183,6 +183,7 @@
 - [img 태그 이미지가 없을경우 대체이미지 생성](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/img%20%ED%83%9C%EA%B7%B8%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%97%86%EC%9D%84%EA%B2%BD%EC%9A%B0%20%EB%8C%80%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1.md)
 - [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
 - [뒤로가기 스크롤 위치 기억](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%20%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%9C%84%EC%B9%98%20%EA%B8%B0%EC%96%B5.md)
+- [hover 이벤트 모바일 반응형 이슈](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/hover%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%B0%98%EC%9D%91%ED%98%95%20%EC%9D%B4%EC%8A%88.md)
 
 ## 6. 성능 최적화
 
