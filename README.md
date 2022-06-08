@@ -52,6 +52,7 @@
 - [img태그 vs background-image](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/%3Cimg%3E%ED%83%9C%EA%B7%B8%20vs%20background-image.md)
 - [section vs article 태그](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/section%20vs%20article%20%ED%83%9C%EA%B7%B8.md)
 - [em vs rem](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/em%20vs%20rem.md)
+- [z-index 정상적으로 동작안될때](https://github.com/FE-Lex-Kim/-TIL/blob/master/CSS/z-index%20%EC%A0%95%EC%83%81%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EB%8F%99%EC%9E%91%EC%95%88%EB%90%A0%EB%95%8C.md)
 
 ## 2. HTML
 
