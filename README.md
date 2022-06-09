@@ -185,6 +185,7 @@
 - [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
 - [뒤로가기 스크롤 위치 기억](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%20%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%9C%84%EC%B9%98%20%EA%B8%B0%EC%96%B5.md)
 - [hover 이벤트 모바일 반응형 이슈](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/hover%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%B0%98%EC%9D%91%ED%98%95%20%EC%9D%B4%EC%8A%88.md)
+- [호버, 클릭시 별점 기능 UI](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%ED%98%B8%EB%B2%84%2C%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EB%B3%84%EC%A0%90%20%EA%B8%B0%EB%8A%A5%20UI.md)
 
 ## 6. 성능 최적화
 
@@ -296,7 +297,7 @@
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/WebP.md)
 - [옵저버 패턴](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%98%B5%EC%A0%80%EB%B2%84%20%ED%8C%A8%ED%84%B4.md)
 - [TDD(Test-driven development)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/TDD(Test-driven%20development).md>)
-- [프론트엔드 TDD](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD.md)
+- [프론트엔드에서 테스트코드란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20TDD.md)
 - [SEO 개념 및 향상방법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/SEO%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%ED%96%A5%EC%83%81%EB%B0%A9%EB%B2%95.md)
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 - [아토믹 디자인 패턴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%ED%86%A0%EB%AF%B9%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4.md)
