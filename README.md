@@ -251,6 +251,7 @@
 - [Git flow](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/Git%20flow.md)
 - [Git bash 단축표현](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/git%20bash%20%EB%8B%A8%EC%B6%95%ED%91%9C%ED%98%84.md)
 - [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
+- [Git 폴더명, 파일명 변경 안되는 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/Git%20%ED%8F%B4%EB%8D%94%EB%AA%85%2C%20%ED%8C%8C%EC%9D%BC%EB%AA%85%20%EB%B3%80%EA%B2%BD%20%EC%95%88%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
 
 ## 9. 알고리즘
 
