@@ -185,6 +185,7 @@
 - [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
 - [뒤로가기 스크롤 위치 기억](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%20%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%9C%84%EC%B9%98%20%EA%B8%B0%EC%96%B5.md)
 - [hover 이벤트 모바일 반응형 이슈](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/hover%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%B0%98%EC%9D%91%ED%98%95%20%EC%9D%B4%EC%8A%88.md)
+- [모바일 touch 이벤트시 click 이벤트 발생 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AA%A8%EB%B0%94%EC%9D%BC%20touch%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%8B%9C%20click%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%B0%9C%EC%83%9D%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
 - [호버, 클릭시 별점 기능 UI](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%ED%98%B8%EB%B2%84%2C%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EB%B3%84%EC%A0%90%20%EA%B8%B0%EB%8A%A5%20UI.md)
 - [무한 슬라이드 중간에 멈추고 진행하는법(Only CSS | 다음,이전 버튼X)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%A4%91%EA%B0%84%EC%97%90%20%EB%A9%88%EC%B6%94%EA%B3%A0%20%EC%A7%84%ED%96%89%ED%95%98%EB%8A%94%EB%B2%95(Only%20CSS%20%7C%20%EB%8B%A4%EC%9D%8C%2C%EC%9D%B4%EC%A0%84%20%EB%B2%84%ED%8A%BCX).md.md>)
 
