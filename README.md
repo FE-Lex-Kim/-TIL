@@ -192,6 +192,7 @@
 ## 6. TypeScript
 
 - [TypeScript(1) - 환경설정, Annotaions](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
+- [TypeScript(2) - Union, Generics](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(2)%20-%20Union%2C%20Generics.md>)
 
 ## 7. 성능 최적화
 
