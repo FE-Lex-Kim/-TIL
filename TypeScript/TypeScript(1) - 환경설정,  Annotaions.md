@@ -96,6 +96,20 @@ function deleteUser(user: user) {
 
 <br>
 
+모든 속성을 `?` 를 사용해 옵셔널 속성으로 지정할 수 있다.
+
+옵셔널 속성으로 타입을 정의하면 해당 속성이 존재하지 않아도 문제없이 작동한다.
+
+```jsx
+function getName(name?: string, age?: number): string {
+  return name + " " + age;
+}
+
+getName("Alex");
+```
+
+<br>
+
 ### 원시타입에 타입 지정하기
 
 ```jsx
