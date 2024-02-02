@@ -189,7 +189,11 @@
 - [호버, 클릭시 별점 기능 UI](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%ED%98%B8%EB%B2%84%2C%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EB%B3%84%EC%A0%90%20%EA%B8%B0%EB%8A%A5%20UI.md)
 - [무한 슬라이드 중간에 멈추고 진행하는법(Only CSS | 다음,이전 버튼X)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%A4%91%EA%B0%84%EC%97%90%20%EB%A9%88%EC%B6%94%EA%B3%A0%20%EC%A7%84%ED%96%89%ED%95%98%EB%8A%94%EB%B2%95(Only%20CSS%20%7C%20%EB%8B%A4%EC%9D%8C%2C%EC%9D%B4%EC%A0%84%20%EB%B2%84%ED%8A%BCX).md.md>)
 
-## 6. 성능 최적화
+## 6. TypeScript
+
+- [TypeScript(1) - 환경설정, Annotaions](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
+
+## 7. 성능 최적화
 
 - [성능 최적화 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
 - [Chrome Performance 패널](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Chrome%20Performance%20%ED%8C%A8%EB%84%90.md)
@@ -214,7 +218,7 @@
 - [스켈레톤 UI (Skeleton UI)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%8A%A4%EC%BC%88%EB%A0%88%ED%86%A4%20UI%20(Skeleton%20UI).md>)
 - [최적화 Check List](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%B5%9C%EC%A0%81%ED%99%94%20Check%20List.md)
 
-## 7. Tools, library
+## 8. Tools, library
 
 - [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
 - [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
@@ -243,7 +247,7 @@
 - [webpack 이미지, 폰트 loader](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/webpack%20%EC%9D%B4%EB%AF%B8%EC%A7%80%2C%20%ED%8F%B0%ED%8A%B8%20loader.md)
 - [MSW(Mock Service Worker)](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/MSW.md)
 
-## 8. Git
+## 9. Git
 
 - [Git 명령어](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 - [Vscode에서 마크다운 사용](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
@@ -255,7 +259,7 @@
 - [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
 - [Git 폴더명, 파일명 변경 안되는 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/Git%20%ED%8F%B4%EB%8D%94%EB%AA%85%2C%20%ED%8C%8C%EC%9D%BC%EB%AA%85%20%EB%B3%80%EA%B2%BD%20%EC%95%88%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
 
-## 9. 알고리즘
+## 10. 알고리즘
 
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 - [선형검색 과 이진검색](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%98%95%EA%B2%80%EC%83%89%20%EA%B3%BC%20%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89.md)
@@ -263,7 +267,7 @@
 - [선택정렬, 삽입정렬](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC%2C%20%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC.md)
 - [배열 HOF 연습문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B0%EC%97%B4%20HOF%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
 
-## 10. 네트워크
+## 11. 네트워크
 
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/Cookie.md)
 - [캐시 기본 동작](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%BA%90%EC%8B%9C%20%EA%B8%B0%EB%B3%B8%20%EB%8F%99%EC%9E%91.md)
@@ -290,11 +294,11 @@
 - [Transport 계층 TCP / UDP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/TCP%2C%20UDP.md)
 - [HTTP 상태 코드](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%EC%83%81%ED%83%9C%20%EC%BD%94%EB%93%9C.md)
 
-## 11. 운영체제
+## 12. 운영체제
 
 - [가상 메모리](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/%EA%B0%80%EC%83%81%20%EB%A9%94%EB%AA%A8%EB%A6%AC.md)
 
-## 12. 웹 지식
+## 13. 웹 지식
 
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/WebP.md)
@@ -305,7 +309,7 @@
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 - [아토믹 디자인 패턴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%ED%86%A0%EB%AF%B9%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4.md)
 
-## 13. 데이터 베이스
+## 14. 데이터 베이스
 
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
