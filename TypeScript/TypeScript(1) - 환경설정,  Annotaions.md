@@ -1,4 +1,4 @@
-- [TypeScript(1) - 환경설정, Annotaions](#typescript1---환경설정-annotaions)
+- [TypeScript(1) - 환경설정, 타입정의(Annotaions)](#typescript1---환경설정-타입정의annotaions)
   - [TypeScript를 사용하는 이유](#typescript를-사용하는-이유)
   - [설치방법](#설치방법)
   - [Annotations](#annotations)
@@ -11,7 +11,7 @@
     - [null, undefined 타입 지정하기](#null-undefined-타입-지정하기)
     - [void 타입 지정하기](#void-타입-지정하기)
 
-# TypeScript(1) - 환경설정, Annotaions
+# TypeScript(1) - 환경설정, 타입정의(Annotaions)
 
 <br>
 
