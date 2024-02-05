@@ -6,6 +6,30 @@
 배우고 공부했던 모든 내용을 기억할 수 없기 때문에
 정리해서 모를때마다 꺼내 볼 수 있도록 한다.
 
+- [-TIL](#-til)
+  - [frontend](#frontend)
+  - [1. CSS](#1-css)
+  - [2. HTML](#2-html)
+  - [3. Javascript](#3-javascript)
+  - [4. React](#4-react)
+  - [5. Tools, library](#5-tools-library)
+    - [5.1 React Query](#51-react-query)
+    - [5.2 TypeScript](#52-typescript)
+    - [5.3 Next.js](#53-nextjs)
+    - [5.4 Storybook](#54-storybook)
+    - [5.5 Cypress](#55-cypress)
+    - [5.6 Jest](#56-jest)
+    - [5.7 Webpack](#57-webpack)
+    - [5.8 Tailwind](#58-tailwind)
+  - [6. 성능 최적화](#6-성능-최적화)
+  - [7. React 구현](#7-react-구현)
+  - [8. Git](#8-git)
+  - [9. 알고리즘](#9-알고리즘)
+  - [10. 네트워크](#10-네트워크)
+  - [11. 운영체제](#11-운영체제)
+  - [12. 웹 지식](#12-웹-지식)
+  - [13. 데이터 베이스](#13-데이터-베이스)
+
 <br>
 
 ## frontend
@@ -165,36 +189,71 @@
 - [redux-saga](https://github.com/Alex-Eojin/-TIL/blob/master/React/redux-saga.md)
 - [Redux Thunk vs Saga](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/Redux%20Thunk%20vs%20Saga.md)
 - [SWR](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/SWR.md)
-- [React Query 란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query.md)
-- [React Query(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
-- [React Query(2) - React Query 캐시](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(2)%20-%20React%20Query%20%EC%BA%90%EC%8B%9C.md>)
-- [React Query(3) - Background Refetch 옵션](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(3)%20-%20Background%20Refetch%20%EC%98%B5%EC%85%98.md>)
-- [React Query(4) - 데이터 요청 함수 이벤트 핸들러 등록 , Success and Error Callback, UI를 위한 데이터 가공 옵션, Custom Query Hook](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(4)%20-%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9A%94%EC%B2%AD%20%ED%95%A8%EC%88%98%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%95%B8%EB%93%A4%EB%9F%AC%20%EB%93%B1%EB%A1%9D%20%2C%20Success%20and%20Error%20Callback%2C%20UI%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%80%EA%B3%B5%20%EC%98%B5%EC%85%98%2C%20Custom%20Query%20Hook.md>)
-- [React Query(5) - Query Id, useQuery 여러번 호출, useQueries](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(5)%20-%20Query%20Id%2C%20useQuery%20%EC%97%AC%EB%9F%AC%EB%B2%88%20%ED%98%B8%EC%B6%9C.md>)
-- [React Query(6) - Dependent Queries, Initial Query Data](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20(6)%20-%20Dependent%20Queries%2C%20Initial%20Query%20Data.md>)
-- [React Query(7) - Infinite Queries, useMutation, Query Invalidation](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(7)%20-%20Infinite%20Queries.md>)
-- [React Query(8) - Handling Mutation Response, Optimistic Updates](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(8).md>)
 
-## 5. React 구현
+## 5. Tools, library
 
-- [여러번 발생하는 이벤트 호출 방지](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%AC%EB%9F%AC%EB%B2%88%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%98%B8%EC%B6%9C%20%EB%B0%A9%EC%A7%80.md)
-- [무한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80%20%EA%B5%AC%ED%98%84.md)
-- [여러 이미지가 캐러셀 페이지 하나에 들어가게 구현한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%AC%EB%9F%AC%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%BA%90%EB%9F%AC%EC%85%80%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%ED%95%98%EB%82%98%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%80%EA%B2%8C%20%EA%B5%AC%ED%98%84%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80.md)
-- [이미지 여러개 무한 자동 슬라이더 auto multiple slider](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/auto%20multiple%20slider(carousel).md>)
-- [img 태그 이미지가 없을경우 대체이미지 생성](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/img%20%ED%83%9C%EA%B7%B8%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%97%86%EC%9D%84%EA%B2%BD%EC%9A%B0%20%EB%8C%80%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1.md)
-- [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
-- [뒤로가기 스크롤 위치 기억](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%20%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%9C%84%EC%B9%98%20%EA%B8%B0%EC%96%B5.md)
-- [hover 이벤트 모바일 반응형 이슈](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/hover%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%B0%98%EC%9D%91%ED%98%95%20%EC%9D%B4%EC%8A%88.md)
-- [모바일 touch 이벤트시 click 이벤트 발생 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AA%A8%EB%B0%94%EC%9D%BC%20touch%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%8B%9C%20click%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%B0%9C%EC%83%9D%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
-- [호버, 클릭시 별점 기능 UI](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%ED%98%B8%EB%B2%84%2C%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EB%B3%84%EC%A0%90%20%EA%B8%B0%EB%8A%A5%20UI.md)
-- [무한 슬라이드 중간에 멈추고 진행하는법(Only CSS | 다음,이전 버튼X)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%A4%91%EA%B0%84%EC%97%90%20%EB%A9%88%EC%B6%94%EA%B3%A0%20%EC%A7%84%ED%96%89%ED%95%98%EB%8A%94%EB%B2%95(Only%20CSS%20%7C%20%EB%8B%A4%EC%9D%8C%2C%EC%9D%B4%EC%A0%84%20%EB%B2%84%ED%8A%BCX).md.md>)
+- [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
+- [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
+- [Prettier](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
+- [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
+- [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
+- [npm install --save-dev, --save-prod](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/--save-dev%2C%20--save-prod%20.md)
+- [터미널에서 vscode여는 방법(code . 적용 하는법)](<https://github.com/Alex-Eojin/-TIL/blob/master/Tool/%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C%20vscode%EC%97%AC%EB%8A%94%20%EB%B0%A9%EB%B2%95(code%20.%20%EC%A0%81%EC%9A%A9%20%ED%95%98%EB%8A%94%EB%B2%95).md>)
+- [git issue 관리](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/git%20issue%20%EA%B4%80%EB%A6%AC.md)
+- [E325: ATTENTION 에러 처리](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/E325:%20ATTENTION%20%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
+- [Vscode Javascript 자동완성 안될때](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Vscode%20Javascript%20%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%20%EC%95%88%EB%90%A0%EB%95%8C.md)
+- [npm](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/npm.md)
+- [AWS s3, CloudFront, Route53 프론트엔드 배포](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/AWS%20s3%2C%20CloudFront%2C%20Route53%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%B0%B0%ED%8F%AC.md)
+- [MSW(Mock Service Worker)](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/MSW.md)
 
-## 6. TypeScript
+  ### 5.1 React Query
 
-- [TypeScript(1) - 환경설정, 타입정의(Annotaions)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
-- [TypeScript(2) - Union, Generics](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(2)%20-%20Union%2C%20Generics.md>)
+  - [React Query 란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query.md)
+  - [React Query(1) - 환경 설정, useQuery, handle Error, devtools](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(1)%20-%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%2C%20useQuery%2C%20handle%20Error%2C%20devtools.md>)
+  - [React Query(2) - React Query 캐시](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(2)%20-%20React%20Query%20%EC%BA%90%EC%8B%9C.md>)
+  - [React Query(3) - Background Refetch 옵션](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(3)%20-%20Background%20Refetch%20%EC%98%B5%EC%85%98.md>)
+  - [React Query(4) - 데이터 요청 함수 이벤트 핸들러 등록 , Success and Error Callback, UI를 위한 데이터 가공 옵션, Custom Query Hook](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(4)%20-%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9A%94%EC%B2%AD%20%ED%95%A8%EC%88%98%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%95%B8%EB%93%A4%EB%9F%AC%20%EB%93%B1%EB%A1%9D%20%2C%20Success%20and%20Error%20Callback%2C%20UI%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%80%EA%B3%B5%20%EC%98%B5%EC%85%98%2C%20Custom%20Query%20Hook.md>)
+  - [React Query(5) - Query Id, useQuery 여러번 호출, useQueries](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC(5)%20-%20Query%20Id%2C%20useQuery%20%EC%97%AC%EB%9F%AC%EB%B2%88%20%ED%98%B8%EC%B6%9C.md>)
+  - [React Query(6) - Dependent Queries, Initial Query Data](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query%20(6)%20-%20Dependent%20Queries%2C%20Initial%20Query%20Data.md>)
+  - [React Query(7) - Infinite Queries, useMutation, Query Invalidation](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(7)%20-%20Infinite%20Queries.md>)
+  - [React Query(8) - Handling Mutation Response, Optimistic Updates](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/React%20Query(8).md>)
 
-## 7. 성능 최적화
+  ### 5.2 TypeScript
+
+  - [TypeScript(1) - 환경설정, 타입정의(Annotaions)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
+  - [TypeScript(2) - Union, Generics](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(2)%20-%20Union%2C%20Generics.md>)
+
+  ### 5.3 Next.js
+
+  ### 5.4 Storybook
+
+  - [Storybook(1) - Storybook이란?, Writing Stories, Story 계층, Renaming Story & Sorting Stories](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
+  - [Storybook(2) - Renaming Story & Sorting Stories, Story within Story, Args, Decorators, Addons](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook(2).md>)
+
+  ### 5.5 Cypress
+
+  - [Cypress 란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Cypress%EB%9E%80.md)
+  - [Cypress 사용하기](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Cypress(1).md>)
+
+  ### 5.6 Jest
+
+  - [Jest 사용하기](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
+  - [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
+  - [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
+  - [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
+
+  ### 5.7 Webpack
+
+  - [Webpack](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack.md)
+  - [Webpack, Babel 사용해서 React 개발 환경 구축](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack%2C%20Babel%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%20React%20%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%B6%95.md)
+  - [webpack 이미지, 폰트 loader](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/webpack%20%EC%9D%B4%EB%AF%B8%EC%A7%80%2C%20%ED%8F%B0%ED%8A%B8%20loader.md)
+
+  ### 5.8 Tailwind
+
+  - [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
+  - [Tailwindcss Complex variants](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/tailwindcss%20Complex%20variants.md)
+
+## 6. 성능 최적화
 
 - [성능 최적화 툴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94%20%EB%B6%84%EC%84%9D%20%ED%88%B4.md)
 - [Chrome Performance 패널](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/Chrome%20Performance%20%ED%8C%A8%EB%84%90.md)
@@ -219,36 +278,21 @@
 - [스켈레톤 UI (Skeleton UI)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%8A%A4%EC%BC%88%EB%A0%88%ED%86%A4%20UI%20(Skeleton%20UI).md>)
 - [최적화 Check List](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/%EC%B5%9C%EC%A0%81%ED%99%94%20Check%20List.md)
 
-## 8. Tools, library
+## 7. React 구현
 
-- [ESlint](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/eslint.md)
-- [JSON Server](https://github.com/Alex-Eojin/-TIL/blob/master/GIt/JSON%20server.md)
-- [Prettier](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/prettier.md)
-- [open color](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/open%20color.md)
-- [nvm](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/nvm.md)
-- [npm install --save-dev, --save-prod](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/--save-dev%2C%20--save-prod%20.md)
-- [터미널에서 vscode여는 방법(code . 적용 하는법)](<https://github.com/Alex-Eojin/-TIL/blob/master/Tool/%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C%20vscode%EC%97%AC%EB%8A%94%20%EB%B0%A9%EB%B2%95(code%20.%20%EC%A0%81%EC%9A%A9%20%ED%95%98%EB%8A%94%EB%B2%95).md>)
-- [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
-- [Tailwindcss Complex variants](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/tailwindcss%20Complex%20variants.md)
-- [git issue 관리](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/git%20issue%20%EA%B4%80%EB%A6%AC.md)
-- [E325: ATTENTION 에러 처리](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/E325:%20ATTENTION%20%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
-- [Vscode Javascript 자동완성 안될때](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Vscode%20Javascript%20%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%20%EC%95%88%EB%90%A0%EB%95%8C.md)
-- [npm](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/npm.md)
-- [Jest 사용하기](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
-- [Jest 비동기 코드 테스트](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%BD%94%EB%93%9C%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
-- [Jest UI testing](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20UI%20testing.md)
-- [Jest 스냅샷](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Jest%20%EC%8A%A4%EB%83%85%EC%83%B7.md)
-- [Storybook(1) - Storybook이란?, Writing Stories, Story 계층, Renaming Story & Sorting Stories](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
-- [Storybook(2) - Renaming Story & Sorting Stories, Story within Story, Args, Decorators, Addons](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook(2).md>)
-- [Cypress 란?](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Cypress%EB%9E%80.md)
-- [Cypress 사용하기](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Cypress(1).md>)
-- [AWS s3, CloudFront, Route53 프론트엔드 배포](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/AWS%20s3%2C%20CloudFront%2C%20Route53%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%B0%B0%ED%8F%AC.md)
-- [Webpack](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack.md)
-- [Webpack, Babel 사용해서 React 개발 환경 구축](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Webpack%2C%20Babel%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%20React%20%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%B6%95.md)
-- [webpack 이미지, 폰트 loader](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/webpack%20%EC%9D%B4%EB%AF%B8%EC%A7%80%2C%20%ED%8F%B0%ED%8A%B8%20loader.md)
-- [MSW(Mock Service Worker)](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/MSW.md)
+- [여러번 발생하는 이벤트 호출 방지](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%AC%EB%9F%AC%EB%B2%88%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%98%B8%EC%B6%9C%20%EB%B0%A9%EC%A7%80.md)
+- [무한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80%20%EA%B5%AC%ED%98%84.md)
+- [여러 이미지가 캐러셀 페이지 하나에 들어가게 구현한 캐러셀](https://github.com/Alex-Eojin/-TIL/blob/master/React/%EC%97%AC%EB%9F%AC%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%BA%90%EB%9F%AC%EC%85%80%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%ED%95%98%EB%82%98%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%80%EA%B2%8C%20%EA%B5%AC%ED%98%84%ED%95%9C%20%EC%BA%90%EB%9F%AC%EC%85%80.md)
+- [이미지 여러개 무한 자동 슬라이더 auto multiple slider](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/auto%20multiple%20slider(carousel).md>)
+- [img 태그 이미지가 없을경우 대체이미지 생성](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/img%20%ED%83%9C%EA%B7%B8%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80%20%EC%97%86%EC%9D%84%EA%B2%BD%EC%9A%B0%20%EB%8C%80%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1.md)
+- [react-virtualized 성능 최적화](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/react-virtualized.md)
+- [뒤로가기 스크롤 위치 기억](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%20%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%9C%84%EC%B9%98%20%EA%B8%B0%EC%96%B5.md)
+- [hover 이벤트 모바일 반응형 이슈](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/hover%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%B0%98%EC%9D%91%ED%98%95%20%EC%9D%B4%EC%8A%88.md)
+- [모바일 touch 이벤트시 click 이벤트 발생 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AA%A8%EB%B0%94%EC%9D%BC%20touch%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%8B%9C%20click%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%B0%9C%EC%83%9D%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
+- [호버, 클릭시 별점 기능 UI](https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%ED%98%B8%EB%B2%84%2C%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EB%B3%84%EC%A0%90%20%EA%B8%B0%EB%8A%A5%20UI.md)
+- [무한 슬라이드 중간에 멈추고 진행하는법(Only CSS | 다음,이전 버튼X)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/React/%EB%AC%B4%ED%95%9C%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%A4%91%EA%B0%84%EC%97%90%20%EB%A9%88%EC%B6%94%EA%B3%A0%20%EC%A7%84%ED%96%89%ED%95%98%EB%8A%94%EB%B2%95(Only%20CSS%20%7C%20%EB%8B%A4%EC%9D%8C%2C%EC%9D%B4%EC%A0%84%20%EB%B2%84%ED%8A%BCX).md.md>)
 
-## 9. Git
+## 8. Git
 
 - [Git 명령어](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/Git%20%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 - [Vscode에서 마크다운 사용](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/VScode%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.md)
@@ -260,7 +304,7 @@
 - [Git commit 취소](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/git%20commit%20%EC%B7%A8%EC%86%8C.md)
 - [Git 폴더명, 파일명 변경 안되는 이슈 해결](https://github.com/FE-Lex-Kim/-TIL/blob/master/GIt/Git%20%ED%8F%B4%EB%8D%94%EB%AA%85%2C%20%ED%8C%8C%EC%9D%BC%EB%AA%85%20%EB%B3%80%EA%B2%BD%20%EC%95%88%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0.md)
 
-## 10. 알고리즘
+## 9. 알고리즘
 
 - [알고리즘 TIL](https://github.com/FE-Lex-Kim/Algorithm)
 - [선형검색 과 이진검색](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%98%95%EA%B2%80%EC%83%89%20%EA%B3%BC%20%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89.md)
@@ -268,7 +312,7 @@
 - [선택정렬, 삽입정렬](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC%2C%20%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC.md)
 - [배열 HOF 연습문제](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B0%EC%97%B4%20HOF%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
 
-## 11. 네트워크
+## 10. 네트워크
 
 - [Cookie](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/Cookie.md)
 - [캐시 기본 동작](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EC%BA%90%EC%8B%9C%20%EA%B8%B0%EB%B3%B8%20%EB%8F%99%EC%9E%91.md)
@@ -295,11 +339,11 @@
 - [Transport 계층 TCP / UDP](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/TCP%2C%20UDP.md)
 - [HTTP 상태 코드](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%EC%83%81%ED%83%9C%20%EC%BD%94%EB%93%9C.md)
 
-## 12. 운영체제
+## 11. 운영체제
 
 - [가상 메모리](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/%EA%B0%80%EC%83%81%20%EB%A9%94%EB%AA%A8%EB%A6%AC.md)
 
-## 13. 웹 지식
+## 12. 웹 지식
 
 - [아스키코드와 유니코드](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EC%99%80%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C.md)
 - [WebP](https://github.com/Alex-Eojin/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/WebP.md)
@@ -310,7 +354,7 @@
 - [클라이언트 - 서버 API URI 설계법](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20-%20%EC%84%9C%EB%B2%84%20API%20URI%20%EC%84%A4%EA%B3%84%EB%B2%95.md)
 - [아토믹 디자인 패턴](https://github.com/FE-Lex-Kim/-TIL/blob/master/%EC%9B%B9%20%EC%A7%80%EC%8B%9D/%EC%95%84%ED%86%A0%EB%AF%B9%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4.md)
 
-## 14. 데이터 베이스
+## 13. 데이터 베이스
 
 - [MYSQL 환경설정](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/MySQL%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [CSV 파일로 테이블 생성하기](https://github.com/Alex-Eojin/-TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B2%A0%EC%9D%B4%EC%8A%A4/CSV%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1.md)
