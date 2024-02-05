@@ -5,7 +5,7 @@
   - [Enum 타입](#enum-타입)
   - [never](#never)
   - [제네릭 함수 (Generics)](#제네릭-함수-generics)
-    - [추론(**Inference)**](#추론inference)
+    - [추론(Inference)](#추론inference)
     - [타입 인수 명시하기](#타입-인수-명시하기)
     - [주의해야할 점](#주의해야할-점)
 
@@ -241,7 +241,7 @@ const u = firstElement([]);
 
 <br>
 
-### 추론(**Inference)**
+### 추론(Inference)
 
 위의 예제에서 Type을 특정하지 않았다.
 
