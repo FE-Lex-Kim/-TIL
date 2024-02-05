@@ -225,6 +225,9 @@
 
 ### 5.3 Next.js
 
+- [Next.js(1) - 사용하는 이유, 환경 설정 ](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(1)%20-%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%2C%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md>)
+- [Next.js(2) - RSC 배경, RSC 특징, RSC 동작과정](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(2)%20-%20RSC.md>)
+
 ### 5.4 Storybook
 
 - [Storybook(1) - Storybook이란?, Writing Stories, Story 계층, Renaming Story & Sorting Stories](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
