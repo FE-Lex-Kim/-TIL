@@ -5,7 +5,7 @@
     - [Dynamic Routes](#dynamic-routes)
     - [Nested Dynamic Routes](#nested-dynamic-routes)
     - [catch all segments](#catch-all-segments)
-  - [**Custom Errors**](#custom-errors)
+  - [Custom Errors](#custom-errors)
   - [재사용 컴포넌트 Structure](#재사용-컴포넌트-structure)
   - [Private Folders](#private-folders)
 
@@ -141,7 +141,7 @@ export default ShopProducts;
 
 <br>
 
-## **Custom Errors**
+## Custom Errors
 
 에러 발생시 커스텀으로 에러 페이지를 만들 수 있다.
 
