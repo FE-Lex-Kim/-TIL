@@ -1,4 +1,4 @@
-- [Next.js(5) - Navigation, Template.js , Loading.js](#nextjs5---navigation-templatejs--loadingjs)
+- [Next.js(5) - Navigation, Template.js , Loading.js, error.js](#nextjs5---navigation-templatejs--loadingjs-errorjs)
   - [Navigation](#navigation)
     - [usePathname()](#usepathname)
     - [useRouter()](#userouter)
@@ -8,7 +8,7 @@
     - [error.js 동작원리](#errorjs-동작원리)
     - [Nested Routes](#nested-routes)
 
-# Next.js(5) - Navigation, Template.js , Loading.js
+# Next.js(5) - Navigation, Template.js , Loading.js, error.js
 
 ## Navigation
 
