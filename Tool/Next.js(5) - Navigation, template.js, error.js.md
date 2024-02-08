@@ -4,7 +4,9 @@
     - [useRouter()](#userouter)
   - [Template](#template)
   - [Loading.js](#loadingjs)
-  - [Error.js](#errorjs)
+  - [error.js](#errorjs)
+    - [error.js 동작원리](#errorjs-동작원리)
+    - [Nested Routes](#nested-routes)
 
 # Next.js(5) - Navigation, Template.js , Loading.js
 
@@ -137,9 +139,21 @@ export default function Loading() {
 
 <br>
 
-## Error.js
+## error.js
 
 서버 컴포넌트 or 클라이언트 컴포넌트에서 예상치 못한 에러가 발생한 경우 Fallback UI를 보여주어 유용하게 사용할 수 있다.
+
+<br>
+
+segment → 라우트 페이지 컴포넌트(page.tsx)
+
+- React Error Boundary가 route segment와 중첩된 자식 segment까지 자동으로 감싸도록 동작한다.
+- 나머지 어플리케이션 기능을 유지하면서 영향받은 segment의 에러만 격리시킨다.
+- 전체 페이지를 리로드 하지않고 에러복구를 시도하는 기능을 추가했다.
+
+<br>
+
+app/error.js
 
 ```jsx
 'use client' // Error components must be Client Components
@@ -182,7 +196,33 @@ eorror.js는 에러가 발생한 경우 보여지는 것이다.
 
 <br>
 
+### error.js 동작원리
+
+![Next.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Images/nextjs(5)/1.png?raw=true>)
+
+1. React Error Boundary가 route segment와 중첩된 자식 segment까지 자동으로 감싸도록 동작한다.
+2. error.js 파일에서 내보낸 React Component 가 fallback component로 사용되어진다.
+3. 에러 바운더리 내에서 에러가 발생하면 fallback component가 렌더된다.
+4. fallback error component가 렌더되었을때, 에러 바운더리 위에 있는 layout은 각 상태와 상호작용을 유지하고(변경되지 않다는뜻) error component는 에러 복구 기능을 표시해준다.
+
+<br>
+
+### Nested Routes
+
+특별한 파일로(error.js, layout.js…) 생성된 리액트 컴포넌트는 특별한 중첩 계층안에서 렌더가 된다.
+
+예를 들어) `error.js`와 `layout.js` 이 있는 중첩된 라우트 페이지는(`page.js`) 다음과 같이 특별한 컴포넌트 계층으로 렌더가 된다.
+
+![Next.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Images/nextjs(5)/2.png?raw=true>)
+
+- error.js 파일은 모든 충첩된 자식 segment들 까지 에러가 발생하면 나타내준다.
+  - 예를 들어) `app/error.js` 안에 에러 컴포넌트가 있다고 하면, `app/product/page.js` 파일에서 발생한 에러도 `app/error.js` 의 에러 UI를 보여준다.
+- error.js boundarya는 같은 계층의 layout.js 까지 에러를 관리해주지 않는다. 왜냐하면 layout component는 error boundary 보다 상위에 존재하기 때문이다.
+  - 따라서 layout component 에러도 확인하기 위해서 상위에 error.js를 두는것이 좋다.
+
+<br>
+
 참고
 
 - https://www.youtube.com/watch?v=YG98I2Bj7qw&list=PLC3y8-rFHvwjOKd6gdf4QtV1uYNiQnruI&index=26
-- https://nextjs.org/docs/app/api-reference/file-conventions/error
+- [https://nextjs.org/docs/app/api-reference/file-conventions/error](https://nextjs.org/docs/app/building-your-application/routing/error-handling#how-errorjs-works)
