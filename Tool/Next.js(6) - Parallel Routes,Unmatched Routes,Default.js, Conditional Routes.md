@@ -56,7 +56,7 @@ Parallel Routes을 통해서 각각 Component 들이 동작한다는 것을 알�
 
 `@notification` 폴더에 ArchivedNotification 이라는 폴더를 만든뒤 `app/dashboard/@notification/ArchivedNotification/page.tsx`를 만든다.
 
-`app/dashboard/@notifiaction/page.tsx`에서 ArchivedNotification 라우트로 가는 Link를 만든뒤 이동하면 `notficaiton/page.tsx` 만 변경이 되고 `user/page.tsx`, `revenu/page.tsx` 는 사라지거나 변경되지 않는다.
+`app/dashboard/@notification/page.tsx`에서 ArchivedNotification 라우트로 가는 Link를 만든뒤 이동하면 `notification/page.tsx` 만 변경이 되고 `@user/page.tsx`, `@revenue/page.tsx` 는 사라지거나 변경되지 않는다.
 
 <br>
 
