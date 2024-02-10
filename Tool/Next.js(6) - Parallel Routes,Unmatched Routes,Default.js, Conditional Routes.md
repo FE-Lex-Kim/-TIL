@@ -1,10 +1,13 @@
-- [Next.js(6) - Parallel Routes,Unmatched Routes,Default.js, Conditional Routes](#nextjs6---parallel-routesunmatched-routesdefaultjs-conditional-routes)
+- [Next.js(6) - Parallel Routes,Unmatched Routes,Default.js, Conditional Routes, Intercepting Routes](#nextjs6---parallel-routesunmatched-routesdefaultjs-conditional-routes-intercepting-routes)
   - [Parallel Routes(병렬 라우팅)](#parallel-routes병렬-라우팅)
   - [Unmatched Routes](#unmatched-routes)
   - [Default.js](#defaultjs)
   - [Conditional Routes](#conditional-routes)
+  - [Intercepting Routes](#intercepting-routes)
+    - [Convention](#convention)
+    - [Example Modals](#example-modals)
 
-# Next.js(6) - Parallel Routes,Unmatched Routes,Default.js, Conditional Routes
+# Next.js(6) - Parallel Routes,Unmatched Routes,Default.js, Conditional Routes, Intercepting Routes
 
 <br>
 
@@ -117,6 +120,66 @@ export default RevenueDefault;
 Parallel Routes을 사용해 특정 조건에 따라서 라우트 렌더를 다르게할 수 있다.
 
 ![Next.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Images/nextjs(6)/10.png?raw=true>)
+
+<br>
+
+## Intercepting Routes
+
+Intercepting routes 는 현재 layout에서 어플리케이션의 다른 부분의 라우트를 로드하는게 가능해진다.
+
+이게 무슨말이냐면, 현재 보여지는 layout이 있다면, Link를 통해 다른 URL 라우트로 이동해도 현재 layout이 보여지는 동시에 그 위에(현재 layout 위에 다른 Route에서 보여지는 layout을 보여줄 수 있다는 뜻이다.
+
+이러한 라우팅 파라다임은 굉장히 유용하다.
+
+유저가 다른 컨텍스트로 변경하지 않아도 개발자가 의도하는 라우트의 컨텐츠를 그대로 보여줄 수 있기 때문이다.
+
+<br>
+
+예를 들어)
+
+![Next.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Images/nextjs(6)/11.png?raw=true>)
+
+위와 같이 여러개의 사진이 있는 feed에서 사진 하나를 클릭했을때, feed가 있는 layout 위에 사진이 있는 모달을 보여줄 수 있다.
+
+Next.js는 `/photo/123` 라우트를 intercept한후(가로챈후), 가로챈후 개발자가 보여주려고 의도한 segment를(segment를 잘모른다면 그냥 UI 컴포넌트라고 생각하면됨) `/feed` 위에 그대로 보여준다.
+
+- 여기서 개발자가 보여주려고 의도한 segment는 `/feed/(..)phtoto/[id]/page.tsx` 파일이다.
+
+<br>
+
+### Convention
+
+path convention `../` 과 비슷하다.
+
+- (.)는 같은 레벨의 segment를 매치해준다.
+- (..)는 하나위의 레벨의 segment를 매치해준다.
+- (..)(..)는 두개위의 레벨의 segment를 매치해준다.
+- (…)sms root app directly에 있는 segment를 매치해준다.
+
+<br>
+
+### Example Modals
+
+intercepting Routes는 모달을 만들때 Parallel Routes와 함께 사용할 수 있다.
+
+모달을 만들때 자주생기는 문제를 쉽게 해결할 수 있다. 예를 들면)
+
+- URL을 통해 모달 컨텐츠를 공유할 수 있게 만들수 있다.
+- 페이지를 새로고침때, 원래는 모달이 사라져야하지만 모달이 그대로 유지되게 할 수 있다.(URL이 있 깅에 가)함
+- 뒤로가기를 통해 이전 라우트를 가는것으로 모달을 닫을 수 있다.(URL이 있기에 가능함)
+- 앞으로가기를 했을때 모달을 다시 열수 있다.(URL이 있기에 가능함)
+
+또한 이러한 UI 패턴을 사용하면, 유저가 브라우저 모달 URL을 공유해서 바로 브라우저 URL로 직접 접근했을때 모달을 열 수 있게 해준다.
+
+![Next.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Images/nextjs(6)/12.png?raw=true>)
+
+위의 예제를 설명하면,
+
+`feed`에서 `@modal`을 동시에 같이 보여주게 하는 parallel route 기법을 사용했다.
+
+modal 이라는 route는 없게하고, photo 라우트를 통해 모달 URL을 만들어주는 것이다.
+
+따라서 feed 에서 photo을 클릭했을때, `@modal/(..)photo/[id]/page.tsx`가 `photo/[id]/page.tsx` 라우트를 가로채서 보여준다.
 
 <br>
 
