@@ -233,6 +233,7 @@
 - [Next.js(5) - Navigation, Template.js , Loading.js, error.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(5)%20-%20Navigation%2C%20template.js%2C%20error.js.md>)
 - [Next.js(6) - Parallel Routes,Unmatched Routes,Default.js, Conditional Routes, Intercepting Routes](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(6)%20-%20Parallel%20Routes%2CUnmatched%20Routes%2CDefault.js%2C%20Conditional%20Routes.md>)
 - [Next.js(7) - Route Handlers](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(7)%20-%20Route%20Handlers.md>)
+- [Next.js(8) - Middleware](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(8)%20-%20Middleware.md>)
 
 ### 5.4 Storybook
 

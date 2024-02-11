@@ -3,7 +3,7 @@
     - [Example](#example)
     - [Convention](#convention)
     - [Matcher](#matcher)
-    - [**Using Cookies**](#using-cookies)
+    - [Using Cookies](#using-cookies)
 
 # Next.js(8) - Middleware
 
@@ -95,7 +95,7 @@ export const config = {
 
 <br>
 
-### **Using Cookies**
+### Using Cookies
 
 쿠키는 일반 헤더이다. 요청 시에는 쿠키 헤더에 저장된다. 응답 시에는 `Set-Cookie` 헤더에 저장된다..
 
