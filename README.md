@@ -228,6 +228,7 @@
 
 - [Next.js(1) - 사용하는 이유, 환경 설정 ](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(1)%20-%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%2C%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md>)
 - [Next.js(2) - RSC 배경, RSC 특징, RSC 동작과정](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(2)%20-%20RSC.md>)
+- [Next.js(2-2) - RSC 더 깊게 잘이해하기(심화)](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(2-2)%20-%20RSC%20%EB%8D%94%20%EA%B9%8A%EA%B2%8C%20%EC%9E%98%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0(%EC%8B%AC%ED%99%94).md>)
 - [Next.js(3) - Routing, Custom Errors, 재사용 컴포넌트 Structure, Private folders](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(3)%20-%20Routing%2C%20Custom%20Errors%2C%20%EC%9E%AC%EC%82%AC%EC%9A%A9%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20Structure%2C%20Private%20folders.md>)
 - [Next.js(4) - Route Groups, Layouts,Metadata](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(4)%20-%20Route%20Groups%2C%20Layouts%2C%20Metadata.md>)
 - [Next.js(5) - Navigation, Template.js , Loading.js, error.js](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Next.js(5)%20-%20Navigation%2C%20template.js%2C%20error.js.md>)
