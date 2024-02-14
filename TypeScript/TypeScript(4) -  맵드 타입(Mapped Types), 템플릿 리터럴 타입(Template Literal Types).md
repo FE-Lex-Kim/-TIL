@@ -30,20 +30,20 @@ const partialPerson: PartialPerson = {
 };
 ```
 
-이 예에서는 **`name`**, **`age`**, **`email`**이라는 세 가지 속성을 사용하여 **`Person`** 타입 정의한다.
+이 예에서는  `name` ,  `age` ,  `email` 이라는 세 가지 속성을 사용하여  `Person`  타입 정의한다.
 
 그런 다음에 맵된핑 유형을 사용하여 'PartialPerson'이라는 새 타입 만든다.
 
-매핑된 타입은 **`Person`** 타입의 각 키(**`K`**)를 반복하고 속성 타입 뒤에 **`?`**를 추가하여 각 속성을 선택 사항으로 만든다.
+매핑된 타입은  `Person`  타입의 각 키( `K` )를 반복하고 속성 타입 뒤에  `?` 를 추가하여 각 속성을 선택 사항으로 만든다.
 
 마지막으로 '`name`' 속성에만 값이 할당되는 'PartialPerson' 타입의 'partialPerson' 변수 만든다.
 
-매핑된 타입 표현식 **`{ [K in keyof Person]?: Person[K] }`**을 분석한다.
+매핑된 타입 표현식  `{ [K in keyof Person]?: Person[K] }` 을 분석한다.
 
-- **`[K in keyof Person]`**: 이 부분은 **`Person`** 타입의 모든 속성 이름의 통합을 생성하는 **`keyof`** 연산자를 사용하여 **`Person`** 타입의 각 키(**`K`**)를 반복한다.
-- **`?: Person[K]`**: 매핑된 타입의 각 속성의 타입을 지정한다. **`Person[K]`**를 사용하여 **`Person`** 타입에서 해당 속성의 타입을 검색한다.
+- `[K in keyof Person]` : 이 부분은  `Person`  타입의 모든 속성 이름의 통합을 생성하는  `keyof`  연산자를 사용하여  `Person`  타입의 각 키( `K` )를 반복한다.
+- `?: Person[K]` : 매핑된 타입의 각 속성의 타입을 지정한다.  `Person[K]` 를 사용하여  `Person`  타입에서 해당 속성의 타입을 검색한다.
 
-따라서 매핑된 타입 **`{ [K in keyof Person]?: Person[K] }`**는 본질적으로 원래 **`Person`** 타입의 각 속성이 새로운 타입을 생성한다.
+따라서 매핑된 타입  `{ [K in keyof Person]?: Person[K] }` 는 본질적으로 원래  `Person`  타입의 각 속성이 새로운 타입을 생성한다.
 
 <br>
 
@@ -84,11 +84,11 @@ const card2: Card = "blue-4"; // Valid
 // const card4: Card = 'yellow-3'; // Error: Type '"yellow-3"' is not assignable to type 'Card'.
 ```
 
-- **`Color`**는 문자열 리터럴 유니온 타입으로 'red', 'blue', 'green' 중 하나를 가질 수 있다.
-- **`Quantity`**는 숫자 리터럴 유니온 타입으로 1, 2, 3, 4 중 하나를 가질 수 있다.
-- **`Card`**는 템플릿 리터럴 타입을 사용하여 **`${Color}-${Quantity}`** 형식의 문자열을 나타내는 타입이다.즉, Color와 Quantity가 결합된 문자열 형태를 가진다.
-- **`card1`**과 **`card2`**는 **`Card`** 타입에 해당하는 유효한 값입니다.
-- **`card3`**과 **`card4`**는 **`Card`** 타입에 맞지 않는 값이므로 컴파일 시에 에러가 발생한다.
+- `Color` 는 문자열 리터럴 유니온 타입으로 'red', 'blue', 'green' 중 하나를 가질 수 있다.
+- `Quantity` 는 숫자 리터럴 유니온 타입으로 1, 2, 3, 4 중 하나를 가질 수 있다.
+- `Card` 는 템플릿 리터럴 타입을 사용하여  `${Color}-${Quantity}`  형식의 문자열을 나타내는 타입이다.즉, Color와 Quantity가 결합된 문자열 형태를 가진다.
+- `card1` 과  `card2` 는  `Card`  타입에 해당하는 유효한 값입니다.
+- `card3` 과  `card4` 는  `Card`  타입에 맞지 않는 값이므로 컴파일 시에 에러가 발생한다.
 
 이렇게 새로운 문자열 리터럴 유니온 타입을 만들 수 있다.
 
