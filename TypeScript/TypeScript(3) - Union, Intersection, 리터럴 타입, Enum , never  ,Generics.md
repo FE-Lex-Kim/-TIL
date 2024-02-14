@@ -5,8 +5,8 @@
   - [Enum 타입](#enum-타입)
   - [never](#never)
   - [제네릭 함수 (Generics)](#제네릭-함수-generics)
-    - [추론(Inference)](#추론inference)
-    - [타입 인수 명시하기](#타입-인수-명시하기)
+    - [제네릭 호출 시그니처](#제네릭-호출-시그니처)
+  - [추론(**Inference)**](#추론inference)
     - [주의해야할 점](#주의해야할-점)
 
 # TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics
@@ -295,72 +295,113 @@ console.log(arrLength); // 출력: 5
 
 <br>
 
-제네릭을 사용할때 TypeScript에서 JSX(JavaScript XML)를 사용하는 파일의 확장자는 **`.tsx`**입니다. JSX는 React와 같은 라이브러리에서 컴포넌트를 작성할 때 사용되는 문법입니다.
+제네릭을 사용할때 TypeScript에서 JSX(JavaScript XML)를 사용하는 파일의 확장자는 `.tsx`입니다. JSX는 React와 같은 라이브러리에서 컴포넌트를 작성할 때 사용되는 문법입니다.
 따라서 제네릭의 꺽쇠괄호와 태그의 꺾쇠 괄호를 혼동하므로 보통 제네릭을 사용할때 function 키워드로 선언하는 경우가 많다.
 
 <br>
 
-### 추론(Inference)
+### 제네릭 호출 시그니처
 
-위의 예제에서 Type을 특정하지 않았다.
-
-여기서 타입은 “추론” 되었다고 할 수 있다.
-
-즉, TypeScript에 의해서 자동적으로 선택된 것이다.
+제네릭(generic) 호출 시그니처는 함수를 정의할 때 **일반적인 타입이나 값을 사용하는 대신, 제네릭 타입 매개변수를 사용**하여 타입을 유연하게 정의할 수 있는 방법을 제공한다.
 
 <br>
 
-이번에는 여러 개의 타입 매개변수때는 어떻게 하는지 알아보자.
+- 제네릭 호출 시그니처
 
-```jsx
-function map<Input, Output>(arr: Input[], func: (arg: Input) => Output): Output[] {
-  return arr.map(func);
+```tsx
+// 제네릭 호출 시그니처를 사용하여 배열의 첫 번째 요소를 반환하는 함수를 정의합니다.
+type FirstElementFunction<T> = (arr: T[]) => T;
+
+// 제네릭 호출 시그니처를 사용하여 숫자 배열의 첫 번째 요소를 반환하는 함수를 정의합니다.
+const getFirstNumber: FirstElementFunction<number> = (arr) => {
+  return arr[0];
+};
+
+// 제네릭 호출 시그니처를 사용하여 문자열 배열의 첫 번째 요소를 반환하는 함수를 정의합니다.
+const getFirstString: FirstElementFunction<string> = (arr) => {
+  return arr[0];
+};
+
+const numbers: number[] = [1, 2, 3, 4, 5];
+const strings: string[] = ["apple", "banana", "orange"];
+
+const firstNumber: number = getFirstNumber(numbers); // 1
+const firstString: string = getFirstString(strings); // "apple"
+```
+
+<br>
+
+- 제네릭 타입
+
+```tsx
+function getFirstNumber(arr: number[]): number {
+  return arr[0];
 }
 
-const parsed = map(["1", "2", "3"], (n) => parseInt(n));
-console.log("parsed: ", parsed); // parsed:  [ 1, 2, 3 ]
-```
-
-`String[]` 이므로 input 타입은 string
-
-`parseInt()`가 number 타입으로 나와서 output은 number
-
-<br>
-
-input 타입과 output 타입을 함수 표현식의 반환값를 통해서 추론할 수 있다.
-
-<br>
-
-### 타입 인수 명시하기
-
-제네릭에서 항상 의도된 타입을 추론하지만, 항상 그렇지만은 않다.
-
-```jsx
-function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
-  return arr1.concat(arr2);
-}
-```
-
-<br>
-
-아래와 같이 number, string 배열로 둘다 타입이 다르다.
-
-```jsx
-const arr = combine([1, 2, 3], ["hello"]);
-// Type 'string' is not assignable to type 'number'.
-```
-
-<br>
-
-이럴때 수동으로 타입을 명시해야한다.
-
-```jsx
-function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
-  return arr1.concat(arr2);
+function getFirstString(arr: string[]): string {
+  return arr[0];
 }
 
-const arr = (combine < number) | (string > ([1, 2, 3], ["hello"]));
+const numbers: number[] = [1, 2, 3, 4, 5];
+const strings: string[] = ["apple", "banana", "orange"];
+
+const firstNumber: number = getFirstNumber(numbers);
+const firstString: string = getFirstString(strings);
 ```
+
+<br>
+
+**장점:**
+
+1. **명확한 인터페이스 정의:** 제네릭 호출 시그니처를 사용하면 함수나 메서드의 인터페이스를 더 명확하게 정의할 수 있습니다. 함수가 어떤 타입을 받고 어떤 타입을 반환하는지 명시적으로 표현할 수 있다.
+2. **타입 추론의 용이성:** 제네릭 호출 시그니처를 사용하면 함수를 호출할 때 매개변수의 타입을 명시적으로 지정하지 않아도 컴파일러가 타입을 추론할 수 있습니다. 이는 코드를 더 간결하게 작성할 수 있게 해준다.
+3. **코드 재사용성:** 제네릭 호출 시그니처를 사용하면 여러 함수나 메서드에서 동일한 타입을 사용할 수 있습니다. 이는 코드의 재사용성을 높여준다.
+
+<br>
+
+## 추론(**Inference)**
+
+타입 추론(Type Inference)은 TypeScript가 코드를 분석하여 변수 또는 함수의 타입을 추측하는 기능이다. 타입을 명시적으로 지정하지 않아도 TypeScript가 컴파일러가 변수 또는 함수를 초기화할 때 그 타입을 추론한다.
+
+```tsx
+// 숫자 변수
+let numberVariable = 10; // TypeScript가 number 타입으로 추론합니다.
+
+// 문자열 변수
+let stringVariable = "Hello"; // TypeScript가 string 타입으로 추론합니다.
+
+// 배열 변수
+let arrayVariable = [1, 2, 3]; // TypeScript가 number[] 타입으로 추론합니다.
+
+// 객체 변수
+let objectVariable = { name: "John", age: 30 }; // TypeScript가 { name: string, age: number } 타입으로 추론합니다.
+
+// 함수
+function add(a: number, b: number) {
+  return a + b;
+}
+let result = add(3, 5); // TypeScript가 함수의 반환 값의 타입을 number로 추론합니다.
+```
+
+코드를 간결하게 유지하고 타입 안정성을 확보할 수 있다.
+
+하지만 매개변수에는 타입을 부여핸다 어떤값이 들어오는지 모르기 때문이다.
+
+<br>
+
+타입스크립트의 추론을 타입스크립트가 제대로 추론하면 그대로 쓰고, 틀리게 추론할떄만 올바른 타입을 표기하는것이 좋다.
+
+<br>
+
+다음과 같은 경우에는 타입 추론을 사용하는 대신 명시적으로 타입을 지정하는 것이 좋다.
+
+1. **코드의 가독성이 떨어지는 경우**: 타입 추론을 사용하면 코드의 가독성이 떨어질 수 있다. 특히 **코드가 복잡하고 이해하기 어려운 경우에는 명시적으로 타입을 지정하여 코드를 명확하게 만드는 것이 좋다.**
+2. **타입이 명확하지 않은 경우**: **타입 추론이 잘못된 결과를 내는 경우가 있다.** 특히 다양한 타입의 조합이 있는 경우에는 타입 추론을 사용하기 어려울 수 있다. 이런 경우에는 명시적으로 타입을 지정하여 정확한 타입을 사용하는 것이 좋다.
+3. **코드의 안정성이 필요한 경우**: 타입 **추론은 코드의 안정성을 보장하지 않을 수 있다.** 특히 타입 추론이 잘못된 결과를 내는 경우에는 코드의 안정성이 떨어질 수 있다. 이런 경우에는 명시적으로 타입을 지정하여 코드의 안정성을 확보하는 것이 좋다.
+
+<br>
+
+따라서, 타입 추론을 사용할 때에는 코드의 복잡성과 안정성을 고려하여 타입 추론을 적절히 활용하는 것이 중요하다. **간단한 경우에는 타입 추론을 사용하여 코드를 간결하게 작성할 수 있지만, 복잡한 경우에는 명시적으로 타입을 지정하여 코드의 가독성과 안정성을 확보하는 것이 좋다.**
 
 <br>
 
