@@ -1,43 +1,8 @@
-- [TypeScript(2) - 타입 추론, 타입 앨리어스, 인터페이스](#typescript2---타입-추론-타입-앨리어스-인터페이스)
-  - [타입 추론](#타입-추론)
+- [TypeScript(2) - 타입 앨리어스, 인터페이스](#typescript2---타입-앨리어스-인터페이스)
   - [타입 앨리어스](#타입-앨리어스)
   - [인터페이스](#인터페이스)
 
-# TypeScript(2) - 타입 추론, 타입 앨리어스, 인터페이스
-
-## 타입 추론
-
-타입 추론이라는 기능이 있어서 굳이 타입을 정의하지 않아도 된다.
-
-```tsx
-let Name = "alex";
-let age = 29;
-let handsome = true;
-
-Name = "james";
-Name = 29; // Error
-
-age = 30;
-age = "30"; // Error
-
-handsome = false;
-handsome = "false"; // Error
-```
-
-<br>
-
-배열의 값도 추론되므로 명시적으로 string이라고 설정하지 않더라도 다음 for 루프에서는 string 타입으로 다루어진다.
-
-```tsx
-const names = ["Alex", "James", "Andrew"]; // name : string[](추론되었음)
-
-names.forEach((name) => {
-  // 따라서 name의 타입은 string으로 추론되어짐
-  console.log(name.toUpperCase());
-});
-```
-
-<br>
+# TypeScript(2) - 타입 앨리어스, 인터페이스
 
 ## 타입 앨리어스
 
