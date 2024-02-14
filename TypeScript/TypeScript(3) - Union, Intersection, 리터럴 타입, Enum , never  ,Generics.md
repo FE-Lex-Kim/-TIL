@@ -209,35 +209,94 @@ function foo(x: string | number | number[]): boolean {
 
 ## 제네릭 함수 (Generics)
 
-**입력 값이 출력 값의 타입과 관련이 있거나, 두 입력값의 타입이 서로 관련이 있는 형태의 함수를 작성하는 경우 사용할 수 있다.**
+함수, 타입, 클래스 등에서 내부적으로 사용할 타입을 미리 정해두지 않고 타입 변수를 사용해서 해당 위치를 비워 둔 다음에, 실제로 그 값을 사용할때 외부에서 타입 변수 자리에 타입을 지정하여 사용하는 방식을 말한다.
 
-```jsx
-function firstElement(arr: any[]) {
-  return arr[0];
-}
+<br>
+
+이렇게 하면 함수, 타입, 클래스 등 여러 타입에 대해 하나하나 따로 정의하지 않아도 되기 때문에 재사용성이 크게 향상된다.
+
+타입 변수는 일반적으로 <T>와 같이 꺽쇠 괄호 내부에 정의하며, 사용할 때는 함수에 매개변수를 넣는 것과 같이 유사하게 원하는 타입을 넣어주면 된다.
+
+보통 타입 변수명으로 T(Type), E(Element), K(Key), V(Value) 등 한글자로 된 이름을 많이 사용한다.
+
+```tsx
+type ExampleArrayType<T> = T[];
+
+// 숫자 배열
+const array2: ExampleArrayType<number> = [1, 2, 3, 4, 5];
+
+// 불리언 배열
+const array3: ExampleArrayType<boolean> = [true, false, true];
+
+console.log(array2); // 출력: [1, 2, 3, 4, 5]
+console.log(array3); // 출력: [true, false, true]
 ```
 
 <br>
 
-입력값과 반환값이 any 값이 된다.
+제네릭을 호출할때 반드시 꺾쇠괄호만 명시하는것이 아니다.
 
-함수가 입력값인 배열의 원소 타입을 반환하는 타입으로 정하면 더 좋을 것같다.
+컴파일러가 인수를 보고 타입을 추론해준다. 따라서 생략도 가능하다.
 
-```jsx
-// function firstElement(arr: any[]) {
-//   return arr[0];
-// }
-
-function firstElement<Type>(arr: Type[]): Type | undefined {
-  return arr[0];
+```tsx
+// 제네릭 함수
+function identity<T>(arg: T): T {
+  return arg;
 }
 
-const s = firstElement(["a", "b", "c"]);
-// n은 "number" 타입
-const n = firstElement([1, 2, 3]);
-// u는 "undefined" 타입
-const u = firstElement([]);
+// 제네릭 함수 호출
+let result1 = identity("Hello"); // result1의 타입은 string로 추론됩니다.
+let result2 = identity(123); // result2의 타입은 number로 추론됩니다.
+
+console.log(result1); // 출력: Hello
+console.log(result2); // 출력: 123
 ```
+
+<br>
+
+주의할점은 함수나 클래스 등의 내부에서 제네릭을 사용할 때 어떤 타입이든 될 수 있다.
+
+**따라서 특정 타입에서만 존재하는 인자를 참조를 하려면 안된다.**
+
+```tsx
+// 제네릭 함수
+function printLength<T>(arg: T): void {
+  // T 타입이 'length' 속성을 가지고 있다고 가정합니다.
+  console.log(arg.length); // 오류: 'length' 속성이 'T'에 존재하지 않습니다.
+}
+
+// 문자열 배열을 전달합니다.
+printLength(["apple", "banana", "orange"]);
+
+// 숫자를 전달합니다.
+printLength(123); // 오류: 'length' 속성이 'number'에 존재하지 않습니다.
+```
+
+<br>
+
+이럴때는 length 속성을 가진 타입만을 받는다 라는 제약을 걸어주면 된다.
+
+```tsx
+interface TypeWithLength {
+  length: number;
+}
+
+function exampleFunc2<T extends TypeWithLength>(arg: T): number {
+  return arg.length;
+}
+
+// 예제 사용
+const strLength = exampleFunc2("Hello"); // 문자열의 길이를 반환합니다.
+console.log(strLength); // 출력: 5
+
+const arrLength = exampleFunc2([1, 2, 3, 4, 5]); // 배열의 길이를 반환합니다.
+console.log(arrLength); // 출력: 5
+```
+
+<br>
+
+제네릭을 사용할때 TypeScript에서 JSX(JavaScript XML)를 사용하는 파일의 확장자는 **`.tsx`**입니다. JSX는 React와 같은 라이브러리에서 컴포넌트를 작성할 때 사용되는 문법입니다.
+따라서 제네릭의 꺽쇠괄호와 태그의 꺾쇠 괄호를 혼동하므로 보통 제네릭을 사용할때 function 키워드로 선언하는 경우가 많다.
 
 <br>
 
