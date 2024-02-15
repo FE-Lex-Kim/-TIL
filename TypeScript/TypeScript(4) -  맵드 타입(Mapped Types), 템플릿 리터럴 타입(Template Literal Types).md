@@ -1,8 +1,10 @@
-- [TypeScript(4) - 맵드 타입(Mapped Types), 템플릿 리터럴 타입(Template Literal Types)](#typescript4---맵드-타입mapped-types-템플릿-리터럴-타입template-literal-types)
+- [TypeScript(4) - 맵드 타입(Mapped Types), 템플릿 리터럴 타입(Template Literal Types),then 반환값 타입,객체간 대입](#typescript4---맵드-타입mapped-types-템플릿-리터럴-타입template-literal-typesthen-반환값-타입객체간-대입)
   - [맵드 타입(Mapped Types)](#맵드-타입mapped-types)
   - [템플릿 리터럴 타입(Template Literal Types)](#템플릿-리터럴-타입template-literal-types)
+  - [then 반환값 타입](#then-반환값-타입)
+  - [객체간 대입](#객체간-대입)
 
-# TypeScript(4) - 맵드 타입(Mapped Types), 템플릿 리터럴 타입(Template Literal Types)
+# TypeScript(4) - 맵드 타입(Mapped Types), 템플릿 리터럴 타입(Template Literal Types),then 반환값 타입,객체간 대입
 
 <br>
 
@@ -91,6 +93,123 @@ const card2: Card = "blue-4"; // Valid
 - `card3` 과  `card4` 는  `Card`  타입에 맞지 않는 값이므로 컴파일 시에 에러가 발생한다.
 
 이렇게 새로운 문자열 리터럴 유니온 타입을 만들 수 있다.
+
+<br>
+
+## then 반환값 타입
+
+제네릭을 사용하면 해당 **`then`** 메서드에서 반환되는 값의 타입을 명시적으로 지정할 수 있다. 이는 TypeScript에서 타입 안정성을 보장하는데 도움이 된다.
+
+```tsx
+fetchData()
+  .then<number>((data) => {
+    // 데이터 처리 로직
+    return data * 2; // 반환값의 타입을 명시적으로 number로 설정
+  })
+  .then<string>((result) => {
+    // 결과 처리 로직
+    return result.toString(); // 반환값의 타입을 명시적으로 string으로 설정
+  })
+  .then((finalResult) => {
+    // 최종 결과 처리 로직
+    // 여기서 반환값의 타입은 이전 `then` 메서드에서 설정된 타입으로 추론됨
+  });
+```
+
+위 예제에서 각 **`then`** 메서드 앞에 제네릭을 사용하여 해당 메서드에서 반환되는 값의 타입을 명시적으로 지정했다. 이렇게 함으로써 TypeScript는 각 단계에서 예상되는 타입을 추론하고, 코드의 타입 안정성을 유지할 수 있다.
+
+<br>
+
+## 객체간 대입
+
+```tsx
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Employee {
+  name: string;
+  age: number;
+  position: string;
+}
+
+let person: Person = { name: "John", age: 30 };
+let employee: Employee = { name: "Alice", age: 25, position: "Manager" };
+
+person = employee; // 가능
+employee = person; // 불가능
+```
+
+이는 **`Employee`** 인터페이스가 **`position`** 속성을 요구하기 때문에 **`Person`** 객체에는 해당 속성이 없어서 호환되지 않기 때문이다.
+
+<br>
+
+Person은 Employee 보다 넓은 타입이다.
+
+**좁은 타입은 넓은 타입에 대입할 수 있고 넓은 타입은 좁은 타입에 대입할 수 없다.**
+
+Employee가 Person보다 넓다고 착각할 수 도 있다.
+
+하지만 Employee가 코드의 양이 많고 A보다 차지하는 줄의 폭이 넓기 때문이다.
+
+**즉, 코드의 양과 줄 수가 더 많은 이유는 그만큼 더 구체적으로 적었기 때문에 더 좁은 타입이라고 생각하면 된다.**
+
+<br>
+
+교집합인 &, 합집합인 | 이 있다면, | 가 더 넓은 영역에 속한다.
+
+```tsx
+interface A {
+    name: string;
+    city: string;
+  }
+
+  interface B {
+    age: number;
+    city: string;
+  }
+
+  let c;
+
+  const target1: A & B = c : A | B; // 에러
+  const target2: A = c : A | B; // 에러
+  const target3: B = c : A | B; // 에러
+```
+
+A | B가 A & B 보다 더 큰 영영이다.( A & B )가 더 구체적이므로 더 좁은 영역이라고 생각하면된다.
+
+A | B가 A 보다 더 큰영역이다.(A | B ) 는 A를 포함하고 또 B까지도 포함하기 때문에 더 크다.
+
+A | B도 B 보다 더 큰영역이다.
+
+<br>
+
+튜플은 배열보다 좁은 타입이다. 튜플은 배열에 대입이 가능하지만, 배열은 튜플에 대입할 수 없다.
+
+```tsx
+// 튜플 타입 정의
+type TupleType = [string, number];
+
+// 배열 타입 정의
+type ArrayType = string[];
+
+// 튜플 변수
+let tuple: TupleType = ["apple", 3];
+
+// 배열 변수
+let array: ArrayType = ["banana", "orange", "grape"];
+
+// 튜플에 배열 대입 시도
+tuple = array; // 실패: 배열 타입은 튜플 타입보다 넓은 범위를 가지므로 대입할 수 없습니다.
+
+// 배열에 튜플 대입 시도
+array = tuple; // 성공: 튜플 타입은 배열 타입보다 좁은 범위를 가지므로 대입할 수 있습니다.
+```
+
+<br>
+
+배열이나 튜플에 readonly 수식어를 붙일 수 있다. readonly 수식어가 붙은 배열이 더 넓은 타입이다.
 
 <br>
 
