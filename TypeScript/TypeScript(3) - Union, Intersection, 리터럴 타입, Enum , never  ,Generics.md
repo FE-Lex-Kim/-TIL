@@ -1,12 +1,13 @@
 - [TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics](#typescript3---union-intersection-리터럴-타입-enum--never-generics)
   - [유니온 (Union)](#유니온-union)
-  - [교차 (Intersection) 타입](#교차-intersection-타입)
   - [리터럴 타입](#리터럴-타입)
   - [Enum 타입](#enum-타입)
   - [never](#never)
   - [제네릭 함수 (Generics)](#제네릭-함수-generics)
     - [제네릭 호출 시그니처](#제네릭-호출-시그니처)
-  - [추론(**Inference)**](#추론inference)
+    - [제네릭을 함수처럼 사용하기](#제네릭을-함수처럼-사용하기)
+    - [제네릭에 제약 걸기](#제네릭에-제약-걸기)
+  - [추론(Inference)](#추론inference)
     - [주의해야할 점](#주의해야할-점)
 
 # TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics
@@ -15,47 +16,58 @@
 
 ## 유니온 (Union)
 
-여러 타입의 합집합을 의미하는 Union이다.
+유니온 타입은 여러 타입 중 하나일 수 있는 값을 나타내는 TypeScript의 타입입니다.
 
 ```jsx
-const person = (name: string | undefined, age: number | string): string => {
-  return `my name is ${name}, I'm ${age}`;
-};
-console.log(person("alex", 29));
+// 숫자 또는 문자열을 받아들이는 함수
+function processInput(input: number | string): void {
+  if (typeof input === "number") {
+    console.log("Input is a number:", input);
+    console.log("Result:", input * 2);
+  } else {
+    console.log("Input is a string:", input);
+    console.log("Result:", input.toUpperCase());
+  }
+}
+
+// 숫자 입력 예시
+processInput(10); // Output: Input is a number: 10, Result: 20
+
+// 문자열 입력 예시
+processInput("hello"); // Output: Input is a string: hello, Result: HELLO
 ```
 
-name에 string과 undefined,
-
-age에 number와 string 모두 가능하게 하려면 파이프( | ) 를 사용해서 설정한다.
+input은 number or string 값이 들어올 수 있게 파이프( | ) 를 사용해서 설정한다.
 
 이를 유니온이라고 부른다.
 
 <br>
 
-## 교차 (Intersection) 타입
+```tsx
+function returnNumber(value: string | number): number {
+  return parseInt(value);
+}
+```
 
-여러 타입의 교집합을 의미하는 Intersection 타입이다.
+value는 숫자, 문자열이 될수도 있다는 뜻이다. parseInt(value)는 에러가 발생한다.
+
+string 타입 매개변수로 넣을 수 없다고 나온다.
+
+타입스크립트에서는 parseInt(1)은 어차피 1이므로 의미가 없어서 하지말라는 의미로 에러가나온다.
+
+따라서 if 문으로 타입을 좁혀야한다.
 
 ```tsx
-type NameAge = {
-  name: string;
-  age: number;
-};
-
-type Email = {
-  email: string;
-};
-
-type Person = NameAge & Email;
-
-const person: Person = {
-  name: "alex",
-  age: 29,
-  email: "lexkim.dev@gmail.com",
-};
-
-console.log(person.name, person.age, person.email);
+function returnNumber(value: string | number): number {
+  if (typeof value === "string") {
+    return parseInt(value);
+  } else {
+    return value;
+  }
+}
 ```
+
+따라서 유니온 타입을 사용할 때는 각 타입에 대해 정확히 이해하고, 예상치 못한 결과가 발생하지 않도록 주의해야 합니다.
 
 <br>
 
@@ -359,7 +371,269 @@ const firstString: string = getFirstString(strings);
 
 <br>
 
-## 추론(**Inference)**
+### 제네릭을 함수처럼 사용하기
+
+```tsx
+interface Alex {
+  type: human;
+  race: yellow;
+  name: "alex";
+  age: 28;
+}
+
+interface James {
+  type: human;
+  race: yellow;
+  name: "james";
+  age: 24;
+}
+```
+
+type과 race 속성은 동일하지만 name과 age 속성은 다르다.
+
+이럴때 제네릭을 사용해서 중복을 제거할 수 있다.
+
+```tsx
+interface Person<N,A> {
+	type: human,
+	race: yellow,
+	name: N,
+	age: A,
+}
+
+interface Alex extend Person<'alex', 28>{}
+interface James extend Person<'james', 24>{}
+```
+
+인터페이스 이름 바로뒤에 제네릭을 위치시켜 사용할 수 있다.
+
+<br>
+
+만약 타입 매개변수의 개수와 타입 인수의 개수가 일치하지 않으면 에러가 발생한다.
+
+```tsx
+interfacee Alex extends Person<'alex'> // 에러
+```
+
+<br>
+
+인터페이스 뿐만이 아니라 타입별칭, 클래스, 함수도 제네릭을 가질 수 있다.
+
+```tsx
+type Person<N, A> = {
+  type: human;
+  race: yellow;
+  name: N;
+  age: A;
+};
+
+type Alex = Person<"alex", 28>;
+type James = Person<"james", 24>;
+```
+
+```tsx
+class Person<N, A> {
+  name: N;
+  age: A;
+  constructor(name: N, age: A) {
+    this.name = name;
+    this.age = age;
+  }
+}
+```
+
+<br>
+
+**주의! 함수에서는 함수 선언문이냐 표현식이냐에 따라 제네릭 표기 위치가 달라진다.**
+
+```tsx
+const personFactoryE = <N, A>(name: N, age: A) => ({
+  type: human,
+  race: yellow,
+  name,
+  age,
+});
+
+function personFactoryD<N, A>(name: N, age: A) {
+  return {
+    type: human,
+    race: yellow,
+    name,
+    age,
+  };
+}
+```
+
+<br>
+
+객체나 메서드에서도 제네릭을 표기할 수 있다.
+
+```tsx
+class Person<N, A> {
+  name: N;
+  age: A;
+
+  constructor(name: N, age: A) {
+    this.name = name;
+    this.age = age;
+  }
+  method<B>(param: B) {}
+}
+
+interface IPerson<N, A> {
+  type: "human";
+  race: "yellow";
+  name: N;
+  age: A;
+  method: <B>(param: B) => void;
+}
+```
+
+<br>
+
+기본값도 사용할 수 있다.
+
+```tsx
+interface Person<N = string, A = number> {
+  type: "human";
+  race: "yellow";
+  name: N;
+  age: A;
+  method: <B>(param: B) => void;
+}
+
+type Person1 = Person;
+type Person2 = Person<number>;
+type Person3 = Person<boolean, number>;
+```
+
+<br>
+
+타입스크립트는 제네릭에 직접 타입을 넣지 않아도 추론을 통해 타입을 알아 낼 수 있다.
+
+```tsx
+const personFactoryE = <N, A>(name: N, age: A) => ({
+  type: "human",
+  race: "yellow",
+  name,
+  age,
+});
+
+const alex = personFactoryE("alex", 29);
+```
+
+변수 alex는 name 변수에 ‘alex’를 age 변수에 ‘29’를 인수로 넣었다
+
+`name : string` ,`age: number` 이므로 N은 string, A는 number가 된다.
+
+실제로도 직접 넣지 않는 경우가 더 많다.
+
+<br>
+
+상수 타입 매개변수도 추가할 수 있다.
+
+```tsx
+function values<const T>(init: T[]) {
+  return {
+    hasValue: (value: T) => init.includes(value),
+  };
+}
+
+const saveValues = values(["a", "b", "c"]);
+saveValues.hasValue("x"); // '"x"' 형식의 인수는 '"a" | "b" | "c"' 형식의 매개 변수에 할당될 수 없습니다.
+```
+
+타입 매개변수앞에 const 수식어를 붙이면 타입 매개변수 T를 추론할때 as const를 붙인 값으로 추론된다.
+
+따라서 T는 `"a" | "b" | "c"` 형식의 매개 변수만 할당 할 수 있게 된다.
+
+<br>
+
+### 제네릭에 제약 걸기
+
+타입 매개변수에 제약을 사용할 수 있다.
+
+**extends 문법으로 타입 매개변수의 제약을 표시하는 방법이다.**
+
+타입의 상속을 의미하던 extends와는 사용법이 다르다.
+
+```tsx
+interface Example<A extends number, B = string> {
+  a: A;
+  b: B;
+}
+
+type Usecase1 = Example<string, number>; // 에러 string이 아니라 반드시 number이여야한다.
+type Usecase2 = Example<1, number>;
+type Usecase3 = Example<number>;
+```
+
+Usecase1 타입에서 string 타입을 넣었더니 에러가 난다. 반드시 number 이여야한다는 뜻이다.
+
+Usecase2 타입에서는 number보다 더 구체적인 1을 넣어서 입력할 수 있다.
+
+<br>
+
+**타입 매개변수에 사용하는 extends는 제약을 의미한다.**
+
+```tsx
+interface Example<A, B extends A> {
+  a: A;
+  b: B;
+}
+
+type Usecase1 = Example<string, number>; // A 타입이 string이므로 에러 발생
+type Usecase2 = Example<string, "hello">;
+type Usecase3 = Example<number, 123>;
+```
+
+Usecase1 에서 A타입이 string인데 B타입은 A타입을 extends 받았으므로 number가 들어오면 에러가 발생한다.
+
+<br>
+
+다음과 같은 제약들이 많이 쓰인다.
+
+```tsx
+<T extends Obejct> // 모든 객체
+<T extends any[]> // 모든 배열
+<T extends (...args: any) => any> // 모든 함수
+<T extends abstract new (...args: any) => any> // 생성자 타입
+<T extends keyof any> // string | number | symbol
+```
+
+주의해야할 점이 있다. 타입 매개변수와 제약을 동일하게 생각하는 것이다
+
+```tsx
+interface V0 {
+  value: any;
+}
+
+const returnV0 = <T extends V0>(): T => {
+  return { value: "test" };
+};
+
+returnV0<{ value: string; another: value }>();
+```
+
+아래처럼 T가 another인 값을 가지고 있을 수 도 있기 때문에 `<value: string>`은 T가 아니다.
+
+<br>
+
+강박적으로 제네릭을 쓸 필요가 없다. 특히 원시값 타입만 사용한다면 대부분 제약을 걸지 않아도 되는 경우가 많다.
+
+```tsx
+interface V0 {
+  value: any;
+}
+
+const returnV0 = (): V0 => {
+  return { value: "test" };
+};
+```
+
+<br>
+
+## 추론(Inference)
 
 타입 추론(Type Inference)은 TypeScript가 코드를 분석하여 변수 또는 함수의 타입을 추측하는 기능이다. 타입을 명시적으로 지정하지 않아도 TypeScript가 컴파일러가 변수 또는 함수를 초기화할 때 그 타입을 추론한다.
 
