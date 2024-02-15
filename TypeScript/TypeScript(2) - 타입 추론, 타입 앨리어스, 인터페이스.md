@@ -1,6 +1,7 @@
 - [TypeScript(2) - 타입 앨리어스, 인터페이스](#typescript2---타입-앨리어스-인터페이스)
   - [타입 앨리어스](#타입-앨리어스)
   - [인터페이스](#인터페이스)
+  - [인덱스 접근 타입](#인덱스-접근-타입)
 
 # TypeScript(2) - 타입 앨리어스, 인터페이스
 
@@ -156,6 +157,39 @@ const cc: ColorfulCircle = {
 <br>
 
 따라서 인터페이스는 객체 그 자체가 아니라 **클래스나 객체의 일부 속성,** 일부 작동을 정의할때 적합하다.
+
+<br>
+
+## 인덱스 접근 타입
+
+특정한 속성에 **연동되게** 타입을 만들고 싶다면 다음과 같이 작성하면된다.
+
+```tsx
+type Animal = {
+  name: string;
+};
+
+type N1 = Animal[name];
+type N2 = Animal[name];
+type N3 = ANimal.name; // 오류 객체.속성 꼴의 방식은 사용할 수 없다.
+```
+
+객체.속성 꼴의 방식은 사용할 수 없기때문에 N3 는 오류가 난다.
+
+<br>
+
+keyof 연산자와 인덱스 접근 타입을 활용해 키의 타입과 값의 타입을 구할 수 있다.
+
+```tsx
+const obj = {
+  hello: "world",
+  name: Alex,
+  age: 28,
+};
+
+type keys = keyof typeof obj; // type Keys = 'hello' | 'name' | 'age'
+type values = (typeof obj)[keys]; // type Value = string | number
+```
 
 <br>
 
