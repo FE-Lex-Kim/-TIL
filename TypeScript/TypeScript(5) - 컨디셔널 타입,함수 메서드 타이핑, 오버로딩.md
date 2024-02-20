@@ -1,4 +1,15 @@
-# TypeScript(5) - 컨디셔널 타입
+- [TypeScript(5) - 컨디셔널 타입,함수 메서드 타이핑, 오버로딩](#typescript5---컨디셔널-타입함수-메서드-타이핑-오버로딩)
+  - [컨디셔널 타입](#컨디셔널-타입)
+    - [컨디셔널 타입 검사](#컨디셔널-타입-검사)
+    - [컨디셔널 타입 분배법칙](#컨디셔널-타입-분배법칙)
+  - [함수와 메서드 타이핑](#함수와-메서드-타이핑)
+    - [일반 매개변수](#일반-매개변수)
+    - […나머지문법](#나머지문법)
+    - [전개 문법(spread)](#전개-문법spread)
+    - [구조분해할당](#구조분해할당)
+  - [오버로딩](#오버로딩)
+
+# TypeScript(5) - 컨디셔널 타입,함수 메서드 타이핑, 오버로딩
 
 <br>
 
@@ -261,6 +272,164 @@ type RR = R<never>;
 
 <br>
 
+## 함수와 메서드 타이핑
+
+<br>
+
+### 일반 매개변수
+
+```tsx
+function example(a: string, b?: number, c = false) {}
+
+example("hi", 123, true);
+example("hi", 123);
+example("hi");
+```
+
+b 매개변수에 옵셔널 수식어가 있다. b의 값이 없어도 상관없다는 의미이다.
+
+c는 기본값이 제공되어 있으므로 마찬가지이다.
+
+<br>
+
+### …나머지문법
+
+매개변수는 …나머지 문법을 사용할 수 있다.
+
+```tsx
+function example1(a: string, ...b: number[]) {}
+function example2(...a: string, b: number[]) {} // 에러
+```
+
+나머지 매개변수는 반드시 배열 또는 튜플이어야 한다.
+
+나머지 매개변수는 항상 마지막 매개변수에 위치해야한다.
+
+<br>
+
+### 전개 문법(spread)
+
+매개변수 자리에 전개 문법(spread)을 사용할 수 있다.
+
+```tsx
+// 두개다 같은 방법임
+function example1(...a: [number, string, boolean]) {}
+function example1(...a: [a: number, b: string, c: boolean]) {}
+example1(1, 2, 3); // 에러 두번째 매개변수가 string이 여야함
+example1(1, 2, 3, 4); // 4번째는 없어서 안됌
+```
+
+<br>
+
+### 구조분해할당
+
+구조분해할당을 타이핑하려면 다음과 같다.
+
+```tsx
+function destructuring({ props: { nested } }) {} // 두번연속 구조분해할당을 사용함
+->
+
+function destructuring({ props: { nested } }: { props: { nested: number } }) {}
+```
+
+## 오버로딩
+
+타입스크립트에서 함수 오버로딩은 하나의 함수에 여러 함수를 정의하여 다양한 매개변수 유형을 지원하는 기능이다.
+
+예를 들어 다음과 같이 코드를 작성하면 에러가 발생한다.
+
+```tsx
+function add(x: string | number, y: string | number): string | number {
+  return x + y; //'+' 연산자를 'string | number' 및 'string | number' 형식에 적용할 수 없습니다.
+}
+
+add(1, 2);
+add("1", "2");
+add(1, "2");
+add("1", 2);
+```
+
+x와 y 모두 string | number이 될 수 있기 때문이다.
+
+이럴때 오버로딩이 필요하다.
+
+<br>
+
+동일한 함수가 다양한 타입의 입력을 처리하고 다른 동작을 수행해야 하는 경우에 오버로딩이 자주 사용될 수 있다.
+
+오버로딩이 무엇인지는 예제를 보면 더 잘알 수 있다.
+
+```tsx
+function add(x: number, y: number): number;
+function add(x: string, y: string): string;
+function add(x: any, y: any) {
+  return x + y;
+}
+
+add(1, 2); // 3
+add("1", "2"); // 12
+add(1, "2"); // 에러
+add("1", 2); // 에러
+```
+
+여기서 any를 제거하면 에러가 발생해서 어쩔수 없이 넣어야한다.
+
+<br>
+
+타입스크립트에서 함수 오버로딩은 컴파일러가 함수 호출 시, 선언된 순서대로 우선순위가 결정된다.
+
+즉, 함수를 호출할 때 매개변수 유형과 일치하는 첫 번째 오버로딩을 선택한다.
+
+<br>
+
+따라서 오버로딩의 순서는 좁은 타입부터 넓은 타입순으로 오게해야 문제가 없다.
+
+```tsx
+function example(param: string): string;
+function example(param: string | null): number;
+function example(param: string): string | number {
+  if (param) {
+    return "string";
+  } else {
+    return 123;
+  }
+}
+
+const result = example("what"); // string
+```
+
+```tsx
+function example(param: string | null): number;
+function example(param: string): string;
+function example(param: string): string | number {
+  if (param) {
+    return "string";
+  } else {
+    return 123;
+  }
+}
+
+const result = example("what"); // number
+```
+
+순서를 바꾸면 첫번째는 string, 두번째는 number가 된다.
+
+<br>
+
+타입스크립트에서 오버로딩은 다음과 같은 상황에서 유용하게 사용된다.
+
+1. **라이브러리와 프레임워크 개발**:
+   - 라이브러리나 프레임워크를 개발할 때, 다양한 유형의 입력을 처리해야 할 때 오버로딩이 유용하다. 이는 사용자가 다양한 유형의 입력을 전달할 수 있도록 하여 라이브러리의 유연성을 향상시킨다.
+2. **다양한 목적의 함수**:
+   - 함수가 다양한 타입의 입력을 받아들이고 해당 입력에 따라 다른 동작을 수행해야 할 때 오버로딩이 유용하다. 이는 함수의 동작을 명확하게 정의하고, 코드의 가독성을 높여준다.
+3. **타입 안정성 확보**:
+   - 오버로딩을 사용하여 입력 타입에 따라 타입 안정성을 보장할 수 있다. 이는 잘못된 타입의 입력이 전달되는 것을 방지하고, 코드의 안정성을 높여준다.
+
+그러나 오버로딩은 항상 필요한 것은 아니다. 간단한 함수나 메서드의 경우에는 오버로딩보다는 타입 가드나 다른 타입 추론 메커니즘을 사용하는 것이 더 간단하고 효율적일 수 있다.
+
+따라서 프로젝트의 요구 사항과 특성에 따라 오버로딩을 사용할 빈도가 달라질 수 있다. 일반적으로 라이브러리 개발이나 다양한 유형의 입력을 처리해야 할 때 오버로딩이 자주 사용된다.
 참고
+
+<br>
 
 - 타입스크립트 교과서를 참고해서 정리한 글입니다.
