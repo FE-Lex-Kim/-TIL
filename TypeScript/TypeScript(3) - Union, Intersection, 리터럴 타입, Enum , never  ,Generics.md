@@ -156,9 +156,36 @@ enum Direction {
 
 <br>
 
+**enum 타입은 브랜딩을 위해 사용하면 좋다.**
+
+```tsx
+enum Name {
+  alex,
+  james,
+}
+
+interface Alex {
+  type: Name.alex;
+}
+
+interface James {
+  type: Name.james;
+}
+
+function alexOrJames(param: Alex | James) {
+  if (param.type === Name.alex) {
+    param; // param : Alex
+  } else {
+    param; // param : James
+  }
+}
+```
+
+<br>
+
 ## never
 
-nerver 절대로 발생하지 않는 값의 종류를 나타낸다.
+never 절대로 발생하지 않는 값의 종류를 나타낸다.
 
 ```tsx
 function fn(input: never) {}
