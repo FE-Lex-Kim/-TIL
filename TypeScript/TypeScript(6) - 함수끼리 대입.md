@@ -1,11 +1,12 @@
-- [TypeScript(6) - 함수끼리 대입](#typescript6---함수끼리-대입)
+- [TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기](#typescript6---함수끼리-대입-infer-타입-좁히기)
   - [함수끼리 대입](#함수끼리-대입)
     - [반환값의 경우](#반환값의-경우)
     - [매개변수의 경우](#매개변수의-경우)
     - [메서드의 경우](#메서드의-경우)
   - [Infer](#infer)
+  - [타입 좁히기](#타입-좁히기)
 
-# TypeScript(6) - 함수끼리 대입
+# TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기
 
 <br>
 
@@ -203,6 +204,38 @@ type Result1 = Union<{ a: 1 | 2; b: 2 | 3 }>;
 첫번째 a infer U 는 1 | 2, 두번째 b infer U는 2 | 3 따라서 1 | 2 | 3 이된다.
 
 같은 이름의 타입 변수(여기선 infer U)는 서로 유니온이 된다.
+
+<br>
+
+## 타입 좁히기
+
+타입스크립트(TypeScript)에서의 타입 좁히기는 변수나 매개변수의 타입을 좁혀나가는 과정을 말한다. 이는 보다 정확한 타입 정보를 얻고, 코드의 안정성을 높이는 데 도움이 된다.
+
+가장 흔한 타입 좁히기 기법 중 하나는 타입 가드(Type Guards)이다. 타입 가드는 조건문을 사용하여 특정 조건이 충족될 때 변수의 타입을 좁혀나가는 방식이다. 예를 들어, instanceof 연산자를 사용하여 객체의 타입을 확인하거나 typeof 연산자를 사용하여 변수의 타입을 확인하는 등의 방법이 있다.
+
+```tsx
+// 문자열 또는 숫자를 받아들이는 함수
+function printLength(input: string | number) {
+  // 타입 가드를 사용하여 input의 타입을 좁힙니다.
+  if (typeof input === "string") {
+    // input이 문자열인 경우, 문자열 길이를 출력합니다.
+    console.log(`문자열 길이: ${input.length}`);
+  } else if (typeof input === "number") {
+    // input이 숫자인 경우, 숫자를 출력합니다.
+    console.log(`숫자: ${input}`);
+  } else {
+    console.log(`input : ${input}`);
+  }
+}
+
+// 함수 호출
+printLength("Hello"); // 출력: 문자열 길이: 5
+printLength(10); // 출력: 숫자: 10
+```
+
+else 문에서 타입이 never가 된다. else 문에서는 string도 number도 아니므로 never가 된다.
+
+이렇게 타입을 추론하는 것을 **제어 흐름 분석(Control Flow Anlysis)** 이라고 부른다.
 
 <br>
 
