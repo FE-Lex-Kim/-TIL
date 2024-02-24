@@ -1,12 +1,13 @@
-- [TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기](#typescript6---함수끼리-대입-infer-타입-좁히기)
+- [TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기, Type Predicate](#typescript6---함수끼리-대입-infer-타입-좁히기-type-predicate)
   - [함수끼리 대입](#함수끼리-대입)
     - [반환값의 경우](#반환값의-경우)
     - [매개변수의 경우](#매개변수의-경우)
     - [메서드의 경우](#메서드의-경우)
   - [Infer](#infer)
   - [타입 좁히기](#타입-좁히기)
+  - [Type Predicate](#type-predicate)
 
-# TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기
+# TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기, Type Predicate
 
 <br>
 
@@ -235,10 +236,268 @@ printLength(10); // 출력: 숫자: 10
 
 else 문에서 타입이 never가 된다. else 문에서는 string도 number도 아니므로 never가 된다.
 
-이렇게 타입을 추론하는 것을 **제어 흐름 분석(Control Flow Anlysis)** 이라고 부른다.
+이렇게 타입을 추론하는 것을 **제어 흐름 분석(Control Flow Analysis)** 이라고 부른다.
+
+<br>
+
+항상 typeof를 사용할 수 있는 것은 아니다.
+
+```tsx
+function processValue(value: string | undefined | null) {
+  if (value === undefined) {
+    // value가 undefined인 경우 처리
+    console.log("값이 정의되지 않았습니다.");
+  } else if (value) {
+    // value가 string인 경우 처리
+    console.log("값은 문자열입니다");
+  } else {
+    // value가 null인 경우 처리
+    console.log("값이 null입니다.");
+  }
+}
+
+// 예시 사용
+processValue(""); // 값이 null입니다.
+processValue(undefined); // 값이 정의되지 않았습니다.
+processValue(null); // 값이 null입니다.
+```
+
+else if 문에서 “”(빈문자열)이 걸러지지 않았다.
+
+그 이유는 빈 문자열이 falsy한 값을 가지기 때문이다. 따라서 else문에 걸러지게 된다.
+
+다음과 같이 고칠 수 있다.
+
+```tsx
+function processValue(value: string | undefined | null) {
+  if (value === undefined) {
+    // value가 undefined인 경우 처리
+    console.log("값이 정의되지 않았습니다.");
+  } else if (value === null) {
+    // value가 null인 경우 처리
+    console.log("값이 null입니다.");
+  } else {
+    // value가 string인 경우 처리
+    console.log("값은 문자열입니다");
+  }
+}
+
+// 예시 사용
+processValue(""); // 값은 문자열입니다
+processValue(undefined); // 값이 정의되지 않았습니다.
+processValue(null); // 값이 null입니다.
+```
+
+이럴때는 굳이 typeof문으로만 타입좁히기를 하지 않아도 된다.
+
+자바스크립트 문법으로 좁힐 수 있다.
+
+<br>
+
+배열을 타입 좁혀보자.
+
+```tsx
+function processValue(value: string | number[]) {
+  if (Array.isArray(value)) {
+    value; //(parameter) value: number[]
+  } else {
+    value; //(parameter) value: string
+  }
+}
+```
+
+Array.isArray로 타입을 좁힐 수 있다.
+
+<br>
+
+클래스 구분하기
+
+instanceof로 클래스를 구분할 수 있다.
+
+```tsx
+class A {}
+class B {}
+
+function processValue(value: A | B) {
+  if (value instanceof A) {
+    value;
+  } else {
+    value;
+  }
+}
+```
+
+함수는 instanceof function으로 하면된다.
+
+<br>
+
+객체를 구분하는 법
+
+in 연산자는 객체 내에 특정 프로퍼티가 존재하는지 여부를 확인한다.
+
+```tsx
+interface X {
+  width: number;
+  height: number;
+}
+interface Y {
+  length: number;
+  center: number;
+}
+
+function processValue(value: X | Y) {
+  if ("width" in value) {
+    value;
+  } else {
+    value;
+  }
+}
+```
+
+<br>
+
+브랜드 속성을 사용하면 더 쉽게 구분할 수 있다.
+
+```tsx
+interface X {
+  __type: "X";
+  width: number;
+  height: number;
+}
+interface Y {
+  __type: "Y";
+  length: number;
+  center: number;
+}
+
+function processValue(value: X | Y) {
+  if (value.__type === "X") {
+    value;
+  } else {
+    value;
+  }
+}
+```
+
+<br>
+
+## Type Predicate
+
+지금까지는 기존 자바스크립트 사용하여 좁혀짐을 처리했지만, 때로는 코드 전체에서 유형이 변경되는 방식을 보다 직접적으로 제어하고 싶을 때가 있다.
+
+타입 프레디케이트(Type Predicates)는 타입스크립트에서 특정 값이 특정 타입인지를 판별하는 함수이다.
+
+이 함수는 **`value is Type`** 형태로 정의되며, 일반적으로 타입 가드(Type Guards)와 함께 사용된다.
+
+<br>
+
+사용자가 타입 가드를 정의하려면, 반환 타입이 type predicate인 함수를 정의하기만 하면 된다.
+
+```tsx
+function isString(value: any): value is string {
+  return typeof value === "string";
+}
+```
+
+위 코드에서 **`isString`** 함수는 주어진 값이 **`string`** 타입인지를 판별하는 타입 프레디케이트이다.
+
+이를 사용하는 함수에서 **`isString`**이 **`true`**를 반환하는 경우 **TypeScript는 해당 값이 `string` 타입임을 추론하게 된다.**
+
+<br>
+
+```tsx
+function isString(value: string | number): value is string {
+  return typeof value === "string";
+}
+
+function stringOrNumber(value: string | number) {
+  if (isString(value)) {
+    // 가독성이 좋다.
+    console.log("값은 string 입니다.");
+    value;
+  } else {
+    console.log("값은 number 입니다.");
+    value;
+  }
+}
+```
+
+위 코드에서 `isString(value)`가 만약 `true`를 반환한다면, if문의 블록안에서는 `value` 타입이 `string`으로 추론하게 된다.
+
+따라서 자연스럽게 `else` 블록에서는 `string`이 아닌 `number`로 추론하게 된다.
+
+<br>
+
+**이렇게 타입 프레디케이트를 사용하면 가독성이 좋아진다.**
+
+만약 타입 좁히기를 직접 처리하게 되면 가독성이 안좋아 질 수 있다.
+
+```tsx
+const isRequiredAndNumberAndNotZero = (value: any): value is number => {
+  return isNumber(value) && isNotZero(value) && isRequired(value);
+}
+
+const isRequired = (value: any): value is any => {
+  return value !== null && value !== undefined;
+}
+
+const isNumber = (value: any): value is number => {
+  return typeof value === "number";
+}
+
+const isNotZero = (value: number | string): value is number => {
+  return Number(value) !== 0;
+}
+
+type StringOrNumber = string | number;
+
+const data: StringOrNumber = await fetchData();
+
+//type predicate 사용한 type guard. 아 data는 저런 데이터겠군 하고 바로 유추가능하다.
+if(isRequiredAndNumberAndNotZero(data){
+   console.log(data + 10);
+} else {
+   console.log(data + "십");
+}
+
+//type predicate를 사용하지 않은 type guard. 가독성이 좋지 않다.
+if(data !== null || data !== undefined){
+  if(typeof data === "number"){
+    if(data !== 0){
+      console.log(data + 10);
+    }
+  }
+} else {
+  console.log(data + "십");
+}
+```
+
+<br>
+
+하지만 is 연산자를 사용할때는 타입을 잘못 적을 가능성이 생긴다.
+
+아래코드는 is 연산자를 잘못 사용해서 타입 좁히기가 반대로 되어버렸다.
+
+```tsx
+function isString(value: any): value is number {
+  return typeof value === "string";
+}
+
+function stringOrNumber(value: string | number) {
+  if (isString(value)) {
+    console.log("값은 string 입니다.");
+    value; // (parameter) value: number
+  } else {
+    console.log("값은 number 입니다.");
+    value; // (parameter) value: string
+  }
+}
+```
 
 <br>
 
 참고
 
 - 타입스크립트 교과서를 정리한 글입니다.
+- https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
+- [https://velog.io/@devshk447/TIL-typescript-type-guard와-type-predicates](https://velog.io/@devshk447/TIL-typescript-type-guard%EC%99%80-type-predicates)
