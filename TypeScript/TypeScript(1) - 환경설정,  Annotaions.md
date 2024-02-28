@@ -1,4 +1,4 @@
-- [TypeScript(1) - 환경설정, 타입정의(Annotaions)](#typescript1---환경설정-타입정의annotaions)
+- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, null, undefined, void 타입 지정하기), as 키워드](#typescript1---환경설정-객체-함수-원시타입-배열-any-null-undefined-void-타입-지정하기-as-키워드)
   - [TypeScript를 사용하는 이유](#typescript를-사용하는-이유)
   - [설치방법](#설치방법)
   - [Annotations](#annotations)
@@ -10,14 +10,15 @@
     - [any 타입 지정하기](#any-타입-지정하기)
     - [null, undefined 타입 지정하기](#null-undefined-타입-지정하기)
     - [void 타입 지정하기](#void-타입-지정하기)
+  - [as 키워드](#as-키워드)
 
-# TypeScript(1) - 환경설정, 타입정의(Annotaions)
+# TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, null, undefined, void 타입 지정하기), as 키워드
 
 <br>
 
 ## TypeScript를 사용하는 이유
 
-Javascript는 string, number, objectg, undefined 같은 원시 타입을 가지고 있지만, 전체 코드베이스 에서 일관되게 할당되어 있는지 미리 확인해 주지 않는다.
+Javascript는 string, number, object, undefined 같은 원시 타입을 가지고 있지만, 전체 코드베이스 에서 일관되게 할당되어 있는지 미리 확인해 주지 않는다.
 
 **TypeScript는 일관된 코드와 예상치 못한 값을 할당하지 않도록 도와주어 손쉬운 디버깅이 가능해진다.**
 
@@ -244,9 +245,73 @@ const func: Func = () => 1;
 
 <br>
 
+## as 키워드
+
+이 연산자는 변수의 타입을 개발자가 **명시적으로 지정하거나 변환할 때 사용된다.**
+
+1. **타입 단언(Type Assertion)**: 변수의 타입을 개발자가 명시적으로 지정한다. 이는 개발자가 해당 변수가 특정한 타입임을 확신할 때 사용된다. 예를 들어, **`variable as Type`**와 같이 사용됩니다.
+2. **타입 변환(Type Conversion)**: 변수의 값을 다른 타입으로 변환한다. 이는 주로 호환되지 않는 타입 간 변환 시 사용된다.
+
+```tsx
+interface Person {
+  name: string;
+  age: number;
+}
+
+let obj = {};
+obj.name = "alex"; // 에러
+obj.age = 29; // 에러
+```
+
+위의 코드는 에러가 발생한다. obj를 빈 객체로 초기화 했기 때문이다. 해당 객체는 어떤 속성이 들어갈지 알 수 없기 떄문에 이후 추가되는 속성들은 모두 있어서는 안될 속성으로 간주한것이다. 이문제를 해결하려면 선언하는 시점에 속성을 정의하거나 변수 타입을 Person으로 정의하면된다.
+
+```tsx
+interface Person {
+  name: string;
+  age: number;
+}
+
+let obj: Person = {
+  name: "alex",
+  age: 29,
+};
+```
+
+<br>
+
+하지만 이런 방법이 아니더라도 에러를 해결할 수 있다.
+
+```tsx
+interface Person {
+  name: string;
+  age: number;
+}
+
+let obj = {} as Person;
+
+obj.name = "alex";
+obj.age = 29;
+```
+
+변수를 선언할 때 빈 객체로 선언했지만, Person 인터페이스의 속성이라고 타입스크립트에게 말해준다.
+
+이렇게 as를 사용하면 타입스크립트가 알기 어려운 타입에 대해 힌트를 제공할 수 있다.
+
+또한 선언하는 시점에 name과 age 속성을 정의하지 않고 추후에 정의할 수 있는 유연함도 가질수 있다.
+
+<br>
+
+하지만 as를 남용하면 실행 시점의 에러에 취약해 질 수 있다.
+
+따라서 가급적 as를 사용하기보다 타입스크립트가 추론하게 하거나 타이핑을 하는 것이 좋다.
+
+<br>
+
 참고
 
 - https://www.typescriptlang.org/ko/docs/handbook/typescript-in-5-minutes.html
 - https://www.elancer.co.kr/blog/view?seq=183
 - [https://radlohead.gitbook.io/typescript-deep-dive](https://radlohead.gitbook.io/typescript-deep-dive/type-system)
 - [https://velog.io/@skulter/TypeScript-5.-배열과-튜플-pg99bu8g](https://velog.io/@skulter/TypeScript-5.-%EB%B0%B0%EC%97%B4%EA%B3%BC-%ED%8A%9C%ED%94%8C-pg99bu8g)
+- [https://joshua1988.github.io/ts/guide/type-inference.html#문맥상의-타이핑-contextual-typing](https://joshua1988.github.io/ts/guide/type-inference.html#%EB%AC%B8%EB%A7%A5%EC%83%81%EC%9D%98-%ED%83%80%EC%9D%B4%ED%95%91-contextual-typing)
+- 쉽게 시작하는 타입스크립트를 참고했습니다.
