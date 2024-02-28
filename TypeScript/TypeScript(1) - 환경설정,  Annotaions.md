@@ -301,6 +301,37 @@ obj.age = 29;
 
 <br>
 
+다음은 as를 변수에 담아야하는 할때를 설명해보겠다.
+
+```tsx
+try {
+} catch (error) {
+  if (error as Error) {
+    error.message; // 에러 'error' is of type 'unknown'.
+  }
+}
+```
+
+error는 unknown 타입이다. unknow은 if문을 통과하면 {} 타입이 된다.
+
+따라서 if문에서 error를 Error라고 강제 주장했는데 error는 unknown이라고 나온다.
+
+as로 강제 주장한 것이 일시적이기 때문이다. if문이 참인지 거짓인지만 판단할때 주장된 타입이 사용되고 이후에는 원래 타입으로 돌아가버린다.
+
+**따라서 주장한 타입을 계속 기억할 수 있게 만들어야한다. 이럴때 변수를 사용한다.**
+
+```tsx
+try {
+} catch (error) {
+  const err = error as Error;
+  if (err) {
+    err.message;
+  }
+}
+```
+
+<br>
+
 하지만 as를 남용하면 실행 시점의 에러에 취약해 질 수 있다.
 
 따라서 가급적 as를 사용하기보다 타입스크립트가 추론하게 하거나 타이핑을 하는 것이 좋다.
