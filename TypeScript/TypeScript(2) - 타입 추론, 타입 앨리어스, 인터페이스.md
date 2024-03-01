@@ -1,7 +1,7 @@
 - [TypeScript(2) - 타입 앨리어스, 인터페이스, 인덱스 시그니처, 인덱스 접근 타입,](#typescript2---타입-앨리어스-인터페이스-인덱스-시그니처-인덱스-접근-타입)
   - [타입 앨리어스](#타입-앨리어스)
   - [인터페이스](#인터페이스)
-    - [인덱스 시그니쳐](#인덱스-시그니쳐)
+  - [인덱스 시그니쳐](#인덱스-시그니쳐)
   - [인덱스 접근 타입](#인덱스-접근-타입)
 
 # TypeScript(2) - 타입 앨리어스, 인터페이스, 인덱스 시그니처, 인덱스 접근 타입,
@@ -161,7 +161,9 @@ const cc: ColorfulCircle = {
 
 <br>
 
-### 인덱스 시그니쳐
+## 인덱스 시그니쳐
+
+인덱스 시그니처는 특정 타입의 속성 이름은 알 수 없지만, **속성값의 타입을 알 고 있을때 사용하는 문법이다.**
 
 ```tsx
 interface Arr {
@@ -172,27 +174,52 @@ interface Arr {
 const arr: Arr = ["3", "5", "7"];
 ```
 
-인터페이스의 속성 키 자리에 `[key: number]` 라는 문법이 있는데 이는 객체의 length를 제외한 속성 키 전부가 number 라는 의미이다. 이 문법을 인덱스 시그니쳐 라고 부른다.
+인터페이스의 속성 키 자리에 `[key: number]` 라는 문법이 있는데 이는 객체의 length를 제외한 속성 키 전부가 number 라는 의미이다.
 
 length는 인덱스 시그니처 이전에 표기했으므로 number가 아니여도 된다.
 
 <br>
 
+또는
+
+**뒤에오는 속성값의 타입을 명시해서 지정할 수 있게한다.**
+
+```tsx
+interface IndexSignatures {
+  [key: string]: number | boolean;
+  length: number;
+  isValid: boolean;
+  name: string; // 에러
+}
+```
+
+인덱스 시그니처 키가 string 일때는 속성 값이 number | boolean 타입이여야 하므로 에러가 발생한다.
+
+<br>
+
 ## 인덱스 접근 타입
 
-특정한 속성에 **연동되게** 타입을 만들고 싶다면 다음과 같이 작성하면된다.
+인덱스 접근 타입은 특정 속성이 가지는 타입을 조회하기 위해 사용된다.
+
+아래는 Animal 타입의 name 속성이 가지는 타입을 조회하기 위한 인덱스 접근 타입이다.
 
 ```tsx
 type Animal = {
   name: string;
+  size: number;
+  isLazy: boolean;
 };
 
-type N1 = Animal[name];
-type N2 = Animal[name];
-type N3 = ANimal.name; // 오류 객체.속성 꼴의 방식은 사용할 수 없다.
+type A1 = Animal["name"]; // string
+type A2 = Animal["name" | "size"]; // string | number
+type A3 = Animal[keyof Animal]; // string | number | boolean
+type A4 = Animal.name; // 에러
+
+type AnimalAlias = "name" | "size";
+type A5 = Animal[AnimalAlias]; // string | number
 ```
 
-객체.속성 꼴의 방식은 사용할 수 없기때문에 N3 는 오류가 난다.
+객체.속성 꼴의 방식은 사용할 수 없기때문에 A4 는 오류가 난다.
 
 <br>
 
