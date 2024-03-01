@@ -6,10 +6,12 @@
     - [함수에 타입 지정하기](#함수에-타입-지정하기)
     - [원시타입에 타입 지정하기](#원시타입에-타입-지정하기)
     - [배열에 타입 지정하기](#배열에-타입-지정하기)
-  - [특별한 타입(any, null, undefined, void 타입 지정하기)](#특별한-타입any-null-undefined-void-타입-지정하기)
-    - [any 타입 지정하기](#any-타입-지정하기)
-    - [null, undefined 타입 지정하기](#null-undefined-타입-지정하기)
-    - [void 타입 지정하기](#void-타입-지정하기)
+  - [any 타입 지정하기](#any-타입-지정하기)
+    - [1. 개발 단계에서 임시로 값을 지정할때](#1-개발-단계에서-임시로-값을-지정할때)
+    - [2. 어떤 값을 받아올지 또는 넘겨줄지 정할 수 없을 때](#2-어떤-값을-받아올지-또는-넘겨줄지-정할-수-없을-때)
+    - [3. 값을 에측할 수 없을 때 암묵적으로 사용](#3-값을-에측할-수-없을-때-암묵적으로-사용)
+  - [null, undefined 타입 지정하기](#null-undefined-타입-지정하기)
+  - [void 타입 지정하기](#void-타입-지정하기)
   - [as 키워드](#as-키워드)
 
 # TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, null, undefined, void 타입 지정하기), as 키워드
@@ -152,11 +154,7 @@ Array<타입> 으로 해도된다. 여기서 Array는 타입스크립트에서 �
 
 <br>
 
-## 특별한 타입(any, null, undefined, void 타입 지정하기)
-
-<br>
-
-### any 타입 지정하기
+## any 타입 지정하기
 
 `any`**는 모든 타입과 호완되며 컴파일러에 포함되지 않는다.**
 
@@ -185,7 +183,35 @@ any는 코드의 특정라인에 문제가 없다고 판단되면 굳이 TypeScr
 
 <br>
 
-### null, undefined 타입 지정하기
+tsconfig.json 파일에서 noIm-plicitAny 옵션을 활성화하면 타입이 명시되지 않은 변수의 암묵적인 any 타입에 대한 경고를 발생시킬 수 있다.
+
+하지만 any 타입을 어쩔 수 없이 쓰는 경우 대표적 3가지가 있다.
+
+### 1. 개발 단계에서 임시로 값을 지정할때
+
+복잡한 개발 과정에서 추후 값이 변경될 가능성이 있거나 세부 항목에 대한 타입이 확정되지 않은 경우 경고 없이 계속 개발할 수 있다. 타입을 세세하게 명시하는데 소요하는 시간을 절약 가능하다.
+
+<br>
+
+하지만 any 에서 다른 타입으로 바꾸는 과정이 누락되면 문제가 발생할 수 있으니 주의!
+
+<br>
+
+### 2. 어떤 값을 받아올지 또는 넘겨줄지 정할 수 없을 때
+
+API 요청 및 응답 처리, 콜백 함수 전달, 타입이 파악이 힘든 외부 라이브러리 등을 사용할때 어떤 인자를 주고 받을지 특정하기 힘들다. 이때 주고 받을 값이 명확하지 않을때 any 타입을 선언해야 할 수 있다.
+
+<br>
+
+### 3. 값을 에측할 수 없을 때 암묵적으로 사용
+
+외부 라이브러리나 웹 API의 요청에 따라 다양한 값을 반환하는 API가 존재할 수 있다. 예를 들어 Fetch API를 들 수 있다. (Fetch API → `Promise<any>`)
+
+<br>
+
+<br>
+
+## null, undefined 타입 지정하기
 
 `null`과 `undefined`는 `strictNullChecks` 옵션의 설정에 따라 달라진다.
 
@@ -211,7 +237,7 @@ any는 코드의 특정라인에 문제가 없다고 판단되면 굳이 TypeScr
 
 <br>
 
-### void 타입 지정하기
+## void 타입 지정하기
 
 `:void`는 함수에서 아무것도 리턴하는 타입이 없을 경우 사용한다.
 
@@ -345,4 +371,5 @@ try {
 - [https://radlohead.gitbook.io/typescript-deep-dive](https://radlohead.gitbook.io/typescript-deep-dive/type-system)
 - [https://velog.io/@skulter/TypeScript-5.-배열과-튜플-pg99bu8g](https://velog.io/@skulter/TypeScript-5.-%EB%B0%B0%EC%97%B4%EA%B3%BC-%ED%8A%9C%ED%94%8C-pg99bu8g)
 - [https://joshua1988.github.io/ts/guide/type-inference.html#문맥상의-타이핑-contextual-typing](https://joshua1988.github.io/ts/guide/type-inference.html#%EB%AC%B8%EB%A7%A5%EC%83%81%EC%9D%98-%ED%83%80%EC%9D%B4%ED%95%91-contextual-typing)
-- 쉽게 시작하는 타입스크립트를 참고했습니다.
+- 쉽게 시작하는 타입스크립트를 참고하고 정리했습니다.
+- 우아한 타입스크립트 책을 참고하고 정리했습니다.
