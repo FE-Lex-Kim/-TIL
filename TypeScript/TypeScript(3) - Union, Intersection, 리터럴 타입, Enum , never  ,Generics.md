@@ -1,5 +1,6 @@
-- [TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics](#typescript3---union-intersection-리터럴-타입-enum--never-generics)
-  - [유니온 (Union)](#유니온-union)
+- [TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never ,Generics](#typescript3---유니온-타입union-교차타입intersection-리터럴-타입-enum--never-generics)
+  - [유니온 타입 (Union)](#유니온-타입-union)
+  - [교차 타입(Intersection)](#교차-타입intersection)
   - [리터럴 타입](#리터럴-타입)
   - [Enum 타입](#enum-타입)
   - [never](#never)
@@ -10,11 +11,11 @@
   - [추론(Inference)](#추론inference)
     - [주의해야할 점](#주의해야할-점)
 
-# TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics
+# TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never ,Generics
 
 <br>
 
-## 유니온 (Union)
+## 유니온 타입 (Union)
 
 유니온 타입은 여러 타입 중 하나일 수 있는 값을 나타내는 TypeScript의 타입입니다.
 
@@ -68,6 +69,39 @@ function returnNumber(value: string | number): number {
 ```
 
 따라서 유니온 타입을 사용할 때는 각 타입에 대해 정확히 이해하고, 예상치 못한 결과가 발생하지 않도록 주의해야 합니다.
+
+<br>
+
+## 교차 타입(Intersection)
+
+**교차 타입을 사용하면 여러가지 타입을 결합해서 새로 생성된 하나의 단일 타입으로 만들 수 있다.**
+
+예를 들어 A타입과 B타입이 있다면, A & B 타입의 교차타입인 C는 A와 B의 모든 멤버를 포함해서 가지고 있는 타입이다.
+
+<br>
+
+교차 타입은 & 을 사용해서 표기한다.
+
+```tsx
+type NameAge = {
+  name: string;
+  age: number;
+};
+
+type Email = {
+  email: string;
+};
+
+type Person = NameAge & Email;
+
+const person: Person = {
+  name: "alex",
+  age: 29,
+  email: "lexkim.dev@gmail.com",
+};
+
+console.log(person.name, person.age, person.email);
+```
 
 <br>
 
