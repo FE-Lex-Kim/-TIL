@@ -1,4 +1,4 @@
-- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, unknown, null, undefined, void 타입 지정하기), as 키워드](#typescript1---환경설정-객체-함수-원시타입-배열-any-unknown-null-undefined-void-타입-지정하기-as-키워드)
+- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, 튜플, any, unknown, null, undefined, void 타입 지정하기), as 키워드](#typescript1---환경설정-객체-함수-원시타입-배열-튜플-any-unknown-null-undefined-void-타입-지정하기-as-키워드)
   - [TypeScript를 사용하는 이유](#typescript를-사용하는-이유)
   - [설치방법](#설치방법)
   - [Annotations](#annotations)
@@ -6,6 +6,7 @@
     - [함수에 타입 지정하기](#함수에-타입-지정하기)
     - [원시타입에 타입 지정하기](#원시타입에-타입-지정하기)
     - [배열에 타입 지정하기](#배열에-타입-지정하기)
+    - [튜플](#튜플)
   - [any 타입 지정하기](#any-타입-지정하기)
     - [1. 개발 단계에서 임시로 값을 지정할때](#1-개발-단계에서-임시로-값을-지정할때)
     - [2. 어떤 값을 받아올지 또는 넘겨줄지 정할 수 없을 때](#2-어떤-값을-받아올지-또는-넘겨줄지-정할-수-없을-때)
@@ -15,7 +16,7 @@
   - [void 타입 지정하기](#void-타입-지정하기)
   - [as 키워드](#as-키워드)
 
-# TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, unknown, null, undefined, void 타입 지정하기), as 키워드
+# TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, 튜플, any, unknown, null, undefined, void 타입 지정하기), as 키워드
 
 <br>
 
@@ -139,6 +140,11 @@ handsome = "false"; // Error
 let nameArr: string[] = ["alex", "james", "andrew"]; // Array<string> 와 같은 의미
 let ageArr: number[] = [29, 30, 24]; // Array<number> 와 같은 의미
 
+// 위, 아래 같음
+
+let nameArr: Array<string> = ["alex", "james", "andrew"];
+let ageArr: Array<number> = [29, 30, 24];
+
 console.log(nameArr);
 console.log(ageArr);
 ```
@@ -152,6 +158,59 @@ Array<타입> 으로 해도된다. 여기서 Array는 타입스크립트에서 �
 3. **`ReadonlyArray<T>`**: 읽기 전용 배열을 나타내며, **`T`**는 배열의 요소 타입이다. 이 배열은 수정할 수 없다.
 4. **`Map<K, V>`**: 키-값 쌍의 집합을 나타내는 맵을 나타내며, **`K`**는 키의 타입이고 **`V`**는 값의 타입이다..
 5. **`Set<T>`**: 고유한 요소로 이루어진 집합을 나타내며, **`T`**는 요소의 타입이다.
+
+<br>
+
+만약 한가지 원소 타입만 사용하는 것이아니라 다양한 원소 타입을 다룰려면 유니온 타입을 사용하면 된다.
+
+```tsx
+let array1: (string | number)[] = ["1", 2, "3"];
+let array2: Array<string | number> = ["1", 2, "3"];
+```
+
+<br>
+
+### 튜플
+
+튜플은 다음과 같은 특징을 가지고 있다:
+
+1. **요소의 순서가 중요하다**: 튜플의 각 요소는 정해진 순서대로 저장되며, 이 순서를 유지한다.
+2. **고정된 길이**: 튜플의 길이는 선언할 때 지정된 길이와 동일하다.
+3. **각 요소의 타입이 미리 정의된다**: 튜플의 각 요소는 해당 위치에서의 타입이 미리 정의되어 있어야 한다. 이를 통해 각 요소에 대한 타입 안정성을 보장한다.
+
+튜플은 다음과 같은 방식으로 선언된다:
+
+```tsx
+let tupleName: [Type1, Type2, ..., TypeN] = [value1, value2, ..., valueN];
+```
+
+<br>
+
+다음은 숫자와 문자열을 각각 요소로 가지는 튜플을 선언하는 예제이다.
+
+```tsx
+let person: [string, number] = ["John", 30];
+```
+
+타입스크립트에서 튜플(Tuple)은 배열과 유사한 데이터 구조다. 하지만 튜플은 배열과는 달리 각 요소의 타입이 미리 정의되어 있어야 한다. 즉, 튜플은 고정된 길이의 배열이며, 각 요소의 타입이 지정된 순서쌍이다.
+
+<br>
+
+```tsx
+let tuple: [string, boolean?, number?] = ["hi", false, 1];
+```
+
+위와같이 옵셔널(?) 수식어로 해당 자리에 값이 없어도 된다.
+
+예를들어 위에서는 `[string, boolean]`, `[string]`, `[string, boolean, number]` 을 의미한다.
+
+<br>
+
+스프레드 연산자(…)를 사용하여 특정 인덱스에서 요소를 명확한 타입으로 선언하고 나머지 인덱스에서는 배열처럼 동일한 자료형의 원소를 개수 제한 없이 나열할 수 있다.
+
+```tsx
+const array1: [number, string, ...number[]] = [1, "2", 3, 4, 5, 6];
+```
 
 <br>
 

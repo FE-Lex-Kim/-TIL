@@ -220,7 +220,7 @@
 
 ### 5.2 TypeScript
 
-- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, unknown, null, undefined, void 타입 지정하기), as 키워드](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
+- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, 튜플, any, unknown, null, undefined, void 타입 지정하기), as 키워드](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(1)%20-%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%2C%20%20Annotaions.md>)
 - [TypeScript(2) - 타입 앨리어스, 인터페이스, 인덱스 시그니처, 인덱스 접근 타입](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(2)%20-%20%ED%83%80%EC%9E%85%20%EC%B6%94%EB%A1%A0%2C%20%ED%83%80%EC%9E%85%20%EC%95%A8%EB%A6%AC%EC%96%B4%EC%8A%A4%2C%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4.md>)
 - [TypeScript(3) - Union, Intersection, 리터럴 타입, Enum , never ,Generics, 타입 추론](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(3)%20-%20Union%2C%20Intersection%2C%20%EB%A6%AC%ED%84%B0%EB%9F%B4%20%ED%83%80%EC%9E%85%2C%20Enum%20%2C%20never%20%20%2CGenerics.md>)
 - [TypeScript(4) - 맵드 타입, 템플릿 리터럴 타입, then 반환값 타입, 객체간 대입](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(4)%20-%20%20%EB%A7%B5%EB%93%9C%20%ED%83%80%EC%9E%85(Mapped%20Types)%2C%20%ED%85%9C%ED%94%8C%EB%A6%BF%20%EB%A6%AC%ED%84%B0%EB%9F%B4%20%ED%83%80%EC%9E%85(Template%20Literal%20Types).md>)
