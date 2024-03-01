@@ -70,6 +70,83 @@ type ResultType = MutablePerson; // { name : string, age: number}
 
 <br>
 
+맵드 타입을 사용하는 예시.
+
+```tsx
+const personInfo = {
+  name: "John",
+  age: 30,
+  isActive: true,
+  hobbies: ["Reading", "Traveling"],
+  address: { city: "New York", postalCode: "10001" },
+  greet: (name) => console.log(`Hello, ${name}!`),
+  createdAt: new Date(),
+  metadata: { key: "value" },
+  description: "Optional description",
+  nullableValue: null,
+};
+
+// 불필요한 반복이 발생한다.
+type PersonInfoStore = {
+  name: {
+    a: () => void;
+    b: any;
+    c: boolean;
+  };
+  age: {
+    a: () => void;
+    b: any;
+    c: boolean;
+  };
+  isActive: {
+    a: () => void;
+    b: any;
+    c: boolean;
+  };
+  // ...
+};
+
+// 맵드 타입으로 효율적으로 타입을 선언할 수 있다.
+type PersonInfoID = keyof typeof personInfo;
+type PersonInfoStore = {
+  [K in PersonInfoID]: {
+    a: () => void;
+    b: any;
+    c: boolean;
+  };
+};
+```
+
+<br>
+
+as 키워드를 사용해서 키를 재지정 할 수 있다.
+
+위의 예시에서 PersonInfoStore의 키 이름에 PersonInfo의 키 이름을 그대로 쓰고 싶은 경우가 있을 수 도 있고, 모든 키에 ForModal 이라는 공통된 처리를 적용해서 새로운 키를 지정하고 싶을 수 도 있다. 이때 as 키워드를 사용하면 된다.
+
+```tsx
+// 맵드 타입으로 효율적으로 타입을 선언할 수 있다.
+type PersonInfoStore = {
+  [K in PersonInfoID as `${K}ForModal`]: {
+    a: () => void;
+    b: any;
+    c: boolean;
+  };
+};
+
+// nameForModal: {
+//   a: () => void;
+//   b: any;
+//   c: boolean;
+// };
+// ageForModal: {
+//     a: () => void;
+//     b: any;
+//     c: boolean;
+// };
+```
+
+<br>
+
 ## 템플릿 리터럴 타입(Template Literal Types)
 
 템플릿 리터럴 타입은 TypeScript 4.1부터 도입된 새로운 기능이다. 이를 사용하면 문자열 템플릿 리터럴을 기반으로 타입을 정의할 수 있습니다. 다음은 간단한 예제입니다:
