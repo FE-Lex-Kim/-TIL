@@ -10,7 +10,8 @@
     - [1. 개발 단계에서 임시로 값을 지정할때](#1-개발-단계에서-임시로-값을-지정할때)
     - [2. 어떤 값을 받아올지 또는 넘겨줄지 정할 수 없을 때](#2-어떤-값을-받아올지-또는-넘겨줄지-정할-수-없을-때)
     - [3. 값을 에측할 수 없을 때 암묵적으로 사용](#3-값을-에측할-수-없을-때-암묵적으로-사용)
-  - [null, undefined 타입 지정하기](#null-undefined-타입-지정하기)
+  - [unknown 타입](#unknown-타입)
+  - [null, undefined 타입](#null-undefined-타입)
   - [void 타입 지정하기](#void-타입-지정하기)
   - [as 키워드](#as-키워드)
 
@@ -209,9 +210,43 @@ API 요청 및 응답 처리, 콜백 함수 전달, 타입이 파악이 힘든 �
 
 <br>
 
+## unknown 타입
+
+unknown 타입은 any 타입과 유사하게 모든 타입의 값이 할당될 수 있다. 그러나 any 타입에만 unknown 타입 값을 할당 할 수 있고 나머지는 안된다.
+
+```tsx
+let unknownValue: unknown;
+
+unknownValue = 1;
+unknownValue = "hello";
+unknownValue = () => 1;
+
+let value1: any = unknownValue;
+let value2: number = unknownValue; // 에러
+let value3: string = unknownValue; // 에러
+```
+
 <br>
 
-## null, undefined 타입 지정하기
+그렇다면 any 타입과 비슷한데 unknown 타입이 왜 추가되었을까.
+
+할당하는 시점에는 문제가 없지만, 호출 시 문제가 생긴다.
+
+unknown은 어떤 타입이 할당되었는지 알 수 없을을 나타내기 때문에 unknown 타입으로 선언된 변수는 값을 가져오거나 내부 속성에 접근 할 수 없다.
+
+**즉, unknown 타입으로 할당된 변수는 어떤 값이든 올 수 있음을 의미하지만 개발자에게 엄격한 타입 검사를 강제하는 의도를 담고 있다.**
+
+<br>
+
+any 타입을 특정 타입으로 수정해야하는 것을 누락하는 경우 예상치 못한 버그가 발생할 수 있다.
+
+**unknown 타입은 이러한 상황을 보안해 타입검사를 강제하고 타입이 식별된 후에 사용할 수 있기에 any 타입보다 안전하다.**
+
+**따라서 데이터 구조를 파악하기 힘들때 any 타입대신 unknown 타입으로 대체하는 방법이 권장된다.**
+
+<br>
+
+## null, undefined 타입
 
 `null`과 `undefined`는 `strictNullChecks` 옵션의 설정에 따라 달라진다.
 
