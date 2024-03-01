@@ -206,6 +206,10 @@ fn(myAny); // ❌ 'any' 타입은 'never' 타입에 할당할 수 없음
 
 <br>
 
+자바스크립트에서는 의도적으로 런타임때 에러를 발생시키고 캐치할 수 있다.
+
+이는 값을 반환하는 것이 아니다. 따라서 에러를 던지는 작업을 한다면, 해당 함수의 반환 타입은 never이다.
+
 if문이나 switch문에서 `default` 는 남아 있는것은 never 타입이여서 모든 상황에 대처할 수 있다.
 
 ```tsx
@@ -243,6 +247,8 @@ function foo(x: string | number | number[]): boolean {
   return error("Never happens");
 }
 ```
+
+never 타입은 모든 타입의 하위 타입이다. 따라서 never는 자신을 제외한 어떤 타입도 never 타입에 할당 할 수 없다. any도 never 타입에 할당 할 수 없다.
 
 <br>
 
