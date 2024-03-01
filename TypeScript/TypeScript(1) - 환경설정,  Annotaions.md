@@ -1,4 +1,4 @@
-- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, null, undefined, void 타입 지정하기), as 키워드](#typescript1---환경설정-객체-함수-원시타입-배열-any-null-undefined-void-타입-지정하기-as-키워드)
+- [TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, unknown, null, undefined, void 타입 지정하기), as 키워드](#typescript1---환경설정-객체-함수-원시타입-배열-any-unknown-null-undefined-void-타입-지정하기-as-키워드)
   - [TypeScript를 사용하는 이유](#typescript를-사용하는-이유)
   - [설치방법](#설치방법)
   - [Annotations](#annotations)
@@ -15,7 +15,7 @@
   - [void 타입 지정하기](#void-타입-지정하기)
   - [as 키워드](#as-키워드)
 
-# TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, null, undefined, void 타입 지정하기), as 키워드
+# TypeScript(1) - 환경설정, (객체, 함수, 원시타입, 배열, any, unknown, null, undefined, void 타입 지정하기), as 키워드
 
 <br>
 
