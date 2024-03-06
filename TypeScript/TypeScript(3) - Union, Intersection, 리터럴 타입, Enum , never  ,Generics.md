@@ -1,17 +1,18 @@
-- [TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never ,Generics](#typescript3---유니온-타입union-교차타입intersection-리터럴-타입-enum--never-generics)
+- [TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never , 제네릭(Generic)](#typescript3---유니온-타입union-교차타입intersection-리터럴-타입-enum--never--제네릭generic)
   - [유니온 타입 (Union)](#유니온-타입-union)
   - [교차 타입(Intersection)](#교차-타입intersection)
   - [리터럴 타입](#리터럴-타입)
   - [Enum 타입](#enum-타입)
   - [never](#never)
   - [제네릭 함수 (Generics)](#제네릭-함수-generics)
-    - [제네릭 호출 시그니처](#제네릭-호출-시그니처)
-    - [제네릭을 함수처럼 사용하기](#제네릭을-함수처럼-사용하기)
-    - [제네릭에 제약 걸기](#제네릭에-제약-걸기)
+    - [1.제네릭 호출 시그니처](#1제네릭-호출-시그니처)
+    - [2.제네릭을 함수처럼 사용하기](#2제네릭을-함수처럼-사용하기)
+    - [3.제한된 제네릭](#3제한된-제네릭)
+    - [4.제네릭 사용 예시(API)](#4제네릭-사용-예시api)
   - [추론(Inference)](#추론inference)
     - [주의해야할 점](#주의해야할-점)
 
-# TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never ,Generics
+# TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never , 제네릭(Generic)
 
 <br>
 
@@ -290,7 +291,13 @@ never 타입은 모든 타입의 하위 타입이다. 따라서 never는 자신�
 
 ## 제네릭 함수 (Generics)
 
-함수, 타입, 클래스 등에서 내부적으로 사용할 타입을 미리 정해두지 않고 타입 변수를 사용해서 해당 위치를 비워 둔 다음에, 실제로 그 값을 사용할때 외부에서 타입 변수 자리에 타입을 지정하여 사용하는 방식을 말한다.
+함수, 타입, 클래스 등에서 내부적으로 사용할 타입을 미리 정해두지 않고 타입 변수를 사용해서 해당 위치를 비워 둔 다음에, 실제로 그 값을 사용할때 외부에서 타입 **변수 자리에** 타입을 지정하여 사용하는 방식을 말한다.
+
+<br>
+
+타입 변수 or 타입 매개변수란
+
+Person<T> 에서 T를 의미한다.
 
 <br>
 
@@ -331,6 +338,16 @@ let result2 = identity(123); // result2의 타입은 number로 추론됩니다.
 
 console.log(result1); // 출력: Hello
 console.log(result2); // 출력: 123
+```
+
+<br>
+
+또한 특정요소 타입을 알 수 없을 때는 제니릭 타입에 기본 값을 추가할 수 있다.
+
+```tsx
+interface Person<T = string> {
+  name: T;
+}
 ```
 
 <br>
@@ -376,12 +393,28 @@ console.log(arrLength); // 출력: 5
 
 <br>
 
-제네릭을 사용할때 TypeScript에서 JSX(JavaScript XML)를 사용하는 파일의 확장자는 `.tsx`입니다. JSX는 React와 같은 라이브러리에서 컴포넌트를 작성할 때 사용되는 문법입니다.
+제네릭을 사용할때 TypeScript에서 JSX(JavaScript XML)를 사용하는 파일의 확장자는 `.tsx`이다. JSX는 React와 같은 라이브러리에서 컴포넌트를 작성할 때 사용되는 문법이다.
 따라서 제네릭의 꺽쇠괄호와 태그의 꺾쇠 괄호를 혼동하므로 보통 제네릭을 사용할때 function 키워드로 선언하는 경우가 많다.
+
+```tsx
+// 에러 발생 JSX 태그로 혼동함
+const exampleFunc = <T,>(arg: T): T[] => {
+  return new [1, 2, 3]();
+};
+
+// function 키워드로 선언
+function exampleFunc<T>(arg: T) {
+  return [1, 2, 3];
+}
+```
 
 <br>
 
-### 제네릭 호출 시그니처
+다음은 제네릭 사용법에 대해 알아보자.
+
+<br>
+
+### 1.제네릭 호출 시그니처
 
 제네릭(generic) 호출 시그니처는 함수를 정의할 때 **일반적인 타입이나 값을 사용하는 대신, 제네릭 타입 매개변수를 사용**하여 타입을 유연하게 정의할 수 있는 방법을 제공한다.
 
@@ -440,7 +473,7 @@ const firstString: string = getFirstString(strings);
 
 <br>
 
-### 제네릭을 함수처럼 사용하기
+### 2.제네릭을 함수처럼 사용하기
 
 ```tsx
 interface Alex {
@@ -481,7 +514,7 @@ interface James extend Person<'james', 24>{}
 만약 타입 매개변수의 개수와 타입 인수의 개수가 일치하지 않으면 에러가 발생한다.
 
 ```tsx
-interfacee Alex extends Person<'alex'> // 에러
+interface Alex extends Person<'alex'> // 에러
 ```
 
 <br>
@@ -618,7 +651,7 @@ saveValues.hasValue("x"); // '"x"' 형식의 인수는 '"a" | "b" | "c"' 형식�
 
 <br>
 
-### 제네릭에 제약 걸기
+### 3.제한된 제네릭
 
 타입 매개변수에 제약을 사용할 수 있다.
 
@@ -636,6 +669,12 @@ type Usecase1 = Example<string, number>; // 에러 string이 아니라 반드시
 type Usecase2 = Example<1, number>;
 type Usecase3 = Example<number>;
 ```
+
+여기서 A를 바운드 타입 매개변수(bounded type parameters) 라고 부른다.
+
+그리고 B는 A의 상한 한계(upper bound)라고 한다.
+
+<br>
 
 Usecase1 타입에서 string 타입을 넣었더니 에러가 난다. 반드시 number 이여야한다는 뜻이다.
 
@@ -699,6 +738,123 @@ const returnV0 = (): V0 => {
   return { value: "test" };
 };
 ```
+
+<br>
+
+또한 유니온 타입을 상속해서 선언할 수도 있다.
+
+```tsx
+function exampleFunc<T extends string | number>(arg: T): T[] {
+  return [arg];
+}
+
+exampleFunc(123);
+exampleFunc("hello");
+```
+
+T는 string 또는 number타입이어야 한다.
+
+<br>
+
+흔하게 에러가 발생하는 제네릭 추론
+
+```tsx
+function exampleFunc<T extends string>(arg: T): T[] {
+  return ["1", "2", "3"];
+} // 에러가 발생함
+
+exampleFunc("hello");
+// exampleFunc<"hello">(arg: "hello"): "hello"[]
+```
+
+문자열 리터럴 타입은 문자열 타입이랑 다르다.
+
+따라서 `T`가 추론될때 문자열 리터럴 타입으로 추론될 수 가 있으므로 `string[]`과 다르다.
+
+예를 들어 `exampleFunc('hello')`가 호출 되었을때 T가 추론되면, `'hello'`가 `T` 타입이 되고 `'hello'[]`가 된다.
+
+따라서 return 값은 `['hello']` 가 되어야한다.
+
+우리가 예상한 `string[]`이 아니라서 에러가 발생한다.
+
+따라서 위의 코드를 고치려면
+
+```tsx
+function exampleFunc<T extends string>(arg: T): string[] {
+  return ["1", "2", "3"];
+}
+
+or;
+
+function exampleFunc<T extends string>(arg: T): T[] {
+  return [arg];
+}
+```
+
+즉 제네릭을 사용할때는 추론되어지는 T 값을 예상해서 사용해야한다.
+
+<br>
+
+### 4.제네릭 사용 예시(API)
+
+제네릭의 장점은 다양한 타입을 받게 해서 코드를 효율적으로 재사용한다.
+
+실제 현업에서 가장 많이 활용되는 곳은 API 응답 값의 타입을 지정할 때다.
+
+```tsx
+// API 응답의 형태를 정의하는 인터페이스
+interface ApiResponse<T> {
+  data: T;
+  statusCode: number;
+}
+
+// 사용자 정보를 담는 인터페이스
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+// API 호출을 시뮬레이션하는 함수
+function fetchUserData(): Promise<ApiResponse<User>> {
+  // 실제 API 호출을 시뮬레이션하는 코드
+  const fakeApiResponse: ApiResponse<User> = {
+    data: {
+      id: 1,
+      name: "John Doe",
+      email: "john@example.com",
+    },
+    statusCode: 200,
+  };
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(fakeApiResponse);
+    }, 1000);
+  });
+}
+
+// API 호출 후 받아온 응답을 처리하는 함수
+async function processUserData() {
+  try {
+    const response = await fetchUserData();
+    console.log("User Data:", response.data);
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+  }
+}
+
+// processUserData 함수 호출
+processUserData();
+```
+
+API 응답 값에 따라 data를 제네릭 타입 T로 선언하고 있다.
+
+ApiResponse 타입은 실제 API응답 값의 타입을 지정할때 사용된다.
+
+ApiResponse을 활용해서 코드를 효율적으로 재사용할 수 있다.
+
+하지만 굳이 필요하지 않은 곳에서 제네릭을 사용하면 오히려 좋지 않다.
 
 <br>
 
