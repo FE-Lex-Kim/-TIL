@@ -173,6 +173,55 @@ const card2: Card = "blue-4"; // Valid
 
 <br>
 
+템플릿 리터럴 타입은 문자열 리터럴을 조합하여 새로운 문자열 타입을 생성하는 방법을 제공한다. 이는 문자열 리터럴과 유사한 문법을 사용하여 타입을 정의할 수 있는 방법이다.
+
+```tsx
+type Greeting = "Hello, " | "Hola, " | "Bonjour, ";
+type Language = "English" | "Spanish" | "French";
+
+type GreetingMessage<T extends Language> = `${Greeting}Welcome to TypeScript in ${T}`;
+
+// 예시 사용
+const englishMessage: GreetingMessage<"English"> = "Hello, Welcome to TypeScript in English";
+const spanishMessage: GreetingMessage<"Spanish"> = "Hola, Welcome to TypeScript in Spanish";
+const frenchMessage: GreetingMessage<"French"> = "Bonjour, Welcome to TypeScript in French";
+```
+
+<br>
+
+다음은 에러가 발생한 코드이다.
+
+```tsx
+type Template = `template ${string}`;
+let str: Template = `template `;
+str = "template hello";
+str = "template 123";
+str = "template"; // 에러
+```
+
+마지막 str에만 에러가 발생한다. template 문자열 뒤에 띄어쓰기가 없기 때문이다. 문자열 변수를 엄격하게 관리할 수 있다.
+
+<br>
+
+문자열 조합해서 표현할때 편리하다.
+
+예를 들어 City로 서울, 수원, 부산, Vehicle로 차, 자전거, 도보 가 있는 상황이다.
+
+이들을 조합해서 지역:이동수단으로 타이핑을 하고 싶다
+
+조합은 9가지 가 나오게 된다. 서울 : 차, 서울 : 자전거, 서울 : 도보, 수원 : 차, 수원 : 자전거 …… 부산 : 도보
+
+이럴때 템플릿 리터럴로 편리하게 사용할 수 있다.
+
+```tsx
+type City = "seoul" | "suwon" | "busan";
+type Vehicle = "car" | "bike" | "walk";
+type ID = `${City} : ${Vehicle}`;
+const id: ID = "seoul : walk";
+```
+
+<br>
+
 ## then 반환값 타입
 
 제네릭을 사용하면 해당 **`then`** 메서드에서 반환되는 값의 타입을 명시적으로 지정할 수 있다. 이는 TypeScript에서 타입 안정성을 보장하는데 도움이 된다.
