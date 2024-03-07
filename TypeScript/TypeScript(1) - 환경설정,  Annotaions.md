@@ -87,17 +87,69 @@ let alex: Alex = {
 
 함수에서 매개변수와 리턴값을 명시하는데도 사용한다.
 
-```jsx
-let user: string = "Alex";
+함수는 2가지 방법으로 정의할 수 있다.
 
-function getUser(): user {
-  //... 리턴값 명시
+첫번째는 함수 선언문
+
+두번째는 화살표 함수
+
+<br>
+
+첫번째인 함수 선언문부터 타입을 명시하는 방법에 대해 알아보자
+
+```jsx
+function Func(매개변수 : 타입) : 반환값 타입 {
+	return 반환값
 }
 
-function deleteUser(user: user) {
-  // ... 매개변수 명시
+// 예시
+function getNumber(params: number): number {
+  return params + 1;
+}
+function getString(params: string): string {
+  return params + " hello";
 }
 ```
+
+<br>
+
+위의 코드를 그대로 화살표 함수로 바꾸어보자
+
+화살표함수는 두가지 방법으로 타입을 정의할 수 있다.
+
+```tsx
+// 첫번째 방법
+const Func = (매개변수 : 타입) : 반환값 타입 => {
+	return 반환값
+}
+// 두번째 방법
+const Func : (매개변수 : 타입) => 반환값 타입 = (매개변수) => {
+	return 반환값
+}
+
+// 아래는 예시코드
+const getNumber = (params: number): number => {
+  return params + 1;
+};
+// 두번째 방법
+const getNumber: (params: number) => number = (params) => {
+  return params + 1;
+};
+
+const getString = (params: string): string => {
+  return params + " hello";
+};
+// 두번째 방법
+const getString: (params: string) => string = (params) => {
+  return params + " hello";
+};
+```
+
+첫번째 방법은 화살표 함수 내부에서 매개변수와 반환값 타입을 설정한다.
+
+두번째 방법은 화살표 함수 변수 자체에 타입을 설정하는 방법이다.
+
+- 따라서 화살표 함수의 매개변수와 반환값을 변수자체에 타입으로 설정하는 방법이다.
 
 <br>
 
