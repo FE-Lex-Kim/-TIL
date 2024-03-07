@@ -1,13 +1,12 @@
-- [TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기, Type Predicate, 템플릿 리터럴 타입](#typescript6---함수끼리-대입-infer-타입-좁히기-type-predicate-템플릿-리터럴-타입)
+- [TypeScript(6) - 함수끼리 대입, Infer, satisfies](#typescript6---함수끼리-대입-infer-satisfies)
   - [함수끼리 대입](#함수끼리-대입)
     - [반환값의 경우](#반환값의-경우)
     - [매개변수의 경우](#매개변수의-경우)
     - [메서드의 경우](#메서드의-경우)
   - [Infer](#infer)
-  - [타입 좁히기](#타입-좁히기)
-  - [Type Predicate](#type-predicate)
+  - [satisfies](#satisfies)
 
-# TypeScript(6) - 함수끼리 대입, Infer, 타입 좁히기, Type Predicate, 템플릿 리터럴 타입
+# TypeScript(6) - 함수끼리 대입, Infer, satisfies
 
 <br>
 
@@ -169,7 +168,11 @@ type MyParameters<T> = T extends (...args: infer P) => any ? P : never;
 type Result = MyParameters<(a: number, b: string) => string>;
 // type Result = [a: number, b: string]
 
-type MyConstructorParameter<T> = T extends abstract new (...args: infer P) => any ? P : never;
+type MyConstructorParameter<T> = T extends abstract new (
+  ...args: infer P
+) => any
+  ? P
+  : never;
 type Result2 = MyConstructorParameter<new (a: number, b: string) => {}>;
 // type Result2 = [a: number, b: string]
 
@@ -208,291 +211,73 @@ type Result1 = Union<{ a: 1 | 2; b: 2 | 3 }>;
 
 <br>
 
-## 타입 좁히기
+## satisfies
 
-타입스크립트(TypeScript)에서의 타입 좁히기는 변수나 매개변수의 타입을 좁혀나가는 과정을 말한다. 이는 보다 정확한 타입 정보를 얻고, 코드의 안정성을 높이는 데 도움이 된다.
+타입 추론을 그대로 활용하면서 추가로 타입 검사를 하고 싶을때 사용한다.
 
-가장 흔한 타입 좁히기 기법 중 하나는 타입 가드(Type Guards)이다. 타입 가드는 조건문을 사용하여 특정 조건이 충족될 때 변수의 타입을 좁혀나가는 방식이다. 예를 들어, instanceof 연산자를 사용하여 객체의 타입을 확인하거나 typeof 연산자를 사용하여 변수의 타입을 확인하는 등의 방법이 있다.
+아래의 코드는 일부로 universe의 속성 키중 sirius 대신 siriius로 오타를 냈다.
 
-```tsx
-// 문자열 또는 숫자를 받아들이는 함수
-function printLength(input: string | number) {
-  // 타입 가드를 사용하여 input의 타입을 좁힙니다.
-  if (typeof input === "string") {
-    // input이 문자열인 경우, 문자열 길이를 출력합니다.
-    console.log(`문자열 길이: ${input.length}`);
-  } else if (typeof input === "number") {
-    // input이 숫자인 경우, 숫자를 출력합니다.
-    console.log(`숫자: ${input}`);
-  } else {
-    console.log(`input : ${input}`);
-  }
-}
-
-// 함수 호출
-printLength("Hello"); // 출력: 문자열 길이: 5
-printLength(10); // 출력: 숫자: 10
-```
-
-else 문에서 타입이 never가 된다. else 문에서는 string도 number도 아니므로 never가 된다.
-
-이렇게 타입을 추론하는 것을 **제어 흐름 분석(Control Flow Analysis)** 이라고 부른다.
-
-<br>
-
-항상 typeof를 사용할 수 있는 것은 아니다.
+그리고 굳이 타이핑을 하지않고 추론을 통해 타입을 정했다.
 
 ```tsx
-function processValue(value: string | undefined | null) {
-  if (value === undefined) {
-    // value가 undefined인 경우 처리
-    console.log("값이 정의되지 않았습니다.");
-  } else if (value) {
-    // value가 string인 경우 처리
-    console.log("값은 문자열입니다");
-  } else {
-    // value가 null인 경우 처리
-    console.log("값이 null입니다.");
-  }
-}
-
-// 예시 사용
-processValue(""); // 값이 null입니다.
-processValue(undefined); // 값이 정의되지 않았습니다.
-processValue(null); // 값이 null입니다.
+const universe = {
+  sun: "star",
+  sriius: "star",
+  earth: { type: "planet", parent: "sun" },
+};
 ```
 
-else if 문에서 “”(빈문자열)이 걸러지지 않았다.
-
-그 이유는 빈 문자열이 falsy한 값을 가지기 때문이다. 따라서 else문에 걸러지게 된다.
-
-다음과 같이 고칠 수 있다.
-
-```tsx
-function processValue(value: string | undefined | null) {
-  if (value === undefined) {
-    // value가 undefined인 경우 처리
-    console.log("값이 정의되지 않았습니다.");
-  } else if (value === null) {
-    // value가 null인 경우 처리
-    console.log("값이 null입니다.");
-  } else {
-    // value가 string인 경우 처리
-    console.log("값은 문자열입니다");
-  }
-}
-
-// 예시 사용
-processValue(""); // 값은 문자열입니다
-processValue(undefined); // 값이 정의되지 않았습니다.
-processValue(null); // 값이 null입니다.
-```
-
-이럴때는 굳이 typeof문으로만 타입좁히기를 하지 않아도 된다.
-
-자바스크립트 문법으로 좁힐 수 있다.
-
-<br>
-
-배열을 타입 좁혀보자.
-
-```tsx
-function processValue(value: string | number[]) {
-  if (Array.isArray(value)) {
-    value; //(parameter) value: number[]
-  } else {
-    value; //(parameter) value: string
-  }
-}
-```
-
-Array.isArray로 타입을 좁힐 수 있다.
-
-<br>
-
-클래스 구분하기
-
-instanceof로 클래스를 구분할 수 있다.
-
-```tsx
-class A {}
-class B {}
-
-function processValue(value: A | B) {
-  if (value instanceof A) {
-    value;
-  } else {
-    value;
-  }
-}
-```
-
-함수는 instanceof function으로 하면된다.
-
-<br>
-
-객체를 구분하는 법
-
-in 연산자는 객체 내에 특정 프로퍼티가 존재하는지 여부를 확인한다.
-
-```tsx
-interface X {
-  width: number;
-  height: number;
-}
-interface Y {
-  length: number;
-  center: number;
-}
-
-function processValue(value: X | Y) {
-  if ("width" in value) {
-    value;
-  } else {
-    value;
-  }
-}
-```
-
-<br>
-
-브랜드 속성을 사용하면 더 쉽게 구분할 수 있다.
-
-```tsx
-interface X {
-  __type: "X";
-  width: number;
-  height: number;
-}
-interface Y {
-  __type: "Y";
-  length: number;
-  center: number;
-}
-
-function processValue(value: X | Y) {
-  if (value.__type === "X") {
-    value;
-  } else {
-    value;
-  }
-}
-```
-
-<br>
-
-## Type Predicate
-
-지금까지는 기존 자바스크립트 사용하여 좁혀짐을 처리했지만, 때로는 코드 전체에서 유형이 변경되는 방식을 보다 직접적으로 제어하고 싶을 때가 있다.
-
-타입 프레디케이트(Type Predicates)는 타입스크립트에서 특정 값이 특정 타입인지를 판별하는 함수이다.
-
-이 함수는 **`value is Type`** 형태로 정의되며, 일반적으로 타입 가드(Type Guards)와 함께 사용된다.
-
-<br>
-
-사용자가 타입 가드를 정의하려면, 반환 타입이 type predicate인 함수를 정의하기만 하면 된다.
-
-```tsx
-function isString(value: any): value is string {
-  return typeof value === "string";
-}
-```
-
-위 코드에서 **`isString`** 함수는 주어진 값이 **`string`** 타입인지를 판별하는 타입 프레디케이트이다.
-
-이를 사용하는 함수에서 **`isString`**이 **`true`**를 반환하는 경우 **TypeScript는 해당 값이 `string` 타입임을 추론하게 된다.**
+이럴때 타입 추론이 아니라 타입을 정할때 sriius의 오타를 잡아낼 수 있는 방법이 있다.
 
 <br>
 
 ```tsx
-function isString(value: string | number): value is string {
-  return typeof value === "string";
-}
-
-function stringOrNumber(value: string | number) {
-  if (isString(value)) {
-    // 가독성이 좋다.
-    console.log("값은 string 입니다.");
-    value;
-  } else {
-    console.log("값은 number 입니다.");
-    value;
-  }
-}
+const universe: {
+  [key in "sun" | "sirius" | "earth"]:
+    | { type: string; parent: string }
+    | string;
+} = {
+  sun: "star",
+  sriius: "star",
+  earth: { type: "planet", parent: "sun" },
+};
 ```
 
-위 코드에서 `isString(value)`가 만약 `true`를 반환한다면, if문의 블록안에서는 `value` 타입이 `string`으로 추론하게 된다.
-
-따라서 자연스럽게 `else` 블록에서는 `string`이 아닌 `number`로 추론하게 된다.
+위와 같이 인덱스 시그니처를 사용해 타이핑 해서 siriius의 오타를 잡을 수 있다.
 
 <br>
 
-**이렇게 타입 프레디케이트를 사용하면 가독성이 좋아진다.**
-
-만약 타입 좁히기를 직접 처리하게 되면 가독성이 안좋아 질 수 있다.
+다만 속성 값을 사용할 때가 문제이다. earth의 타입이 객체라는 것을 제대로 잡아내지 못한다.
 
 ```tsx
-const isRequiredAndNumberAndNotZero = (value: any): value is number => {
-  return isNumber(value) && isNotZero(value) && isRequired(value);
-}
-
-const isRequired = (value: any): value is any => {
-  return value !== null && value !== undefined;
-}
-
-const isNumber = (value: any): value is number => {
-  return typeof value === "number";
-}
-
-const isNotZero = (value: number | string): value is number => {
-  return Number(value) !== 0;
-}
-
-type StringOrNumber = string | number;
-
-const data: StringOrNumber = await fetchData();
-
-//type predicate 사용한 type guard. 아 data는 저런 데이터겠군 하고 바로 유추가능하다.
-if(isRequiredAndNumberAndNotZero(data){
-   console.log(data + 10);
-} else {
-   console.log(data + "십");
-}
-
-//type predicate를 사용하지 않은 type guard. 가독성이 좋지 않다.
-if(data !== null || data !== undefined){
-  if(typeof data === "number"){
-    if(data !== 0){
-      console.log(data + 10);
-    }
-  }
-} else {
-  console.log(data + "십");
-}
+universe.earth.type; // <--- 에러가 발생한다.
 ```
+
+속성 값의 타입을 객체와 문자열의 유니언으로 표기했기 때문에 earth가 문자열 일 수 도 있다고 생각하는것이다.
 
 <br>
 
-하지만 is 연산자를 사용할때는 타입을 잘못 적을 가능성이 생긴다.
+이럴때 처음처럼 타입을 추론하는 이점을 사용하고 sriius에서 오타가 났음을 알리는 방법이 있다.
 
-아래코드는 is 연산자를 잘못 사용해서 타입 좁히기가 반대로 되어버렸다.
+satisfies 연산자를 사용하면 된다.
 
 ```tsx
-function isString(value: any): value is number {
-  return typeof value === "string";
-}
-
-function stringOrNumber(value: string | number) {
-  if (isString(value)) {
-    console.log("값은 string 입니다.");
-    value; // (parameter) value: number
-  } else {
-    console.log("값은 number 입니다.");
-    value; // (parameter) value: string
-  }
-}
+const universe = {
+  sun: "star",
+  sriius: "star",
+  earth: { type: "planet", parent: "sun" },
+} satisfies {
+  [key in "sun" | "sirius" | "earth"]:
+    | { type: string; parent: string }
+    | string;
+};
 ```
+
+이러면 universe 타입은 타입 추론된것을 그대로 사용하면서, 각각 속성들은 satisfies에 적은 타입으로 **다시 검사 한다.**
+
+여기서 sririus 오타가 발견된다.
+
+또한 `universe.earth.type` 도 에러없이 쓸 수 있다.
 
 <br>
 
