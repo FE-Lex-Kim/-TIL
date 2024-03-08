@@ -1,7 +1,8 @@
-- [TypeScript(5) - 컨디셔널 타입,함수 메서드 타이핑, 오버로딩](#typescript5---컨디셔널-타입함수-메서드-타이핑-오버로딩)
-  - [컨디셔널 타입](#컨디셔널-타입)
-    - [컨디셔널 타입 검사](#컨디셔널-타입-검사)
-    - [컨디셔널 타입 분배법칙](#컨디셔널-타입-분배법칙)
+- [TypeScript(5) - 조건부 타입(컨디셔널 타입),함수 메서드 타이핑, 오버로딩](#typescript5---조건부-타입컨디셔널-타입함수-메서드-타이핑-오버로딩)
+  - [조건부 타입(컨디셔널 타입)](#조건부-타입컨디셔널-타입)
+    - [제네릭 타입 제한](#제네릭-타입-제한)
+    - [조건부 타입 검사](#조건부-타입-검사)
+    - [조건부 타입 분배법칙](#조건부-타입-분배법칙)
   - [함수와 메서드 타이핑](#함수와-메서드-타이핑)
     - [일반 매개변수](#일반-매개변수)
     - […나머지문법](#나머지문법)
@@ -9,13 +10,13 @@
     - [구조분해할당](#구조분해할당)
   - [오버로딩](#오버로딩)
 
-# TypeScript(5) - 컨디셔널 타입,함수 메서드 타이핑, 오버로딩
+# TypeScript(5) - 조건부 타입(컨디셔널 타입),함수 메서드 타이핑, 오버로딩
 
 <br>
 
-## 컨디셔널 타입
+## 조건부 타입(컨디셔널 타입)
 
-조건에 따라 다른 타입이 되는 컨디셔널 타입이 있다.
+조건에 따라 다른 타입이 되는 조건부 타입이 있다.
 
 ```tsx
 type A1 = string;
@@ -85,9 +86,59 @@ type Result5 = string | never extends never ? true : false;
 
 <br>
 
-### 컨디셔널 타입 검사
+### 제네릭 타입 제한
 
-컨디셔널 타입은 타입검사를 위해 많이 사용한다.
+제네릭과 extends를 함께 사용해서 제네릭으로 받는 타입을 제한할 수 있다.
+
+따라서 개발자는 잘못된 값을 넘길 수 없기 때문에 휴먼 에러를 방지할 수 있다.
+
+```tsx
+const Alex = <T extends "Alex" | "James" | "Andrew">(name: T) => {
+  type Alex = {
+    name: string;
+    age: number;
+    hasGirlfriend: boolean;
+  };
+
+  type James = {
+    name: string;
+    age: number;
+    hobby: string;
+  };
+
+  type Andrew = {
+    name: string;
+    age: number;
+  };
+
+  type NameInfo = T extends "Alex" ? Alex : T extends "James" ? James : Andrew;
+
+  function getNameInfo(name: "Alex" | "James" | "Andrew"): NameInfo {
+    if (name === "Alex") {
+      return { name: "Alex", age: 29, hasGirlfriend: true } as NameInfo;
+    } else if (name === "James") {
+      return { name: "James", age: 24, hobby: "youtube" } as NameInfo;
+    } else {
+      return { name: "Andrew", age: 22 } as NameInfo;
+    }
+  }
+
+  return <h1>hello</h1>;
+};
+export default Alex;
+```
+
+제네릭 타입 매개변수를 제한해서 “Alex”, “James”, “Andrew” 문자열 리터럴 타입만 받게했다.
+
+getNameInfo 반환값에 대한 타입을 NameInfo 으로 했으며, 각각 제네릭 타입매개변수 T에 따라서 Alex, James, Andrew 타입을 받게 했다.
+
+**이때 getNameInfo 함수 내부에서 조건문 if-else 문을 사용을 했는데, 조건부 에서 반환하는 값은 타입스크립트가 추론할수가 없어서 as NameInfo를 해주어야한다.**
+
+<br>
+
+### 조건부 타입 검사
+
+조건부 타입은 타입검사를 위해 많이 사용한다.
 
 ```tsx
 type Result = "h1" extends string ? true : false; // type Result = true
@@ -128,7 +179,7 @@ type Result = Omit<
 
 <br>
 
-### 컨디셔널 타입 분배법칙
+### 조건부 타입 분배법칙
 
 다음 코드에서 string | number 을 사용해서 string[] 타입을 얻으려는 상황이다.
 
