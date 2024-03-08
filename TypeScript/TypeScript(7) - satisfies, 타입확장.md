@@ -11,6 +11,7 @@
     - [4. 배열 좁히기(Array.isArray)](#4-배열-좁히기arrayisarray)
     - [5. 사용자 정의 타입 가드 함수(is 연산자)](#5-사용자-정의-타입-가드-함수is-연산자)
     - [6. 브랜드 속성 사용](#6-브랜드-속성-사용)
+    - [7. Exhaustive Checking](#7-exhaustive-checking)
 
 # TypeScript(7) - 타입 확장, 타입 좁히기
 
@@ -22,7 +23,7 @@
 
 타입스크립트는 interface, type 키워드로 타입을 정의하고
 
-extends, 교차타입(&), 유니온 타입( | )을 사용해서 타입을 확장한다.
+extends, 교차타입(&), 유니 온 타입( | )을 사용해서 타입을 확장한다.
 
 <br>
 
@@ -593,6 +594,185 @@ function processValue(value: X | Y) {
   }
 }
 ```
+
+<br>
+
+응용하기 예시
+
+```tsx
+// 객체 타입 속성
+type Object1 = {
+  name: string;
+  age: number;
+  hobby: string;
+};
+
+type Object2 = {
+  name: string;
+  age: number;
+  skills: string[];
+};
+
+type ObjectArrType = Object1 | Object2;
+
+// 객체요소 배열
+const arrayOfObjects: ObjectArrType[] = [
+  {
+    name: "Charlie",
+    age: 19,
+    skills: ["JavaScript", "TypeScript"],
+  },
+  {
+    name: "Charlie",
+    age: 19,
+    hobby: "Reading",
+  },
+];
+```
+
+<br>
+
+여기서 새로운 객체가 arrayofobjects에 생겼다고 해보자.
+
+이 객체는 Object1, Object2의 모든 속성을 다 가지고 있다.
+
+```tsx
+const arrayOfObjects: ObjectArrType[] = [
+  //...
+  {
+    name: "Charlie",
+    age: 20,
+    hobby: "Reading",
+    skills: ["JavaScript", "TypeScript"],
+  },
+];
+```
+
+이때는 Object1 과 Object2 타입과 다르므로 에러가 발생해야한다.
+
+하지만 이코드를 작성했을때는 자바스크립트는 에러를 뱉지 않는다.
+
+타입 에러가 발생하지 않는다면 무수한 에러 객체가 생길 가능성이 있다.
+
+<br>
+
+따라서 객체 타입을 서로 호환되지 않도록 만들어주어야한다.
+
+브랜드 속성을 사용하면 된다.
+
+```tsx
+// 객체 타입 속성
+type Object1 = {
+  __type: "object1";
+  name: string;
+  age: number;
+  hobby: string;
+};
+
+type Object2 = {
+  __type: "object2";
+  name: string;
+  age: number;
+  skills: string[];
+};
+
+type ObjectArrType = Object1 | Object2;
+
+// 객체요소 배열
+const arrayOfObjects: ObjectArrType[] = [
+  {
+    __type: "object1",
+    name: "Charlie",
+    age: 19,
+    skills: ["JavaScript", "TypeScript"],
+  },
+  {
+    __type: "object2",
+    name: "Charlie",
+    age: 19,
+    hobby: "Reading",
+  },
+  {
+    __type: "object1",
+    name: "Charlie",
+    age: 20,
+    hobby: "Reading",
+    skills: ["JavaScript", "TypeScript"],
+  },
+];
+```
+
+이제는 브랜드 속성을 사용해서 에러 객체에 대해 에러가 발생하는 것을 확인할 수 있다.
+
+<br>
+
+### 7. Exhaustive Checking
+
+Exhaustive 사전적으로 철저함, 완벽함을 의미한다.
+
+따라서 Exhaustive Checking는 철저하게 모든 타입을 검사하는 것을 말하는 패러다임이다.
+
+<br>
+
+분기처리(타입 조건문)를 필요하다고 생각되는 부분만 분기처리를 해서 코드를 작성할 수 있다.
+
+하지만 모든 케이스에 대해 분기처리를 해야만 유지보수 측면에서 안전하다고 생각되는 상황이 생긴다.
+
+이때 Exhaustive Checking을 통해 모든 케이스에 대한 타입 검사를 강제할 수 있다.
+
+<br>
+
+아래 예시를 보자
+
+```tsx
+interface X {
+  __type: "X";
+  width: number;
+  height: number;
+}
+interface Y {
+  __type: "Y";
+  length: number;
+  center: number;
+}
+
+function processValue(value: X | Y) {
+  if (value.__type === "X") return value + "X";
+  if (value.__type === "Y") return value + "Y";
+  return value;
+}
+```
+
+X, Y 타입에 대해 분기를 걸어서 확실하게 타입 검사를 하고 있다.
+
+만약 새로운 Z 타입이 생겼다고 해보자
+
+```tsx
+...
+interface Z {
+  __type: "Z";
+  length: number;
+  center: number;
+}
+
+function processValue(value: X | Y) {
+  if (value.__type === "X") return value + "X";
+  if (value.__type === "Y") return value + "Y";
+  else {
+	  exhaustiveCheck(value); // Error : Argument of type 'Y' is not assign
+														// able to parameter of type 'never'
+	  return value;
+	}
+}
+```
+
+이때 당연히 Z 타입에 대해 분기를 걸어주어야 한다. 하지만 깜빡하고 모든 케이스에 대한 분기를 처리해주지 않았을때 컴파일 타입 에러가 발생하게 해주는것이 Exhaustive Checking 이다.
+
+`exhaustiveCheck(value)` 은 파라미터로 어떠한 값을 받을수없는 never 타입을 선언하고 있다.
+
+따라서 만약 모든 분기를 지나치고 else 문에 들어오면 강제로 타입 에러가 발생하게 된다.
+
+이렇게 철저하게 분기 처리가 필요하다면 Exhaustive Checking 패턴을 활용하는게 좋다.
 
 <br>
 
