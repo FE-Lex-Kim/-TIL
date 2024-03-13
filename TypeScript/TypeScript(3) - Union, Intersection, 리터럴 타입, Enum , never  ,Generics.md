@@ -1,6 +1,8 @@
 - [TypeScript(3) - 유니온 타입(Union), 교차타입(Intersection), 리터럴 타입, Enum , never , 제네릭(Generic)](#typescript3---유니온-타입union-교차타입intersection-리터럴-타입-enum--never--제네릭generic)
   - [유니온 타입 (Union)](#유니온-타입-union)
   - [교차 타입(Intersection)](#교차-타입intersection)
+    - [객체유니온 \& 객체유니온 일 경우(A | B) \& (C \& B)](#객체유니온--객체유니온-일-경우a--b--c--b)
+    - [원시타입 유니온 \& 원시타입 유니온 일경우](#원시타입-유니온--원시타입-유니온-일경우)
   - [리터럴 타입](#리터럴-타입)
   - [Enum 타입](#enum-타입)
   - [never](#never)
@@ -8,7 +10,7 @@
     - [1.제네릭 호출 시그니처](#1제네릭-호출-시그니처)
     - [2.제네릭을 함수처럼 사용하기](#2제네릭을-함수처럼-사용하기)
     - [3.제한된 제네릭](#3제한된-제네릭)
-    - [4. 제네릭 맵드 타입](#4-제네릭-맵드-타입)
+    - [4. 제네릭 맵드 타입s](#4-제네릭-맵드-타입s)
     - [제네릭 사용 예시(API)](#제네릭-사용-예시api)
   - [추론(Inference)](#추론inference)
     - [주의해야할 점](#주의해야할-점)
@@ -106,6 +108,41 @@ const person: Person = {
 
 console.log(person.name, person.age, person.email);
 ```
+
+<br>
+
+### 객체유니온 & 객체유니온 일 경우(A | B) & (C & B)
+
+```tsx
+type ListT1 = { name: string } | { hello: string };
+type ListT2 = { age: number } | { car: "Kia" };
+
+type Mix = ListT1 & ListT2;
+```
+
+이때 Mix의 타입을 나열하면
+
+1. `{ name: string, age: number }`
+2. `{ name: string, car: "Kia" }`
+3. `{ hello: string, age: number }`
+4. `{ hello: string, car: "Kia" }`
+
+이 된다.
+
+<br>
+
+### 원시타입 유니온 & 원시타입 유니온 일경우
+
+```tsx
+type ListT1 = string | number;
+type ListT2 = boolean;
+
+type Mix = ListT3 & ListT4;
+```
+
+Mix 타입은 never이 된다.
+
+객체일 경우와 원시타입일 경우 헷갈리므로 조심해야한다.
 
 <br>
 
@@ -796,7 +833,7 @@ function exampleFunc<T extends string>(arg: T): T[] {
 
 <br>
 
-### 4. 제네릭 맵드 타입
+### 4. 제네릭 맵드 타입s
 
 만약 두개의 매개변수 타입을 가지고 객체 타입으로 표현할때 주의해야한다.
 
@@ -809,7 +846,7 @@ type Test = Record<"hello", string>;
 
 위의 코드가 Test 타입이 `{ “hello” : string }` 으로 동작할 것으로 예상하지만 실제로는 `{ K : string }` 으로 나타난다.
 
-위 코드에서는 **`K`**가 반드시 문자열, 숫자열, symbol 타입이어야 한다는 제약을 추가하여야 한다. 왜나면 객체의 key에 들어가는 값은 3개의 타입만 가능하기 때문이다.
+위 코드에서는 `K`가 반드시 문자열, 숫자열, symbol 타입이어야 한다는 제약을 추가하여야 한다. 왜나면 객체의 key에 들어가는 값은 3개의 타입만 가능하기 때문이다.
 
 하지만 K에 아무런 제약이 없어서 'hello'로 제한하면 컴파일러는 이를 인식하지 못하고 에러를 발생시킨다.
 
@@ -819,7 +856,7 @@ type Test = Record<"hello", string>;
 
 <br>
 
-그리고 두번째로 여기서 **`{ K: V }`**와 같이 사용된 것은 정적인 프로퍼티 이름인 "K"에 V 값을 할당하는 것으로 해석된다. 그러나 K는 제네릭 타입으로, 여러 가지 값 중 하나를 나타내는데 사용된다. 이렇게 사용하면 실제로는 K라는 이름의 프로퍼티를 만들고 이에 V 값을 할당하는 것이 된다.
+그리고 두번째로 여기서 `{ K: V }`와 같이 사용된 것은 정적인 프로퍼티 이름인 "K"에 V 값을 할당하는 것으로 해석된다. 그러나 K는 제네릭 타입으로, 여러 가지 값 중 하나를 나타내는데 사용된다. 이렇게 사용하면 실제로는 K라는 이름의 프로퍼티를 만들고 이에 V 값을 할당하는 것이 된다.
 
 우리가 원하는것은 K값에 따라 동적으로 프로퍼티로 할당하는 것이므로 keyof 연산자를 사용해서 K가 객체의 키 타입중 하나로 제한해야한다.
 
@@ -830,7 +867,7 @@ type Record<K extends string | number | symbol, V> = { [P in K]: V };
 type Test = Record<"hello", string>; // { hello : string }
 ```
 
-이렇게 하면 **`K`**는 `"hello"`와 같은 문자열 키의 타입을 의미하게 된다.
+이렇게 하면 `K`는 `"hello"`와 같은 문자열 키의 타입을 의미하게 된다.
 
 <br>
 
