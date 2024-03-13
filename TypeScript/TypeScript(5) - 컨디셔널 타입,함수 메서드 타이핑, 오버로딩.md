@@ -132,7 +132,7 @@ export default Alex;
 
 getNameInfo 반환값에 대한 타입을 NameInfo 으로 했으며, 각각 제네릭 타입매개변수 T에 따라서 Alex, James, Andrew 타입을 받게 했다.
 
-**이때 getNameInfo 함수 내부에서 조건문 if-else 문을 사용을 했는데, 조건부 에서 반환하는 값은 타입스크립트가 추론할수가 없어서 as NameInfo를 해주어야한다.**
+이때 getNameInfo 함수 내부에서 조건문 if-else 문을 사용을 했는데, 조건부 에서 반환하는 값은 타입스크립트가 추론할수가 없어서 as NameInfo를 해주어야한다.
 
 <br>
 
