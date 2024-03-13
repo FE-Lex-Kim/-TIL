@@ -227,6 +227,7 @@
 - [TypeScript(5) - 조건부 타입,함수 메서드 타이핑, 오버로딩](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(5)%20-%20%EC%BB%A8%EB%94%94%EC%85%94%EB%84%90%20%ED%83%80%EC%9E%85%2C%ED%95%A8%EC%88%98%20%EB%A9%94%EC%84%9C%EB%93%9C%20%ED%83%80%EC%9D%B4%ED%95%91%2C%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9.md>)
 - [TypeScript(6) - 함수끼리 대입, Infer, satisfies](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(6)%20-%20%ED%95%A8%EC%88%98%EB%81%BC%EB%A6%AC%20%EB%8C%80%EC%9E%85.md>)
 - [TypeScript(7) - 타입 확장, 타입 좁히기](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(7)%20-%20satisfies%2C%20%ED%83%80%EC%9E%85%ED%99%95%EC%9E%A5.md>)
+- [TypeScript(8) - 유틸리티 타입, 커스텀 유틸리티 타입](<https://github.com/FE-Lex-Kim/-TIL/blob/master/TypeScript/TypeScript(8)%20-%20%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0%20%ED%83%80%EC%9E%85%2C%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0%20%ED%83%80%EC%9E%85.md>)
 
 ### 5.3 Next.js
 
