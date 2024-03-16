@@ -3,6 +3,8 @@
   - [React 타입스크립트](#react-타입스크립트)
     - [Children Props 타입 지정](#children-props-타입-지정)
     - [리액트 요소 타입](#리액트-요소-타입)
+      - [2. React.ReactNode](#2-reactreactnode)
+      - [3. JSX.Element](#3-jsxelement)
     - [HTML 요소 타입](#html-요소-타입)
 
 # Typescript(9) - 타입스크립트 컴파일, React 타입스크립트
@@ -135,7 +137,7 @@ Soccer(hobby)의 Props를 타이핑을 할 수 있게 됐다.
 
 <br>
 
-**#### 2. React.ReactNode**
+#### 2. React.ReactNode
 
 ReactNode는 다음과 같이 구성되어있다.
 
@@ -165,7 +167,7 @@ const MyComponent: React.FC<Props> = ({ children }) => {
 
 <br>
 
-**#### 3. JSX.Element**
+#### 3. JSX.Element
 
 JSX 문법을 사용하여 생성된 요소를 나타내는 타입이다.
 
