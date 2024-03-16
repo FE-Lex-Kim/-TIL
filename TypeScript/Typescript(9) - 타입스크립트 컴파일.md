@@ -1,7 +1,11 @@
-- [Typescript(9) - 타입스크립트 컴파일](#typescript9---타입스크립트-컴파일)
+- [Typescript(9) - 타입스크립트 컴파일, React 타입스크립트](#typescript9---타입스크립트-컴파일-react-타입스크립트)
   - [타입스크립트 컴파일](#타입스크립트-컴파일)
+  - [React 타입스크립트](#react-타입스크립트)
+    - [Children Props 타입 지정](#children-props-타입-지정)
+    - [리액트 요소 타입](#리액트-요소-타입)
+    - [HTML 요소 타입](#html-요소-타입)
 
-# Typescript(9) - 타입스크립트 컴파일
+# Typescript(9) - 타입스크립트 컴파일, React 타입스크립트
 
 ## 타입스크립트 컴파일
 
@@ -41,6 +45,234 @@
 3. 바인더 → 각 AST 노드에 대응하는 심볼 생성. 심볼은 선언된 타입의 노드 정보 포함하고 있음.
 4. 체커 → AST를 탐색하며 심볼 정보를 활용해 타입 검사
 5. 이미터 → 에러가 없으면 자바스크립트 소스 파일로 변환.
+
+<br>
+
+## React 타입스크립트
+
+함수형 리액트 컴포넌트 타입은 React.FC가 있다.
+
+```tsx
+interface Props {
+  name: string;
+}
+
+const Alex: React.FC<Props> = () => {};
+```
+
+React.FC를 사용할때 Children Props는 어떻게 타입 지정하는지 알아보자.
+
+<br>
+
+### Children Props 타입 지정
+
+가장 보편적인 방법은 `ReactNode | undefined` 이다.
+
+```tsx
+interface Props {
+  name: string;
+  children?: ReactNode | undefined;
+}
+```
+
+ReactNode를 하면 ReactElement 이외에도 boolean, number.. 등등이 있어서 구체적으로 타이핑하는 용도로는 좋지않다.
+
+만약 구체적으로 타이핑을 하고싶다면, 직접 children 타이핑을 해주면된다.
+
+예를 들면
+
+```tsx
+interface Props {
+  children: "Alex" | "James" | "Andrew";
+}
+interface Props {
+  children: string;
+}
+interface Props {
+  children: ReactElement;
+}
+```
+
+<br>
+
+### 리액트 요소 타입
+
+리액트 요소 타입으로 3가지가 있다.
+
+1. React.ReactElement
+2. React.ReactNode
+3. JSX.Element
+
+<br>
+
+**#### 1. ReactElement**
+
+`React.createElement` 메서드를 호출한 후 반환하는 타입이 ReactElement 타입이다.
+
+`ReacatElement<P>` 같이 제네릭으로 사용하면, 해당 컴포넌트 props의 타입을 P 매개변수 타입에 지정해서 타이핑 할 수 있다.
+
+예를들면
+
+```tsx
+const App = () => {
+  return <Alex hobby={<Soccer player={"messi"} />}></Alex>;
+};
+
+interface HobbyProps {
+  player: string;
+}
+
+interface Props {
+  hobby: ReactElement<HobbyProps>;
+}
+
+const Alex = ({ hobby }: Props) => {
+  return <li>{hobby}</li>;
+};
+```
+
+Soccer(hobby)의 Props를 타이핑을 할 수 있게 됐다.
+
+<br>
+
+**#### 2. React.ReactNode**
+
+ReactNode는 다음과 같이 구성되어있다.
+
+```tsx
+type ReactText = string | number;
+type ReactChild = ReactElement | ReactText;
+type ReactNode =
+  | ReactChild
+  | ReactFragment
+  | ReactPortal
+  | boolean
+  | null
+  | undefined;
+```
+
+즉 ReactNode는 render 함수가 반환 할 수 있는 모든 형태를 담고 있다.
+
+<br>
+
+```tsx
+const MyComponent: React.FC<Props> = ({ children }) => {
+  return <div>{children}</div>;
+};
+```
+
+**ReactNode는 다양한 종류의 값을 나타내므로, 컴포넌트의 자식 요소로 다양한 형태의 값을 받을 때 사용된다.**
+
+<br>
+
+**#### 3. JSX.Element**
+
+JSX 문법을 사용하여 생성된 요소를 나타내는 타입이다.
+
+주로 렌더링할 컴포넌트의 요소를 표현하는 데 사용된다.
+
+```tsx
+const element = <MyComponent prop={value} />;
+```
+
+<br>
+
+```tsx
+interface Props {
+  person: JSX.Element;
+}
+
+const Alex = ({ person }: Props) => {
+  return <h1>hello</h1>;
+};
+export default Alex;
+
+const App = () => {
+  return <Alex person={<James />}></Alex>;
+};
+```
+
+**JSX.Element 타입으로 선언함으로써 `person={<James />}` 과 같이 JSX 형태의 props만 전달할 수 있다.**
+
+<br>
+
+### HTML 요소 타입
+
+HTML 태그의 속성 타입으로는 대표적으로 2가지가 있다.
+
+1. DetailedHTMLProps
+2. ComponentWithoutRef
+
+<br>
+
+1. DetailedHTMLProps
+
+```tsx
+type NativeButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
+
+type ButtonProps = {
+  onClick?: NativeButtonProps["onClick"];
+};
+```
+
+<br>
+
+2. ComponentPropsWithoutRef
+
+```tsx
+type NativeButtonProps = React.ComponentPropsWithoutRef<"button">;
+
+type ButtonProps = {
+  onClick?: NativeButtonProps["onClick"];
+};
+```
+
+<br>
+
+이 두가지 공통점은 HTML 요소에 대해 타이핑 할 수 있다는점이다.
+
+이 두가지 차이점은 함수형 컴포넌트에서 ref를 사용할때 나타난다.
+
+- DetailedHTMLProps은 ref를 포함하지 않는 요소의 타입이다.
+- ComponentPropsWithoutRef는 ref를 포함하지 않는 요소의 타입이다.
+
+DetailedHTMLProps은 실제로 동작하지 않는 ref를 받도록 타입이 지정되어 예기치않은 에러가 발생할 수 있다.
+
+따라서 HTML 속성의 타입을 할때는 ComponentPropsWithoutRef 타입을 사용해서 ref가 실제로 forwardRef와 함께 사용할때만 타입을 정의하는 것이 안전하다.
+
+<br>
+
+그렇다면 forwardRef의 타입은 어떻게 해야할까
+
+```tsx
+type Props = {
+  name: string;
+};
+
+const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
+  return (
+    <button ref={ref} {...props}>
+      hello
+    </button>
+  );
+});
+
+const Alex = () => {
+  const buttonRef = useRef();
+
+  return <Button ref={buttonRef} />;
+};
+```
+
+forwardRef의 제네릭 인자가 2가지가 있다.
+
+`forwardRef<A, B>`
+
+- A는 ref에 대한 타입
+- B는 props에 대한 타입이다.
 
 <br>
 
