@@ -12,6 +12,7 @@
     - [useEffect](#useeffect)
     - [useMemo, useCallback](#usememo-usecallback)
     - [useRef](#useref)
+    - [styled Component 중복 타입 선언](#styled-component-중복-타입-선언)
 
 # Typescript(9) - 타입스크립트 컴파일, React 타입스크립트
 
@@ -353,6 +354,46 @@ const count = useRef<number>(1);
 const ref = useRef<HtmlInputElement>(null);
 
 return <input ref={ref} />;
+```
+
+<br>
+
+### styled Component 중복 타입 선언
+
+props와 똑같은 타입에도 StyledProps를 따로 정의해주어야 하는 점이 코드 중복이 된다.
+
+만약 컴포넌트가 복잡해지고 커진다면, 매번 props와 StyledProps를 둘다 수정해야한다는 문제점이 생긴다.
+
+이때 유틸리티 타입 Pick과 Omit을 사용하면 유지보수가 좋아진다.
+
+```tsx
+interface Props{
+	height? : string;
+	color? : string;
+	isFull?: boolean;
+	className?: string;
+	...
+}
+
+const Alex : React.FC<Props> = ({height, color, isFull, className}) => {
+	return <PersonComponet height={height} color={color}... />
+}
+
+interface StyledProps {
+	height? : string;
+	color? : string;
+	isFull?: boolean;
+}
+
+// 중복되어진 props 타입
+const PersonComponent = styled.div<StyledProps>`
+	...
+`
+
+// Pick,을 사용한 타입
+const PersonCoponent = styled.div<Pick<Props,"height" | "color" | "isFull">>`
+	...
+`
 ```
 
 <br>
