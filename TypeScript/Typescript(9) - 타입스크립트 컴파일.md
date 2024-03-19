@@ -3,9 +3,15 @@
   - [React 타입스크립트](#react-타입스크립트)
     - [Children Props 타입 지정](#children-props-타입-지정)
     - [리액트 요소 타입](#리액트-요소-타입)
+      - [1. ReactElement](#1-reactelement)
       - [2. React.ReactNode](#2-reactreactnode)
       - [3. JSX.Element](#3-jsxelement)
     - [HTML 요소 타입](#html-요소-타입)
+  - [React Hook 타입](#react-hook-타입)
+    - [useState](#usestate)
+    - [useEffect](#useeffect)
+    - [useMemo, useCallback](#usememo-usecallback)
+    - [useRef](#useref)
 
 # Typescript(9) - 타입스크립트 컴파일, React 타입스크립트
 
@@ -107,7 +113,7 @@ interface Props {
 
 <br>
 
-**#### 1. ReactElement**
+#### 1. ReactElement
 
 `React.createElement` 메서드를 호출한 후 반환하는 타입이 ReactElement 타입이다.
 
@@ -275,6 +281,79 @@ forwardRef의 제네릭 인자가 2가지가 있다.
 
 - A는 ref에 대한 타입
 - B는 props에 대한 타입이다.
+
+<br>
+
+## React Hook 타입
+
+### useState
+
+useState에 타입 매개변수를 지정해줌으로써 반환되는 state 타입을 지정해 줄 수 있다.
+
+만약 제네릭 타입을 명시하지 않으면 초기값의 타입을 기반으로 state 타입을 추론한다.
+
+```tsx
+type Person = "Alex" | "James" | "Andrew";
+
+const [fruit, setFruit] = useState<string | undefined>();
+const [person, setPerson] = useState<Person | undefined>("Alex");
+```
+
+<br>
+
+### useEffect
+
+```tsx
+type someObject = {
+  name: string;
+  id: string;
+};
+
+type ButtonProps = {
+  value: someObject;
+};
+
+const Button: React.FC<ButtonProps> = ({ value }) => {
+  const { name, id } = value;
+  useEffect(() => {
+    // name과 id를 사용해서 작업한다.
+  }, [name, id]);
+  return <h1>hello</h1>;
+};
+```
+
+<br>
+
+### useMemo, useCallback
+
+두 훅 모두 제네릭을 지원해주며, 제네릭 매개변수 타입은 반환되는 값의 타입을 지정해줄 수 있다.
+
+```tsx
+const avg = useMemo<number>(() => getAverage(list), [list]);
+const changeName = useCallback<() => void>(() => {
+  setName(!name);
+}, [name]);
+```
+
+<br>
+
+### useRef
+
+1. 값 저장 용도
+
+```tsx
+const count = useRef<number>(1);
+```
+
+<br>
+
+1. DOM 요소 저장 용도
+
+```tsx
+const ref = useRef<HtmlInputElement>(null);
+
+return <input ref={ref} />;
+```
 
 <br>
 
