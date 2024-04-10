@@ -246,6 +246,7 @@
 
 - [Storybook(1) - Storybook이란?, Writing Stories, Story 계층, Renaming Story & Sorting Stories](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook.md)
 - [Storybook(2) - Renaming Story & Sorting Stories, Story within Story, Args, Decorators, Addons](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook(2).md>)
+- [Storybook(3) - TypeScript](<https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/Storybook(3).md>)
 
 ### 5.5 Cypress
 
