@@ -21,7 +21,7 @@
     - [5.6 Jest](#56-jest)
     - [5.7 Webpack](#57-webpack)
     - [5.8 Tailwind](#58-tailwind)
-  - [5.9 배포](#59-배포)
+    - [5.9 배포](#59-배포)
   - [6. 성능 최적화](#6-성능-최적화)
   - [7. React 구현](#7-react-구현)
   - [8. Git](#8-git)
@@ -272,7 +272,7 @@
 - [Tailwindcss](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/Tailwindcss.md)
 - [Tailwindcss Complex variants](https://github.com/Alex-Eojin/-TIL/blob/master/Tool/tailwindcss%20Complex%20variants.md)
 
-## 5.9 배포
+### 5.9 배포
 
 - [AWS s3, CloudFront, Route53 프론트엔드 배포](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/AWS%20s3%2C%20CloudFront%2C%20Route53%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%20%EB%B0%B0%ED%8F%AC.md)
 - [CI/CD 구축하기 with GitHub Action, aws s3, route53, ACM](https://github.com/FE-Lex-Kim/-TIL/blob/master/Tool/CI%2CCD%20%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0%20with%20GitHub%20Action%2C%20aws%20s3%2C%20route53%2C%20ACM.md)
